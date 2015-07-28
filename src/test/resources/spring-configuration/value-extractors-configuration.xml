@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="espnProjectionsNextPageValueExtractor" class="com.btanabe.fsdu.parser.ValueExtractor">
+        <constructor-arg name="inputHtmlString" ref="espnProjectionsPageOneFactoryBean"/>
+        <constructor-arg name="objectType" value="java.lang.String" />
+        <constructor-arg name="outputMatchingRegex" value="(?&lt;=&lt;/table&gt;&lt;div class\=&quot;paginationNav&quot;&gt;&lt;a href=&quot;).+startIndex.+(?=&quot;&gt;NEXT)" />
+    </bean>
+
+    <bean id="espnProjectionsRushingYardsProjection" class="com.btanabe.fsdu.parser.ValueExtractor">
+        <constructor-arg name="inputHtmlString" ref="espnProjectionsPageEddieLacyBean" />
+        <constructor-arg name="objectType" value="java.lang.Integer" />
+        <constructor-arg name="outputMatchingRegex" value="(?&lt;=&lt;td class=&quot;playertableStat &quot;&gt;\d{1,5}+&lt;\/td&gt;&lt;td class=&quot;playertableStat &quot;&gt;\d{1,5}+&lt;\/td&gt;&lt;td class=&quot;playertableStat &quot;&gt;\d{1,5}+&lt;\/td&gt;&lt;td class=&quot;playertableStat &quot;&gt;\d{1,5}+&lt;\/td&gt;&lt;td class=&quot;playertableStat &quot;&gt;)\d+(?=&lt;/td&gt;)" />
+    </bean>
+
+    <bean id="espnProjectionsPageOneFactoryBean" class="com.btanabe.fsdu.test.factories.FileStringFactory">
+        <property name="inputFile" value="classpath:test-webpages/espn/projections-1.html" />
+    </bean>
+
+    <bean id="espnProjectionsPageEddieLacyBean" class="com.btanabe.fsdu.test.factories.FileStringFactory">
+        <property name="inputFile" value="classpath:test-webpages/espn/projections-eddie-lacy.html" />
+    </bean>
+</beans>
