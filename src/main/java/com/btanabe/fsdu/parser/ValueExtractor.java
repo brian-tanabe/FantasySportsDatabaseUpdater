@@ -18,7 +18,6 @@ public class ValueExtractor {
         this.inputHtmlString = inputHtmlString;
         valuePattern = Pattern.compile(outputMatchingRegex, Pattern.MULTILINE);
         this.objectType = objectType;
-
     }
 
     public Object getValue() throws ClassNotFoundException {
