@@ -23,6 +23,11 @@
 
     <bean id="espnProjectionsPassingAttemptsValueExtractor" class="com.btanabe.fsdu.parsers.ValueExtractor">
         <constructor-arg name="outputClasspath" value="java.lang.Integer"/>
+        <constructor-arg name="outputMatchingRegex" value="(?&lt;=&lt;td class=&quot;playertableStat&quot;&gt;\d{1,5}/)\d{1,5}(?=&lt;\/td&gt;)"/>
+    </bean>
+
+    <bean id="espnProjectionsPassingCompletionsValueExtractor" class="com.btanabe.fsdu.parsers.ValueExtractor">
+        <constructor-arg name="outputClasspath" value="java.lang.Integer"/>
         <constructor-arg name="outputMatchingRegex" value="(?&lt;=&lt;td class=&quot;playertableStat&quot;&gt;)\d{1,5}(?=/\d{1,5}&lt;\/td&gt;)"/>
     </bean>
 </beans>

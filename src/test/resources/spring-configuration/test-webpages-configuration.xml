@@ -11,6 +11,10 @@
         <property name="inputFile" value="classpath:test-webpages/espn/projections-eddie-lacy.html"/>
     </bean>
 
+    <bean id="espnProjectionsPageAaronRodgersBean" class="com.btanabe.fsdu.test.factories.FileTidiedStringFactory">
+        <property name="inputFile" value="classpath:test-webpages/espn/projections-aaron-rodgers.html"/>
+    </bean>
+
     <bean id="espnProjectionsPageOneUnformattedBean" class="com.btanabe.fsdu.test.factories.FileStringFactory">
         <property name="inputFile" value="classpath:test-webpages/espn/projections-1.dirty.html"/>
     </bean>

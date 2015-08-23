@@ -24,9 +24,17 @@ public class EspnProjectionsPageValueExtractorTests {
     @Autowired
     private String eddieLacyEspnProjectionPageHtml;
 
+    @Qualifier("espnProjectionsPageAaronRodgersBean")
+    @Autowired
+    private String aaronRodgersEspnProjectionPageHtml;
+
     @Autowired
     @Qualifier("eddieLacyEspnProjectionModel")
     private EspnProjectionModel expectedEddieLacyProjectionModel;
+
+    @Qualifier("aaronRodgersEspnProjectionModel")
+    @Autowired
+    private EspnProjectionModel expectedAaronRodgersProjectionModel;
 
     @Autowired
     private ValueExtractor espnProjectionsNameValueExtractor;
@@ -39,6 +47,9 @@ public class EspnProjectionsPageValueExtractorTests {
 
     @Autowired
     private ValueExtractor espnProjectionsPassingAttemptsValueExtractor;
+
+    @Autowired
+    private ValueExtractor espnProjectionsPassingCompletionsValueExtractor;
 
     @Test
     public void shouldBeAbleToExtractNamesFromEspnProjectionPages() throws ClassNotFoundException {
@@ -60,7 +71,13 @@ public class EspnProjectionsPageValueExtractorTests {
 
     @Test
     public void shouldBeAbleToExtractPassingAttemptsFromEspnProjectionPages() throws ClassNotFoundException {
-        espnProjectionsPassingAttemptsValueExtractor.setInputStringToSearch(eddieLacyEspnProjectionPageHtml);
-        assertThat(espnProjectionsPassingAttemptsValueExtractor.getValue(), is(equalTo((Object) expectedEddieLacyProjectionModel.getPassingCompletions())));
+        espnProjectionsPassingAttemptsValueExtractor.setInputStringToSearch(aaronRodgersEspnProjectionPageHtml);
+        assertThat(espnProjectionsPassingAttemptsValueExtractor.getValue(), is(equalTo((Object) expectedAaronRodgersProjectionModel.getPassingAttempts())));
+    }
+
+    @Test
+    public void shouldBeAbleToExtractPassingCompletionsFromEspnProjectionPage() throws ClassNotFoundException {
+        espnProjectionsPassingCompletionsValueExtractor.setInputStringToSearch(aaronRodgersEspnProjectionPageHtml);
+        assertThat(espnProjectionsPassingCompletionsValueExtractor.getValue(), is(equalTo((Object) expectedAaronRodgersProjectionModel.getPassingCompletions())));
     }
 }

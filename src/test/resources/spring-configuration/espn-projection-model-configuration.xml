@@ -21,4 +21,23 @@
         <property name="receivingTouchdowns" value="3"/>
         <property name="fantasyPoints" value="287.4"/>
     </bean>
+
+    <bean id="aaronRodgersEspnProjectionModel" class="com.btanabe.fsdu.models.EspnProjectionModel">
+        <property name="rank" value="20"/>
+        <property name="name" value="Aaron Rodgers"/>
+        <property name="team" value="GB"/>
+        <property name="position" value="QB"/>
+        <property name="passingCompletions" value="347"/>
+        <property name="passingAttempts" value="538"/>
+        <property name="passingYards" value="4317"/>
+        <property name="passingTouchdowns" value="35"/>
+        <property name="interceptions" value="8"/>
+        <property name="rushingAttempts" value="50"/>
+        <property name="rushingYards" value="256"/>
+        <property name="rushingTouchdowns" value="2"/>
+        <property name="receptions" value="0"/>
+        <property name="receivingYards" value="0"/>
+        <property name="receivingTouchdowns" value="0"/>
+        <property name="fantasyPoints" value="325.1"/>
+    </bean>
 </beans>
