@@ -13,11 +13,13 @@ public class HtmlTidier {
     private static Tidy htmlTidy = new Tidy();
 
     static {
-        htmlTidy.setShowWarnings(true);
+        htmlTidy.setQuiet(true);
+        htmlTidy.setShowWarnings(false);
         htmlTidy.setInputEncoding("UTF-8");
         htmlTidy.setOutputEncoding("UTF-8");
         htmlTidy.setXHTML(true);
         htmlTidy.setMakeClean(true);
+        htmlTidy.setWrapSection(false);
     }
 
     public static String tidyHtmlAndConvertToXhtml(String dirtyHtml) {
