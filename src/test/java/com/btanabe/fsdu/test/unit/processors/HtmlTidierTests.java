@@ -18,10 +18,10 @@ import static org.junit.Assert.assertThat;
 @RunWith(SpringJUnit4ClassRunner.class)
 public class HtmlTidierTests {
 
-    @Qualifier("espnProjectionsPageOneUnformatted")
+    @Qualifier("espnProjectionsPageOneUnformattedBean")
     @Autowired private String poorlyFormattedHtmlString;
 
-    @Qualifier("espnProjectionsPageOneFormatted")
+    @Qualifier("espnProjectionsPageOneFormattedBean")
     @Autowired private String wellFormattedHtmlString;
 
     @Test

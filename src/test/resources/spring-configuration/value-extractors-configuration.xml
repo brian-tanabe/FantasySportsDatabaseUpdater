@@ -3,18 +3,20 @@
        xmlns="http://www.springframework.org/schema/beans"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
+    <import resource="classpath:/spring-configuration/webpages-configuration.xml"/>
+
     <bean id="espnProjectionsNextPageValueExtractor" class="com.btanabe.fsdu.parsers.ValueExtractor">
         <constructor-arg name="inputHtmlString" ref="espnProjectionsPageOneFactoryBean"/>
         <constructor-arg name="outputClasspath" value="java.lang.String"/>
         <constructor-arg name="outputMatchingRegex"
-                         value="(?&lt;=&lt;/table&gt;&lt;div class\=&quot;paginationNav&quot;&gt;&lt;a href=&quot;).+startIndex.+(?=&quot;&gt;NEXT)"/>
+                         value="(?&lt;=href=&quot;).+startIndex.+(?=&quot;&gt;NEXT)"/>
     </bean>
 
     <bean id="espnProjectionsRushingYardsProjection" class="com.btanabe.fsdu.parsers.ValueExtractor">
         <constructor-arg name="inputHtmlString" ref="espnProjectionsPageEddieLacyBean"/>
         <constructor-arg name="outputClasspath" value="java.lang.Integer"/>
         <constructor-arg name="outputMatchingRegex"
-                         value="(?&lt;=&lt;td class=&quot;playertableStat &quot;&gt;\d{1,5}+&lt;\/td&gt;&lt;td class=&quot;playertableStat &quot;&gt;\d{1,5}+&lt;\/td&gt;&lt;td class=&quot;playertableStat &quot;&gt;\d{1,5}+&lt;\/td&gt;&lt;td class=&quot;playertableStat &quot;&gt;\d{1,5}+&lt;\/td&gt;&lt;td class=&quot;playertableStat &quot;&gt;)\d+(?=&lt;/td&gt;)"/>
+                         value="(?&lt;=&lt;td class=&quot;playertableStat&quot;&gt;\d{1,5}&lt;\/td&gt;\n&lt;td class=&quot;playertableStat&quot;&gt;\d{1,5}&lt;\/td&gt;\n&lt;td class=&quot;playertableStat&quot;&gt;\d{1,5}&lt;\/td&gt;\n&lt;td class=&quot;playertableStat&quot;&gt;\d{1,5}&lt;\/td&gt;\n&lt;td class=&quot;playertableStat&quot;&gt;)\d+(?=&lt;/td&gt;)"/>
     </bean>
 
     <bean id="espnProjectionsFantasyPointsProjection" class="com.btanabe.fsdu.parsers.ValueExtractor">
@@ -22,13 +24,5 @@
         <constructor-arg name="outputClasspath" value="java.lang.Float"/>
         <constructor-arg name="outputMatchingRegex"
                          value="(?&lt;=&lt;td class=&quot;playertableStat appliedPoints&quot;&gt;)\d{1,4}\.\d{1,2}(?=&lt;/td&gt;)"/>
-    </bean>
-
-    <bean id="espnProjectionsPageOneFactoryBean" class="com.btanabe.fsdu.test.factories.FileStringFactory">
-        <property name="inputFile" value="classpath:test-webpages/espn/projections-1.dirty.html"/>
-    </bean>
-
-    <bean id="espnProjectionsPageEddieLacyBean" class="com.btanabe.fsdu.test.factories.FileStringFactory">
-        <property name="inputFile" value="classpath:test-webpages/espn/projections-eddie-lacy.html"/>
     </bean>
 </beans>

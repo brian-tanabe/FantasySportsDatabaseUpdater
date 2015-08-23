@@ -3,11 +3,19 @@
        xmlns="http://www.springframework.org/schema/beans"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean id="espnProjectionsPageOneUnformatted" class="com.btanabe.fsdu.test.factories.FileStringFactory">
+    <bean id="espnProjectionsPageOneFactoryBean" class="com.btanabe.fsdu.test.factories.FileTidiedStringFactory">
+        <property name="inputFile" value="classpath:test-webpages/espn/projections-1.html"/>
+    </bean>
+
+    <bean id="espnProjectionsPageEddieLacyBean" class="com.btanabe.fsdu.test.factories.FileTidiedStringFactory">
+        <property name="inputFile" value="classpath:test-webpages/espn/projections-eddie-lacy.html"/>
+    </bean>
+
+    <bean id="espnProjectionsPageOneUnformattedBean" class="com.btanabe.fsdu.test.factories.FileStringFactory">
         <property name="inputFile" value="classpath:test-webpages/espn/projections-1.dirty.html"/>
     </bean>
 
-    <bean id="espnProjectionsPageOneFormatted" class="com.btanabe.fsdu.test.factories.FileTidiedStringFactory">
+    <bean id="espnProjectionsPageOneFormattedBean" class="com.btanabe.fsdu.test.factories.FileTidiedStringFactory">
         <property name="inputFile" value="classpath:test-webpages/espn/projections-1.dirty.html"/>
     </bean>
 </beans>

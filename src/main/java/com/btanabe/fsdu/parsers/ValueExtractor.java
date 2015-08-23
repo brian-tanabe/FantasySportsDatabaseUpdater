@@ -16,7 +16,7 @@ public class ValueExtractor {
 
     public ValueExtractor(String inputHtmlString, String outputMatchingRegex, String outputClasspath) {
         this.inputHtmlString = inputHtmlString;
-//        valuePattern = Pattern.compile(outputMatchingRegex, Pattern.MULTILINE);
+        valuePattern = Pattern.compile(outputMatchingRegex, Pattern.MULTILINE);
         valuePattern = Pattern.compile(outputMatchingRegex);
         this.objectClasspath = outputClasspath;
     }
