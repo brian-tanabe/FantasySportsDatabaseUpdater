@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+                           http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-2.5.xsd">
+
+    <import resource="classpath:/spring-configuration/webpages-configuration.xml"/>
+    <import resource="classpath:/spring-configuration/value-extractors-configuration.xml"/>
+    <import resource="classpath:/spring-configuration/model-factory-configuration.xml"/>
+
+    <bean id="espnPlayerProjectionRecordParserBean" class="com.btanabe.fsdu.parsers.RecordParser">
+        <constructor-arg ref="espnProjectionsPageEddieLacyBean"/>
+        <constructor-arg ref="espnPlayerProjectionRecordParserValueExtractorMapBean"/>
+        <constructor-arg value="com.btanabe.fsdu.models.EspnProjectionModel"/>
+        <constructor-arg ref="&amp;espnProjectionModelFactory"/>
+    </bean>
+
+    <util:map id="espnPlayerProjectionRecordParserValueExtractorMapBean"
+              key-type="java.lang.String"
+              value-type="com.btanabe.fsdu.parsers.ValueExtractor">
+        <entry key="name" value-ref="espnProjectionsNameValueExtractor"/>
+    </util:map>
+</beans>

@@ -25,4 +25,9 @@
         <constructor-arg name="outputMatchingRegex"
                          value="(?&lt;=&lt;td class=&quot;playertableStat appliedPoints&quot;&gt;)\d{1,4}\.\d{1,2}(?=&lt;/td&gt;)"/>
     </bean>
+
+    <bean id="espnProjectionsNameValueExtractor" class="com.btanabe.fsdu.parsers.ValueExtractor">
+        <constructor-arg name="outputClasspath" value="java.lang.String" />
+        <constructor-arg name="outputMatchingRegex" value="" />
+    </bean>
 </beans>

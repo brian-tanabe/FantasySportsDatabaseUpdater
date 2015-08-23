@@ -15,9 +15,13 @@ public class ValueExtractor {
     private String objectClasspath;
 
     public ValueExtractor(String inputHtmlString, String outputMatchingRegex, String outputClasspath) {
+        this(outputMatchingRegex, outputClasspath);
         this.inputHtmlString = inputHtmlString;
+    }
+
+    public ValueExtractor(String outputMatchingRegex, String outputClasspath) {
         valuePattern = Pattern.compile(outputMatchingRegex, Pattern.MULTILINE);
-        valuePattern = Pattern.compile(outputMatchingRegex);
+//        valuePattern = Pattern.compile(outputMatchingRegex);
         this.objectClasspath = outputClasspath;
     }
 
@@ -29,5 +33,9 @@ public class ValueExtractor {
         Matcher valueMatcher = valuePattern.matcher(inputString);
         valueMatcher.find();
         return valueMatcher.group();
+    }
+
+    public void setInputHtmlString(String inputHtmlString) {
+        this.inputHtmlString = inputHtmlString;
     }
 }
