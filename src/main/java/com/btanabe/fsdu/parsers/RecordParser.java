@@ -1,6 +1,6 @@
 package com.btanabe.fsdu.parsers;
 
-import org.springframework.beans.factory.FactoryBean;
+import com.btanabe.fsdu.models.factories.AbstractModelFactory;
 
 import java.util.Map;
 
@@ -10,18 +10,19 @@ import java.util.Map;
 public class RecordParser <T> {
     private String inputHtml;
     private Map<String, ValueExtractor> valueExtractorMap;
-    private String outputClasspath;
-    private FactoryBean<T> outputClassFactory;
+    private Class<T> outputClass;
+    private AbstractModelFactory<T> outputClassFactory;
 
-    public RecordParser(String inputHtml, Map<String, ValueExtractor> valueExtractorMap, String outputClasspath, FactoryBean<T> outputClassFactory) {
+    public RecordParser(String inputHtml, Map<String, ValueExtractor> valueExtractorMap, String outputClasspath, AbstractModelFactory<T> outputClassFactory) throws ClassNotFoundException {
         this.inputHtml = inputHtml;
         this.valueExtractorMap = valueExtractorMap;
-        this.outputClasspath = outputClasspath;
+        this.outputClass = (Class<T>) Class.forName(outputClasspath);
         this.outputClassFactory = outputClassFactory;
     }
 
-    public T parseRecord() {
-
-        return null;
+    public T parseRecord() throws Exception {
+        valueExtractorMap.values().forEach(valueExtractor -> valueExtractor.setInputHtmlString(inputHtml));
+        outputClassFactory.setSetterMethodToValueMap(valueExtractorMap);
+        return outputClassFactory.createObject();
     }
 }

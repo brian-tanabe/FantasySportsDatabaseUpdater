@@ -28,6 +28,9 @@ public class ValueExtractorTests {
     @Qualifier("espnProjectionsFantasyPointsProjection")
     @Autowired private ValueExtractor testFloatValueExtraction;
 
+    @Qualifier("espnProjectionsEddieLacyNameValueExtractor")
+    @Autowired private ValueExtractor testEspnProjectionsNameValueExtractor;
+
     @Test
     public void shouldBeAbleToExtractStrings() throws ClassNotFoundException {
         assertThat((String) testStringValueExtraction.getValue() , is(equalTo("http://games.espn.go.com/ffl/tools/projections?&amp;startIndex=40")));
@@ -41,5 +44,10 @@ public class ValueExtractorTests {
     @Test
     public void shouldBeAbleToExtractFloats() throws ClassNotFoundException {
         assertThat((Float) testFloatValueExtraction.getValue(), is(equalTo(287.4f)));
+    }
+
+    @Test
+    public void shouldBeAbleToExtractNamesFromEspnProjectionPages() throws ClassNotFoundException {
+        assertThat((String) testEspnProjectionsNameValueExtractor.getValue(), is(equalTo("Eddie Lacy")));
     }
 }

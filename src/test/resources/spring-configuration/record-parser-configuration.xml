@@ -19,6 +19,6 @@
     <util:map id="espnPlayerProjectionRecordParserValueExtractorMapBean"
               key-type="java.lang.String"
               value-type="com.btanabe.fsdu.parsers.ValueExtractor">
-        <entry key="name" value-ref="espnProjectionsNameValueExtractor"/>
+        <entry key="setName" value-ref="espnProjectionsNameValueExtractor"/>
     </util:map>
 </beans>

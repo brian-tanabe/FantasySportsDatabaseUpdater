@@ -21,7 +21,6 @@ public class ValueExtractor {
 
     public ValueExtractor(String outputMatchingRegex, String outputClasspath) {
         valuePattern = Pattern.compile(outputMatchingRegex, Pattern.MULTILINE);
-//        valuePattern = Pattern.compile(outputMatchingRegex);
         this.objectClasspath = outputClasspath;
     }
 

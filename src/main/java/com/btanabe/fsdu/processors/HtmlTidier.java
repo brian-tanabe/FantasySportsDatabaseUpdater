@@ -20,6 +20,7 @@ public class HtmlTidier {
         htmlTidy.setXHTML(true);
         htmlTidy.setMakeClean(true);
         htmlTidy.setWrapSection(false);
+        htmlTidy.setWraplen(Integer.MAX_VALUE);
     }
 
     public static String tidyHtmlAndConvertToXhtml(String dirtyHtml) {
