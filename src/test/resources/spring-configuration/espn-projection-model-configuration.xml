@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="eddieLacyEspnProjectionModel" class="com.btanabe.fsdu.models.EspnProjectionModel">
+        <property name="rank" value="1" />
+        <property name="name" value="Eddie Lacy" />
+        <property name="team" value="GB" />
+        <property name="position" value="RB" />
+        <property name="passingCompletions" value="0" />
+        <property name="passingAttempts" value="0" />
+        <property name="passingYards" value="0" />
+        <property name="passingTouchdowns" value="0" />
+        <property name="interceptions" value="0" />
+        <property name="rushingAttempts" value="308" />
+        <property name="rushingYards" value="1365" />
+        <property name="rushingTouchdowns" value="9" />
+        <property name="receptions" value="44" />
+        <property name="receivingYards" value="314" />
+        <property name="receivingTouchdowns" value="3" />
+        <property name="fantasyPoints" value="287.4" />
+    </bean>
+</beans>
