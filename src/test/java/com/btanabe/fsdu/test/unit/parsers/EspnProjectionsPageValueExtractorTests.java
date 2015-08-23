@@ -1,5 +1,6 @@
 package com.btanabe.fsdu.test.unit.parsers;
 
+import com.btanabe.fsdu.models.EspnProjectionModel;
 import com.btanabe.fsdu.parsers.ValueExtractor;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -20,7 +21,12 @@ import static org.junit.Assert.assertThat;
 public class EspnProjectionsPageValueExtractorTests {
 
     @Qualifier("espnProjectionsPageEddieLacyBean")
-    @Autowired private String eddieLacyEspnProjectionPageHtml;
+    @Autowired
+    private String eddieLacyEspnProjectionPageHtml;
+
+    @Autowired
+    @Qualifier("eddieLacyEspnProjectionModel")
+    private EspnProjectionModel expectedEddieLacyProjectionModel;
 
     @Autowired
     private ValueExtractor espnProjectionsNameValueExtractor;
@@ -34,18 +40,18 @@ public class EspnProjectionsPageValueExtractorTests {
     @Test
     public void shouldBeAbleToExtractNamesFromEspnProjectionPages() throws ClassNotFoundException {
         espnProjectionsNameValueExtractor.setInputStringToSearch(eddieLacyEspnProjectionPageHtml);
-        assertThat(espnProjectionsNameValueExtractor.getValue(), is(equalTo("Eddie Lacy")));
+        assertThat(espnProjectionsNameValueExtractor.getValue(), is(equalTo((Object) expectedEddieLacyProjectionModel.getName())));
     }
 
     @Test
     public void shouldBeAbleToExtractNflTeamNamesFromEspnProjectionPages() throws ClassNotFoundException {
         espnProjectionsNflTeamValueExtractor.setInputStringToSearch(eddieLacyEspnProjectionPageHtml);
-        assertThat(espnProjectionsNflTeamValueExtractor.getValue(), is(equalTo("GB")));
+        assertThat(espnProjectionsNflTeamValueExtractor.getValue(), is(equalTo((Object) expectedEddieLacyProjectionModel.getTeam())));
     }
 
     @Test
     public void shouldBeAbleToExtractPositionFromEspnProjectionPages() throws ClassNotFoundException {
         espnProjectionsPositionValueExtractor.setInputStringToSearch(eddieLacyEspnProjectionPageHtml);
-        assertThat(espnProjectionsPositionValueExtractor.getValue(), is(equalTo("RB")));
+        assertThat(espnProjectionsPositionValueExtractor.getValue(), is(equalTo((Object) expectedEddieLacyProjectionModel.getPosition())));
     }
 }
