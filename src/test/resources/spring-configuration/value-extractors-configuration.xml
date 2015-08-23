@@ -25,7 +25,7 @@
     </bean>
 
     <bean id="espnProjectionsPageOneFactoryBean" class="com.btanabe.fsdu.test.factories.FileStringFactory">
-        <property name="inputFile" value="classpath:test-webpages/espn/projections-1.html"/>
+        <property name="inputFile" value="classpath:test-webpages/espn/projections-1.dirty.html"/>
     </bean>
 
     <bean id="espnProjectionsPageEddieLacyBean" class="com.btanabe.fsdu.test.factories.FileStringFactory">
