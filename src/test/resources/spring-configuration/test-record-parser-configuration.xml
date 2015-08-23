@@ -5,9 +5,10 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
                            http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-2.5.xsd">
 
-    <import resource="classpath:/spring-configuration/webpages-configuration.xml"/>
+    <import resource="classpath:/spring-configuration/test-webpages-configuration.xml"/>
     <import resource="classpath:/spring-configuration/value-extractors-configuration.xml"/>
     <import resource="classpath:/spring-configuration/model-factory-configuration.xml"/>
+    <import resource="classpath:/spring-configuration/application-configuration.xml" />
 
     <bean id="espnPlayerProjectionRecordParserBean" class="com.btanabe.fsdu.parsers.RecordParser">
         <constructor-arg ref="espnProjectionsPageEddieLacyBean"/>

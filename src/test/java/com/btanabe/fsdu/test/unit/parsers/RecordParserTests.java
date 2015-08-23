@@ -26,6 +26,10 @@ public class RecordParserTests {
     @Autowired
     private RecordParser<EspnProjectionModel> eddieLacyRecordParser;
 
+    @Autowired
+    @Qualifier("eddieLacyEspnProjectionModel")
+    private EspnProjectionModel expectedEddieLacyProjectionModel;
+
     private EspnProjectionModel eddieLacyProjectionModel;
 
     @Before
@@ -40,6 +44,6 @@ public class RecordParserTests {
 
     @Test
     public void shouldBeAbleToParseEddieLacysNameProperly() {
-        assertThat(eddieLacyProjectionModel.getName(), is(equalTo("Eddie Lacy")));
+        assertThat(eddieLacyProjectionModel.getName(), is(equalTo(expectedEddieLacyProjectionModel.getName())));
     }
 }

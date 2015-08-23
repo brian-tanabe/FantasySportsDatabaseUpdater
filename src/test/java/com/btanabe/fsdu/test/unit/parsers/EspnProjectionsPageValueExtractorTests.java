@@ -19,12 +19,33 @@ import static org.junit.Assert.assertThat;
 @RunWith(SpringJUnit4ClassRunner.class)
 public class EspnProjectionsPageValueExtractorTests {
 
-    @Qualifier("espnProjectionsEddieLacyNameValueExtractor")
+    @Qualifier("espnProjectionsPageEddieLacyBean")
+    @Autowired private String eddieLacyEspnProjectionPageHtml;
+
     @Autowired
-    private ValueExtractor testEspnProjectionsNameValueExtractor;
+    private ValueExtractor espnProjectionsNameValueExtractor;
+
+    @Autowired
+    private ValueExtractor espnProjectionsNflTeamValueExtractor;
+
+    @Autowired
+    private ValueExtractor espnProjectionsPositionValueExtractor;
 
     @Test
     public void shouldBeAbleToExtractNamesFromEspnProjectionPages() throws ClassNotFoundException {
-        assertThat(testEspnProjectionsNameValueExtractor.getValue(), is(equalTo("Eddie Lacy")));
+        espnProjectionsNameValueExtractor.setInputStringToSearch(eddieLacyEspnProjectionPageHtml);
+        assertThat(espnProjectionsNameValueExtractor.getValue(), is(equalTo("Eddie Lacy")));
+    }
+
+    @Test
+    public void shouldBeAbleToExtractNflTeamNamesFromEspnProjectionPages() throws ClassNotFoundException {
+        espnProjectionsNflTeamValueExtractor.setInputStringToSearch(eddieLacyEspnProjectionPageHtml);
+        assertThat(espnProjectionsNflTeamValueExtractor.getValue(), is(equalTo("GB")));
+    }
+
+    @Test
+    public void shouldBeAbleToExtractPositionFromEspnProjectionPages() throws ClassNotFoundException {
+        espnProjectionsPositionValueExtractor.setInputStringToSearch(eddieLacyEspnProjectionPageHtml);
+        assertThat(espnProjectionsPositionValueExtractor.getValue(), is(equalTo("RB")));
     }
 }

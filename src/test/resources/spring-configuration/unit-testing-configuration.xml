@@ -3,8 +3,9 @@
        xmlns="http://www.springframework.org/schema/beans"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <import resource="classpath:/spring-configuration/webpages-configuration.xml"/>
-    <import resource="classpath:/spring-configuration/value-extractors-configuration.xml"/>
-    <import resource="classpath:/spring-configuration/record-parser-configuration.xml"/>
+    <import resource="application-configuration.xml"/>
+    <import resource="classpath:/spring-configuration/test-webpages-configuration.xml"/>
+    <import resource="classpath:/spring-configuration/test-value-extractors-configuration.xml"/>
+    <import resource="classpath:/spring-configuration/test-record-parser-configuration.xml"/>
     <import resource="classpath:/spring-configuration/espn-projection-model-configuration.xml"/>
 </beans>
