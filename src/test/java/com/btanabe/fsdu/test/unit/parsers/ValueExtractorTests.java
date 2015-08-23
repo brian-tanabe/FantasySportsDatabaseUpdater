@@ -8,7 +8,9 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import static junit.framework.TestCase.assertEquals;
+import static org.hamcrest.CoreMatchers.equalTo;
+import static org.hamcrest.CoreMatchers.is;
+import static org.junit.Assert.assertThat;
 
 /**
  * Created by Brian on 7/28/15.
@@ -28,16 +30,16 @@ public class ValueExtractorTests {
 
     @Test
     public void shouldBeAbleToExtractStrings() throws ClassNotFoundException {
-        assertEquals("http://games.espn.go.com/ffl/tools/projections?&amp;startIndex=40", testStringValueExtraction.getValue());
+        assertThat((String) testStringValueExtraction.getValue() , is(equalTo("http://games.espn.go.com/ffl/tools/projections?&amp;startIndex=40")));
     }
 
     @Test
     public void shouldBeAbleToExtractIntegers() throws ClassNotFoundException {
-        assertEquals(1365, testIntegerValueExtraction.getValue());
+        assertThat((Integer) testIntegerValueExtraction.getValue(), is(equalTo(1365)));
     }
 
     @Test
     public void shouldBeAbleToExtractFloats() throws ClassNotFoundException {
-        assertEquals(287.4f, testFloatValueExtraction.getValue());
+        assertThat((Float) testFloatValueExtraction.getValue(), is(equalTo(287.4f)));
     }
 }

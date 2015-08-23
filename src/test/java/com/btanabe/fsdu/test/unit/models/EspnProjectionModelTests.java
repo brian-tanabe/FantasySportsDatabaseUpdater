@@ -9,6 +9,9 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import static junit.framework.TestCase.assertEquals;
+import static org.hamcrest.CoreMatchers.equalTo;
+import static org.hamcrest.CoreMatchers.is;
+import static org.junit.Assert.assertThat;
 
 /**
  * Created by Brian on 7/28/15.
@@ -31,6 +34,6 @@ public class EspnProjectionModelTests {
 
     @Test
     public void shouldBeAbleToCorrectlyFormatItsStringRepresentation() {
-        assertEquals("rank=[1], name=[Eddie Lacy], team=[GB], position=[RB], passingCompletions=[0], passingAttempts=[0], passingYards=[0], passingTouchdowns=[0], interceptions=[0], rushingAttempts=[308], rushingYards=[1365], rushingTouchdowns=[9], receptions=[44], receivingYards=[314], receivingTouchdowns=[3], fantasyPoints=[287.400000]", lhs.toString());
+        assertThat(lhs.toString(), is(equalTo("rank=[1], name=[Eddie Lacy], team=[GB], position=[RB], passingCompletions=[0], passingAttempts=[0], passingYards=[0], passingTouchdowns=[0], interceptions=[0], rushingAttempts=[308], rushingYards=[1365], rushingTouchdowns=[9], receptions=[44], receivingYards=[314], receivingTouchdowns=[3], fantasyPoints=[287.400000]")));
     }
 }
