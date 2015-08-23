@@ -19,10 +19,12 @@ import static org.junit.Assert.assertThat;
 public class HtmlTidierTests {
 
     @Qualifier("espnProjectionsPageOneUnformattedBean")
-    @Autowired private String poorlyFormattedHtmlString;
+    @Autowired
+    private String poorlyFormattedHtmlString;
 
     @Qualifier("espnProjectionsPageOneFormattedBean")
-    @Autowired private String wellFormattedHtmlString;
+    @Autowired
+    private String wellFormattedHtmlString;
 
     @Test
     public void formattingHtmlFilesShouldModifyTheFile() {

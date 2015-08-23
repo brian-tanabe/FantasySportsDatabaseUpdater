@@ -23,7 +23,8 @@ import static org.junit.Assert.assertThat;
 public class RecordParserTests {
 
     @Qualifier("espnPlayerProjectionRecordParserBean")
-    @Autowired private RecordParser<EspnProjectionModel> eddieLacyRecordParser;
+    @Autowired
+    private RecordParser<EspnProjectionModel> eddieLacyRecordParser;
 
     private EspnProjectionModel eddieLacyProjectionModel;
 

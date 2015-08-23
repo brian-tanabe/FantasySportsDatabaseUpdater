@@ -7,7 +7,7 @@ import java.util.Map;
 /**
  * Created by Brian on 7/28/15.
  */
-public class RecordParser <T> {
+public class RecordParser<T> {
     private String inputHtml;
     private Map<String, ValueExtractor> valueExtractorMap;
     private Class<T> outputClass;
@@ -21,7 +21,7 @@ public class RecordParser <T> {
     }
 
     public T parseRecord() throws Exception {
-        valueExtractorMap.values().forEach(valueExtractor -> valueExtractor.setInputHtmlString(inputHtml));
+        valueExtractorMap.values().forEach(valueExtractor -> valueExtractor.setInputStringToSearch(inputHtml));
         outputClassFactory.setSetterMethodToValueMap(valueExtractorMap);
         return outputClassFactory.createObject();
     }

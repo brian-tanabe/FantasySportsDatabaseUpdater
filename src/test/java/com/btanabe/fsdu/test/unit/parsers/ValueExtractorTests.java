@@ -20,34 +20,38 @@ import static org.junit.Assert.assertThat;
 public class ValueExtractorTests {
 
     @Qualifier("espnProjectionsNextPageValueExtractor")
-    @Autowired private ValueExtractor testStringValueExtraction;
+    @Autowired
+    private ValueExtractor testStringValueExtraction;
 
     @Qualifier("espnProjectionsRushingYardsProjection")
-    @Autowired private ValueExtractor testIntegerValueExtraction;
+    @Autowired
+    private ValueExtractor testIntegerValueExtraction;
 
     @Qualifier("espnProjectionsFantasyPointsProjection")
-    @Autowired private ValueExtractor testFloatValueExtraction;
+    @Autowired
+    private ValueExtractor testFloatValueExtraction;
 
     @Qualifier("espnProjectionsEddieLacyNameValueExtractor")
-    @Autowired private ValueExtractor testEspnProjectionsNameValueExtractor;
+    @Autowired
+    private ValueExtractor testEspnProjectionsNameValueExtractor;
 
     @Test
     public void shouldBeAbleToExtractStrings() throws ClassNotFoundException {
-        assertThat((String) testStringValueExtraction.getValue() , is(equalTo("http://games.espn.go.com/ffl/tools/projections?&amp;startIndex=40")));
+        assertThat(testStringValueExtraction.getValue(), is(equalTo("http://games.espn.go.com/ffl/tools/projections?&amp;startIndex=40")));
     }
 
     @Test
     public void shouldBeAbleToExtractIntegers() throws ClassNotFoundException {
-        assertThat((Integer) testIntegerValueExtraction.getValue(), is(equalTo(1365)));
+        assertThat(testIntegerValueExtraction.getValue(), is(equalTo(1365)));
     }
 
     @Test
     public void shouldBeAbleToExtractFloats() throws ClassNotFoundException {
-        assertThat((Float) testFloatValueExtraction.getValue(), is(equalTo(287.4f)));
+        assertThat(testFloatValueExtraction.getValue(), is(equalTo(287.4f)));
     }
 
     @Test
     public void shouldBeAbleToExtractNamesFromEspnProjectionPages() throws ClassNotFoundException {
-        assertThat((String) testEspnProjectionsNameValueExtractor.getValue(), is(equalTo("Eddie Lacy")));
+        assertThat(testEspnProjectionsNameValueExtractor.getValue(), is(equalTo("Eddie Lacy")));
     }
 }
