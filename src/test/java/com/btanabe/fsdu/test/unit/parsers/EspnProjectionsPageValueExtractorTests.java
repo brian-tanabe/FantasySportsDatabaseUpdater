@@ -37,6 +37,9 @@ public class EspnProjectionsPageValueExtractorTests {
     @Autowired
     private ValueExtractor espnProjectionsPositionValueExtractor;
 
+    @Autowired
+    private ValueExtractor espnProjectionsPassingAttemptsValueExtractor;
+
     @Test
     public void shouldBeAbleToExtractNamesFromEspnProjectionPages() throws ClassNotFoundException {
         espnProjectionsNameValueExtractor.setInputStringToSearch(eddieLacyEspnProjectionPageHtml);
@@ -53,5 +56,11 @@ public class EspnProjectionsPageValueExtractorTests {
     public void shouldBeAbleToExtractPositionFromEspnProjectionPages() throws ClassNotFoundException {
         espnProjectionsPositionValueExtractor.setInputStringToSearch(eddieLacyEspnProjectionPageHtml);
         assertThat(espnProjectionsPositionValueExtractor.getValue(), is(equalTo((Object) expectedEddieLacyProjectionModel.getPosition())));
+    }
+
+    @Test
+    public void shouldBeAbleToExtractPassingAttemptsFromEspnProjectionPages() throws ClassNotFoundException {
+        espnProjectionsPassingAttemptsValueExtractor.setInputStringToSearch(eddieLacyEspnProjectionPageHtml);
+        assertThat(espnProjectionsPassingAttemptsValueExtractor.getValue(), is(equalTo((Object) expectedEddieLacyProjectionModel.getPassingCompletions())));
     }
 }
