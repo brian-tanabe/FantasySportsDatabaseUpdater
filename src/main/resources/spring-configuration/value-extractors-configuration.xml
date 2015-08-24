@@ -23,51 +23,73 @@
 
     <bean id="espnProjectionsPassingCompletionsValueExtractor" class="com.btanabe.fsdu.parsers.ValueExtractor">
         <constructor-arg name="outputClasspath" value="java.lang.Integer"/>
-        <constructor-arg name="outputMatchingRegex" value="(?&lt;=&lt;td class=&quot;playertableStat&quot;&gt;)\d+(?=/\d{1,5}&lt;\/td&gt;)"/>
+        <constructor-arg name="outputMatchingRegex"
+                         value="(?&lt;=&lt;td class=&quot;playertableStat&quot;&gt;)\d+(?=/\d{1,5}&lt;\/td&gt;)"/>
     </bean>
 
     <bean id="espnProjectionsPassingAttemptsValueExtractor" class="com.btanabe.fsdu.parsers.ValueExtractor">
         <constructor-arg name="outputClasspath" value="java.lang.Integer"/>
-        <constructor-arg name="outputMatchingRegex" value="(?&lt;=&lt;td class=&quot;playertableStat&quot;&gt;\d{1,5}/)\d+(?=&lt;\/td&gt;)"/>
+        <constructor-arg name="outputMatchingRegex"
+                         value="(?&lt;=&lt;td class=&quot;playertableStat&quot;&gt;\d{1,5}/)\d+(?=&lt;\/td&gt;)"/>
     </bean>
 
     <bean id="espnProjectionsPassingYardsValueExtractor" class="com.btanabe.fsdu.parsers.ValueExtractor">
         <constructor-arg name="outputClasspath" value="java.lang.Integer"/>
-        <constructor-arg name="outputMatchingRegex" value="(?&lt;=&lt;td class=&quot;playertableStat&quot;&gt;)\d+(?=&lt;\/td&gt;)"/>
+        <constructor-arg name="outputMatchingRegex"
+                         value="(?&lt;=&lt;td class=&quot;playertableStat&quot;&gt;)\d+(?=&lt;\/td&gt;)"/>
     </bean>
 
     <bean id="espnProjectionsPassingTouchdownsValueExtractor" class="com.btanabe.fsdu.parsers.ValueExtractor">
         <constructor-arg name="outputClasspath" value="java.lang.Integer"/>
-        <constructor-arg name="outputMatchingRegex" value="(?&lt;=&lt;td class=&quot;playertableStat&quot;&gt;\d{1,5}&lt;\/td&gt;\n&lt;td class=&quot;playertableStat&quot;&gt;)\d+(?=&lt;\/td&gt;)"/>
+        <constructor-arg name="outputMatchingRegex"
+                         value="(?&lt;=&lt;td class=&quot;playertableStat&quot;&gt;\d{1,5}&lt;\/td&gt;\n&lt;td class=&quot;playertableStat&quot;&gt;)\d+(?=&lt;\/td&gt;)"/>
     </bean>
 
     <bean id="espnProjectionsInterceptionsValueExtractor" class="com.btanabe.fsdu.parsers.ValueExtractor">
         <constructor-arg name="outputClasspath" value="java.lang.Integer"/>
-        <constructor-arg name="outputMatchingRegex" value="(?&lt;=&lt;td class=&quot;playertableStat&quot;&gt;\d{1,5}&lt;\/td&gt;\n&lt;td class=&quot;playertableStat&quot;&gt;\d{1,5}&lt;\/td&gt;\n&lt;td class=&quot;playertableStat&quot;&gt;)\d+(?=&lt;\/td&gt;)"/>
+        <constructor-arg name="outputMatchingRegex"
+                         value="(?&lt;=&lt;td class=&quot;playertableStat&quot;&gt;\d{1,5}&lt;\/td&gt;\n&lt;td class=&quot;playertableStat&quot;&gt;\d{1,5}&lt;\/td&gt;\n&lt;td class=&quot;playertableStat&quot;&gt;)\d+(?=&lt;\/td&gt;)"/>
     </bean>
 
     <bean id="espnProjectionsRushingAttemptsValueExtractor" class="com.btanabe.fsdu.parsers.ValueExtractor">
         <constructor-arg name="outputClasspath" value="java.lang.Integer"/>
-        <constructor-arg name="outputMatchingRegex" value="(?&lt;=&lt;td class=&quot;playertableStat&quot;&gt;\d{1,5}&lt;\/td&gt;\n&lt;td class=&quot;playertableStat&quot;&gt;\d{1,5}&lt;\/td&gt;\n&lt;td class=&quot;playertableStat&quot;&gt;\d{1,5}&lt;\/td&gt;\n&lt;td class=&quot;playertableStat&quot;&gt;)\d+(?=&lt;\/td&gt;)"/>
+        <constructor-arg name="outputMatchingRegex"
+                         value="(?&lt;=&lt;td class=&quot;playertableStat&quot;&gt;\d{1,5}&lt;\/td&gt;\n&lt;td class=&quot;playertableStat&quot;&gt;\d{1,5}&lt;\/td&gt;\n&lt;td class=&quot;playertableStat&quot;&gt;\d{1,5}&lt;\/td&gt;\n&lt;td class=&quot;playertableStat&quot;&gt;)\d+(?=&lt;\/td&gt;)"/>
     </bean>
 
     <bean id="espnProjectionsRushingYardsValueExtractor" class="com.btanabe.fsdu.parsers.ValueExtractor">
         <constructor-arg name="outputClasspath" value="java.lang.Integer"/>
-        <constructor-arg name="outputMatchingRegex" value="(?&lt;=&lt;td class=&quot;playertableStat&quot;&gt;\d{1,5}&lt;\/td&gt;\n&lt;td class=&quot;playertableStat&quot;&gt;\d{1,5}&lt;\/td&gt;\n&lt;td class=&quot;playertableStat&quot;&gt;\d{1,5}&lt;\/td&gt;\n&lt;td class=&quot;playertableStat&quot;&gt;\d{1,5}&lt;\/td&gt;\n&lt;td class=&quot;playertableStat&quot;&gt;)\d+(?=&lt;\/td&gt;)"/>
+        <constructor-arg name="outputMatchingRegex"
+                         value="(?&lt;=&lt;td class=&quot;playertableStat&quot;&gt;\d{1,5}&lt;\/td&gt;\n&lt;td class=&quot;playertableStat&quot;&gt;\d{1,5}&lt;\/td&gt;\n&lt;td class=&quot;playertableStat&quot;&gt;\d{1,5}&lt;\/td&gt;\n&lt;td class=&quot;playertableStat&quot;&gt;\d{1,5}&lt;\/td&gt;\n&lt;td class=&quot;playertableStat&quot;&gt;)\d+(?=&lt;\/td&gt;)"/>
     </bean>
 
     <bean id="espnProjectionsRushingTouchdownsValueExtractor" class="com.btanabe.fsdu.parsers.ValueExtractor">
         <constructor-arg name="outputClasspath" value="java.lang.Integer"/>
-        <constructor-arg name="outputMatchingRegex" value="(?&lt;=&lt;td class=&quot;playertableStat&quot;&gt;\d{1,5}&lt;\/td&gt;\n&lt;td class=&quot;playertableStat&quot;&gt;\d{1,5}&lt;\/td&gt;\n&lt;td class=&quot;playertableStat&quot;&gt;\d{1,5}&lt;\/td&gt;\n&lt;td class=&quot;playertableStat&quot;&gt;\d{1,5}&lt;\/td&gt;\n&lt;td class=&quot;playertableStat&quot;&gt;\d{1,5}&lt;\/td&gt;\n&lt;td class=&quot;playertableStat&quot;&gt;)\d+(?=&lt;\/td&gt;)"/>
+        <constructor-arg name="outputMatchingRegex"
+                         value="(?&lt;=&lt;td class=&quot;playertableStat&quot;&gt;\d{1,5}&lt;\/td&gt;\n&lt;td class=&quot;playertableStat&quot;&gt;\d{1,5}&lt;\/td&gt;\n&lt;td class=&quot;playertableStat&quot;&gt;\d{1,5}&lt;\/td&gt;\n&lt;td class=&quot;playertableStat&quot;&gt;\d{1,5}&lt;\/td&gt;\n&lt;td class=&quot;playertableStat&quot;&gt;\d{1,5}&lt;\/td&gt;\n&lt;td class=&quot;playertableStat&quot;&gt;)\d+(?=&lt;\/td&gt;)"/>
     </bean>
 
     <bean id="espnProjectionsReceptionsValueExtractor" class="com.btanabe.fsdu.parsers.ValueExtractor">
         <constructor-arg name="outputClasspath" value="java.lang.Integer"/>
-        <constructor-arg name="outputMatchingRegex" value="(?&lt;=&lt;td class=&quot;playertableStat&quot;&gt;\d{1,5}&lt;\/td&gt;\n&lt;td class=&quot;playertableStat&quot;&gt;\d{1,5}&lt;\/td&gt;\n&lt;td class=&quot;playertableStat&quot;&gt;\d{1,5}&lt;\/td&gt;\n&lt;td class=&quot;playertableStat&quot;&gt;\d{1,5}&lt;\/td&gt;\n&lt;td class=&quot;playertableStat&quot;&gt;\d{1,5}&lt;\/td&gt;\n&lt;td class=&quot;playertableStat&quot;&gt;\d{1,5}&lt;\/td&gt;\n&lt;td class=&quot;playertableStat&quot;&gt;)\d+(?=&lt;\/td&gt;)"/>
+        <constructor-arg name="outputMatchingRegex"
+                         value="(?&lt;=&lt;td class=&quot;playertableStat&quot;&gt;\d{1,5}&lt;\/td&gt;\n&lt;td class=&quot;playertableStat&quot;&gt;\d{1,5}&lt;\/td&gt;\n&lt;td class=&quot;playertableStat&quot;&gt;\d{1,5}&lt;\/td&gt;\n&lt;td class=&quot;playertableStat&quot;&gt;\d{1,5}&lt;\/td&gt;\n&lt;td class=&quot;playertableStat&quot;&gt;\d{1,5}&lt;\/td&gt;\n&lt;td class=&quot;playertableStat&quot;&gt;\d{1,5}&lt;\/td&gt;\n&lt;td class=&quot;playertableStat&quot;&gt;)\d+(?=&lt;\/td&gt;)"/>
     </bean>
 
     <bean id="espnProjectionsReceivingYardsValueExtractor" class="com.btanabe.fsdu.parsers.ValueExtractor">
         <constructor-arg name="outputClasspath" value="java.lang.Integer"/>
-        <constructor-arg name="outputMatchingRegex" value="(?&lt;=&lt;td class=&quot;playertableStat&quot;&gt;\d{1,5}&lt;\/td&gt;\n&lt;td class=&quot;playertableStat&quot;&gt;\d{1,5}&lt;\/td&gt;\n&lt;td class=&quot;playertableStat&quot;&gt;\d{1,5}&lt;\/td&gt;\n&lt;td class=&quot;playertableStat&quot;&gt;\d{1,5}&lt;\/td&gt;\n&lt;td class=&quot;playertableStat&quot;&gt;\d{1,5}&lt;\/td&gt;\n&lt;td class=&quot;playertableStat&quot;&gt;\d{1,5}&lt;\/td&gt;\n&lt;td class=&quot;playertableStat&quot;&gt;\d{1,5}&lt;\/td&gt;\n&lt;td class=&quot;playertableStat&quot;&gt;)\d+(?=&lt;\/td&gt;)"/>
+        <constructor-arg name="outputMatchingRegex"
+                         value="(?&lt;=&lt;td class=&quot;playertableStat&quot;&gt;\d{1,5}&lt;\/td&gt;\n&lt;td class=&quot;playertableStat&quot;&gt;\d{1,5}&lt;\/td&gt;\n&lt;td class=&quot;playertableStat&quot;&gt;\d{1,5}&lt;\/td&gt;\n&lt;td class=&quot;playertableStat&quot;&gt;\d{1,5}&lt;\/td&gt;\n&lt;td class=&quot;playertableStat&quot;&gt;\d{1,5}&lt;\/td&gt;\n&lt;td class=&quot;playertableStat&quot;&gt;\d{1,5}&lt;\/td&gt;\n&lt;td class=&quot;playertableStat&quot;&gt;\d{1,5}&lt;\/td&gt;\n&lt;td class=&quot;playertableStat&quot;&gt;)\d+(?=&lt;\/td&gt;)"/>
+    </bean>
+
+    <bean id="espnProjectionsReceivingTouchdownsValueExtractor" class="com.btanabe.fsdu.parsers.ValueExtractor">
+        <constructor-arg name="outputClasspath" value="java.lang.Integer"/>
+        <constructor-arg name="outputMatchingRegex"
+                         value="(?&lt;=&lt;td class=&quot;playertableStat&quot;&gt;\d{1,5}&lt;\/td&gt;\n&lt;td class=&quot;playertableStat&quot;&gt;\d{1,5}&lt;\/td&gt;\n&lt;td class=&quot;playertableStat&quot;&gt;\d{1,5}&lt;\/td&gt;\n&lt;td class=&quot;playertableStat&quot;&gt;\d{1,5}&lt;\/td&gt;\n&lt;td class=&quot;playertableStat&quot;&gt;\d{1,5}&lt;\/td&gt;\n&lt;td class=&quot;playertableStat&quot;&gt;\d{1,5}&lt;\/td&gt;\n&lt;td class=&quot;playertableStat&quot;&gt;\d{1,5}&lt;\/td&gt;\n&lt;td class=&quot;playertableStat&quot;&gt;\d{1,5}&lt;\/td&gt;\n&lt;td class=&quot;playertableStat&quot;&gt;)\d+(?=&lt;\/td&gt;)"/>
+    </bean>
+
+    <bean id="espnProjectionsFantasyPointsValueExtractor" class="com.btanabe.fsdu.parsers.ValueExtractor">
+        <constructor-arg name="outputClasspath" value="java.lang.Float"/>
+        <constructor-arg name="outputMatchingRegex"
+                         value="(?&lt;=&lt;td class=&quot;playertableStat appliedPoints&quot;&gt;)\d{1,4}\.\d{1,2}(?=&lt;/td&gt;)"/>
     </bean>
 </beans>

@@ -75,6 +75,12 @@ public class EspnProjectionsPageValueExtractorTests {
     @Autowired
     private ValueExtractor espnProjectionsReceivingYardsValueExtractor;
 
+    @Autowired
+    private ValueExtractor espnProjectionsReceivingTouchdownsValueExtractor;
+
+    @Autowired
+    private ValueExtractor espnProjectionsFantasyPointsValueExtractor;
+
     @Test
     public void shouldBeAbleToExtractNamesFromEspnProjectionPages() throws ClassNotFoundException {
         espnProjectionsNameValueExtractor.setInputStringToSearch(eddieLacyEspnProjectionPageHtml);
@@ -148,8 +154,20 @@ public class EspnProjectionsPageValueExtractorTests {
     }
 
     @Test
-    public void shuoldBeAbleToExtractReceivingYardsFromEspnProjectionPage() throws ClassNotFoundException {
+    public void shouldBeAbleToExtractReceivingYardsFromEspnProjectionPage() throws ClassNotFoundException {
         espnProjectionsReceivingYardsValueExtractor.setInputStringToSearch(eddieLacyEspnProjectionPageHtml);
         assertThat(espnProjectionsReceivingYardsValueExtractor.getValue(), is(equalTo((Object) expectedEddieLacyProjectionModel.getReceivingYards())));
+    }
+
+    @Test
+    public void shouldBeAbleToExtractReceivingTouchdownsFromEspnProjectionPage() throws ClassNotFoundException {
+        espnProjectionsReceivingTouchdownsValueExtractor.setInputStringToSearch(eddieLacyEspnProjectionPageHtml);
+        assertThat(espnProjectionsReceivingTouchdownsValueExtractor.getValue(), is(equalTo((Object) expectedEddieLacyProjectionModel.getReceivingTouchdowns())));
+    }
+
+    @Test
+    public void shouldBeAbleToExtractFantasyPointsFromEspnProjectionPage() throws ClassNotFoundException {
+        espnProjectionsFantasyPointsValueExtractor.setInputStringToSearch(eddieLacyEspnProjectionPageHtml);
+        assertThat(espnProjectionsFantasyPointsValueExtractor.getValue(), is(equalTo((Object) expectedEddieLacyProjectionModel.getFantasyPoints())));
     }
 }
