@@ -19,7 +19,7 @@ public class EspnProjectionModel {
     private Integer receptions;
     private Integer receivingYards;
     private Integer receivingTouchdowns;
-    private Float fantasyPoints;
+    private Double fantasyPoints;
 
     @Override
     public boolean equals(Object obj) {
@@ -102,7 +102,7 @@ public class EspnProjectionModel {
         this.receivingTouchdowns = receivingTouchdowns;
     }
 
-    public void setFantasyPoints(Float fantasyPoints) {
+    public void setFantasyPoints(Double fantasyPoints) {
         this.fantasyPoints = fantasyPoints;
     }
 
@@ -166,7 +166,7 @@ public class EspnProjectionModel {
         return receivingTouchdowns;
     }
 
-    public Float getFantasyPoints() {
+    public Double getFantasyPoints() {
         return fantasyPoints;
     }
 }
