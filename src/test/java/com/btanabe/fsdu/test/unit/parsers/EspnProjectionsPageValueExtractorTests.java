@@ -60,6 +60,12 @@ public class EspnProjectionsPageValueExtractorTests {
     @Autowired
     private ValueExtractor espnProjectionsInterceptionsValueExtractor;
 
+    @Autowired
+    private ValueExtractor espnProjectionsRushingAttemptsValueExtractor;
+
+    @Autowired
+    private ValueExtractor espnProjectionsRushingYardsValueExtractor;
+
     @Test
     public void shouldBeAbleToExtractNamesFromEspnProjectionPages() throws ClassNotFoundException {
         espnProjectionsNameValueExtractor.setInputStringToSearch(eddieLacyEspnProjectionPageHtml);
@@ -106,5 +112,17 @@ public class EspnProjectionsPageValueExtractorTests {
     public void shouldBeAbleToExtractInterceptionsFromEspnProjectionPage() throws ClassNotFoundException {
         espnProjectionsInterceptionsValueExtractor.setInputStringToSearch(aaronRodgersEspnProjectionPageHtml);
         assertThat(espnProjectionsInterceptionsValueExtractor.getValue(), is(equalTo((Object) expectedAaronRodgersProjectionModel.getInterceptions())));
+    }
+
+    @Test
+    public void shouldBeAbleToExtractRushingAttemptsFromEspnProjectionPage() throws ClassNotFoundException {
+        espnProjectionsRushingAttemptsValueExtractor.setInputStringToSearch(eddieLacyEspnProjectionPageHtml);
+        assertThat(espnProjectionsRushingAttemptsValueExtractor.getValue(), is(equalTo((Object) expectedEddieLacyProjectionModel.getRushingAttempts())));
+    }
+
+    @Test
+    public void shouldBeAbleToExtractRushingYardsFromEspnProjectionPage() throws ClassNotFoundException {
+        espnProjectionsRushingYardsValueExtractor.setInputStringToSearch(eddieLacyEspnProjectionPageHtml);
+        assertThat(espnProjectionsRushingYardsValueExtractor.getValue(), is(equalTo((Object) expectedEddieLacyProjectionModel.getRushingYards())));
     }
 }
