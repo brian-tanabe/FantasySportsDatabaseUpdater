@@ -54,6 +54,12 @@ public class EspnProjectionsPageValueExtractorTests {
     @Autowired
     private ValueExtractor espnProjectionsPassingYardsValueExtractor;
 
+    @Autowired
+    private ValueExtractor espnProjectionsPassingTouchdownsValueExtractor;
+
+    @Autowired
+    private ValueExtractor espnProjectionsInterceptionsValueExtractor;
+
     @Test
     public void shouldBeAbleToExtractNamesFromEspnProjectionPages() throws ClassNotFoundException {
         espnProjectionsNameValueExtractor.setInputStringToSearch(eddieLacyEspnProjectionPageHtml);
@@ -88,5 +94,17 @@ public class EspnProjectionsPageValueExtractorTests {
     public void shouldBeAbleToExtractPassingYardsFromEspnProjectionPage() throws ClassNotFoundException {
         espnProjectionsPassingYardsValueExtractor.setInputStringToSearch(aaronRodgersEspnProjectionPageHtml);
         assertThat(espnProjectionsPassingYardsValueExtractor.getValue(), is(equalTo((Object) expectedAaronRodgersProjectionModel.getPassingYards())));
+    }
+
+    @Test
+    public void shouldBeAbleToExtractPassingTouchdownsFromEspnProjectionPage() throws ClassNotFoundException {
+        espnProjectionsPassingTouchdownsValueExtractor.setInputStringToSearch(aaronRodgersEspnProjectionPageHtml);
+        assertThat(espnProjectionsPassingTouchdownsValueExtractor.getValue(), is(equalTo((Object) expectedAaronRodgersProjectionModel.getPassingTouchdowns())));
+    }
+
+    @Test
+    public void shouldBeAbleToExtractInterceptionsFromEspnProjectionPage() throws ClassNotFoundException {
+        espnProjectionsInterceptionsValueExtractor.setInputStringToSearch(aaronRodgersEspnProjectionPageHtml);
+        assertThat(espnProjectionsInterceptionsValueExtractor.getValue(), is(equalTo((Object) expectedAaronRodgersProjectionModel.getInterceptions())));
     }
 }
