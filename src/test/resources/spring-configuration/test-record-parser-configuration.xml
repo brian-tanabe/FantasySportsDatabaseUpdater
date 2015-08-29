@@ -13,7 +13,6 @@
     <bean id="espnPlayerProjectionRecordParserBean" class="com.btanabe.fsdu.parsers.RecordParser">
         <constructor-arg ref="espnProjectionsPageEddieLacyBean"/>
         <constructor-arg ref="espnPlayerProjectionRecordParserValueExtractorMapBean"/>
-        <constructor-arg value="com.btanabe.fsdu.models.EspnProjectionModel"/>
         <constructor-arg ref="&amp;espnProjectionModelFactory"/>
     </bean>
 
