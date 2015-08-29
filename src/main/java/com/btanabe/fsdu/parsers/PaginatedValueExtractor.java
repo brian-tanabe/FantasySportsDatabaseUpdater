@@ -6,9 +6,9 @@ import java.util.List;
 /**
  * Created by Brian on 8/23/15.
  */
-public class PaginatedValueExtractor extends ValueExtractor {
+public class PaginatedValueExtractor<T> extends ValueExtractor<T> {
 
-    public PaginatedValueExtractor(String outputMatchingRegex, String outputClasspath) {
+    public PaginatedValueExtractor(String outputMatchingRegex, Class<T> outputClasspath) {
         super(outputMatchingRegex, outputClasspath);
     }
 

@@ -8,6 +8,8 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
+import java.util.List;
+
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
@@ -24,12 +26,13 @@ public class PaginatedValueExtractorTests {
     private PaginatedValueExtractor espnProjectionsPagePlayerValueExtractor;
 
     @Autowired
-    @Qualifier("espnProjectionsPageOneFactoryBean")
+    @Qualifier("espnProjectionsPageOneFormattedBean")
     private String espnProjectionsPageOne;
 
     @Test
     public void shouldBeAbleToFindFortyPlayersOnOneEspnProjectionsPage() throws ClassNotFoundException {
         espnProjectionsPagePlayerValueExtractor.setInputStringToSearch(espnProjectionsPageOne);
-        assertThat(espnProjectionsPagePlayerValueExtractor.getValuesAsList().size(), is(equalTo(40)));
+        List<String> objectList = espnProjectionsPagePlayerValueExtractor.getValuesAsList();
+        assertThat(objectList.size(), is(equalTo(40)));
     }
 }
