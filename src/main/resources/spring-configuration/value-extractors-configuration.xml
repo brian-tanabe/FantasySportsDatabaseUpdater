@@ -6,10 +6,17 @@
     <!-- ************ ESPN PLAYER PROJECTIONS PAGE VALUE EXTRACTORS: ************ -->
     <bean id="espnProjectionsPagePlayerValueExtractor" class="com.btanabe.fsdu.parsers.PaginatedValueExtractor">
         <constructor-arg name="outputClasspath" value="java.lang.String"/>
-        <constructor-arg name="outputMatchingRegex" value="&lt;tr id=&quot;.+?&quot; class=&quot;pncPlayerRow.+?&quot;&gt;(.|\n|\s)+?&lt;\/tr&gt;"/>
+        <constructor-arg name="outputMatchingRegex"
+                         value="&lt;tr id=&quot;.+?&quot; class=&quot;pncPlayerRow.+?&quot;&gt;(.|\n|\s)+?&lt;\/tr&gt;"/>
     </bean>
 
     <!-- ************ ESPN PLAYER PROJECTION VALUE EXTRACTORS: ************ -->
+    <bean id="espnProjectionsRankValueExtractor" class="com.btanabe.fsdu.parsers.ValueExtractor">
+        <constructor-arg name="outputClasspath" value="java.lang.Integer"/>
+        <constructor-arg name="outputMatchingRegex"
+                         value="(?&lt;=&lt;td class=&quot;playertableData&quot;&gt;)\d+(?=&lt;\/td&gt;)"/>
+    </bean>
+
     <bean id="espnProjectionsNameValueExtractor" class="com.btanabe.fsdu.parsers.ValueExtractor">
         <constructor-arg name="outputClasspath" value="java.lang.String"/>
         <constructor-arg name="outputMatchingRegex"

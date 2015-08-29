@@ -22,19 +22,39 @@ import static org.junit.Assert.assertThat;
 @RunWith(SpringJUnit4ClassRunner.class)
 public class RecordParserTests {
 
-    @Qualifier("espnPlayerProjectionRecordParserBean")
     @Autowired
+    @Qualifier("eddieLacyEspnPlayerProjectionRecordParser")
     private RecordParser<EspnProjectionModel> eddieLacyRecordParser;
+
+    @Autowired
+    @Qualifier("aaronRodgersEspnPlayerProjectionRecordParser")
+    private RecordParser<EspnProjectionModel> aaronRodgersRecordParser;
 
     @Autowired
     @Qualifier("eddieLacyEspnProjectionModel")
     private EspnProjectionModel expectedEddieLacyProjectionModel;
 
+    @Autowired
+    @Qualifier("aaronRodgersEspnProjectionModel")
+    private EspnProjectionModel expectedAaronRodgersEspnProjectionModel;
+
     private EspnProjectionModel eddieLacyProjectionModel;
+    private EspnProjectionModel aaronRodgersProjectionModel;
 
     @Before
     public void parseEddieLacysProjections() throws Exception {
         eddieLacyProjectionModel = eddieLacyRecordParser.parseRecord();
+        aaronRodgersProjectionModel = aaronRodgersRecordParser.parseRecord();
+    }
+
+    @Test
+    public void shouldBeAbleToParseEddieLacysNameProperly() {
+        assertThat(eddieLacyProjectionModel.getName(), is(equalTo(expectedEddieLacyProjectionModel.getName())));
+    }
+
+    @Test
+    public void shouldBeAbleToParseEddieLacysNflTeamProperly() {
+        assertThat(eddieLacyProjectionModel.getTeam(), is(equalTo(expectedAaronRodgersEspnProjectionModel.getTeam())));
     }
 
     @Test
@@ -43,7 +63,63 @@ public class RecordParserTests {
     }
 
     @Test
-    public void shouldBeAbleToParseEddieLacysNameProperly() {
-        assertThat(eddieLacyProjectionModel.getName(), is(equalTo(expectedEddieLacyProjectionModel.getName())));
+    public void shouldBeAbleToParseEddieLacysFantasyPointsProperly() {
+        assertThat(eddieLacyProjectionModel.getFantasyPoints(), is(equalTo(expectedEddieLacyProjectionModel.getFantasyPoints())));
+    }
+
+    @Test
+    public void shouldBeAbleToParseEddieLacysRankProperly() {
+        assertThat(eddieLacyProjectionModel.getRank(), is(equalTo(expectedEddieLacyProjectionModel.getRank())));
+    }
+
+    @Test
+    public void shouldBeAbleToParseEddieLacysRushingAttemptsProperly() {
+        assertThat(eddieLacyProjectionModel.getRushingAttempts(), is(equalTo(expectedEddieLacyProjectionModel.getRushingAttempts())));
+    }
+
+    @Test
+    public void shouldBeAbleToParseEddieLacysRushingYardsProperly() {
+        assertThat(eddieLacyProjectionModel.getRushingYards(), is(equalTo(expectedEddieLacyProjectionModel.getRushingYards())));
+    }
+
+    @Test
+    public void shouldBeAbleToParseEddieLacysRushingTouchdownsProperly() {
+        assertThat(eddieLacyProjectionModel.getRushingTouchdowns(), is(equalTo(expectedEddieLacyProjectionModel.getRushingTouchdowns())));
+    }
+
+    @Test
+    public void shouldBeAbleToParseEddieLacysReceptionsProperly() {
+        assertThat(eddieLacyProjectionModel.getReceptions(), is(equalTo(expectedEddieLacyProjectionModel.getReceptions())));
+    }
+
+    @Test
+    public void shouldBeAbleToParseEddieLacysReceivingYardsProperly() {
+        assertThat(eddieLacyProjectionModel.getReceivingYards(), is(equalTo(expectedEddieLacyProjectionModel.getReceivingYards())));
+    }
+
+    @Test
+    public void shouldBeAbleToParseEddieLacysReceivingTouchdownsProperly() {
+        assertThat(eddieLacyProjectionModel.getReceivingTouchdowns(), is(equalTo(expectedEddieLacyProjectionModel.getReceivingTouchdowns())));
+    }
+
+    @Test
+    public void shouldBeAbleToParseAaronRodgersPassingAttemptsProperly() {
+        assertThat(aaronRodgersProjectionModel.getPassingAttempts(), is(equalTo(expectedAaronRodgersEspnProjectionModel.getPassingAttempts())));
+    }
+
+    @Test
+    public void shouldBeAbleToParseAaronRodgersPassingCompletionsProperly() {
+        assertThat(aaronRodgersProjectionModel.getPassingCompletions(), is(equalTo(expectedAaronRodgersEspnProjectionModel.getPassingCompletions())));
+    }
+
+    @Test
+    public void shouldBeAbleToParseAaronRodgersPassingYardsProperly() {
+        assertThat(aaronRodgersProjectionModel.getPassingYards(), is(equalTo(expectedAaronRodgersEspnProjectionModel.getPassingYards())));
+    }
+
+
+    @Test
+    public void shouldBeAbleToParseAaronRodgersInterceptionsProperly() {
+        assertThat(aaronRodgersProjectionModel.getInterceptions(), is(equalTo(expectedAaronRodgersEspnProjectionModel.getInterceptions())));
     }
 }

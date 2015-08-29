@@ -37,6 +37,9 @@ public class EspnProjectionsPageValueExtractorTests {
     private EspnProjectionModel expectedAaronRodgersProjectionModel;
 
     @Autowired
+    private ValueExtractor espnProjectionsRankValueExtractor;
+
+    @Autowired
     private ValueExtractor espnProjectionsNameValueExtractor;
 
     @Autowired
@@ -80,6 +83,12 @@ public class EspnProjectionsPageValueExtractorTests {
 
     @Autowired
     private ValueExtractor espnProjectionsFantasyPointsValueExtractor;
+
+    @Test
+    public void shouldBeAbleToExtractRankFromEspnProjectionPages() throws ClassNotFoundException {
+        espnProjectionsRankValueExtractor.setInputStringToSearch(eddieLacyEspnProjectionPageHtml);
+        assertThat(espnProjectionsRankValueExtractor.getValue(), is(equalTo((Object) expectedEddieLacyProjectionModel.getRank())));
+    }
 
     @Test
     public void shouldBeAbleToExtractNamesFromEspnProjectionPages() throws ClassNotFoundException {
