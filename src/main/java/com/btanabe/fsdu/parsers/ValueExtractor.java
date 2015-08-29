@@ -10,9 +10,9 @@ import java.util.regex.Pattern;
  * Created by Brian on 7/28/15.
  */
 public class ValueExtractor {
-    private String inputStringToSearch;
-    private Pattern valuePattern;
-    private String objectClasspath;
+    protected Pattern valuePattern;
+    protected String objectClasspath;
+    protected Matcher valueMatcher;
 
     public ValueExtractor(String outputMatchingRegex, String outputClasspath) {
         valuePattern = Pattern.compile(outputMatchingRegex, Pattern.MULTILINE);
@@ -20,16 +20,16 @@ public class ValueExtractor {
     }
 
     public Object getValue() throws ClassNotFoundException {
-        return BeanUtils.instantiateClass(ClassUtils.getConstructorIfAvailable(Class.forName(objectClasspath), String.class), extractValueAsString(inputStringToSearch));
+        Class outputClazz = Class.forName(objectClasspath);
+        String objectValue = extractValueAsString();
+        return objectValue == null ? null : BeanUtils.instantiateClass(ClassUtils.getConstructorIfAvailable(outputClazz, String.class), extractValueAsString());
     }
 
-    private String extractValueAsString(String inputString) {
-        Matcher valueMatcher = valuePattern.matcher(inputString);
-        valueMatcher.find();
-        return valueMatcher.group();
+    protected String extractValueAsString() {
+        return valueMatcher.find() ? valueMatcher.group() : null;
     }
 
     public void setInputStringToSearch(String inputStringToSearch) {
-        this.inputStringToSearch = inputStringToSearch;
+        valueMatcher = valuePattern.matcher(inputStringToSearch);
     }
 }

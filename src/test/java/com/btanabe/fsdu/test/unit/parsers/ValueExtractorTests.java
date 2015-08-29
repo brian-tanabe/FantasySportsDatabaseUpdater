@@ -19,16 +19,16 @@ import static org.junit.Assert.assertThat;
 @RunWith(SpringJUnit4ClassRunner.class)
 public class ValueExtractorTests {
 
-    @Qualifier("espnProjectionsNextPageValueExtractor")
     @Autowired
+    @Qualifier("espnProjectionsNextPageValueExtractor")
     private ValueExtractor testStringValueExtraction;
 
-    @Qualifier("espnProjectionsRushingYardsProjection")
     @Autowired
+    @Qualifier("espnProjectionsRushingYardsProjection")
     private ValueExtractor testIntegerValueExtraction;
 
-    @Qualifier("espnProjectionsFantasyPointsProjection")
     @Autowired
+    @Qualifier("espnProjectionsFantasyPointsProjection")
     private ValueExtractor testFloatValueExtraction;
 
     @Test
