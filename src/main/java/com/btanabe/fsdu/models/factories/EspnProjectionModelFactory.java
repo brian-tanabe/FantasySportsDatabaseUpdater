@@ -22,9 +22,16 @@ public class EspnProjectionModelFactory extends AbstractModelFactory {
     @Override
     public Object createObject() throws ClassNotFoundException, InvocationTargetException, IllegalAccessException {
         EspnProjectionModel model = new EspnProjectionModel();
-
         for (String setterMethodName : setterMethodToValueMap.keySet()) {
+
+            // TODO REMOVE THIS DEBUGGING STATEMENT:
+            System.out.print(String.format("Attempting to call method=[%s]", setterMethodName));
+
             Object value = setterMethodToValueMap.get(setterMethodName).getValue();
+
+            // TODO REMOVE THIS DEBUGGING STATEMENT:
+            System.out.println(String.format(" using value=[%s] of type=[%s]", setterMethodName, value.toString(), value.getClass().toGenericString()));
+
             Method setterMethod = ClassUtils.getMethod(EspnProjectionModel.class, setterMethodName, value.getClass());
             setterMethod.invoke(model, value);
         }

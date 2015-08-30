@@ -227,4 +227,10 @@ public class EspnProjectionsPageValueExtractorTests {
         espnProjectionsRushingYardsValueExtractor.setInputStringToSearch(peytonManningEspnProjectionPageHtml);
         assertThat(espnProjectionsRushingYardsValueExtractor.getValue(), is(equalTo((Object) expectedPeytonManningEspnProjectionModel.getRushingYards())));
     }
+
+    @Test
+    public void shouldBeAbleToExtractPositionWhenDirectlyFollowedByAnotherLinkTag() throws Exception {
+        espnProjectionsPositionValueExtractor.setInputStringToSearch(peytonManningEspnProjectionPageHtml);
+        assertThat(espnProjectionsPositionValueExtractor.getValue(), is(equalTo((Object) expectedPeytonManningEspnProjectionModel.getPosition())));
+    }
 }
