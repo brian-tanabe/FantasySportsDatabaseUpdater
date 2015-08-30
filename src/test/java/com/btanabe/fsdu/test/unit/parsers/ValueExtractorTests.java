@@ -38,11 +38,11 @@ public class ValueExtractorTests {
 
     @Test
     public void shouldBeAbleToExtractIntegers() throws ClassNotFoundException {
-        assertThat(testIntegerValueExtraction.getValue(), is(equalTo(1365)));
+        assertThat(testIntegerValueExtraction.getValue(), is(equalTo(1297)));
     }
 
     @Test
     public void shouldBeAbleToExtractFloats() throws ClassNotFoundException {
-        assertThat(testFloatValueExtraction.getValue(), is(equalTo(287.4f)));
+        assertThat(testFloatValueExtraction.getValue(), is(equalTo(229.6F)));
     }
 }

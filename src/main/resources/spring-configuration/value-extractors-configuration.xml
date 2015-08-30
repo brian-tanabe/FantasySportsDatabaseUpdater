@@ -20,7 +20,7 @@
     <bean id="espnProjectionsNameValueExtractor" class="com.btanabe.fsdu.parsers.ValueExtractor">
         <constructor-arg name="outputClasspath" value="java.lang.String"/>
         <constructor-arg name="outputMatchingRegex"
-                         value="(?&lt;=&lt;td class=&quot;playertablePlayerName&quot; id=&quot;playername_\d{1,10}&quot; style=&quot;.{0,128}?&quot;&gt;&lt;a href=&quot;&quot; class=&quot;.{0,128}?&quot; content=&quot;.{0,128}?&quot; instance=&quot;.{0,128}?&quot; fpopheight=&quot;.{0,128}?&quot; fpopwidth=&quot;.{0,128}?&quot; tab=&quot;.{0,128}?&quot; leagueid=&quot;.{0,128}?&quot; playerid=&quot;.{0,128}?&quot; teamid=&quot;.{0,128}?&quot; seasonid=&quot;.{0,128}?&quot; cache=&quot;.{0,128}?&quot;&gt;).*(?=&lt;/a&gt;)"/>
+                         value="(?&lt;=&lt;td class=&quot;playertablePlayerName&quot; id=&quot;playername_\d{1,10}&quot; style=&quot;.{0,128}?&quot;&gt;&lt;a href=&quot;&quot; class=&quot;.{0,128}?&quot; content=&quot;.{0,128}?&quot; instance=&quot;.{0,128}?&quot; fpopheight=&quot;.{0,128}?&quot; fpopwidth=&quot;.{0,128}?&quot; tab=&quot;.{0,128}?&quot; leagueid=&quot;.{0,128}?&quot; playerid=&quot;.{0,128}?&quot; teamid=&quot;.{0,128}?&quot; seasonid=&quot;.{0,128}?&quot; cache=&quot;.{0,128}?&quot;&gt;).+?(?=&lt;/a&gt;)"/>
     </bean>
 
     <bean id="espnProjectionsNflTeamValueExtractor" class="com.btanabe.fsdu.parsers.ValueExtractor">
