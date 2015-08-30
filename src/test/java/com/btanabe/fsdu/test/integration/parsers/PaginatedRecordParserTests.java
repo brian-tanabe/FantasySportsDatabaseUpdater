@@ -52,7 +52,6 @@ public class PaginatedRecordParserTests {
     public void getTestRecords() throws Exception {
         if(playersFromRecordParser == null) {
             playersFromRecordParser = paginatedRecordParser.getRecordsAsList();
-            playersFromRecordParser.forEach(p -> System.out.println(p));
         }
     }
 
