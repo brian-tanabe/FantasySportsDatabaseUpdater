@@ -24,12 +24,7 @@ public class PaginatedRecordParser<T> extends RecordParser<T> {
         List<T> parsedAndPopulatedObjects = new ArrayList<>();
         for(String inputHtmlForSingleRecord : allRecordsAsListOfStrings) {
             setInputHtml(inputHtmlForSingleRecord);
-
-            // TODO REMOVE THIS DEBUGGING STATEMENT:
-            System.out.println(inputHtml);
-
-            T singleRecord = getRecord();
-            parsedAndPopulatedObjects.add(singleRecord);
+            parsedAndPopulatedObjects.add(getRecord());
         }
 
         return parsedAndPopulatedObjects;
