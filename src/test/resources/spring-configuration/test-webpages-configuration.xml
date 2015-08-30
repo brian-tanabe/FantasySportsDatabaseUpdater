@@ -26,4 +26,12 @@
     <bean id="espnProjectionsPageLeVeonBell" class="com.btanabe.fsdu.test.factories.FileTidiedStringFactory">
         <property name="inputFile" value="classpath:test-webpages/espn/projections-leveon-bell.html"/>
     </bean>
+
+    <bean id="espnProjectionsPageDemaryiusThomas" class="com.btanabe.fsdu.test.factories.FileTidiedStringFactory">
+        <property name="inputFile" value="classpath:test-webpages/espn/projections-demaryius-thomas.html"/>
+    </bean>
+
+    <bean id="espnProjectionsPagePeytonManning" class="com.btanabe.fsdu.test.factories.FileTidiedStringFactory">
+        <property name="inputFile" value="classpath:test-webpages/espn/projections-peyton-manning.html"/>
+    </bean>
 </beans>

@@ -59,4 +59,43 @@
         <property name="receivingTouchdowns" value="3"/>
         <property name="fantasyPoints" value="208.5"/>
     </bean>
+
+    <bean id="demaryiusThomasEspnProjectionModel" class="com.btanabe.fsdu.models.EspnProjectionModel">
+        <property name="rank" value="10"/>
+        <property name="name" value="Demaryius Thomas'"/>
+        <property name="team" value="Den"/>
+        <property name="position" value="WR"/>
+        <property name="passingCompletions" value="0"/>
+        <property name="passingAttempts" value="0"/>
+        <property name="passingYards" value="0"/>
+        <property name="passingTouchdowns" value="0"/>
+        <property name="interceptions" value="0"/>
+        <property name="rushingAttempts" value="0"/>
+        <property name="rushingYards" value="0"/>
+        <property name="rushingTouchdowns" value="0"/>
+        <property name="receptions" value="102"/>
+        <property name="receivingYards" value="1298"/>
+        <property name="receivingTouchdowns" value="11"/>
+        <property name="fantasyPoints" value="195"/>
+    </bean>
+
+    <bean id="peytonManningEspnProjectionModel" class="com.btanabe.fsdu.models.EspnProjectionModel">
+        <property name="rank" value="38"/>
+        <property name="name" value="Peyton Manning"/>
+        <property name="team" value="Den"/>
+        <property name="position" value="QB"/>
+        <property name="passingCompletions" value="394"/>
+        <property name="passingAttempts" value="607"/>
+        <property name="passingYards" value="4621"/>
+        <property name="passingTouchdowns" value="34"/>
+        <property name="interceptions" value="14"/>
+        <property name="rushingAttempts" value="24"/>
+        <property name="rushingYards" value="-6"/>
+        <property name="rushingTouchdowns" value="1"/>
+        <property name="receptions" value="0"/>
+        <property name="receivingYards" value="0"/>
+        <property name="receivingTouchdowns" value="0"/>
+        <property name="fantasyPoints" value="296"/>
+    </bean>
+
 </beans>

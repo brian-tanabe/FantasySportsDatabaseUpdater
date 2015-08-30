@@ -33,6 +33,14 @@ public class EspnProjectionsPageValueExtractorTests {
     private String leVeonBellEspnProjectionPageHtml;
 
     @Autowired
+    @Qualifier("espnProjectionsPageDemaryiusThomas")
+    private String demaryiusThomasEspnProjectionPageHtml;
+
+    @Autowired
+    @Qualifier("espnProjectionsPagePeytonManning")
+    private String peytonManningEspnProjectionPageHtml;
+
+    @Autowired
     @Qualifier("eddieLacyEspnProjectionModel")
     private EspnProjectionModel expectedEddieLacyProjectionModel;
 
@@ -43,6 +51,14 @@ public class EspnProjectionsPageValueExtractorTests {
     @Autowired
     @Qualifier("leVeonBellEspnProjectionModel")
     private EspnProjectionModel expectedLeVeonBellEspnProjectionModel;
+
+    @Autowired
+    @Qualifier("demaryiusThomasEspnProjectionModel")
+    private EspnProjectionModel expectedDemaryiusThomasEspnProjectionModel;
+
+    @Autowired
+    @Qualifier("peytonManningEspnProjectionModel")
+    private EspnProjectionModel expectedPeytonManningEspnProjectionModel;
 
     @Autowired
     private ValueExtractor espnProjectionsRankValueExtractor;
@@ -198,5 +214,17 @@ public class EspnProjectionsPageValueExtractorTests {
     public void shouldBeAbleToExtractPositionsFromProjectionPageWhenThePlayerIsSuspendedOrInjured() throws Exception {
         espnProjectionsPositionValueExtractor.setInputStringToSearch(leVeonBellEspnProjectionPageHtml);
         assertThat(espnProjectionsPositionValueExtractor.getValue(), is(equalTo((Object) expectedLeVeonBellEspnProjectionModel.getPosition())));
+    }
+
+    @Test
+    public void shouldBeABleToExtractFantasyPointsWhenThePlayersProjectionDoesNotContainFractionalPoints() throws Exception {
+        espnProjectionsFantasyPointsValueExtractor.setInputStringToSearch(demaryiusThomasEspnProjectionPageHtml);
+        assertThat(espnProjectionsFantasyPointsValueExtractor.getValue(), is(equalTo((Object) expectedDemaryiusThomasEspnProjectionModel.getFantasyPoints())));
+    }
+
+    @Test
+    public void shouldBeAbleToExtractNegativeRushingYardsFromEspnProjectionPage() throws Exception {
+        espnProjectionsRushingYardsValueExtractor.setInputStringToSearch(peytonManningEspnProjectionPageHtml);
+        assertThat(espnProjectionsRushingYardsValueExtractor.getValue(), is(equalTo((Object) expectedPeytonManningEspnProjectionModel.getRushingYards())));
     }
 }
