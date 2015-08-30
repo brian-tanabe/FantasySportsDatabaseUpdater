@@ -18,11 +18,11 @@ import static org.junit.Assert.assertThat;
 @RunWith(SpringJUnit4ClassRunner.class)
 public class HtmlTidierTests {
 
-    @Qualifier("espnProjectionsPageOneUnformattedBean")
+    @Qualifier("espnProjectionsPageOneUnformatted")
     @Autowired
     private String poorlyFormattedHtmlString;
 
-    @Qualifier("espnProjectionsPageOneFormattedBean")
+    @Qualifier("espnProjectionsPageOneFormatted")
     @Autowired
     private String wellFormattedHtmlString;
 
@@ -34,5 +34,10 @@ public class HtmlTidierTests {
     @Test
     public void shouldBeAbleToCleanUpIncorrectIndentations() {
         assertThat(HtmlTidier.tidyHtmlAndConvertToXhtml(poorlyFormattedHtmlString), is(equalTo(wellFormattedHtmlString)));
+    }
+
+    @Test
+    public void shouldBeAbleToReplaceAllNbspReferences() {
+        assertThat(HtmlTidier.tidyHtmlAndConvertToXhtml(poorlyFormattedHtmlString), not(containsString("&nbsp")));
     }
 }

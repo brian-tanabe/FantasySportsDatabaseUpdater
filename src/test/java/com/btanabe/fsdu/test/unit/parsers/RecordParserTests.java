@@ -43,8 +43,8 @@ public class RecordParserTests {
 
     @Before
     public void parseEddieLacysProjections() throws Exception {
-        eddieLacyProjectionModel = eddieLacyRecordParser.parseRecord();
-        aaronRodgersProjectionModel = aaronRodgersRecordParser.parseRecord();
+        eddieLacyProjectionModel = eddieLacyRecordParser.getRecord();
+        aaronRodgersProjectionModel = aaronRodgersRecordParser.getRecord();
     }
 
     @Test
@@ -59,7 +59,7 @@ public class RecordParserTests {
 
     @Test
     public void shouldBeAbleToParseEddieLacyIntoProjectionObject() throws Exception {
-        assertThat(eddieLacyRecordParser.parseRecord(), isA(EspnProjectionModel.class));
+        assertThat(eddieLacyRecordParser.getRecord(), isA(EspnProjectionModel.class));
     }
 
     @Test

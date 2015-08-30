@@ -3,23 +3,27 @@
        xmlns="http://www.springframework.org/schema/beans"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean id="espnProjectionsPageOneFactoryBean" class="com.btanabe.fsdu.test.factories.FileTidiedStringFactory">
+    <bean id="espnProjectionsPageOneFactory" class="com.btanabe.fsdu.test.factories.FileTidiedStringFactory">
         <property name="inputFile" value="classpath:test-webpages/espn/projections-1.html"/>
     </bean>
 
-    <bean id="espnProjectionsPageEddieLacyBean" class="com.btanabe.fsdu.test.factories.FileTidiedStringFactory">
+    <bean id="espnProjectionsPageEddieLacy" class="com.btanabe.fsdu.test.factories.FileTidiedStringFactory">
         <property name="inputFile" value="classpath:test-webpages/espn/projections-eddie-lacy.html"/>
     </bean>
 
-    <bean id="espnProjectionsPageAaronRodgersBean" class="com.btanabe.fsdu.test.factories.FileTidiedStringFactory">
+    <bean id="espnProjectionsPageAaronRodgers" class="com.btanabe.fsdu.test.factories.FileTidiedStringFactory">
         <property name="inputFile" value="classpath:test-webpages/espn/projections-aaron-rodgers.html"/>
     </bean>
 
-    <bean id="espnProjectionsPageOneUnformattedBean" class="com.btanabe.fsdu.test.factories.FileStringFactory">
+    <bean id="espnProjectionsPageOneUnformatted" class="com.btanabe.fsdu.test.factories.FileStringFactory">
         <property name="inputFile" value="classpath:test-webpages/espn/projections-1.dirty.html"/>
     </bean>
 
-    <bean id="espnProjectionsPageOneFormattedBean" class="com.btanabe.fsdu.test.factories.FileTidiedStringFactory">
+    <bean id="espnProjectionsPageOneFormatted" class="com.btanabe.fsdu.test.factories.FileTidiedStringFactory">
         <property name="inputFile" value="classpath:test-webpages/espn/projections-1.dirty.html"/>
+    </bean>
+
+    <bean id="espnProjectionsPageLeVeonBell" class="com.btanabe.fsdu.test.factories.FileTidiedStringFactory">
+        <property name="inputFile" value="classpath:test-webpages/espn/projections-leveon-bell.html"/>
     </bean>
 </beans>

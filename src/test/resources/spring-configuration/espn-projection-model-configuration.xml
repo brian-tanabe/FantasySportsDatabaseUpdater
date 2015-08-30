@@ -40,4 +40,23 @@
         <property name="receivingTouchdowns" value="0"/>
         <property name="fantasyPoints" value="325.1"/>
     </bean>
+
+    <bean id="leVeonBellEspnProjectionModel" class="com.btanabe.fsdu.models.EspnProjectionModel">
+        <property name="rank" value="1"/>
+        <property name="name" value="Le'Veon Bell'"/>
+        <property name="team" value="Pit"/>
+        <property name="position" value="RB"/>
+        <property name="passingCompletions" value="0"/>
+        <property name="passingAttempts" value="0"/>
+        <property name="passingYards" value="0"/>
+        <property name="passingTouchdowns" value="0"/>
+        <property name="interceptions" value="0"/>
+        <property name="rushingAttempts" value="247"/>
+        <property name="rushingYards" value="1062"/>
+        <property name="rushingTouchdowns" value="6"/>
+        <property name="receptions" value="62"/>
+        <property name="receivingYards" value="502"/>
+        <property name="receivingTouchdowns" value="3"/>
+        <property name="fantasyPoints" value="208.5"/>
+    </bean>
 </beans>

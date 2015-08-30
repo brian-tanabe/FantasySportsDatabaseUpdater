@@ -10,7 +10,13 @@
     <import resource="classpath:/spring-configuration/model-factory-configuration.xml"/>
     <import resource="classpath:/spring-configuration/application-configuration.xml" />
 
-    <util:map id="espnPlayerProjectionRecordParserValueExtractorMapBean"
+    <bean id="espnPlayerProjectionPagePaginatedRecordParser" class="com.btanabe.fsdu.parsers.PaginatedRecordParser">
+        <constructor-arg ref="&amp;espnProjectionModelFactory"/>
+        <constructor-arg ref="espnProjectionsPagePlayerValueExtractor"/>
+        <constructor-arg ref="espnPlayerProjectionRecordParserValueExtractorMap"/>
+    </bean>
+
+    <util:map id="espnPlayerProjectionRecordParserValueExtractorMap"
               key-type="java.lang.String"
               value-type="com.btanabe.fsdu.parsers.ValueExtractor">
         <entry key="setRank" value-ref="espnProjectionsRankValueExtractor"/>
@@ -30,4 +36,5 @@
         <entry key="setReceivingTouchdowns" value-ref="espnProjectionsReceivingTouchdownsValueExtractor"/>
         <entry key="setFantasyPoints" value-ref="espnProjectionsFantasyPointsValueExtractor"/>
     </util:map>
+
 </beans>

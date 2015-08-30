@@ -20,21 +20,29 @@ import static org.junit.Assert.assertThat;
 @RunWith(SpringJUnit4ClassRunner.class)
 public class EspnProjectionsPageValueExtractorTests {
 
-    @Qualifier("espnProjectionsPageEddieLacyBean")
     @Autowired
+    @Qualifier("espnProjectionsPageEddieLacy")
     private String eddieLacyEspnProjectionPageHtml;
 
-    @Qualifier("espnProjectionsPageAaronRodgersBean")
     @Autowired
+    @Qualifier("espnProjectionsPageAaronRodgers")
     private String aaronRodgersEspnProjectionPageHtml;
+
+    @Autowired
+    @Qualifier("espnProjectionsPageLeVeonBell")
+    private String leVeonBellEspnProjectionPageHtml;
 
     @Autowired
     @Qualifier("eddieLacyEspnProjectionModel")
     private EspnProjectionModel expectedEddieLacyProjectionModel;
 
-    @Qualifier("aaronRodgersEspnProjectionModel")
     @Autowired
+    @Qualifier("aaronRodgersEspnProjectionModel")
     private EspnProjectionModel expectedAaronRodgersProjectionModel;
+
+    @Autowired
+    @Qualifier("leVeonBellEspnProjectionModel")
+    private EspnProjectionModel expectedLeVeonBellEspnProjectionModel;
 
     @Autowired
     private ValueExtractor espnProjectionsRankValueExtractor;
@@ -85,98 +93,110 @@ public class EspnProjectionsPageValueExtractorTests {
     private ValueExtractor espnProjectionsFantasyPointsValueExtractor;
 
     @Test
-    public void shouldBeAbleToExtractRankFromEspnProjectionPages() throws ClassNotFoundException {
+    public void shouldBeAbleToExtractRankFromEspnProjectionPages() throws Exception {
         espnProjectionsRankValueExtractor.setInputStringToSearch(eddieLacyEspnProjectionPageHtml);
         assertThat(espnProjectionsRankValueExtractor.getValue(), is(equalTo((Object) expectedEddieLacyProjectionModel.getRank())));
     }
 
     @Test
-    public void shouldBeAbleToExtractNamesFromEspnProjectionPages() throws ClassNotFoundException {
+    public void shouldBeAbleToExtractNamesFromEspnProjectionPages() throws Exception {
         espnProjectionsNameValueExtractor.setInputStringToSearch(eddieLacyEspnProjectionPageHtml);
         assertThat(espnProjectionsNameValueExtractor.getValue(), is(equalTo((Object) expectedEddieLacyProjectionModel.getName())));
     }
 
     @Test
-    public void shouldBeAbleToExtractNflTeamNamesFromEspnProjectionPages() throws ClassNotFoundException {
+    public void shouldBeAbleToExtractNflTeamNamesFromEspnProjectionPages() throws Exception {
         espnProjectionsNflTeamValueExtractor.setInputStringToSearch(eddieLacyEspnProjectionPageHtml);
         assertThat(espnProjectionsNflTeamValueExtractor.getValue(), is(equalTo((Object) expectedEddieLacyProjectionModel.getTeam())));
     }
 
     @Test
-    public void shouldBeAbleToExtractPositionFromEspnProjectionPages() throws ClassNotFoundException {
+    public void shouldBeAbleToExtractPositionFromEspnProjectionPages() throws Exception {
         espnProjectionsPositionValueExtractor.setInputStringToSearch(eddieLacyEspnProjectionPageHtml);
         assertThat(espnProjectionsPositionValueExtractor.getValue(), is(equalTo((Object) expectedEddieLacyProjectionModel.getPosition())));
     }
 
     @Test
-    public void shouldBeAbleToExtractPassingAttemptsFromEspnProjectionPages() throws ClassNotFoundException {
+    public void shouldBeAbleToExtractPassingAttemptsFromEspnProjectionPages() throws Exception {
         espnProjectionsPassingAttemptsValueExtractor.setInputStringToSearch(aaronRodgersEspnProjectionPageHtml);
         assertThat(espnProjectionsPassingAttemptsValueExtractor.getValue(), is(equalTo((Object) expectedAaronRodgersProjectionModel.getPassingAttempts())));
     }
 
     @Test
-    public void shouldBeAbleToExtractPassingCompletionsFromEspnProjectionPage() throws ClassNotFoundException {
+    public void shouldBeAbleToExtractPassingCompletionsFromEspnProjectionPage() throws Exception {
         espnProjectionsPassingCompletionsValueExtractor.setInputStringToSearch(aaronRodgersEspnProjectionPageHtml);
         assertThat(espnProjectionsPassingCompletionsValueExtractor.getValue(), is(equalTo((Object) expectedAaronRodgersProjectionModel.getPassingCompletions())));
     }
 
     @Test
-    public void shouldBeAbleToExtractPassingYardsFromEspnProjectionPage() throws ClassNotFoundException {
+    public void shouldBeAbleToExtractPassingYardsFromEspnProjectionPage() throws Exception {
         espnProjectionsPassingYardsValueExtractor.setInputStringToSearch(aaronRodgersEspnProjectionPageHtml);
         assertThat(espnProjectionsPassingYardsValueExtractor.getValue(), is(equalTo((Object) expectedAaronRodgersProjectionModel.getPassingYards())));
     }
 
     @Test
-    public void shouldBeAbleToExtractPassingTouchdownsFromEspnProjectionPage() throws ClassNotFoundException {
+    public void shouldBeAbleToExtractPassingTouchdownsFromEspnProjectionPage() throws Exception {
         espnProjectionsPassingTouchdownsValueExtractor.setInputStringToSearch(aaronRodgersEspnProjectionPageHtml);
         assertThat(espnProjectionsPassingTouchdownsValueExtractor.getValue(), is(equalTo((Object) expectedAaronRodgersProjectionModel.getPassingTouchdowns())));
     }
 
     @Test
-    public void shouldBeAbleToExtractInterceptionsFromEspnProjectionPage() throws ClassNotFoundException {
+    public void shouldBeAbleToExtractInterceptionsFromEspnProjectionPage() throws Exception {
         espnProjectionsInterceptionsValueExtractor.setInputStringToSearch(aaronRodgersEspnProjectionPageHtml);
         assertThat(espnProjectionsInterceptionsValueExtractor.getValue(), is(equalTo((Object) expectedAaronRodgersProjectionModel.getInterceptions())));
     }
 
     @Test
-    public void shouldBeAbleToExtractRushingAttemptsFromEspnProjectionPage() throws ClassNotFoundException {
+    public void shouldBeAbleToExtractRushingAttemptsFromEspnProjectionPage() throws Exception {
         espnProjectionsRushingAttemptsValueExtractor.setInputStringToSearch(eddieLacyEspnProjectionPageHtml);
         assertThat(espnProjectionsRushingAttemptsValueExtractor.getValue(), is(equalTo((Object) expectedEddieLacyProjectionModel.getRushingAttempts())));
     }
 
     @Test
-    public void shouldBeAbleToExtractRushingYardsFromEspnProjectionPage() throws ClassNotFoundException {
+    public void shouldBeAbleToExtractRushingYardsFromEspnProjectionPage() throws Exception {
         espnProjectionsRushingYardsValueExtractor.setInputStringToSearch(eddieLacyEspnProjectionPageHtml);
         assertThat(espnProjectionsRushingYardsValueExtractor.getValue(), is(equalTo((Object) expectedEddieLacyProjectionModel.getRushingYards())));
     }
 
     @Test
-    public void shouldBeAbleToExtractRushingTouchdownsFromEspnProjectionPage() throws ClassNotFoundException {
+    public void shouldBeAbleToExtractRushingTouchdownsFromEspnProjectionPage() throws Exception {
         espnProjectionsRushingTouchdownsValueExtractor.setInputStringToSearch(eddieLacyEspnProjectionPageHtml);
         assertThat(espnProjectionsRushingTouchdownsValueExtractor.getValue(), is(equalTo((Object) expectedEddieLacyProjectionModel.getRushingTouchdowns())));
     }
 
     @Test
-    public void shouldBeAbleToExtractReceptionsFromEspnProjectionPage() throws ClassNotFoundException {
+    public void shouldBeAbleToExtractReceptionsFromEspnProjectionPage() throws Exception {
         espnProjectionsReceptionsValueExtractor.setInputStringToSearch(eddieLacyEspnProjectionPageHtml);
         assertThat(espnProjectionsReceptionsValueExtractor.getValue(), is(equalTo((Object) expectedEddieLacyProjectionModel.getReceptions())));
     }
 
     @Test
-    public void shouldBeAbleToExtractReceivingYardsFromEspnProjectionPage() throws ClassNotFoundException {
+    public void shouldBeAbleToExtractReceivingYardsFromEspnProjectionPage() throws Exception {
         espnProjectionsReceivingYardsValueExtractor.setInputStringToSearch(eddieLacyEspnProjectionPageHtml);
         assertThat(espnProjectionsReceivingYardsValueExtractor.getValue(), is(equalTo((Object) expectedEddieLacyProjectionModel.getReceivingYards())));
     }
 
     @Test
-    public void shouldBeAbleToExtractReceivingTouchdownsFromEspnProjectionPage() throws ClassNotFoundException {
+    public void shouldBeAbleToExtractReceivingTouchdownsFromEspnProjectionPage() throws Exception {
         espnProjectionsReceivingTouchdownsValueExtractor.setInputStringToSearch(eddieLacyEspnProjectionPageHtml);
         assertThat(espnProjectionsReceivingTouchdownsValueExtractor.getValue(), is(equalTo((Object) expectedEddieLacyProjectionModel.getReceivingTouchdowns())));
     }
 
     @Test
-    public void shouldBeAbleToExtractFantasyPointsFromEspnProjectionPage() throws ClassNotFoundException {
+    public void shouldBeAbleToExtractFantasyPointsFromEspnProjectionPage() throws Exception {
         espnProjectionsFantasyPointsValueExtractor.setInputStringToSearch(eddieLacyEspnProjectionPageHtml);
         assertThat(espnProjectionsFantasyPointsValueExtractor.getValue(), is(equalTo((Object) expectedEddieLacyProjectionModel.getFantasyPoints())));
+    }
+
+    @Test
+    public void shouldBeAbleToExtractTeamNameFromProjectionPageWhenThePlayerIsSuspended() throws Exception {
+        espnProjectionsNflTeamValueExtractor.setInputStringToSearch(leVeonBellEspnProjectionPageHtml);
+        assertThat(espnProjectionsNflTeamValueExtractor.getValue(), is(equalTo((Object) expectedLeVeonBellEspnProjectionModel.getTeam())));
+    }
+
+    @Test
+    public void shouldBeAbleToExtractPositionsFromProjectionPageWhenThePlayerIsSuspendedOrInjured() throws Exception {
+        espnProjectionsPositionValueExtractor.setInputStringToSearch(leVeonBellEspnProjectionPageHtml);
+        assertThat(espnProjectionsPositionValueExtractor.getValue(), is(equalTo((Object) expectedLeVeonBellEspnProjectionModel.getPosition())));
     }
 }

@@ -27,6 +27,11 @@ public class HtmlTidier {
         ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
         Document xmlDocument = htmlTidy.parseDOM(new ByteArrayInputStream(dirtyHtml.getBytes()), outputStream);
         htmlTidy.pprint(xmlDocument, outputStream);
-        return new String(outputStream.toByteArray());
+        return replaceAllNbspWithActualSpaces(new String(outputStream.toByteArray()));
+
+    }
+
+    private static String replaceAllNbspWithActualSpaces(String inputString) {
+        return inputString.replaceAll("&nbsp;", " ");
     }
 }

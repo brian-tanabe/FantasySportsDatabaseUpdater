@@ -26,7 +26,7 @@ public class PaginatedValueExtractorTests {
     private PaginatedValueExtractor espnProjectionsPagePlayerValueExtractor;
 
     @Autowired
-    @Qualifier("espnProjectionsPageOneFormattedBean")
+    @Qualifier("espnProjectionsPageOneFormatted")
     private String espnProjectionsPageOne;
 
     @Test

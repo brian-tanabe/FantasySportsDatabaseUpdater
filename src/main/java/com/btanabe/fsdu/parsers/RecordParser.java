@@ -9,17 +9,20 @@ import java.util.Map;
  * Created by Brian on 7/28/15.
  */
 public class RecordParser<T> {
-    private String inputHtml;
+    protected String inputHtml;
     private Map<String, ValueExtractor> valueExtractorMap;
     private AbstractModelFactory<T> outputClassFactory;
 
-    public RecordParser(String inputHtml, Map<String, ValueExtractor> valueExtractorMap, AbstractModelFactory<T> outputClassFactory) {
-        this.inputHtml = inputHtml;
+    public RecordParser(Map<String, ValueExtractor> valueExtractorMap, AbstractModelFactory<T> outputClassFactory) {
         this.valueExtractorMap = valueExtractorMap;
         this.outputClassFactory = outputClassFactory;
     }
 
-    public T parseRecord() throws IllegalAccessException, InvocationTargetException, ClassNotFoundException {
+    public void setInputHtml(String inputHtml) {
+        this.inputHtml = inputHtml;
+    }
+
+    public T getRecord() throws IllegalAccessException, InvocationTargetException, ClassNotFoundException {
         valueExtractorMap.values().forEach(valueExtractor -> valueExtractor.setInputStringToSearch(inputHtml));
         outputClassFactory.setSetterMethodToValueMap(valueExtractorMap);
         return outputClassFactory.createObject();
