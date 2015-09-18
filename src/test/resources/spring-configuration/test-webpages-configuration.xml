@@ -3,7 +3,7 @@
        xmlns="http://www.springframework.org/schema/beans"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean id="espnProjectionsPageOneFactory" class="com.btanabe.fsdu.test.factories.FileTidiedStringFactory">
+    <bean id="espnProjectionsPageOne" class="com.btanabe.fsdu.test.factories.FileTidiedStringFactory">
         <property name="inputFile" value="classpath:test-webpages/espn/projections-1.html"/>
     </bean>
 
@@ -33,5 +33,9 @@
 
     <bean id="espnProjectionsPagePeytonManning" class="com.btanabe.fsdu.test.factories.FileTidiedStringFactory">
         <property name="inputFile" value="classpath:test-webpages/espn/projections-peyton-manning.html"/>
+    </bean>
+
+    <bean id="numberFireAnonymousLeagueProjections" class="com.btanabe.fsdu.test.factories.FileTidiedStringFactory">
+        <property name="inputFile" value="classpath:test-webpages/numberFire/projections-anonymous-league.html"/>
     </bean>
 </beans>

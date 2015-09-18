@@ -19,10 +19,8 @@ public class PaginatedRecordParser<T> extends RecordParser<T> {
     }
 
     public List<T> getRecordsAsList() throws IllegalAccessException, ClassNotFoundException, InvocationTargetException {
-        List<String> allRecordsAsListOfStrings = findNextRecord();
-
         List<T> parsedAndPopulatedObjects = new ArrayList<>();
-        for(String inputHtmlForSingleRecord : allRecordsAsListOfStrings) {
+        for(String inputHtmlForSingleRecord : getAllRecordsAsListOfStrings()) {
             setInputHtml(inputHtmlForSingleRecord);
             parsedAndPopulatedObjects.add(getRecord());
         }
@@ -30,7 +28,7 @@ public class PaginatedRecordParser<T> extends RecordParser<T> {
         return parsedAndPopulatedObjects;
     }
 
-    private List<String> findNextRecord() throws ClassNotFoundException {
+    private List<String> getAllRecordsAsListOfStrings() throws ClassNotFoundException {
         recordValueExtractor.setInputStringToSearch(inputHtml);
         return recordValueExtractor.getValuesAsList();
     }

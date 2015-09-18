@@ -9,7 +9,7 @@
         <constructor-arg name="outputClasspath" value="java.lang.String"/>
         <constructor-arg name="outputMatchingRegex"
                          value="(?&lt;=href=&quot;).+startIndex.+(?=&quot;&gt;NEXT)"/>
-        <property name="inputStringToSearch" ref="espnProjectionsPageOneFactory"/>
+        <property name="inputStringToSearch" ref="espnProjectionsPageOne"/>
     </bean>
 
     <bean id="espnProjectionsRushingYardsProjection" class="com.btanabe.fsdu.parsers.ValueExtractor">

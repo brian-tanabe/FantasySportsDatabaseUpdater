@@ -21,6 +21,8 @@ public class HtmlTidier {
         htmlTidy.setMakeClean(true);
         htmlTidy.setWrapSection(false);
         htmlTidy.setWraplen(Integer.MAX_VALUE);
+        htmlTidy.setOnlyErrors(true);
+        htmlTidy.setFixBackslash(true);
     }
 
     public static String tidyHtmlAndConvertToXhtml(String dirtyHtml) {
