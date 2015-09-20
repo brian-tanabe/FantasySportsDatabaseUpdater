@@ -17,7 +17,7 @@ import static org.junit.Assert.assertThat;
 public class WebRequestTests {
 
     @Test
-    public void shouldBeAbleToDownloadNumberFireSource() throws Exception {
+    public void shouldBeAbleToDownloadEspnProjectionsSource() throws Exception {
         WebRequest webRequest = new WebRequest();
         String htmlFromFunction = webRequest.downloadWebPageSource("http://games.espn.go.com/ffl/tools/projections?");
         assertThat(htmlFromFunction, containsString("<title>2015 Fantasy Football Rankings &amp; Projections - Free Fantasy Football - ESPN</title>"));

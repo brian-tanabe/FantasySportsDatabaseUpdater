@@ -38,4 +38,12 @@
     <bean id="numberFireAnonymousLeagueProjections" class="com.btanabe.fsdu.test.factories.FileTidiedStringFactory">
         <property name="inputFile" value="classpath:test-webpages/numberFire/projections-anonymous-league.html"/>
     </bean>
+
+    <bean id="nflRunningBacksPageOneFormatted" class="com.btanabe.fsdu.test.factories.FileTidiedStringFactory">
+        <property name="inputFile" value="classpath:test-webpages/nfl/nfl-runningbacks-1.html"/>
+    </bean>
+
+    <bean id="nflRunningBacksAmeerAbdullahFormatted" class="com.btanabe.fsdu.test.factories.FileTidiedStringFactory">
+        <property name="inputFile" value="classpath:test-webpages/nfl/nfl-runningbacks-ameer-abdullah.html"/>
+    </bean>
 </beans>
