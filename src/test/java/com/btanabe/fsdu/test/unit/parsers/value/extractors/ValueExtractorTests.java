@@ -1,4 +1,4 @@
-package com.btanabe.fsdu.test.unit.parsers;
+package com.btanabe.fsdu.test.unit.parsers.value.extractors;
 
 import com.btanabe.fsdu.parsers.ValueExtractor;
 import org.junit.Test;

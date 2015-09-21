@@ -4,6 +4,7 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
     <bean id="eddieLacyEspnProjectionModel" class="com.btanabe.fsdu.models.EspnProjectionModel">
+        <property name="playerId" value="15848" />
         <property name="rank" value="3"/>
         <property name="name" value="Eddie Lacy"/>
         <property name="team" value="GB"/>
@@ -23,6 +24,7 @@
     </bean>
 
     <bean id="aaronRodgersEspnProjectionModel" class="com.btanabe.fsdu.models.EspnProjectionModel">
+        <property name="playerId" value="8439" />
         <property name="rank" value="20"/>
         <property name="name" value="Aaron Rodgers"/>
         <property name="team" value="GB"/>
@@ -42,6 +44,7 @@
     </bean>
 
     <bean id="leVeonBellEspnProjectionModel" class="com.btanabe.fsdu.models.EspnProjectionModel">
+        <property name="playerId" value="15825" />
         <property name="rank" value="1"/>
         <property name="name" value="Le'Veon Bell"/>
         <property name="team" value="Pit"/>
@@ -61,6 +64,7 @@
     </bean>
 
     <bean id="demaryiusThomasEspnProjectionModel" class="com.btanabe.fsdu.models.EspnProjectionModel">
+        <property name="playerId" value="13216" />
         <property name="rank" value="10"/>
         <property name="name" value="Demaryius Thomas"/>
         <property name="team" value="Den"/>
@@ -80,6 +84,7 @@
     </bean>
 
     <bean id="peytonManningEspnProjectionModel" class="com.btanabe.fsdu.models.EspnProjectionModel">
+        <property name="playerId" value="1428" />
         <property name="rank" value="38"/>
         <property name="name" value="Peyton Manning"/>
         <property name="team" value="Den"/>

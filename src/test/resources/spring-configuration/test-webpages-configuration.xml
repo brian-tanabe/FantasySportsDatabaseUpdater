@@ -35,6 +35,10 @@
         <property name="inputFile" value="classpath:test-webpages/espn/projections-peyton-manning.html"/>
     </bean>
 
+    <bean id="espnPlayerPageEddieLacy" class="com.btanabe.fsdu.test.factories.FileTidiedStringFactory">
+        <property name="inputFile" value="classpath:test-webpages/espn/player-page-15848-eddie-lacy.html"/>
+    </bean>
+
     <bean id="numberFireAnonymousLeagueProjections" class="com.btanabe.fsdu.test.factories.FileTidiedStringFactory">
         <property name="inputFile" value="classpath:test-webpages/numberFire/projections-anonymous-league.html"/>
     </bean>

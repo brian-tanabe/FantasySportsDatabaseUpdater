@@ -1,4 +1,4 @@
-package com.btanabe.fsdu.test.unit.parsers;
+package com.btanabe.fsdu.test.unit.parsers.record.parser;
 
 import com.btanabe.fsdu.models.EspnProjectionModel;
 import com.btanabe.fsdu.parsers.RecordParser;

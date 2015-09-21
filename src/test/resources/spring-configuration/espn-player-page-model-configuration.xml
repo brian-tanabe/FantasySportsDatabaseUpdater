@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="eddieLacyEspnPlayerPageModel" class="com.btanabe.fsdu.models.EspnPlayerPageModel">
+        <property name="playerId" value="15848" />
+        <property name="height" value="5' 11&quot;" />
+        <property name="weightInPounds" value="234" />
+        <property name="birthday" value="Jun 2, 1990" />
+        <property name="experienceInYears" value="3" />
+        <property name="college" value="Alabama" />
+        <property name="draftPickTaken" value="61" />
+    </bean>
+</beans>
