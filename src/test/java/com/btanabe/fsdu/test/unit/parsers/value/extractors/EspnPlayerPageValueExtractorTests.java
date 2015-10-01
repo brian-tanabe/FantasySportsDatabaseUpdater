@@ -23,7 +23,13 @@ public class EspnPlayerPageValueExtractorTests {
     private String espnPlayerPageEddieLacy;
 
     @Autowired
+    private String espnPlayerPageBrandonMcManus;
+
+    @Autowired
     private EspnPlayerPageModel eddieLacyEspnPlayerPageModel;
+
+    @Autowired
+    private EspnPlayerPageModel brandonMcManusEspnPlayerPageModel;
 
     @Autowired
     private ValueExtractor espnPlayerPagePlayerIdValueExtractor;
@@ -86,5 +92,11 @@ public class EspnPlayerPageValueExtractorTests {
     public void shouldBeAbleToExtractDraftPickFromEspnPlayerPage() throws Exception {
         espnPlayerPageDraftPickValueExtractor.setInputStringToSearch(espnPlayerPageEddieLacy);
         assertThat(espnPlayerPageDraftPickValueExtractor.getValue(), is(equalTo(eddieLacyEspnPlayerPageModel.getDraftPickTaken())));
+    }
+
+    @Test
+    public void shouldBeAbleToExtractDraftPickFromUndraftedPlayersAsNegativeOne() throws Exception {
+        espnPlayerPageDraftPickValueExtractor.setInputStringToSearch(espnPlayerPageBrandonMcManus);
+        assertThat(espnPlayerPageDraftPickValueExtractor.getValue(), is(equalTo(brandonMcManusEspnPlayerPageModel.getDraftPickTaken())));
     }
 }

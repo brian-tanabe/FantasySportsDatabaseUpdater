@@ -5,4 +5,5 @@
 
     <import resource="classpath:/spring-configuration/model-factory-configuration.xml"/>
     <import resource="classpath:/spring-configuration/value-extractors-configuration.xml"/>
+    <import resource="classpath:/spring-configuration/value-transformer-configuration.xml"/>
 </beans>

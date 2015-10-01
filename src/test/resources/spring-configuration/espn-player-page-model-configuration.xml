@@ -12,4 +12,14 @@
         <property name="college" value="Alabama" />
         <property name="draftPickTaken" value="61" />
     </bean>
+
+    <bean id="brandonMcManusEspnPlayerPageModel" class="com.btanabe.fsdu.models.EspnPlayerPageModel">
+        <property name="playerId" value="16339" />
+        <property name="height" value="6' 3&quot;" />
+        <property name="weightInPounds" value="201" />
+        <property name="birthday" value="Jul 25, 1991" />
+        <property name="experienceInYears" value="2" />
+        <property name="college" value="Temple" />
+        <property name="draftPickTaken" value="-1" />
+    </bean>
 </beans>

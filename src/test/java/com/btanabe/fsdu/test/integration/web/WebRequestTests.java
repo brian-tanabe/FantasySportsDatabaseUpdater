@@ -15,13 +15,15 @@ import static org.junit.Assert.assertThat;
 @ContextConfiguration("classpath:spring-configuration/unit-testing-configuration.xml")
 @RunWith(SpringJUnit4ClassRunner.class)
 public class WebRequestTests {
+    private static final int TWO_SECONDS = 2000;
 
-    @Test
+    @Test(timeout = TWO_SECONDS)
     public void shouldBeAbleToDownloadEspnProjectionsSource() throws Exception {
         WebRequest webRequest = new WebRequest();
         String htmlFromFunction = webRequest.downloadWebPageSource("http://games.espn.go.com/ffl/tools/projections?");
         assertThat(htmlFromFunction, containsString("<title>2015 Fantasy Football Rankings &amp; Projections - Free Fantasy Football - ESPN</title>"));
     }
 
-
+    @Test(timeout = TWO_SECONDS)
+    public void shouldBeAbleToDownloadMoreThanOnePageSourceAtOnce() { }
 }
