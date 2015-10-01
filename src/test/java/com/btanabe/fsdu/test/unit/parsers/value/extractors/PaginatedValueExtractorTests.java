@@ -1,4 +1,4 @@
-package com.btanabe.fsdu.test.unit.parsers;
+package com.btanabe.fsdu.test.unit.parsers.value.extractors;
 
 import com.btanabe.fsdu.parsers.PaginatedValueExtractor;
 import org.junit.Test;
@@ -26,13 +26,28 @@ public class PaginatedValueExtractorTests {
     private PaginatedValueExtractor espnProjectionsPagePlayerValueExtractor;
 
     @Autowired
+    @Qualifier("nflPositionPageRunningbacksValueExtractor")
+    private PaginatedValueExtractor nflPositionPagePlayerValueExtractor;
+
+    @Autowired
     @Qualifier("espnProjectionsPageOneFormatted")
     private String espnProjectionsPageOne;
 
+    @Autowired
+    @Qualifier("nflRunningBacksPageOneFormatted")
+    private String nflRunningbacksPageOne;
+
     @Test
-    public void shouldBeAbleToFindFortyPlayersOnOneEspnProjectionsPage() throws ClassNotFoundException {
+    public void shouldBeAbleToFindFortyPlayersOnOneEspnProjectionsPage() throws Exception {
         espnProjectionsPagePlayerValueExtractor.setInputStringToSearch(espnProjectionsPageOne);
         List<String> objectList = espnProjectionsPagePlayerValueExtractor.getValuesAsList();
         assertThat(objectList.size(), is(equalTo(40)));
+    }
+
+    @Test
+    public void shouldBeAbleToFindSeventyFivePlayersOnOneNflPositionPage() throws Exception {
+        nflPositionPagePlayerValueExtractor.setInputStringToSearch(nflRunningbacksPageOne);
+        List<String> objectList = nflPositionPagePlayerValueExtractor.getValuesAsList();
+        assertThat(objectList.size(), is(equalTo(75)));
     }
 }

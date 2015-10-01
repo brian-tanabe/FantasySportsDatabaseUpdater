@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="nullToNegativeOneValueTransformer" class="com.btanabe.fsdu.processors.ValueTransformer">
+        <constructor-arg name="inputClassType" ref="integerClass"/>
+        <constructor-arg name="outputClassType" ref="integerClass" />
+        <constructor-arg name="classWhichPerformsTheValueTransformation" value="java.lang.Math" />
+        <constructor-arg name="transformingMethodName" value="addExact" />
+        <constructor-arg name="classTypeOfTheInputToTheTransformingMethod" ref="integerClass" />
+        <constructor-arg name="inputValueToTheTransformationMethod" value="0.0" />
+        <constructor-arg name="defaultValueWhenNull" ref="negativeOne" />
+    </bean>
+
+    <bean id="integerClass" class="java.lang.Class" factory-method="forName">
+        <constructor-arg value="java.lang.Integer" />
+    </bean>
+
+    <bean id="negativeOne" class="java.lang.Integer" factory-method="getInteger">
+        <constructor-arg value="-1" />
+    </bean>
+</beans>

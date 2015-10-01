@@ -1,4 +1,4 @@
-package com.btanabe.fsdu.test.unit.parsers;
+package com.btanabe.fsdu.test.unit.parsers.value.extractors;
 
 import com.btanabe.fsdu.models.EspnProjectionModel;
 import com.btanabe.fsdu.parsers.ValueExtractor;
@@ -61,6 +61,9 @@ public class EspnProjectionsPageValueExtractorTests {
     private EspnProjectionModel expectedPeytonManningEspnProjectionModel;
 
     @Autowired
+    private ValueExtractor espnProjectionsPlayerIdValueExtractor;
+
+    @Autowired
     private ValueExtractor espnProjectionsRankValueExtractor;
 
     @Autowired
@@ -107,6 +110,12 @@ public class EspnProjectionsPageValueExtractorTests {
 
     @Autowired
     private ValueExtractor espnProjectionsFantasyPointsValueExtractor;
+
+    @Test
+    public void shouldBeAbleToExtractPlayerIdProperlyFromEspnProjectionPage() throws Exception {
+        espnProjectionsPlayerIdValueExtractor.setInputStringToSearch(eddieLacyEspnProjectionPageHtml);
+        assertThat(espnProjectionsPlayerIdValueExtractor.getValue(), is(equalTo((Object) expectedEddieLacyProjectionModel.getPlayerId())));
+    }
 
     @Test
     public void shouldBeAbleToExtractRankFromEspnProjectionPages() throws Exception {
