@@ -136,9 +136,21 @@ public class EspnProjectionsPageValueExtractorTests {
     }
 
     @Test
+    public void shouldBeAbleToExtractNbaPlayerPlayeIdProperlyFromEspnProjectionPage() throws Exception {
+        espnProjectionsPlayerIdValueExtractor.setInputStringToSearch(anthonyDavisEspnProjectionPageHtml);
+        assertThat(espnProjectionsPlayerIdValueExtractor.getValue(), is(equalTo((Object) expectedAnthonyDavisEspnNbaProjectionModel.getPlayerId())));
+    }
+
+    @Test
     public void shouldBeAbleToExtractNflPlayerRankFromEspnProjectionPages() throws Exception {
         espnProjectionsRankValueExtractor.setInputStringToSearch(eddieLacyEspnProjectionPageHtml);
         assertThat(espnProjectionsRankValueExtractor.getValue(), is(equalTo((Object) expectedEddieLacyProjectionModel.getRank())));
+    }
+
+    @Test
+    public void shouldBeAbleToExtractNbaPlayerRankFromEspnProjectionPages() throws Exception {
+        espnProjectionsRankValueExtractor.setInputStringToSearch(anthonyDavisEspnProjectionPageHtml);
+        assertThat(espnProjectionsRankValueExtractor.getValue(), is(equalTo((Object) expectedAnthonyDavisEspnNbaProjectionModel.getRank())));
     }
 
     @Test
@@ -160,9 +172,21 @@ public class EspnProjectionsPageValueExtractorTests {
     }
 
     @Test
+    public void shouldBeAbleToExtractNbaTeamNamesFromEspnProjectionPage() throws Exception {
+        espnProjectionsNflTeamValueExtractor.setInputStringToSearch(anthonyDavisEspnProjectionPageHtml);
+        assertThat(espnProjectionsNflTeamValueExtractor.getValue(), is(equalTo((Object) expectedAnthonyDavisEspnNbaProjectionModel.getTeam())));
+    }
+
+    @Test
     public void shouldBeAbleToExtractNflPlayerPositionFromEspnProjectionPages() throws Exception {
         espnProjectionsPositionValueExtractor.setInputStringToSearch(eddieLacyEspnProjectionPageHtml);
         assertThat(espnProjectionsPositionValueExtractor.getValue(), is(equalTo((Object) expectedEddieLacyProjectionModel.getPosition())));
+    }
+
+    @Test
+    public void shouldBeAbleToExtractNbaPlayerPositionFromEspnProjectionPages() throws Exception {
+        espnProjectionsPositionValueExtractor.setInputStringToSearch(anthonyDavisEspnProjectionPageHtml);
+        assertThat(espnProjectionsPositionValueExtractor.getValue(), is(equalTo((Object) expectedAnthonyDavisEspnNbaProjectionModel.getPosition())));
     }
 
     @Test
