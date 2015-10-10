@@ -4,20 +4,23 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
     <bean id="nullToNegativeOneValueTransformer" class="com.btanabe.fsdu.processors.ValueTransformer">
-        <constructor-arg name="inputClassType" ref="integerClass"/>
-        <constructor-arg name="outputClassType" ref="integerClass" />
         <constructor-arg name="classWhichPerformsTheValueTransformation" value="java.lang.Math" />
         <constructor-arg name="transformingMethodName" value="addExact" />
         <constructor-arg name="classTypeOfTheInputToTheTransformingMethod" ref="integerClass" />
-        <constructor-arg name="inputValueToTheTransformationMethod" value="0.0" />
+        <constructor-arg name="inputValueToTheTransformationMethod" ref="zero" />
         <constructor-arg name="defaultValueWhenNull" ref="negativeOne" />
+        <constructor-arg name="inputClassGetterMethodName" value="intValue" />
     </bean>
 
     <bean id="integerClass" class="java.lang.Class" factory-method="forName">
         <constructor-arg value="java.lang.Integer" />
     </bean>
 
-    <bean id="negativeOne" class="java.lang.Integer" factory-method="getInteger">
+    <bean id="zero" class="java.lang.Integer">
+        <constructor-arg value="0" />
+    </bean>
+
+    <bean id="negativeOne" class="java.lang.Integer">
         <constructor-arg value="-1" />
     </bean>
 </beans>

@@ -23,8 +23,11 @@ public class ValueTransformerTests {
 
     @Test
     public void shouldBeAbleToHandleTransformationsOfNullInputs() throws Exception {
-        Class<Integer> myClass = (Class<Integer>) Class.forName("java.lang.Integer");
+        assertThat(nullToNegativeOneValueTransformer.transformValue(null), is(equalTo(-1)));
+    }
 
-        assertThat(nullToNegativeOneValueTransformer.transformValue(null), is(equalTo(-1.0)));
+    @Test
+    public void shouldBeAbleToTransformOneToOneSinceOnePlusZeroIsOne() throws Exception {
+        assertThat(nullToNegativeOneValueTransformer.transformValue(1), is(equalTo(1)));
     }
 }
