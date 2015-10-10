@@ -3,6 +3,8 @@
        xmlns="http://www.springframework.org/schema/beans"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
+    <import resource="value-transformer-configuration.xml" />
+
     <!-- ************ ESPN PLAYER PROJECTIONS PAGE VALUE EXTRACTORS: ************ -->
     <bean id="espnProjectionsPagePlayerValueExtractor" class="com.btanabe.fsdu.parsers.PaginatedValueExtractor">
         <constructor-arg name="outputClasspath" value="java.lang.String"/>
@@ -159,6 +161,12 @@
         <constructor-arg name="outputClasspath" value="java.lang.String"/>
         <constructor-arg name="outputMatchingRegex"
                          value="(?&lt;=&lt;span&gt;Drafted&lt;/span&gt; {0,5}\d{4}: \d[a-z]{2} Rnd, ).+?(?=[a-z]{2} by )"/>
+    </bean>
+
+    <bean id="espnPlayerPageDraftPickTransformingValueExtractor" class="com.btanabe.fsdu.processors.TransformingValueExtractor">
+        <constructor-arg name="outputClasspath" value="java.lang.Integer" />
+        <constructor-arg name="outputMatchingRegex" value="(?&lt;=&lt;span&gt;Drafted&lt;/span&gt; {0,5}\d{4}: \d[a-z]{2} Rnd, ).+?(?=[a-z]{2} by )" />
+        <constructor-arg name="outputValueTransformer" ref="nullToNegativeOneValueTransformer" />
     </bean>
     <!-- *************** ESPN PLAYER PAGE VALUE EXTRACTORS: *************** -->
 

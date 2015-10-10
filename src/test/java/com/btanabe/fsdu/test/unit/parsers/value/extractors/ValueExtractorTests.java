@@ -8,6 +8,8 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
+import java.lang.reflect.InvocationTargetException;
+
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
@@ -32,17 +34,17 @@ public class ValueExtractorTests {
     private ValueExtractor testFloatValueExtraction;
 
     @Test
-    public void shouldBeAbleToExtractStrings() throws ClassNotFoundException {
+    public void shouldBeAbleToExtractStrings() throws ClassNotFoundException, InvocationTargetException, IllegalAccessException {
         assertThat(testStringValueExtraction.getValue(), equalTo("http://games.espn.go.com/ffl/tools/projections?&amp;startIndex=40"));
     }
 
     @Test
-    public void shouldBeAbleToExtractIntegers() throws ClassNotFoundException {
+    public void shouldBeAbleToExtractIntegers() throws ClassNotFoundException, InvocationTargetException, IllegalAccessException {
         assertThat(testIntegerValueExtraction.getValue(), is(equalTo(1297)));
     }
 
     @Test
-    public void shouldBeAbleToExtractFloats() throws ClassNotFoundException {
+    public void shouldBeAbleToExtractFloats() throws ClassNotFoundException, InvocationTargetException, IllegalAccessException {
         assertThat(testFloatValueExtraction.getValue(), is(equalTo(229.6F)));
     }
 }

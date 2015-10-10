@@ -1,5 +1,6 @@
 package com.btanabe.fsdu.parsers;
 
+import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -12,7 +13,7 @@ public class PaginatedValueExtractor<T> extends ValueExtractor<T> {
         super(outputMatchingRegex, outputClasspath);
     }
 
-    public List<Object> getValuesAsList() throws ClassNotFoundException {
+    public List<Object> getValuesAsList() throws ClassNotFoundException, InvocationTargetException, IllegalAccessException {
         List<Object> matchedObjects = new ArrayList<>();
         for(Object singleMatchedObject = getValue(); singleMatchedObject != null; singleMatchedObject = getValue()) {
             matchedObjects.add(singleMatchedObject);

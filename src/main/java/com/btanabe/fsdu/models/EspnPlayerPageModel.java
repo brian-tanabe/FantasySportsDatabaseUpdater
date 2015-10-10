@@ -10,7 +10,7 @@ public class EspnPlayerPageModel {
     private String birthday;
     private Integer experienceInYears;
     private String college;
-    private String draftPickTaken;
+    private Integer draftPickTaken;
 
     @Override
     public boolean equals(Object obj) {
@@ -76,11 +76,11 @@ public class EspnPlayerPageModel {
         this.college = college;
     }
 
-    public String getDraftPickTaken() {
+    public Integer getDraftPickTaken() {
         return draftPickTaken;
     }
 
-    public void setDraftPickTaken(String draftPickTaken) {
+    public void setDraftPickTaken(Integer draftPickTaken) {
         this.draftPickTaken = draftPickTaken;
     }
 }

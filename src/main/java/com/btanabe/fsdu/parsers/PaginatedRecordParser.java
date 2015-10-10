@@ -28,7 +28,7 @@ public class PaginatedRecordParser<T> extends RecordParser<T> {
         return parsedAndPopulatedObjects;
     }
 
-    private List<String> getAllRecordsAsListOfStrings() throws ClassNotFoundException {
+    private List<String> getAllRecordsAsListOfStrings() throws ClassNotFoundException, InvocationTargetException, IllegalAccessException {
         recordValueExtractor.setInputStringToSearch(inputHtml);
         return recordValueExtractor.getValuesAsList();
     }

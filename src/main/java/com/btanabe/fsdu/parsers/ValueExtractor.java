@@ -3,6 +3,7 @@ package com.btanabe.fsdu.parsers;
 import org.springframework.beans.BeanUtils;
 import org.springframework.util.ClassUtils;
 
+import java.lang.reflect.InvocationTargetException;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -19,7 +20,7 @@ public class ValueExtractor<T> {
         this.objectClasspath = outputClasspath;
     }
 
-    public Object getValue() throws ClassNotFoundException {
+    public Object getValue() throws IllegalAccessException, ClassNotFoundException, InvocationTargetException {
         String objectValue = extractValueAsString();
         return objectValue == null ? null : BeanUtils.instantiateClass(ClassUtils.getConstructorIfAvailable(objectClasspath, String.class), objectValue);
     }
