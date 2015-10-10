@@ -1,16 +1,15 @@
 package com.btanabe.fsdu.models.factories;
 
-import com.btanabe.fsdu.models.EspnProjectionModel;
 import com.btanabe.fsdu.parsers.ValueExtractor;
 import org.springframework.util.ClassUtils;
 
-import java.lang.reflect.InvocationTargetException;
 import java.util.Map;
 
 /**
  * Created by Brian on 8/23/15.
  */
-public class EspnProjectionModelFactory extends AbstractModelFactory {
+public class EspnProjectionModelFactory<OutputClazz> extends AbstractModelFactory {
+    private Class<OutputClazz> outputClazzClass;
     private Map<String, ValueExtractor> setterMethodToValueMap;
 
     @Override
@@ -19,23 +18,29 @@ public class EspnProjectionModelFactory extends AbstractModelFactory {
     }
 
     @Override
-    public Object createObject() throws ClassNotFoundException, InvocationTargetException, IllegalAccessException {
-        EspnProjectionModel model = new EspnProjectionModel();
+    public Object createObject() throws Exception {
+        OutputClazz model = (OutputClazz) createInstance();
+
         for (String setterMethodName : setterMethodToValueMap.keySet()) {
             Object value = setterMethodToValueMap.get(setterMethodName).getValue();
-            ClassUtils.getMethod(EspnProjectionModel.class, setterMethodName, value.getClass()).invoke(model, value);
+            ClassUtils.getMethod(outputClazzClass, setterMethodName, value.getClass()).invoke(model, value);
         }
 
         return model;
     }
 
     @Override
-    public Class<?> getObjectType() {
-        return EspnProjectionModel.class;
+    public Class<OutputClazz> getObjectType() {
+        return outputClazzClass;
     }
 
     @Override
     protected Object createInstance() throws Exception {
-        return null;
+        return ClassUtils.getConstructorIfAvailable(outputClazzClass).newInstance();
+    }
+
+    @Override
+    public void setOutputClazz(Class outputModelClass) {
+        this.outputClazzClass = outputModelClass;
     }
 }

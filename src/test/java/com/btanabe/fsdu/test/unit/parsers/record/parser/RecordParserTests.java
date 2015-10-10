@@ -1,6 +1,6 @@
 package com.btanabe.fsdu.test.unit.parsers.record.parser;
 
-import com.btanabe.fsdu.models.EspnProjectionModel;
+import com.btanabe.fsdu.models.EspnNflProjectionModel;
 import com.btanabe.fsdu.parsers.RecordParser;
 import org.junit.Before;
 import org.junit.Test;
@@ -24,22 +24,22 @@ public class RecordParserTests {
 
     @Autowired
     @Qualifier("eddieLacyEspnPlayerProjectionRecordParser")
-    private RecordParser<EspnProjectionModel> eddieLacyRecordParser;
+    private RecordParser<EspnNflProjectionModel> eddieLacyRecordParser;
 
     @Autowired
     @Qualifier("aaronRodgersEspnPlayerProjectionRecordParser")
-    private RecordParser<EspnProjectionModel> aaronRodgersRecordParser;
+    private RecordParser<EspnNflProjectionModel> aaronRodgersRecordParser;
 
     @Autowired
     @Qualifier("eddieLacyEspnProjectionModel")
-    private EspnProjectionModel expectedEddieLacyProjectionModel;
+    private EspnNflProjectionModel expectedEddieLacyProjectionModel;
 
     @Autowired
     @Qualifier("aaronRodgersEspnProjectionModel")
-    private EspnProjectionModel expectedAaronRodgersEspnProjectionModel;
+    private EspnNflProjectionModel expectedAaronRodgersEspnNflProjectionModel;
 
-    private EspnProjectionModel eddieLacyProjectionModel;
-    private EspnProjectionModel aaronRodgersProjectionModel;
+    private EspnNflProjectionModel eddieLacyProjectionModel;
+    private EspnNflProjectionModel aaronRodgersProjectionModel;
 
     @Before
     public void parseEddieLacysProjections() throws Exception {
@@ -54,12 +54,12 @@ public class RecordParserTests {
 
     @Test
     public void shouldBeAbleToParseEddieLacysNflTeamProperly() {
-        assertThat(eddieLacyProjectionModel.getTeam(), is(equalTo(expectedAaronRodgersEspnProjectionModel.getTeam())));
+        assertThat(eddieLacyProjectionModel.getTeam(), is(equalTo(expectedAaronRodgersEspnNflProjectionModel.getTeam())));
     }
 
     @Test
     public void shouldBeAbleToParseEddieLacyIntoProjectionObject() throws Exception {
-        assertThat(eddieLacyRecordParser.getRecord(), isA(EspnProjectionModel.class));
+        assertThat(eddieLacyRecordParser.getRecord(), isA(EspnNflProjectionModel.class));
     }
 
     @Test
@@ -104,22 +104,22 @@ public class RecordParserTests {
 
     @Test
     public void shouldBeAbleToParseAaronRodgersPassingAttemptsProperly() {
-        assertThat(aaronRodgersProjectionModel.getPassingAttempts(), is(equalTo(expectedAaronRodgersEspnProjectionModel.getPassingAttempts())));
+        assertThat(aaronRodgersProjectionModel.getPassingAttempts(), is(equalTo(expectedAaronRodgersEspnNflProjectionModel.getPassingAttempts())));
     }
 
     @Test
     public void shouldBeAbleToParseAaronRodgersPassingCompletionsProperly() {
-        assertThat(aaronRodgersProjectionModel.getPassingCompletions(), is(equalTo(expectedAaronRodgersEspnProjectionModel.getPassingCompletions())));
+        assertThat(aaronRodgersProjectionModel.getPassingCompletions(), is(equalTo(expectedAaronRodgersEspnNflProjectionModel.getPassingCompletions())));
     }
 
     @Test
     public void shouldBeAbleToParseAaronRodgersPassingYardsProperly() {
-        assertThat(aaronRodgersProjectionModel.getPassingYards(), is(equalTo(expectedAaronRodgersEspnProjectionModel.getPassingYards())));
+        assertThat(aaronRodgersProjectionModel.getPassingYards(), is(equalTo(expectedAaronRodgersEspnNflProjectionModel.getPassingYards())));
     }
 
 
     @Test
     public void shouldBeAbleToParseAaronRodgersInterceptionsProperly() {
-        assertThat(aaronRodgersProjectionModel.getInterceptions(), is(equalTo(expectedAaronRodgersEspnProjectionModel.getInterceptions())));
+        assertThat(aaronRodgersProjectionModel.getInterceptions(), is(equalTo(expectedAaronRodgersEspnNflProjectionModel.getInterceptions())));
     }
 }

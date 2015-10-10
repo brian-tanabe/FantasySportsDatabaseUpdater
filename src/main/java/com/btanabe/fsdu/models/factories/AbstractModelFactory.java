@@ -10,8 +10,9 @@ import java.util.Map;
 /**
  * Created by Brian on 8/23/15.
  */
-public abstract class AbstractModelFactory<T> extends AbstractFactoryBean implements FactoryBean {
+public abstract class AbstractModelFactory<OutputClazz> extends AbstractFactoryBean implements FactoryBean {
 
+    public abstract void setOutputClazz(Class<OutputClazz> outputModelClass);
     public abstract void setSetterMethodToValueMap(Map<String, ValueExtractor> setterMethodToValueMap);
-    public abstract T createObject() throws ClassNotFoundException, InvocationTargetException, IllegalAccessException;
+    public abstract OutputClazz createObject() throws ClassNotFoundException, InvocationTargetException, IllegalAccessException, InstantiationException, Exception;
 }

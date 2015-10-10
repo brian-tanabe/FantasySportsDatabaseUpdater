@@ -1,6 +1,6 @@
 package com.btanabe.fsdu.test.unit.models;
 
-import com.btanabe.fsdu.models.EspnProjectionModel;
+import com.btanabe.fsdu.models.EspnNflProjectionModel;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,11 +21,11 @@ import static org.junit.Assert.assertThat;
 public class EspnProjectionModelTests {
     @Autowired
     @Qualifier("eddieLacyEspnProjectionModel")
-    private EspnProjectionModel lhs;
+    private EspnNflProjectionModel lhs;
 
     @Autowired
     @Qualifier("eddieLacyEspnProjectionModel")
-    private EspnProjectionModel rhs;
+    private EspnNflProjectionModel rhs;
 
     @Test
     public void shouldBeAbleDetermineEquality() {

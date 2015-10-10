@@ -12,9 +12,9 @@
 
     <!-- ESPN Projections page RecordParser configuration -->
     <bean id="espnPlayerProjectionPagePaginatedRecordParser" class="com.btanabe.fsdu.parsers.PaginatedRecordParser">
-        <constructor-arg ref="&amp;espnProjectionModelFactory"/>
         <constructor-arg ref="espnProjectionsPagePlayerValueExtractor"/>
         <constructor-arg ref="espnPlayerProjectionRecordParserValueExtractorMap"/>
+        <constructor-arg ref="&amp;espnNflProjectionModelFactory"/>
     </bean>
 
     <util:map id="espnPlayerProjectionRecordParserValueExtractorMap"

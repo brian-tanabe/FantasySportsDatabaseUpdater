@@ -1,6 +1,6 @@
 package com.btanabe.fsdu.test.unit.parsers.value.extractors;
 
-import com.btanabe.fsdu.models.EspnProjectionModel;
+import com.btanabe.fsdu.models.EspnNflProjectionModel;
 import com.btanabe.fsdu.parsers.ValueExtractor;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -19,6 +19,12 @@ import static org.junit.Assert.assertThat;
 @ContextConfiguration("classpath:spring-configuration/unit-testing-configuration.xml")
 @RunWith(SpringJUnit4ClassRunner.class)
 public class EspnProjectionsPageValueExtractorTests {
+
+    @Autowired
+    private String espnNflProjectionsPageOne;
+
+    @Autowired
+    private String espnNbaProjectionsPageOne;
 
     @Autowired
     @Qualifier("espnProjectionsPageEddieLacy")
@@ -42,23 +48,23 @@ public class EspnProjectionsPageValueExtractorTests {
 
     @Autowired
     @Qualifier("eddieLacyEspnProjectionModel")
-    private EspnProjectionModel expectedEddieLacyProjectionModel;
+    private EspnNflProjectionModel expectedEddieLacyProjectionModel;
 
     @Autowired
     @Qualifier("aaronRodgersEspnProjectionModel")
-    private EspnProjectionModel expectedAaronRodgersProjectionModel;
+    private EspnNflProjectionModel expectedAaronRodgersProjectionModel;
 
     @Autowired
     @Qualifier("leVeonBellEspnProjectionModel")
-    private EspnProjectionModel expectedLeVeonBellEspnProjectionModel;
+    private EspnNflProjectionModel expectedLeVeonBellEspnNflProjectionModel;
 
     @Autowired
     @Qualifier("demaryiusThomasEspnProjectionModel")
-    private EspnProjectionModel expectedDemaryiusThomasEspnProjectionModel;
+    private EspnNflProjectionModel expectedDemaryiusThomasEspnNflProjectionModel;
 
     @Autowired
     @Qualifier("peytonManningEspnProjectionModel")
-    private EspnProjectionModel expectedPeytonManningEspnProjectionModel;
+    private EspnNflProjectionModel expectedPeytonManningEspnNflProjectionModel;
 
     @Autowired
     private ValueExtractor espnProjectionsPlayerIdValueExtractor;
@@ -110,6 +116,9 @@ public class EspnProjectionsPageValueExtractorTests {
 
     @Autowired
     private ValueExtractor espnProjectionsFantasyPointsValueExtractor;
+
+    @Autowired
+    private ValueExtractor espnProjectionsNextPageValueExtractor;
 
     @Test
     public void shouldBeAbleToExtractPlayerIdProperlyFromEspnProjectionPage() throws Exception {
@@ -216,30 +225,42 @@ public class EspnProjectionsPageValueExtractorTests {
     @Test
     public void shouldBeAbleToExtractTeamNameFromProjectionPageWhenThePlayerIsSuspended() throws Exception {
         espnProjectionsNflTeamValueExtractor.setInputStringToSearch(leVeonBellEspnProjectionPageHtml);
-        assertThat(espnProjectionsNflTeamValueExtractor.getValue(), is(equalTo((Object) expectedLeVeonBellEspnProjectionModel.getTeam())));
+        assertThat(espnProjectionsNflTeamValueExtractor.getValue(), is(equalTo((Object) expectedLeVeonBellEspnNflProjectionModel.getTeam())));
     }
 
     @Test
     public void shouldBeAbleToExtractPositionsFromProjectionPageWhenThePlayerIsSuspendedOrInjured() throws Exception {
         espnProjectionsPositionValueExtractor.setInputStringToSearch(leVeonBellEspnProjectionPageHtml);
-        assertThat(espnProjectionsPositionValueExtractor.getValue(), is(equalTo((Object) expectedLeVeonBellEspnProjectionModel.getPosition())));
+        assertThat(espnProjectionsPositionValueExtractor.getValue(), is(equalTo((Object) expectedLeVeonBellEspnNflProjectionModel.getPosition())));
     }
 
     @Test
     public void shouldBeABleToExtractFantasyPointsWhenThePlayersProjectionDoesNotContainFractionalPoints() throws Exception {
         espnProjectionsFantasyPointsValueExtractor.setInputStringToSearch(demaryiusThomasEspnProjectionPageHtml);
-        assertThat(espnProjectionsFantasyPointsValueExtractor.getValue(), is(equalTo((Object) expectedDemaryiusThomasEspnProjectionModel.getFantasyPoints())));
+        assertThat(espnProjectionsFantasyPointsValueExtractor.getValue(), is(equalTo((Object) expectedDemaryiusThomasEspnNflProjectionModel.getFantasyPoints())));
     }
 
     @Test
     public void shouldBeAbleToExtractNegativeRushingYardsFromEspnProjectionPage() throws Exception {
         espnProjectionsRushingYardsValueExtractor.setInputStringToSearch(peytonManningEspnProjectionPageHtml);
-        assertThat(espnProjectionsRushingYardsValueExtractor.getValue(), is(equalTo((Object) expectedPeytonManningEspnProjectionModel.getRushingYards())));
+        assertThat(espnProjectionsRushingYardsValueExtractor.getValue(), is(equalTo((Object) expectedPeytonManningEspnNflProjectionModel.getRushingYards())));
     }
 
     @Test
     public void shouldBeAbleToExtractPositionWhenDirectlyFollowedByAnotherLinkTag() throws Exception {
         espnProjectionsPositionValueExtractor.setInputStringToSearch(peytonManningEspnProjectionPageHtml);
-        assertThat(espnProjectionsPositionValueExtractor.getValue(), is(equalTo((Object) expectedPeytonManningEspnProjectionModel.getPosition())));
+        assertThat(espnProjectionsPositionValueExtractor.getValue(), is(equalTo((Object) expectedPeytonManningEspnNflProjectionModel.getPosition())));
+    }
+
+    @Test
+    public void shouldBeAbleToFindTheNextPageLinkOnEspnsNflProjectionsPage() throws Exception {
+        espnProjectionsNextPageValueExtractor.setInputStringToSearch(espnNflProjectionsPageOne);
+        assertThat(espnProjectionsNextPageValueExtractor.getValue(), is(equalTo((Object) "http://games.espn.go.com/ffl/tools/projections?&amp;startIndex=40")));
+    }
+
+    @Test
+    public void shouldBeAbleToFindTheNextPageLinkOnEspnsNbaProjectionsPage() throws Exception {
+        espnProjectionsNextPageValueExtractor.setInputStringToSearch(espnNbaProjectionsPageOne);
+        assertThat(espnProjectionsNextPageValueExtractor.getValue(), is(equalTo((Object) "http://games.espn.go.com/fba/tools/projections?&amp;leagueId=233928&amp;startIndex=40")));
     }
 }

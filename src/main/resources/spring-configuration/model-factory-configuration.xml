@@ -3,6 +3,15 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean id="espnProjectionModelFactory" class="com.btanabe.fsdu.models.factories.EspnProjectionModelFactory" />
+    <bean id="espnNflProjectionModelFactory" class="com.btanabe.fsdu.models.factories.EspnProjectionModelFactory">
+        <property name="outputClazz" ref="espnNflProjectionModel" />
+    </bean>
 
+    <bean id="espnNflProjectionModel" class="java.lang.Class" factory-method="forName">
+        <constructor-arg value="com.btanabe.fsdu.models.EspnNflProjectionModel" />
+    </bean>
+
+    <bean id="espnNbaProjectionModel" class="java.lang.Class" factory-method="forName">
+        <constructor-arg value="com.btanabe.fsdu.models.EspnNbaProjectionModel" />
+    </bean>
 </beans>

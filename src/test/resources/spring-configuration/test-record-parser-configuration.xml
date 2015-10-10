@@ -10,21 +10,21 @@
     <import resource="classpath:/spring-configuration/record-parser-configuration.xml" />
 
     <bean id="eddieLacyEspnPlayerProjectionRecordParser" class="com.btanabe.fsdu.parsers.RecordParser">
-        <constructor-arg ref="&amp;espnProjectionModelFactory"/>
         <constructor-arg ref="espnPlayerProjectionRecordParserValueExtractorMap"/>
+        <constructor-arg ref="&amp;espnNflProjectionModelFactory"/>
         <property name="inputHtml" ref="espnProjectionsPageEddieLacy"/>
     </bean>
 
     <bean id="aaronRodgersEspnPlayerProjectionRecordParser" class="com.btanabe.fsdu.parsers.RecordParser">
-        <constructor-arg ref="&amp;espnProjectionModelFactory"/>
         <constructor-arg ref="espnPlayerProjectionRecordParserValueExtractorMap"/>
+        <constructor-arg ref="&amp;espnNflProjectionModelFactory"/>
         <property name="inputHtml" ref="espnProjectionsPageAaronRodgers"/>
     </bean>
 
     <bean id="testEspnPlayerProjectionPagePaginatedRecordParser" class="com.btanabe.fsdu.parsers.PaginatedRecordParser">
-        <constructor-arg ref="&amp;espnProjectionModelFactory"/>
         <constructor-arg ref="espnProjectionsPagePlayerValueExtractor"/>
         <constructor-arg ref="espnPlayerProjectionRecordParserValueExtractorMap"/>
-        <property name="inputHtml" ref="espnProjectionsPageOneFormatted"/>
+        <constructor-arg ref="&amp;espnNflProjectionModelFactory"/>
+        <property name="inputHtml" ref="espnNflProjectionsPageOneFormatted"/>
     </bean>
 </beans>

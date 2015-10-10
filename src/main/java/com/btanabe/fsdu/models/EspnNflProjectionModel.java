@@ -3,7 +3,7 @@ package com.btanabe.fsdu.models;
 /**
  * Created by Brian on 7/28/15.
  */
-public class EspnProjectionModel {
+public class EspnNflProjectionModel {
     private Integer playerId;
     private Integer rank;
     private String name;
@@ -24,8 +24,8 @@ public class EspnProjectionModel {
 
     @Override
     public boolean equals(Object obj) {
-        if (obj instanceof EspnProjectionModel) {
-            EspnProjectionModel rhs = (EspnProjectionModel) obj;
+        if (obj instanceof EspnNflProjectionModel) {
+            EspnNflProjectionModel rhs = (EspnNflProjectionModel) obj;
             return playerId.equals(rhs.getPlayerId()) && rank.equals(rhs.getRank()) && name.equals(rhs.getName()) && team.equals(rhs.getTeam()) && position.equals(rhs.getPosition()) && passingCompletions.equals(rhs.getPassingCompletions()) && passingAttempts.equals(rhs.getPassingAttempts()) && passingYards.equals(rhs.getPassingYards()) && passingTouchdowns.equals(rhs.getPassingTouchdowns()) && interceptions.equals(rhs.getInterceptions()) && rushingAttempts.equals(rhs.getRushingAttempts()) && rushingYards.equals(rhs.getRushingYards()) && rushingTouchdowns.equals(rhs.getRushingTouchdowns()) && receptions.equals(rhs.getReceptions()) && receivingYards.equals(rhs.getReceivingYards()) && receivingTouchdowns.equals(rhs.getReceivingTouchdowns()) && fantasyPoints.equals(rhs.getFantasyPoints());
         }
 

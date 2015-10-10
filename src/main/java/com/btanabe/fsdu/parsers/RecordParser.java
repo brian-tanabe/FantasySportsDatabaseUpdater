@@ -1,8 +1,8 @@
 package com.btanabe.fsdu.parsers;
 
+
 import com.btanabe.fsdu.models.factories.AbstractModelFactory;
 
-import java.lang.reflect.InvocationTargetException;
 import java.util.Map;
 
 /**
@@ -22,7 +22,7 @@ public class RecordParser<T> {
         this.inputHtml = inputHtml;
     }
 
-    public T getRecord() throws IllegalAccessException, InvocationTargetException, ClassNotFoundException {
+    public T getRecord() throws Exception {
         valueExtractorMap.values().forEach(valueExtractor -> valueExtractor.setInputStringToSearch(inputHtml));
         outputClassFactory.setSetterMethodToValueMap(valueExtractorMap);
         return outputClassFactory.createObject();

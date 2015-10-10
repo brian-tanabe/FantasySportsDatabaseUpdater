@@ -22,15 +22,15 @@ import static org.junit.Assert.assertThat;
 public class ValueExtractorTests {
 
     @Autowired
-    @Qualifier("espnProjectionsNextPageValueExtractor")
+    @Qualifier("espnNflProjectionsNextPageValueExtractor")
     private ValueExtractor testStringValueExtraction;
 
     @Autowired
-    @Qualifier("espnProjectionsRushingYardsProjection")
+    @Qualifier("espnNflProjectionsRushingYardsProjection")
     private ValueExtractor testIntegerValueExtraction;
 
     @Autowired
-    @Qualifier("espnProjectionsFantasyPointsProjection")
+    @Qualifier("espnNflProjectionsFantasyPointsProjection")
     private ValueExtractor testFloatValueExtraction;
 
     @Test

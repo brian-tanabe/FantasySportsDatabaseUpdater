@@ -18,7 +18,7 @@ public class PaginatedRecordParser<T> extends RecordParser<T> {
         this.recordValueExtractor = recordValueExtractor;
     }
 
-    public List<T> getRecordsAsList() throws IllegalAccessException, ClassNotFoundException, InvocationTargetException {
+    public List<T> getRecordsAsList() throws Exception {
         List<T> parsedAndPopulatedObjects = new ArrayList<>();
         for(String inputHtmlForSingleRecord : getAllRecordsAsListOfStrings()) {
             setInputHtml(inputHtmlForSingleRecord);

@@ -30,7 +30,7 @@ public class PaginatedValueExtractorTests {
     private PaginatedValueExtractor nflPositionPagePlayerValueExtractor;
 
     @Autowired
-    @Qualifier("espnProjectionsPageOneFormatted")
+    @Qualifier("espnNflProjectionsPageOneFormatted")
     private String espnProjectionsPageOne;
 
     @Autowired

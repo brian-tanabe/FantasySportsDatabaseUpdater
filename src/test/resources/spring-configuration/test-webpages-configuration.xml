@@ -3,36 +3,40 @@
        xmlns="http://www.springframework.org/schema/beans"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean id="espnProjectionsPageOne" class="com.btanabe.fsdu.test.factories.FileTidiedStringFactory">
-        <property name="inputFile" value="classpath:test-webpages/espn/projections-1.html"/>
+    <bean id="espnNbaProjectionsPageOne" class="com.btanabe.fsdu.test.factories.FileTidiedStringFactory">
+        <property name="inputFile" value="classpath:test-webpages/espn/nba/projections-1.html"/>
+    </bean>
+
+    <bean id="espnNflProjectionsPageOne" class="com.btanabe.fsdu.test.factories.FileTidiedStringFactory">
+        <property name="inputFile" value="classpath:test-webpages/espn/nfl/projections-1.html"/>
     </bean>
 
     <bean id="espnProjectionsPageEddieLacy" class="com.btanabe.fsdu.test.factories.FileTidiedStringFactory">
-        <property name="inputFile" value="classpath:test-webpages/espn/projections-eddie-lacy.html"/>
+        <property name="inputFile" value="classpath:test-webpages/espn/nfl/projections-eddie-lacy.html"/>
     </bean>
 
     <bean id="espnProjectionsPageAaronRodgers" class="com.btanabe.fsdu.test.factories.FileTidiedStringFactory">
-        <property name="inputFile" value="classpath:test-webpages/espn/projections-aaron-rodgers.html"/>
+        <property name="inputFile" value="classpath:test-webpages/espn/nfl/projections-aaron-rodgers.html"/>
     </bean>
 
-    <bean id="espnProjectionsPageOneUnformatted" class="com.btanabe.fsdu.test.factories.FileStringFactory">
-        <property name="inputFile" value="classpath:test-webpages/espn/projections-1.dirty.html"/>
+    <bean id="espnNflProjectionsPageOneUnformatted" class="com.btanabe.fsdu.test.factories.FileStringFactory">
+        <property name="inputFile" value="classpath:test-webpages/espn/nfl/projections-1.dirty.html"/>
     </bean>
 
-    <bean id="espnProjectionsPageOneFormatted" class="com.btanabe.fsdu.test.factories.FileTidiedStringFactory">
-        <property name="inputFile" value="classpath:test-webpages/espn/projections-1.dirty.html"/>
+    <bean id="espnNflProjectionsPageOneFormatted" class="com.btanabe.fsdu.test.factories.FileTidiedStringFactory">
+        <property name="inputFile" value="classpath:test-webpages/espn/nfl/projections-1.dirty.html"/>
     </bean>
 
     <bean id="espnProjectionsPageLeVeonBell" class="com.btanabe.fsdu.test.factories.FileTidiedStringFactory">
-        <property name="inputFile" value="classpath:test-webpages/espn/projections-leveon-bell.html"/>
+        <property name="inputFile" value="classpath:test-webpages/espn/nfl/projections-leveon-bell.html"/>
     </bean>
 
     <bean id="espnProjectionsPageDemaryiusThomas" class="com.btanabe.fsdu.test.factories.FileTidiedStringFactory">
-        <property name="inputFile" value="classpath:test-webpages/espn/projections-demaryius-thomas.html"/>
+        <property name="inputFile" value="classpath:test-webpages/espn/nfl/projections-demaryius-thomas.html"/>
     </bean>
 
     <bean id="espnProjectionsPagePeytonManning" class="com.btanabe.fsdu.test.factories.FileTidiedStringFactory">
-        <property name="inputFile" value="classpath:test-webpages/espn/projections-peyton-manning.html"/>
+        <property name="inputFile" value="classpath:test-webpages/espn/nfl/projections-peyton-manning.html"/>
     </bean>
 
     <bean id="espnPlayerPageEddieLacy" class="com.btanabe.fsdu.test.factories.FileTidiedStringFactory">
@@ -43,7 +47,7 @@
         <property name="inputFile" value="classpath:test-webpages/espn/player-page/player-page-16339-brandon-mcmanus.html"/>
     </bean>
 
-    <bean id="numberFireAnonymousLeagueProjections" class="com.btanabe.fsdu.test.factories.FileTidiedStringFactory">
+    <bean id="numberNflFireAnonymousLeagueProjections" class="com.btanabe.fsdu.test.factories.FileTidiedStringFactory">
         <property name="inputFile" value="classpath:test-webpages/numberFire/projections-anonymous-league.html"/>
     </bean>
 
