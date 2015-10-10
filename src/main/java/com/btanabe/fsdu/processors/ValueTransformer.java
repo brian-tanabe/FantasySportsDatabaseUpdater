@@ -13,15 +13,13 @@ public class ValueTransformer<TransformerClass, TransformationValueClass, Output
     private Class<TransformationValueClass> classTypeOfTheInputToTheTransformingMethod;
     private TransformationValueClass inputValueToTheTransformationMethod;
     private OutputType defaultValueWhenNull;
-    private String inputClassGetterMethodName;
 
-    public ValueTransformer(Class<TransformerClass> classWhichPerformsTheValueTransformation, String transformingMethodName, Class<TransformationValueClass> classTypeOfTheInputToTheTransformingMethod, TransformationValueClass inputValueToTheTransformationMethod, OutputType defaultValueWhenNull, String inputClassGetterMethodName) {
+    public ValueTransformer(Class<TransformerClass> classWhichPerformsTheValueTransformation, String transformingMethodName, Class<TransformationValueClass> classTypeOfTheInputToTheTransformingMethod, TransformationValueClass inputValueToTheTransformationMethod, OutputType defaultValueWhenNull) {
         this.classWhichPerformsTheValueTransformation = classWhichPerformsTheValueTransformation;
         this.transformingMethodName = transformingMethodName;
         this.classTypeOfTheInputToTheTransformingMethod = classTypeOfTheInputToTheTransformingMethod;
         this.inputValueToTheTransformationMethod = inputValueToTheTransformationMethod;
         this.defaultValueWhenNull = defaultValueWhenNull;
-        this.inputClassGetterMethodName = inputClassGetterMethodName;
     }
 
     public <InputClass> OutputType transformValue(InputClass inputValue) throws InvocationTargetException, IllegalAccessException, ClassNotFoundException {
@@ -29,9 +27,6 @@ public class ValueTransformer<TransformerClass, TransformationValueClass, Output
             return defaultValueWhenNull;
         }
 
-        System.out.println(inputValueToTheTransformationMethod.getClass().getName() + ": " + inputValueToTheTransformationMethod);
-        System.out.println(inputValue.getClass().getName() + ": " + inputValue);
-
-        return (OutputType) ClassUtils.getMethod(classWhichPerformsTheValueTransformation, transformingMethodName, classTypeOfTheInputToTheTransformingMethod).invoke(inputValue, inputValueToTheTransformationMethod);
+        return (OutputType) ClassUtils.getMethod(classWhichPerformsTheValueTransformation, transformingMethodName, classTypeOfTheInputToTheTransformingMethod).invoke(inputValueToTheTransformationMethod, inputValue);
     }
 }

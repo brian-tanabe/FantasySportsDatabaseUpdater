@@ -33,7 +33,7 @@ public class ValueExtractorTests {
 
     @Test
     public void shouldBeAbleToExtractStrings() throws ClassNotFoundException {
-        assertThat(testStringValueExtraction.getValue(), is(equalTo("http://games.espn.go.com/ffl/tools/projections?&amp;startIndex=40")));
+        assertThat(testStringValueExtraction.getValue(), equalTo("http://games.espn.go.com/ffl/tools/projections?&amp;startIndex=40"));
     }
 
     @Test
