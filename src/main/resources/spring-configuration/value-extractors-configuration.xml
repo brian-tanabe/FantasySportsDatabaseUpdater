@@ -11,6 +11,12 @@
     </bean>
 
     <!-- ************ ESPN PLAYER PROJECTION VALUE EXTRACTORS: ************ -->
+    <bean id="espnProjectionsPlayerIdValueExtractor" class="com.btanabe.fsdu.parsers.ValueExtractor">
+        <constructor-arg name="outputClasspath" value="java.lang.Integer"/>
+        <constructor-arg name="outputMatchingRegex"
+                         value="(?&lt;=playerid=&quot;)\d+(?=&quot;)"/>
+    </bean>
+
     <bean id="espnProjectionsRankValueExtractor" class="com.btanabe.fsdu.parsers.ValueExtractor">
         <constructor-arg name="outputClasspath" value="java.lang.Integer"/>
         <constructor-arg name="outputMatchingRegex"
@@ -108,7 +114,61 @@
     </bean>
     <!-- ************ ESPN PLAYER PROJECTION VALUE EXTRACTORS: ************ -->
 
+    <!-- *************** ESPN PLAYER PAGE VALUE EXTRACTORS: *************** -->
+    <!--
+     College
+     Draft pick taken
+     -->
+
+    <bean id="espnPlayerPagePlayerIdValueExtractor" class="com.btanabe.fsdu.parsers.ValueExtractor">
+        <constructor-arg name="outputClasspath" value="java.lang.Integer"/>
+        <constructor-arg name="outputMatchingRegex" value="(?&lt;=var playerId = )\d{4,10}(?=;)"/>
+    </bean>
+
+    <bean id="espnPlayerPageHeightValueExtractor" class="com.btanabe.fsdu.parsers.ValueExtractor">
+        <constructor-arg name="outputClasspath" value="java.lang.String"/>
+        <constructor-arg name="outputMatchingRegex"
+                         value="(?&lt;=&lt;li&gt;)\d' \d{1,2}&quot;(?=, \d{3} lbs&lt;/li&gt;)"/>
+    </bean>
+
+    <bean id="espnPlayerPageWeightValueExtractor" class="com.btanabe.fsdu.parsers.ValueExtractor">
+        <constructor-arg name="outputClasspath" value="java.lang.Integer"/>
+        <constructor-arg name="outputMatchingRegex"
+                         value="(?&lt;=&lt;li&gt;\d' \d{1,2}&quot;, )\d{3}(?= lbs&lt;/li&gt;)"/>
+    </bean>
+
+    <bean id="espnPlayerPageBirthdayValueExtractor" class="com.btanabe.fsdu.parsers.ValueExtractor">
+        <constructor-arg name="outputClasspath" value="java.lang.String"/>
+        <constructor-arg name="outputMatchingRegex"
+                         value="(?&lt;=&lt;span&gt;Born&lt;/span&gt;)[a-zA-Z]{3} \d{1,2}, \d{4}(?= in )"/>
+    </bean>
+
+    <bean id="espnPlayerPageExperienceValueExtractor" class="com.btanabe.fsdu.parsers.ValueExtractor">
+        <constructor-arg name="outputClasspath" value="java.lang.Integer"/>
+        <constructor-arg name="outputMatchingRegex"
+                         value="(?&lt;=&lt;span&gt;Experience&lt;/span&gt;)\d{1,2}(?=[a-z]{2} season)"/>
+    </bean>
+
+    <bean id="espnPlayerPageCollegeValueExtractor" class="com.btanabe.fsdu.parsers.ValueExtractor">
+        <constructor-arg name="outputClasspath" value="java.lang.String"/>
+        <constructor-arg name="outputMatchingRegex"
+                         value="(?&lt;=&lt;span&gt;College&lt;/span&gt;)[a-zA-Z]{1,128}(?=&lt;/li&gt;)"/>
+    </bean>
+
+    <bean id="espnPlayerPageDraftPickValueExtractor" class="com.btanabe.fsdu.parsers.ValueExtractor">
+        <constructor-arg name="outputClasspath" value="java.lang.String"/>
+        <constructor-arg name="outputMatchingRegex"
+                         value="(?&lt;=&lt;span&gt;Drafted&lt;/span&gt; {0,5}\d{4}: \d[a-z]{2} Rnd, ).+?(?=[a-z]{2} by )"/>
+    </bean>
+    <!-- *************** ESPN PLAYER PAGE VALUE EXTRACTORS: *************** -->
+
     <!-- ************** NFL POSITION PAGE VALUE EXTRACTORS: *************** -->
+
+    <bean id="nflPositionPageRunningbacksValueExtractor" class="com.btanabe.fsdu.parsers.PaginatedValueExtractor">
+        <constructor-arg name="outputClasspath" value="java.lang.String"/>
+        <constructor-arg name="outputMatchingRegex"
+                         value="&lt;tr class=&quot;(odd|even)&quot;&gt;(.|\n|\s)+?&lt;\/tr&gt;"/>
+    </bean>
 
     <bean id="nflPositionPagePositionValueExtractor" class="com.btanabe.fsdu.parsers.ValueExtractor">
         <constructor-arg name="outputClasspath" value="java.lang.String"/>
