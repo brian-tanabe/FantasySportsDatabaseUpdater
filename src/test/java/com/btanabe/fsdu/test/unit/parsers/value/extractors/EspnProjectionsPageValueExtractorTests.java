@@ -1,5 +1,6 @@
 package com.btanabe.fsdu.test.unit.parsers.value.extractors;
 
+import com.btanabe.fsdu.models.EspnNbaProjectionModel;
 import com.btanabe.fsdu.models.EspnNflProjectionModel;
 import com.btanabe.fsdu.parsers.ValueExtractor;
 import org.junit.Test;
@@ -47,6 +48,10 @@ public class EspnProjectionsPageValueExtractorTests {
     private String peytonManningEspnProjectionPageHtml;
 
     @Autowired
+    @Qualifier("espnProjectionsPageAnthonyDavis")
+    private String anthonyDavisEspnProjectionPageHtml;
+
+    @Autowired
     @Qualifier("eddieLacyEspnProjectionModel")
     private EspnNflProjectionModel expectedEddieLacyProjectionModel;
 
@@ -65,6 +70,10 @@ public class EspnProjectionsPageValueExtractorTests {
     @Autowired
     @Qualifier("peytonManningEspnProjectionModel")
     private EspnNflProjectionModel expectedPeytonManningEspnNflProjectionModel;
+
+    @Autowired
+    @Qualifier("anthonyDavisEspnProjectionModel")
+    private EspnNbaProjectionModel expectedAnthonyDavisEspnNbaProjectionModel;
 
     @Autowired
     private ValueExtractor espnProjectionsPlayerIdValueExtractor;
@@ -121,21 +130,27 @@ public class EspnProjectionsPageValueExtractorTests {
     private ValueExtractor espnProjectionsNextPageValueExtractor;
 
     @Test
-    public void shouldBeAbleToExtractPlayerIdProperlyFromEspnProjectionPage() throws Exception {
+    public void shouldBeAbleToExtractNflPlayerPlayerIdProperlyFromEspnProjectionPage() throws Exception {
         espnProjectionsPlayerIdValueExtractor.setInputStringToSearch(eddieLacyEspnProjectionPageHtml);
         assertThat(espnProjectionsPlayerIdValueExtractor.getValue(), is(equalTo((Object) expectedEddieLacyProjectionModel.getPlayerId())));
     }
 
     @Test
-    public void shouldBeAbleToExtractRankFromEspnProjectionPages() throws Exception {
+    public void shouldBeAbleToExtractNflPlayerRankFromEspnProjectionPages() throws Exception {
         espnProjectionsRankValueExtractor.setInputStringToSearch(eddieLacyEspnProjectionPageHtml);
         assertThat(espnProjectionsRankValueExtractor.getValue(), is(equalTo((Object) expectedEddieLacyProjectionModel.getRank())));
     }
 
     @Test
-    public void shouldBeAbleToExtractNamesFromEspnProjectionPages() throws Exception {
+    public void shouldBeAbleToExtractNflPlayerNamesFromEspnProjectionPages() throws Exception {
         espnProjectionsNameValueExtractor.setInputStringToSearch(eddieLacyEspnProjectionPageHtml);
         assertThat(espnProjectionsNameValueExtractor.getValue(), is(equalTo((Object) expectedEddieLacyProjectionModel.getName())));
+    }
+
+    @Test
+    public void shouldBeAbleToExtractNbaPlayerNamesFromEspnProjectionPage() throws Exception {
+        espnProjectionsNameValueExtractor.setInputStringToSearch(anthonyDavisEspnProjectionPageHtml);
+        assertThat(espnProjectionsNameValueExtractor.getValue(), is(equalTo((Object) expectedAnthonyDavisEspnNbaProjectionModel.getName())));
     }
 
     @Test
@@ -145,109 +160,109 @@ public class EspnProjectionsPageValueExtractorTests {
     }
 
     @Test
-    public void shouldBeAbleToExtractPositionFromEspnProjectionPages() throws Exception {
+    public void shouldBeAbleToExtractNflPlayerPositionFromEspnProjectionPages() throws Exception {
         espnProjectionsPositionValueExtractor.setInputStringToSearch(eddieLacyEspnProjectionPageHtml);
         assertThat(espnProjectionsPositionValueExtractor.getValue(), is(equalTo((Object) expectedEddieLacyProjectionModel.getPosition())));
     }
 
     @Test
-    public void shouldBeAbleToExtractPassingAttemptsFromEspnProjectionPages() throws Exception {
+    public void shouldBeAbleToExtractNflPlayerPassingAttemptsFromEspnProjectionPages() throws Exception {
         espnProjectionsPassingAttemptsValueExtractor.setInputStringToSearch(aaronRodgersEspnProjectionPageHtml);
         assertThat(espnProjectionsPassingAttemptsValueExtractor.getValue(), is(equalTo((Object) expectedAaronRodgersProjectionModel.getPassingAttempts())));
     }
 
     @Test
-    public void shouldBeAbleToExtractPassingCompletionsFromEspnProjectionPage() throws Exception {
+    public void shouldBeAbleToExtractNflPlayerPassingCompletionsFromEspnProjectionPage() throws Exception {
         espnProjectionsPassingCompletionsValueExtractor.setInputStringToSearch(aaronRodgersEspnProjectionPageHtml);
         assertThat(espnProjectionsPassingCompletionsValueExtractor.getValue(), is(equalTo((Object) expectedAaronRodgersProjectionModel.getPassingCompletions())));
     }
 
     @Test
-    public void shouldBeAbleToExtractPassingYardsFromEspnProjectionPage() throws Exception {
+    public void shouldBeAbleToExtractNflPlayerPassingYardsFromEspnProjectionPage() throws Exception {
         espnProjectionsPassingYardsValueExtractor.setInputStringToSearch(aaronRodgersEspnProjectionPageHtml);
         assertThat(espnProjectionsPassingYardsValueExtractor.getValue(), is(equalTo((Object) expectedAaronRodgersProjectionModel.getPassingYards())));
     }
 
     @Test
-    public void shouldBeAbleToExtractPassingTouchdownsFromEspnProjectionPage() throws Exception {
+    public void shouldBeAbleToExtractNflPlayerPassingTouchdownsFromEspnProjectionPage() throws Exception {
         espnProjectionsPassingTouchdownsValueExtractor.setInputStringToSearch(aaronRodgersEspnProjectionPageHtml);
         assertThat(espnProjectionsPassingTouchdownsValueExtractor.getValue(), is(equalTo((Object) expectedAaronRodgersProjectionModel.getPassingTouchdowns())));
     }
 
     @Test
-    public void shouldBeAbleToExtractInterceptionsFromEspnProjectionPage() throws Exception {
+    public void shouldBeAbleToExtractNflPlayerInterceptionsFromEspnProjectionPage() throws Exception {
         espnProjectionsInterceptionsValueExtractor.setInputStringToSearch(aaronRodgersEspnProjectionPageHtml);
         assertThat(espnProjectionsInterceptionsValueExtractor.getValue(), is(equalTo((Object) expectedAaronRodgersProjectionModel.getInterceptions())));
     }
 
     @Test
-    public void shouldBeAbleToExtractRushingAttemptsFromEspnProjectionPage() throws Exception {
+    public void shouldBeAbleToExtractNflPlayerRushingAttemptsFromEspnProjectionPage() throws Exception {
         espnProjectionsRushingAttemptsValueExtractor.setInputStringToSearch(eddieLacyEspnProjectionPageHtml);
         assertThat(espnProjectionsRushingAttemptsValueExtractor.getValue(), is(equalTo((Object) expectedEddieLacyProjectionModel.getRushingAttempts())));
     }
 
     @Test
-    public void shouldBeAbleToExtractRushingYardsFromEspnProjectionPage() throws Exception {
+    public void shouldBeAbleToExtractNflPlayerRushingYardsFromEspnProjectionPage() throws Exception {
         espnProjectionsRushingYardsValueExtractor.setInputStringToSearch(eddieLacyEspnProjectionPageHtml);
         assertThat(espnProjectionsRushingYardsValueExtractor.getValue(), is(equalTo((Object) expectedEddieLacyProjectionModel.getRushingYards())));
     }
 
     @Test
-    public void shouldBeAbleToExtractRushingTouchdownsFromEspnProjectionPage() throws Exception {
+    public void shouldBeAbleToExtractNflPlayerRushingTouchdownsFromEspnProjectionPage() throws Exception {
         espnProjectionsRushingTouchdownsValueExtractor.setInputStringToSearch(eddieLacyEspnProjectionPageHtml);
         assertThat(espnProjectionsRushingTouchdownsValueExtractor.getValue(), is(equalTo((Object) expectedEddieLacyProjectionModel.getRushingTouchdowns())));
     }
 
     @Test
-    public void shouldBeAbleToExtractReceptionsFromEspnProjectionPage() throws Exception {
+    public void shouldBeAbleToExtractNflPlayerReceptionsFromEspnProjectionPage() throws Exception {
         espnProjectionsReceptionsValueExtractor.setInputStringToSearch(eddieLacyEspnProjectionPageHtml);
         assertThat(espnProjectionsReceptionsValueExtractor.getValue(), is(equalTo((Object) expectedEddieLacyProjectionModel.getReceptions())));
     }
 
     @Test
-    public void shouldBeAbleToExtractReceivingYardsFromEspnProjectionPage() throws Exception {
+    public void shouldBeAbleToExtractNflPlayerReceivingYardsFromEspnProjectionPage() throws Exception {
         espnProjectionsReceivingYardsValueExtractor.setInputStringToSearch(eddieLacyEspnProjectionPageHtml);
         assertThat(espnProjectionsReceivingYardsValueExtractor.getValue(), is(equalTo((Object) expectedEddieLacyProjectionModel.getReceivingYards())));
     }
 
     @Test
-    public void shouldBeAbleToExtractReceivingTouchdownsFromEspnProjectionPage() throws Exception {
+    public void shouldBeAbleToExtractNflPlayerReceivingTouchdownsFromEspnProjectionPage() throws Exception {
         espnProjectionsReceivingTouchdownsValueExtractor.setInputStringToSearch(eddieLacyEspnProjectionPageHtml);
         assertThat(espnProjectionsReceivingTouchdownsValueExtractor.getValue(), is(equalTo((Object) expectedEddieLacyProjectionModel.getReceivingTouchdowns())));
     }
 
     @Test
-    public void shouldBeAbleToExtractFantasyPointsFromEspnProjectionPage() throws Exception {
+    public void shouldBeAbleToExtractNflPlayerFantasyPointsFromEspnProjectionPage() throws Exception {
         espnProjectionsFantasyPointsValueExtractor.setInputStringToSearch(eddieLacyEspnProjectionPageHtml);
         assertThat(espnProjectionsFantasyPointsValueExtractor.getValue(), is(equalTo((Object) expectedEddieLacyProjectionModel.getFantasyPoints())));
     }
 
     @Test
-    public void shouldBeAbleToExtractTeamNameFromProjectionPageWhenThePlayerIsSuspended() throws Exception {
+    public void shouldBeAbleToExtractNflPlayerTeamNameFromProjectionPageWhenThePlayerIsSuspended() throws Exception {
         espnProjectionsNflTeamValueExtractor.setInputStringToSearch(leVeonBellEspnProjectionPageHtml);
         assertThat(espnProjectionsNflTeamValueExtractor.getValue(), is(equalTo((Object) expectedLeVeonBellEspnNflProjectionModel.getTeam())));
     }
 
     @Test
-    public void shouldBeAbleToExtractPositionsFromProjectionPageWhenThePlayerIsSuspendedOrInjured() throws Exception {
+    public void shouldBeAbleToExtractNflPlayerPositionsFromProjectionPageWhenThePlayerIsSuspendedOrInjured() throws Exception {
         espnProjectionsPositionValueExtractor.setInputStringToSearch(leVeonBellEspnProjectionPageHtml);
         assertThat(espnProjectionsPositionValueExtractor.getValue(), is(equalTo((Object) expectedLeVeonBellEspnNflProjectionModel.getPosition())));
     }
 
     @Test
-    public void shouldBeABleToExtractFantasyPointsWhenThePlayersProjectionDoesNotContainFractionalPoints() throws Exception {
+    public void shouldBeABleToExtractNflPlayerFantasyPointsWhenThePlayersProjectionDoesNotContainFractionalPoints() throws Exception {
         espnProjectionsFantasyPointsValueExtractor.setInputStringToSearch(demaryiusThomasEspnProjectionPageHtml);
         assertThat(espnProjectionsFantasyPointsValueExtractor.getValue(), is(equalTo((Object) expectedDemaryiusThomasEspnNflProjectionModel.getFantasyPoints())));
     }
 
     @Test
-    public void shouldBeAbleToExtractNegativeRushingYardsFromEspnProjectionPage() throws Exception {
+    public void shouldBeAbleToExtractNflPlayerNegativeRushingYardsFromEspnProjectionPage() throws Exception {
         espnProjectionsRushingYardsValueExtractor.setInputStringToSearch(peytonManningEspnProjectionPageHtml);
         assertThat(espnProjectionsRushingYardsValueExtractor.getValue(), is(equalTo((Object) expectedPeytonManningEspnNflProjectionModel.getRushingYards())));
     }
 
     @Test
-    public void shouldBeAbleToExtractPositionWhenDirectlyFollowedByAnotherLinkTag() throws Exception {
+    public void shouldBeAbleToExtractNflPlayerPositionWhenDirectlyFollowedByAnotherLinkTag() throws Exception {
         espnProjectionsPositionValueExtractor.setInputStringToSearch(peytonManningEspnProjectionPageHtml);
         assertThat(espnProjectionsPositionValueExtractor.getValue(), is(equalTo((Object) expectedPeytonManningEspnNflProjectionModel.getPosition())));
     }

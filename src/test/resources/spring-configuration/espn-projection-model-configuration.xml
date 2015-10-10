@@ -103,4 +103,21 @@
         <property name="fantasyPoints" value="296"/>
     </bean>
 
+    <bean id="anthonyDavisEspnProjectionModel" class="com.btanabe.fsdu.models.EspnNbaProjectionModel">
+        <property name="playerId" value="968"/>
+        <property name="rank" value="1"/>
+        <property name="name" value="Anthony Davis"/>
+        <property name="team" value="Nor"/>
+        <property name="position" value="PF, C"/>
+        <property name="fieldGoalPercentage" value="0.530"/>
+        <property name="freeThrowPercentage" value="0.807"/>
+        <property name="threePointMadePerGame" value="0.40"/>
+        <property name="reboundsPerGame" value="10.4"/>
+        <property name="assistsPerGame" value="2.8"/>
+        <property name="stealsPerGame" value="1.5"/>
+        <property name="blocksPerGame" value="3.0"/>
+        <property name="turnoversPerGame" value="1.5"/>
+        <property name="pointsPerGame" value="26.0"/>
+    </bean>
+
 </beans>

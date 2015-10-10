@@ -18,7 +18,6 @@ public class EspnNbaProjectionModel {
     private Double blocksPerGame;
     private Double turnoversPerGame;
     private Double pointsPerGame;
-    private Double fantasyPoints;
 
     @Override
     public boolean equals(Object o) {
@@ -29,7 +28,6 @@ public class EspnNbaProjectionModel {
 
         if (!assistsPerGame.equals(that.assistsPerGame)) return false;
         if (!blocksPerGame.equals(that.blocksPerGame)) return false;
-        if (!fantasyPoints.equals(that.fantasyPoints)) return false;
         if (!fieldGoalPercentage.equals(that.fieldGoalPercentage)) return false;
         if (!freeThrowPercentage.equals(that.freeThrowPercentage)) return false;
         if (!name.equals(that.name)) return false;
@@ -62,7 +60,6 @@ public class EspnNbaProjectionModel {
         result = 31 * result + blocksPerGame.hashCode();
         result = 31 * result + turnoversPerGame.hashCode();
         result = 31 * result + pointsPerGame.hashCode();
-        result = 31 * result + fantasyPoints.hashCode();
         return result;
     }
 
@@ -176,13 +173,5 @@ public class EspnNbaProjectionModel {
 
     public void setPointsPerGame(Double pointsPerGame) {
         this.pointsPerGame = pointsPerGame;
-    }
-
-    public Double getFantasyPoints() {
-        return fantasyPoints;
-    }
-
-    public void setFantasyPoints(Double fantasyPoints) {
-        this.fantasyPoints = fantasyPoints;
     }
 }
