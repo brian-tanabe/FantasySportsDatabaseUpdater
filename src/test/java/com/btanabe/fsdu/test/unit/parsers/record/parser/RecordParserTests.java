@@ -1,8 +1,8 @@
 package com.btanabe.fsdu.test.unit.parsers.record.parser;
 
+import com.btanabe.fsdu.models.EspnNbaProjectionModel;
 import com.btanabe.fsdu.models.EspnNflProjectionModel;
 import com.btanabe.fsdu.parsers.RecordParser;
-import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,103 +23,140 @@ import static org.junit.Assert.assertThat;
 public class RecordParserTests {
 
     @Autowired
-    @Qualifier("eddieLacyEspnPlayerProjectionRecordParser")
-    private RecordParser<EspnNflProjectionModel> eddieLacyRecordParser;
+    @Qualifier("espnNbaPlayerProjectionPagePaginatedRecordParser")
+    private RecordParser<EspnNbaProjectionModel> nbaProjectionPageRecordParser;
 
     @Autowired
-    @Qualifier("aaronRodgersEspnPlayerProjectionRecordParser")
-    private RecordParser<EspnNflProjectionModel> aaronRodgersRecordParser;
+    @Qualifier("espnNflPlayerProjectionPagePaginatedRecordParser")
+    private RecordParser<EspnNflProjectionModel> nflProjectionPageRecordParser;
+
+    @Autowired
+    private String espnProjectionsPageAnthonyDavis;
+
+    @Autowired
+    private String espnProjectionsPageAaronRodgers;
+
+    @Autowired
+    private String espnProjectionsPageEddieLacy;
 
     @Autowired
     @Qualifier("eddieLacyEspnProjectionModel")
-    private EspnNflProjectionModel expectedEddieLacyProjectionModel;
+    private EspnNflProjectionModel expectedEddieLacyEspnNflProjectionModel;
 
     @Autowired
     @Qualifier("aaronRodgersEspnProjectionModel")
     private EspnNflProjectionModel expectedAaronRodgersEspnNflProjectionModel;
 
-    private EspnNflProjectionModel eddieLacyProjectionModel;
-    private EspnNflProjectionModel aaronRodgersProjectionModel;
+    @Autowired
+    @Qualifier("anthonyDavisEspnProjectionModel")
+    private EspnNbaProjectionModel expectedAnthonyDavisEspnNbaProjectionModel;
 
-    @Before
-    public void parseEddieLacysProjections() throws Exception {
-        eddieLacyProjectionModel = eddieLacyRecordParser.getRecord();
-        aaronRodgersProjectionModel = aaronRodgersRecordParser.getRecord();
+    @Test
+    public void shouldBeAbleToParseEddieLacysNameProperly() throws Exception {
+        nflProjectionPageRecordParser.setInputHtml(espnProjectionsPageEddieLacy);
+        assertThat(nflProjectionPageRecordParser.getRecord().getName(), is(equalTo(expectedEddieLacyEspnNflProjectionModel.getName())));
     }
 
     @Test
-    public void shouldBeAbleToParseEddieLacysNameProperly() {
-        assertThat(eddieLacyProjectionModel.getName(), is(equalTo(expectedEddieLacyProjectionModel.getName())));
-    }
-
-    @Test
-    public void shouldBeAbleToParseEddieLacysNflTeamProperly() {
-        assertThat(eddieLacyProjectionModel.getTeam(), is(equalTo(expectedAaronRodgersEspnNflProjectionModel.getTeam())));
+    public void shouldBeAbleToParseEddieLacysNflTeamProperly() throws Exception {
+        nflProjectionPageRecordParser.setInputHtml(espnProjectionsPageEddieLacy);
+        assertThat(nflProjectionPageRecordParser.getRecord().getTeam(), is(equalTo(expectedAaronRodgersEspnNflProjectionModel.getTeam())));
     }
 
     @Test
     public void shouldBeAbleToParseEddieLacyIntoProjectionObject() throws Exception {
-        assertThat(eddieLacyRecordParser.getRecord(), isA(EspnNflProjectionModel.class));
+        nflProjectionPageRecordParser.setInputHtml(espnProjectionsPageEddieLacy);
+        assertThat(nflProjectionPageRecordParser.getRecord(), isA(EspnNflProjectionModel.class));
     }
 
     @Test
-    public void shouldBeAbleToParseEddieLacysFantasyPointsProperly() {
-        assertThat(eddieLacyProjectionModel.getFantasyPoints(), is(equalTo(expectedEddieLacyProjectionModel.getFantasyPoints())));
+    public void shouldBeAbleToParseEddieLacysFantasyPointsProperly() throws Exception {
+        nflProjectionPageRecordParser.setInputHtml(espnProjectionsPageEddieLacy);
+        assertThat(nflProjectionPageRecordParser.getRecord().getFantasyPoints(), is(equalTo(expectedEddieLacyEspnNflProjectionModel.getFantasyPoints())));
     }
 
     @Test
-    public void shouldBeAbleToParseEddieLacysRankProperly() {
-        assertThat(eddieLacyProjectionModel.getRank(), is(equalTo(expectedEddieLacyProjectionModel.getRank())));
+    public void shouldBeAbleToParseEddieLacysRankProperly() throws Exception {
+        nflProjectionPageRecordParser.setInputHtml(espnProjectionsPageEddieLacy);
+        assertThat(nflProjectionPageRecordParser.getRecord().getRank(), is(equalTo(expectedEddieLacyEspnNflProjectionModel.getRank())));
     }
 
     @Test
-    public void shouldBeAbleToParseEddieLacysRushingAttemptsProperly() {
-        assertThat(eddieLacyProjectionModel.getRushingAttempts(), is(equalTo(expectedEddieLacyProjectionModel.getRushingAttempts())));
+    public void shouldBeAbleToParseEddieLacysRushingAttemptsProperly() throws Exception {
+        nflProjectionPageRecordParser.setInputHtml(espnProjectionsPageEddieLacy);
+        assertThat(nflProjectionPageRecordParser.getRecord().getRushingAttempts(), is(equalTo(expectedEddieLacyEspnNflProjectionModel.getRushingAttempts())));
     }
 
     @Test
-    public void shouldBeAbleToParseEddieLacysRushingYardsProperly() {
-        assertThat(eddieLacyProjectionModel.getRushingYards(), is(equalTo(expectedEddieLacyProjectionModel.getRushingYards())));
+    public void shouldBeAbleToParseEddieLacysRushingYardsProperly() throws Exception {
+        nflProjectionPageRecordParser.setInputHtml(espnProjectionsPageEddieLacy);
+        assertThat(nflProjectionPageRecordParser.getRecord().getRushingYards(), is(equalTo(expectedEddieLacyEspnNflProjectionModel.getRushingYards())));
     }
 
     @Test
-    public void shouldBeAbleToParseEddieLacysRushingTouchdownsProperly() {
-        assertThat(eddieLacyProjectionModel.getRushingTouchdowns(), is(equalTo(expectedEddieLacyProjectionModel.getRushingTouchdowns())));
+    public void shouldBeAbleToParseEddieLacysRushingTouchdownsProperly() throws Exception {
+        nflProjectionPageRecordParser.setInputHtml(espnProjectionsPageEddieLacy);
+        assertThat(nflProjectionPageRecordParser.getRecord().getRushingTouchdowns(), is(equalTo(expectedEddieLacyEspnNflProjectionModel.getRushingTouchdowns())));
     }
 
     @Test
-    public void shouldBeAbleToParseEddieLacysReceptionsProperly() {
-        assertThat(eddieLacyProjectionModel.getReceptions(), is(equalTo(expectedEddieLacyProjectionModel.getReceptions())));
+    public void shouldBeAbleToParseEddieLacysReceptionsProperly() throws Exception {
+        nflProjectionPageRecordParser.setInputHtml(espnProjectionsPageEddieLacy);
+        assertThat(nflProjectionPageRecordParser.getRecord().getReceptions(), is(equalTo(expectedEddieLacyEspnNflProjectionModel.getReceptions())));
     }
 
     @Test
-    public void shouldBeAbleToParseEddieLacysReceivingYardsProperly() {
-        assertThat(eddieLacyProjectionModel.getReceivingYards(), is(equalTo(expectedEddieLacyProjectionModel.getReceivingYards())));
+    public void shouldBeAbleToParseEddieLacysReceivingYardsProperly() throws Exception {
+        nflProjectionPageRecordParser.setInputHtml(espnProjectionsPageEddieLacy);
+        assertThat(nflProjectionPageRecordParser.getRecord().getReceivingYards(), is(equalTo(expectedEddieLacyEspnNflProjectionModel.getReceivingYards())));
     }
 
     @Test
-    public void shouldBeAbleToParseEddieLacysReceivingTouchdownsProperly() {
-        assertThat(eddieLacyProjectionModel.getReceivingTouchdowns(), is(equalTo(expectedEddieLacyProjectionModel.getReceivingTouchdowns())));
+    public void shouldBeAbleToParseEddieLacysReceivingTouchdownsProperly() throws Exception {
+        nflProjectionPageRecordParser.setInputHtml(espnProjectionsPageEddieLacy);
+        assertThat(nflProjectionPageRecordParser.getRecord().getReceivingTouchdowns(), is(equalTo(expectedEddieLacyEspnNflProjectionModel.getReceivingTouchdowns())));
     }
 
     @Test
-    public void shouldBeAbleToParseAaronRodgersPassingAttemptsProperly() {
-        assertThat(aaronRodgersProjectionModel.getPassingAttempts(), is(equalTo(expectedAaronRodgersEspnNflProjectionModel.getPassingAttempts())));
+    public void shouldBeAbleToParseAaronRodgersPassingAttemptsProperly() throws Exception {
+        nflProjectionPageRecordParser.setInputHtml(espnProjectionsPageAaronRodgers);
+        assertThat(nflProjectionPageRecordParser.getRecord().getPassingAttempts(), is(equalTo(expectedAaronRodgersEspnNflProjectionModel.getPassingAttempts())));
     }
 
     @Test
-    public void shouldBeAbleToParseAaronRodgersPassingCompletionsProperly() {
-        assertThat(aaronRodgersProjectionModel.getPassingCompletions(), is(equalTo(expectedAaronRodgersEspnNflProjectionModel.getPassingCompletions())));
+    public void shouldBeAbleToParseAaronRodgersPassingCompletionsProperly() throws Exception {
+        nflProjectionPageRecordParser.setInputHtml(espnProjectionsPageAaronRodgers);
+        assertThat(nflProjectionPageRecordParser.getRecord().getPassingCompletions(), is(equalTo(expectedAaronRodgersEspnNflProjectionModel.getPassingCompletions())));
     }
 
     @Test
-    public void shouldBeAbleToParseAaronRodgersPassingYardsProperly() {
-        assertThat(aaronRodgersProjectionModel.getPassingYards(), is(equalTo(expectedAaronRodgersEspnNflProjectionModel.getPassingYards())));
+    public void shouldBeAbleToParseAaronRodgersPassingYardsProperly() throws Exception {
+        nflProjectionPageRecordParser.setInputHtml(espnProjectionsPageAaronRodgers);
+        assertThat(nflProjectionPageRecordParser.getRecord().getPassingYards(), is(equalTo(expectedAaronRodgersEspnNflProjectionModel.getPassingYards())));
     }
 
 
     @Test
-    public void shouldBeAbleToParseAaronRodgersInterceptionsProperly() {
-        assertThat(aaronRodgersProjectionModel.getInterceptions(), is(equalTo(expectedAaronRodgersEspnNflProjectionModel.getInterceptions())));
+    public void shouldBeAbleToParseAaronRodgersInterceptionsProperly() throws Exception {
+        nflProjectionPageRecordParser.setInputHtml(espnProjectionsPageAaronRodgers);
+        assertThat(nflProjectionPageRecordParser.getRecord().getInterceptions(), is(equalTo(expectedAaronRodgersEspnNflProjectionModel.getInterceptions())));
+    }
+
+    @Test
+    public void shouldBeAbleToParseNflRunningBacksProjectionsProperly() throws Exception {
+        nflProjectionPageRecordParser.setInputHtml(espnProjectionsPageEddieLacy);
+        assertThat(nflProjectionPageRecordParser.getRecord(), is(equalTo((Object) expectedEddieLacyEspnNflProjectionModel)));
+    }
+
+    @Test
+    public void shouldBeAbleToParseNflQuarterbacksProjectionsProperly() throws Exception {
+        nflProjectionPageRecordParser.setInputHtml(espnProjectionsPageAaronRodgers);
+        assertThat(nflProjectionPageRecordParser.getRecord(), is(equalTo((Object) expectedAaronRodgersEspnNflProjectionModel)));
+    }
+
+    @Test
+    public void shouldBeAbleToParseNbaPlayerProjectionsProperly() throws Exception {
+        nbaProjectionPageRecordParser.setInputHtml(espnProjectionsPageAnthonyDavis);
+        assertThat(nbaProjectionPageRecordParser.getRecord(), is(equalTo((Object) expectedAnthonyDavisEspnNbaProjectionModel)));
     }
 }

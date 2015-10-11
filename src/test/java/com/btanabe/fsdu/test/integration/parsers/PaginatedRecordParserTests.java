@@ -23,8 +23,11 @@ import static org.junit.Assert.assertThat;
 public class PaginatedRecordParserTests {
 
     @Autowired
-    @Qualifier("testEspnPlayerProjectionPagePaginatedRecordParser")
-    private PaginatedRecordParser paginatedRecordParser;
+    @Qualifier("espnNflPlayerProjectionPagePaginatedRecordParser")
+    private PaginatedRecordParser<EspnNflProjectionModel> nflProjectionPagePaginatedRecordParser;
+
+    @Autowired
+    private String espnNflProjectionsPageOneFormatted;
 
     @Autowired
     @Qualifier("eddieLacyEspnProjectionModel")
@@ -51,7 +54,8 @@ public class PaginatedRecordParserTests {
     @Before
     public void getTestRecords() throws Exception {
         if(playersFromRecordParser == null) {
-            playersFromRecordParser = paginatedRecordParser.getRecordsAsList();
+            nflProjectionPagePaginatedRecordParser.setInputHtml(espnNflProjectionsPageOneFormatted);
+            playersFromRecordParser = nflProjectionPagePaginatedRecordParser.getRecordsAsList();
         }
     }
 

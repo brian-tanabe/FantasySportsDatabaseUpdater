@@ -7,6 +7,10 @@
         <property name="outputClazz" ref="espnNflProjectionModel" />
     </bean>
 
+    <bean id="espnNbaProjectionModelFactory" class="com.btanabe.fsdu.models.factories.EspnProjectionModelFactory">
+        <property name="outputClazz" ref="espnNbaProjectionModel" />
+    </bean>
+
     <bean id="espnNflProjectionModel" class="java.lang.Class" factory-method="forName">
         <constructor-arg value="com.btanabe.fsdu.models.EspnNflProjectionModel" />
     </bean>

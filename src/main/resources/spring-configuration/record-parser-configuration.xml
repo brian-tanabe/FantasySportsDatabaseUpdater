@@ -11,13 +11,19 @@
     <import resource="classpath:/spring-configuration/application-configuration.xml" />
 
     <!-- ESPN Projections page RecordParser configuration -->
-    <bean id="espnPlayerProjectionPagePaginatedRecordParser" class="com.btanabe.fsdu.parsers.PaginatedRecordParser">
+    <bean id="espnNflPlayerProjectionPagePaginatedRecordParser" class="com.btanabe.fsdu.parsers.PaginatedRecordParser">
         <constructor-arg ref="espnProjectionsPagePlayerValueExtractor"/>
-        <constructor-arg ref="espnPlayerProjectionRecordParserValueExtractorMap"/>
+        <constructor-arg ref="espnNflPlayerProjectionRecordParserValueExtractorMap"/>
         <constructor-arg ref="&amp;espnNflProjectionModelFactory"/>
     </bean>
 
-    <util:map id="espnPlayerProjectionRecordParserValueExtractorMap"
+    <bean id="espnNbaPlayerProjectionPagePaginatedRecordParser" class="com.btanabe.fsdu.parsers.PaginatedRecordParser">
+        <constructor-arg ref="espnProjectionsPagePlayerValueExtractor"/>
+        <constructor-arg ref="espnNbaPlayerProjectionRecordParserValueExtractorMap"/>
+        <constructor-arg ref="&amp;espnNbaProjectionModelFactory"/>
+    </bean>
+
+    <util:map id="espnNflPlayerProjectionRecordParserValueExtractorMap"
               key-type="java.lang.String"
               value-type="com.btanabe.fsdu.parsers.ValueExtractor">
         <entry key="setPlayerId" value-ref="espnProjectionsPlayerIdValueExtractor" />
@@ -37,6 +43,25 @@
         <entry key="setReceivingYards" value-ref="espnProjectionsReceivingYardsValueExtractor"/>
         <entry key="setReceivingTouchdowns" value-ref="espnProjectionsReceivingTouchdownsValueExtractor"/>
         <entry key="setFantasyPoints" value-ref="espnProjectionsFantasyPointsValueExtractor"/>
+    </util:map>
+
+    <util:map id="espnNbaPlayerProjectionRecordParserValueExtractorMap"
+            key-type="java.lang.String"
+            value-type="com.btanabe.fsdu.parsers.ValueExtractor">
+        <entry key="setPlayerId" value-ref="espnProjectionsPlayerIdValueExtractor" />
+        <entry key="setRank" value-ref="espnProjectionsRankValueExtractor"/>
+        <entry key="setName" value-ref="espnProjectionsNameValueExtractor"/>
+        <entry key="setTeam" value-ref="espnProjectionsNflTeamValueExtractor"/>
+        <entry key="setPosition" value-ref="espnProjectionsPositionValueExtractor"/>
+        <entry key="setFieldGoalPercentage" value-ref="espnPlayerPageFieldGoalPercentageValueExtractor"/>
+        <entry key="setFreeThrowPercentage" value-ref="espnPlayerPageFreeThrowPercentageValueExtractor"/>
+        <entry key="setThreePointMadePerGame" value-ref="espnPlayerPageThreePointersPerGameValueExtractor"/>
+        <entry key="setReboundsPerGame" value-ref="espnPlayerPageReboundsPerGameValueExtractor"/>
+        <entry key="setAssistsPerGame" value-ref="espnPlayerPageAssistsPerGameValueExtractor"/>
+        <entry key="setStealsPerGame" value-ref="espnPlayerPageStealsPerGameValueExtractor"/>
+        <entry key="setBlocksPerGame" value-ref="espnPlayerPageBlocksPerGameValueExtractor"/>
+        <entry key="setTurnoversPerGame" value-ref="espnPlayerPageTurnoversPerGameValueExtractor"/>
+        <entry key="setPointsPerGame" value-ref="espnPlayerPagePointsPerGameValueExtractor"/>
     </util:map>
     <!-- end ESPN Projections page RecordParser configuration -->
 </beans>

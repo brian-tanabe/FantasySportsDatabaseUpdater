@@ -6,7 +6,7 @@
     <import resource="application-configuration.xml"/>
     <import resource="classpath:/spring-configuration/test-webpages-configuration.xml"/>
     <import resource="classpath:/spring-configuration/test-value-extractors-configuration.xml"/>
-    <import resource="classpath:/spring-configuration/test-record-parser-configuration.xml"/>
     <import resource="classpath:/spring-configuration/espn-projection-model-configuration.xml"/>
-    <import resource="classpath:spring-configuration/espn-player-page-model-configuration.xml"/>
+    <import resource="classpath:/spring-configuration/espn-player-page-model-configuration.xml"/>
+    <import resource="classpath:/spring-configuration/record-parser-configuration.xml"/>
 </beans>
