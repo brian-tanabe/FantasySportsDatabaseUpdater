@@ -129,6 +129,33 @@ public class EspnProjectionsPageValueExtractorTests {
     @Autowired
     private ValueExtractor espnProjectionsNextPageValueExtractor;
 
+    @Autowired
+    private ValueExtractor espnPlayerPageFieldGoalPercentageValueExtractor;
+
+    @Autowired
+    private ValueExtractor espnPlayerPageFreeThrowPercentageValueExtractor;
+
+    @Autowired
+    private ValueExtractor espnPlayerPageThreePointersPerGameValueExtractor;
+
+    @Autowired
+    private ValueExtractor espnPlayerPageReboundsPerGameValueExtractor;
+
+    @Autowired
+    private ValueExtractor espnPlayerPageAssistsPerGameValueExtractor;
+
+    @Autowired
+    private ValueExtractor espnPlayerPageStealsPerGameValueExtractor;
+
+    @Autowired
+    private ValueExtractor espnPlayerPageBlocksPerGameValueExtractor;
+
+    @Autowired
+    private ValueExtractor espnPlayerPageTurnoversPerGameValueExtractor;
+
+    @Autowired
+    private ValueExtractor espnPlayerPagePointsPerGameValueExtractor;
+
     @Test
     public void shouldBeAbleToExtractNflPlayerPlayerIdProperlyFromEspnProjectionPage() throws Exception {
         espnProjectionsPlayerIdValueExtractor.setInputStringToSearch(eddieLacyEspnProjectionPageHtml);
@@ -259,6 +286,60 @@ public class EspnProjectionsPageValueExtractorTests {
     public void shouldBeAbleToExtractNflPlayerFantasyPointsFromEspnProjectionPage() throws Exception {
         espnProjectionsFantasyPointsValueExtractor.setInputStringToSearch(eddieLacyEspnProjectionPageHtml);
         assertThat(espnProjectionsFantasyPointsValueExtractor.getValue(), is(equalTo((Object) expectedEddieLacyProjectionModel.getFantasyPoints())));
+    }
+
+    @Test
+    public void shouldBeAbleToExtractNbaPlayerFieldGoalPercentageFromEspnProjectionPage() throws Exception {
+        espnPlayerPageFieldGoalPercentageValueExtractor.setInputStringToSearch(anthonyDavisEspnProjectionPageHtml);
+        assertThat(espnPlayerPageFieldGoalPercentageValueExtractor.getValue(), is(equalTo((Object) expectedAnthonyDavisEspnNbaProjectionModel.getFieldGoalPercentage())));
+    }
+
+    @Test
+    public void shouldBeAbleToExtractNbaPlayerFreeThrowPercentageFromEspnProjectionPage() throws Exception {
+        espnPlayerPageFreeThrowPercentageValueExtractor.setInputStringToSearch(anthonyDavisEspnProjectionPageHtml);
+        assertThat(espnPlayerPageFreeThrowPercentageValueExtractor.getValue(), is(equalTo((Object) expectedAnthonyDavisEspnNbaProjectionModel.getFreeThrowPercentage())));
+    }
+
+    @Test
+    public void shouldBeAbleToExtractNbaPlayerThreePointsPerGameFromEspnProjectionPage() throws Exception {
+        espnPlayerPageThreePointersPerGameValueExtractor.setInputStringToSearch(anthonyDavisEspnProjectionPageHtml);
+        assertThat(espnPlayerPageThreePointersPerGameValueExtractor.getValue(), is(equalTo((Object) expectedAnthonyDavisEspnNbaProjectionModel.getThreePointMadePerGame())));
+    }
+
+    @Test
+    public void shouldBeAbleToExtractNbaPlayerReboundsPerGameFromEspnProjectionPage() throws Exception {
+        espnPlayerPageReboundsPerGameValueExtractor.setInputStringToSearch(anthonyDavisEspnProjectionPageHtml);
+        assertThat(espnPlayerPageReboundsPerGameValueExtractor.getValue(), is(equalTo((Object) expectedAnthonyDavisEspnNbaProjectionModel.getReboundsPerGame())));
+    }
+
+    @Test
+    public void shouldBeAbleToExtractNbaPlayerAssistsPerGameFromEspnProjectionPage() throws Exception {
+        espnPlayerPageAssistsPerGameValueExtractor.setInputStringToSearch(anthonyDavisEspnProjectionPageHtml);
+        assertThat(espnPlayerPageAssistsPerGameValueExtractor.getValue(), is(equalTo((Object) expectedAnthonyDavisEspnNbaProjectionModel.getAssistsPerGame())));
+    }
+
+    @Test
+    public void shouldBeAbleToExtractNbaPlayerStealsPerGameFromEspnProjectionPage() throws Exception {
+        espnPlayerPageStealsPerGameValueExtractor.setInputStringToSearch(anthonyDavisEspnProjectionPageHtml);
+        assertThat(espnPlayerPageStealsPerGameValueExtractor.getValue(), is(equalTo((Object) expectedAnthonyDavisEspnNbaProjectionModel.getStealsPerGame())));
+    }
+
+    @Test
+    public void shouldBeAbleToExtractNbaPlayerBlocksPerGameFromEspnProjectionPage() throws Exception {
+        espnPlayerPageBlocksPerGameValueExtractor.setInputStringToSearch(anthonyDavisEspnProjectionPageHtml);
+        assertThat(espnPlayerPageBlocksPerGameValueExtractor.getValue(), is(equalTo((Object) expectedAnthonyDavisEspnNbaProjectionModel.getBlocksPerGame())));
+    }
+
+    @Test
+    public void shouldBeAbleToExtractNbaPlayerTurnoversPerGameFromEspnProjectionPage() throws Exception {
+        espnPlayerPageTurnoversPerGameValueExtractor.setInputStringToSearch(anthonyDavisEspnProjectionPageHtml);
+        assertThat(espnPlayerPageTurnoversPerGameValueExtractor.getValue(), is(equalTo((Object) expectedAnthonyDavisEspnNbaProjectionModel.getTurnoversPerGame())));
+    }
+
+    @Test
+    public void shouldBeAbleToExtractNbaPlayerPointsPerGameFromEspnProjectionPage() throws Exception {
+        espnPlayerPagePointsPerGameValueExtractor.setInputStringToSearch(anthonyDavisEspnProjectionPageHtml);
+        assertThat(espnPlayerPagePointsPerGameValueExtractor.getValue(), is(equalTo((Object) expectedAnthonyDavisEspnNbaProjectionModel.getPointsPerGame())));
     }
 
     @Test
