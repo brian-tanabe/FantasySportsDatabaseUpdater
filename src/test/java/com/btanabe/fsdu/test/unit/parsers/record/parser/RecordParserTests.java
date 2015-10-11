@@ -23,12 +23,12 @@ import static org.junit.Assert.assertThat;
 public class RecordParserTests {
 
     @Autowired
-    @Qualifier("espnNbaPlayerProjectionPagePaginatedRecordParser")
-    private RecordParser<EspnNbaProjectionModel> nbaProjectionPageRecordParser;
-
-    @Autowired
     @Qualifier("espnNflPlayerProjectionPagePaginatedRecordParser")
     private RecordParser<EspnNflProjectionModel> nflProjectionPageRecordParser;
+
+    @Autowired
+    @Qualifier("espnNbaPlayerProjectionPagePaginatedRecordParser")
+    private RecordParser<EspnNbaProjectionModel> nbaProjectionPageRecordParser;
 
     @Autowired
     private String espnProjectionsPageAnthonyDavis;

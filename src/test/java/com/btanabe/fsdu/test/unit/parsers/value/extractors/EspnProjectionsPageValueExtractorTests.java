@@ -52,6 +52,10 @@ public class EspnProjectionsPageValueExtractorTests {
     private String anthonyDavisEspnProjectionPageHtml;
 
     @Autowired
+    @Qualifier("espnProjectionsPageKyrieIrving")
+    private String kyrieIrvingEspnProjectionPageHtml;
+
+    @Autowired
     @Qualifier("eddieLacyEspnProjectionModel")
     private EspnNflProjectionModel expectedEddieLacyProjectionModel;
 
@@ -76,6 +80,10 @@ public class EspnProjectionsPageValueExtractorTests {
     private EspnNbaProjectionModel expectedAnthonyDavisEspnNbaProjectionModel;
 
     @Autowired
+    @Qualifier("kyrieIrvingEspnProjectionModel")
+    private EspnNbaProjectionModel expectedKyrieIrvingEspnNbaProjectionModel;
+
+    @Autowired
     private ValueExtractor espnProjectionsPlayerIdValueExtractor;
 
     @Autowired
@@ -85,7 +93,7 @@ public class EspnProjectionsPageValueExtractorTests {
     private ValueExtractor espnProjectionsNameValueExtractor;
 
     @Autowired
-    private ValueExtractor espnProjectionsNflTeamValueExtractor;
+    private ValueExtractor espnProjectionsTeamValueExtractor;
 
     @Autowired
     private ValueExtractor espnProjectionsPositionValueExtractor;
@@ -194,14 +202,14 @@ public class EspnProjectionsPageValueExtractorTests {
 
     @Test
     public void shouldBeAbleToExtractNflTeamNamesFromEspnProjectionPages() throws Exception {
-        espnProjectionsNflTeamValueExtractor.setInputStringToSearch(eddieLacyEspnProjectionPageHtml);
-        assertThat(espnProjectionsNflTeamValueExtractor.getValue(), is(equalTo((Object) expectedEddieLacyProjectionModel.getTeam())));
+        espnProjectionsTeamValueExtractor.setInputStringToSearch(eddieLacyEspnProjectionPageHtml);
+        assertThat(espnProjectionsTeamValueExtractor.getValue(), is(equalTo((Object) expectedEddieLacyProjectionModel.getTeam())));
     }
 
     @Test
     public void shouldBeAbleToExtractNbaTeamNamesFromEspnProjectionPage() throws Exception {
-        espnProjectionsNflTeamValueExtractor.setInputStringToSearch(anthonyDavisEspnProjectionPageHtml);
-        assertThat(espnProjectionsNflTeamValueExtractor.getValue(), is(equalTo((Object) expectedAnthonyDavisEspnNbaProjectionModel.getTeam())));
+        espnProjectionsTeamValueExtractor.setInputStringToSearch(anthonyDavisEspnProjectionPageHtml);
+        assertThat(espnProjectionsTeamValueExtractor.getValue(), is(equalTo((Object) expectedAnthonyDavisEspnNbaProjectionModel.getTeam())));
     }
 
     @Test
@@ -344,8 +352,8 @@ public class EspnProjectionsPageValueExtractorTests {
 
     @Test
     public void shouldBeAbleToExtractNflPlayerTeamNameFromProjectionPageWhenThePlayerIsSuspended() throws Exception {
-        espnProjectionsNflTeamValueExtractor.setInputStringToSearch(leVeonBellEspnProjectionPageHtml);
-        assertThat(espnProjectionsNflTeamValueExtractor.getValue(), is(equalTo((Object) expectedLeVeonBellEspnNflProjectionModel.getTeam())));
+        espnProjectionsTeamValueExtractor.setInputStringToSearch(leVeonBellEspnProjectionPageHtml);
+        assertThat(espnProjectionsTeamValueExtractor.getValue(), is(equalTo((Object) expectedLeVeonBellEspnNflProjectionModel.getTeam())));
     }
 
     @Test
@@ -370,6 +378,18 @@ public class EspnProjectionsPageValueExtractorTests {
     public void shouldBeAbleToExtractNflPlayerPositionWhenDirectlyFollowedByAnotherLinkTag() throws Exception {
         espnProjectionsPositionValueExtractor.setInputStringToSearch(peytonManningEspnProjectionPageHtml);
         assertThat(espnProjectionsPositionValueExtractor.getValue(), is(equalTo((Object) expectedPeytonManningEspnNflProjectionModel.getPosition())));
+    }
+
+    @Test
+    public void shouldBeAbleToExtractNbaPlayerPositionsWhenThePlayerIsOut() throws Exception {
+        espnProjectionsPositionValueExtractor.setInputStringToSearch(kyrieIrvingEspnProjectionPageHtml);
+        assertThat(espnProjectionsPositionValueExtractor.getValue(), is(equalTo((Object) expectedKyrieIrvingEspnNbaProjectionModel.getPosition())));
+    }
+
+    @Test
+    public void shouldBeAbleToExtractNbaPlayerTeamWhenThePlayerIsOut() throws Exception {
+        espnProjectionsTeamValueExtractor.setInputStringToSearch(kyrieIrvingEspnProjectionPageHtml);
+        assertThat(espnProjectionsTeamValueExtractor.getValue(), is(equalTo((Object) expectedKyrieIrvingEspnNbaProjectionModel.getTeam())));
     }
 
     @Test

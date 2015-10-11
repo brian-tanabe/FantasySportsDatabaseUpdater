@@ -20,6 +20,11 @@ public class EspnNbaProjectionModel {
     private Double pointsPerGame;
 
     @Override
+    public String toString() {
+        return String.format("rank=[%s], name=[%s], team=[%s], position=[%s], fieldGoalPercentage=[%s], freeThrowPercentage=[%s], threePointMadePerGame=[%s], reboundsPerGame=[%s], assistsPerGame=[%s], stealsPerGam[%s], blocksPerGame=[%s], turnoversPerGame=[%s], pointsPerGame=[%s]", rank, name, team, position, fieldGoalPercentage, freeThrowPercentage, threePointMadePerGame, reboundsPerGame, assistsPerGame, stealsPerGame, blocksPerGame, turnoversPerGame, pointsPerGame);
+    }
+
+    @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (!(o instanceof EspnNbaProjectionModel)) return false;

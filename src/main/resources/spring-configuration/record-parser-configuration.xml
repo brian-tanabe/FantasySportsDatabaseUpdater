@@ -29,7 +29,7 @@
         <entry key="setPlayerId" value-ref="espnProjectionsPlayerIdValueExtractor" />
         <entry key="setRank" value-ref="espnProjectionsRankValueExtractor"/>
         <entry key="setName" value-ref="espnProjectionsNameValueExtractor"/>
-        <entry key="setTeam" value-ref="espnProjectionsNflTeamValueExtractor"/>
+        <entry key="setTeam" value-ref="espnProjectionsTeamValueExtractor"/>
         <entry key="setPosition" value-ref="espnProjectionsPositionValueExtractor"/>
         <entry key="setPassingCompletions" value-ref="espnProjectionsPassingCompletionsValueExtractor"/>
         <entry key="setPassingAttempts" value-ref="espnProjectionsPassingAttemptsValueExtractor"/>
@@ -51,7 +51,7 @@
         <entry key="setPlayerId" value-ref="espnProjectionsPlayerIdValueExtractor" />
         <entry key="setRank" value-ref="espnProjectionsRankValueExtractor"/>
         <entry key="setName" value-ref="espnProjectionsNameValueExtractor"/>
-        <entry key="setTeam" value-ref="espnProjectionsNflTeamValueExtractor"/>
+        <entry key="setTeam" value-ref="espnProjectionsTeamValueExtractor"/>
         <entry key="setPosition" value-ref="espnProjectionsPositionValueExtractor"/>
         <entry key="setFieldGoalPercentage" value-ref="espnPlayerPageFieldGoalPercentageValueExtractor"/>
         <entry key="setFreeThrowPercentage" value-ref="espnPlayerPageFreeThrowPercentageValueExtractor"/>

@@ -1,5 +1,6 @@
 package com.btanabe.fsdu.test.integration.parsers;
 
+import com.btanabe.fsdu.models.EspnNbaProjectionModel;
 import com.btanabe.fsdu.models.EspnNflProjectionModel;
 import com.btanabe.fsdu.parsers.PaginatedRecordParser;
 import org.junit.Before;
@@ -27,7 +28,14 @@ public class PaginatedRecordParserTests {
     private PaginatedRecordParser<EspnNflProjectionModel> nflProjectionPagePaginatedRecordParser;
 
     @Autowired
-    private String espnNflProjectionsPageOneFormatted;
+    @Qualifier("espnNbaPlayerProjectionPagePaginatedRecordParser")
+    private PaginatedRecordParser<EspnNbaProjectionModel> nbaProjectionPageRecordParser;
+
+    @Autowired
+    private String espnNflProjectionsPageOne;
+
+    @Autowired
+    private String espnNbaProjectionsPageOne;
 
     @Autowired
     @Qualifier("eddieLacyEspnProjectionModel")
@@ -49,53 +57,70 @@ public class PaginatedRecordParserTests {
     @Qualifier("peytonManningEspnProjectionModel")
     private EspnNflProjectionModel expectedPeytonManningEspnNflProjectionModel;
 
-    private static List<EspnNflProjectionModel> playersFromRecordParser;
+    private static List<EspnNflProjectionModel> playersNflFromRecordParser;
+
+    private static List<EspnNbaProjectionModel> playersNbaFromRecordParser;
 
     @Before
     public void getTestRecords() throws Exception {
-        if(playersFromRecordParser == null) {
-            nflProjectionPagePaginatedRecordParser.setInputHtml(espnNflProjectionsPageOneFormatted);
-            playersFromRecordParser = nflProjectionPagePaginatedRecordParser.getRecordsAsList();
+        if(playersNflFromRecordParser == null) {
+            nflProjectionPagePaginatedRecordParser.setInputHtml(espnNflProjectionsPageOne);
+            playersNflFromRecordParser = nflProjectionPagePaginatedRecordParser.getRecordsAsList();
+        }
+
+        if(playersNbaFromRecordParser == null) {
+            nbaProjectionPageRecordParser.setInputHtml(espnNbaProjectionsPageOne);
+            playersNbaFromRecordParser = nbaProjectionPageRecordParser.getRecordsAsList();
         }
     }
 
     @Test
-    public void shouldBeAbleToExtractEspnPlayerModelsFromEspnPlayerProjectionPage() {
-        assertThat(playersFromRecordParser, hasItem(isA(EspnNflProjectionModel.class)));
+    public void shouldBeAbleToExtractEspnNflPlayerModelsFromEspnPlayerProjectionPage() {
+        assertThat(playersNflFromRecordParser, hasItem(isA(EspnNflProjectionModel.class)));
     }
 
     @Test
-    public void shouldBeAbleToCreateFortyRecordsFromOneEspnPlayerProjectionPage() throws Exception {
-        assertThat(playersFromRecordParser.size(), is(equalTo(40)));
+    public void shouldBeAbleToCreateFortyRecordsFromOneEspnNflPlayerProjectionPage() throws Exception {
+        assertThat(playersNflFromRecordParser.size(), is(equalTo(40)));
+    }
+
+    @Test
+    public void shouldBeAbleToExtractEspnNbaPlayerModelsFromEspnPlayerProjectionPage() {
+        assertThat(playersNbaFromRecordParser, hasItem(isA(EspnNbaProjectionModel.class)));
+    }
+
+    @Test
+    public void shouldBeAbleToCreateFortyRecordsFromOneEspnNbaPlayerProjectionPage() throws Exception {
+        assertThat(playersNbaFromRecordParser.size(), is(equalTo(40)));
     }
 
     @Test
     public void shouldBeAbleToProperlyParseAndPopulateEddieLacy() {
-        EspnNflProjectionModel eddieLacyFromParser = playersFromRecordParser.parallelStream().filter(p -> p.getName().equals("Eddie Lacy")).findFirst().get();
+        EspnNflProjectionModel eddieLacyFromParser = playersNflFromRecordParser.parallelStream().filter(p -> p.getName().equals("Eddie Lacy")).findFirst().get();
         assertThat(eddieLacyFromParser, is(equalTo(expectedEddieLacyProjectionModel)));
     }
 
     @Test
     public void shouldBeAbleToProperlyParseAndPopulateLeVeonBell() {
-        EspnNflProjectionModel LeVeonBellFromParser = playersFromRecordParser.parallelStream().filter(p -> p.getName().equals("Le'Veon Bell")).findFirst().get();
+        EspnNflProjectionModel LeVeonBellFromParser = playersNflFromRecordParser.parallelStream().filter(p -> p.getName().equals("Le'Veon Bell")).findFirst().get();
         assertThat(LeVeonBellFromParser, is(equalTo(expectedLeVeonBellEspnNflProjectionModel)));
     }
 
     @Test
     public void shouldBeAbleToProperlyParseAndPopulateDemaryiusThomas() {
-        EspnNflProjectionModel demaryiusThomasFromParser = playersFromRecordParser.parallelStream().filter(p -> p.getName().equals("Demaryius Thomas")).findFirst().get();
+        EspnNflProjectionModel demaryiusThomasFromParser = playersNflFromRecordParser.parallelStream().filter(p -> p.getName().equals("Demaryius Thomas")).findFirst().get();
         assertThat(demaryiusThomasFromParser, is(equalTo(expectedDemaryiusThomasEspnNflProjectionModel)));
     }
 
     @Test
     public void shouldBeAbleToProperlyParseAndPopulateAaronRodgers() {
-        EspnNflProjectionModel aaronRodgersFromParser = playersFromRecordParser.parallelStream().filter(p -> p.getName().equals("Aaron Rodgers")).findFirst().get();
+        EspnNflProjectionModel aaronRodgersFromParser = playersNflFromRecordParser.parallelStream().filter(p -> p.getName().equals("Aaron Rodgers")).findFirst().get();
         assertThat(aaronRodgersFromParser, is(equalTo(expectedAaronRodgersProjectionModel)));
     }
 
     @Test
     public void shouldBeAbleToProperlyParseAndPopulatePeytonManning() {
-        EspnNflProjectionModel peytonManningFromParser = playersFromRecordParser.parallelStream().filter(p -> p.getName().equals("Peyton Manning")).findFirst().get();
+        EspnNflProjectionModel peytonManningFromParser = playersNflFromRecordParser.parallelStream().filter(p -> p.getName().equals("Peyton Manning")).findFirst().get();
         assertThat(peytonManningFromParser, is(equalTo(expectedPeytonManningEspnNflProjectionModel)));
     }
 }
