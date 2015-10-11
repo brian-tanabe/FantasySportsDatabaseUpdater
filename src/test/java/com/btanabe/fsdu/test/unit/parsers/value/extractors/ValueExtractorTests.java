@@ -22,29 +22,38 @@ import static org.junit.Assert.assertThat;
 public class ValueExtractorTests {
 
     @Autowired
-    @Qualifier("espnNflProjectionsNextPageValueExtractor")
+    @Qualifier("espnProjectionsNextPageValueExtractor")
     private ValueExtractor testStringValueExtraction;
 
     @Autowired
-    @Qualifier("espnNflProjectionsRushingYardsProjection")
+    @Qualifier("espnProjectionsRushingYardsValueExtractor")
     private ValueExtractor testIntegerValueExtraction;
 
     @Autowired
-    @Qualifier("espnNflProjectionsFantasyPointsProjection")
+    @Qualifier("espnProjectionsFantasyPointsValueExtractor")
     private ValueExtractor testFloatValueExtraction;
+
+    @Autowired
+    private String espnNflProjectionsPageOne;
+
+    @Autowired
+    private String espnProjectionsPageEddieLacy;
 
     @Test
     public void shouldBeAbleToExtractStrings() throws ClassNotFoundException, InvocationTargetException, IllegalAccessException {
+        testStringValueExtraction.setInputStringToSearch(espnNflProjectionsPageOne);
         assertThat(testStringValueExtraction.getValue(), equalTo("http://games.espn.go.com/ffl/tools/projections?&amp;startIndex=40"));
     }
 
     @Test
     public void shouldBeAbleToExtractIntegers() throws ClassNotFoundException, InvocationTargetException, IllegalAccessException {
+        testIntegerValueExtraction.setInputStringToSearch(espnProjectionsPageEddieLacy);
         assertThat(testIntegerValueExtraction.getValue(), is(equalTo(1297)));
     }
 
     @Test
     public void shouldBeAbleToExtractFloats() throws ClassNotFoundException, InvocationTargetException, IllegalAccessException {
-        assertThat(testFloatValueExtraction.getValue(), is(equalTo(229.6F)));
+        testFloatValueExtraction.setInputStringToSearch(espnProjectionsPageEddieLacy);
+        assertThat(testFloatValueExtraction.getValue(), is(equalTo((Object) 229.6)));
     }
 }
