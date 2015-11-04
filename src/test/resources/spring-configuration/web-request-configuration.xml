@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+                           http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-2.5.xsd">
+
+    <import resource="classpath:/spring-configuration/test-webpages-configuration.xml"/>
+
+    <bean id="mockEspnNbaProjectionsPageWebRequest" class="com.btanabe.fsdu.test.factories.MockWebRequestFactory">
+        <property name="urlToPageHtmlMap" ref="espnNbaProjectionPagesUrlToPageHtmlMap"/>
+    </bean>
+
+    <util:map id="espnNbaProjectionPagesUrlToPageHtmlMap"
+              key-type="java.lang.String"
+              value-type="java.lang.String">
+        <entry key="http://games.espn.go.com/fba/tools/projections?&amp;leagueId=233928"
+               value-ref="espnNbaHoopDreamsProjectionsPageOne"/>
+        <entry key="http://games.espn.go.com/fba/tools/projections?&amp;leagueId=233928&amp;startIndex=40"
+               value-ref="espnNbaHoopDreamsProjectionsPageTwo"/>
+        <entry key="http://games.espn.go.com/fba/tools/projections?&amp;leagueId=233928&amp;startIndex=80"
+               value-ref="espnNbaHoopDreamsProjectionsPageThree"/>
+        <entry key="http://games.espn.go.com/fba/tools/projections?&amp;leagueId=233928&amp;startIndex=120"
+               value-ref="espnNbaHoopDreamsProjectionsPageThree"/>
+        <entry key="http://games.espn.go.com/fba/tools/projections?&amp;leagueId=233928&amp;startIndex=160"
+               value-ref="espnNbaHoopDreamsProjectionsPageFour"/>
+        <entry key="http://games.espn.go.com/fba/tools/projections?&amp;leagueId=233928&amp;startIndex=200"
+               value-ref="espnNbaHoopDreamsProjectionsPageFive"/>
+        <entry key="http://games.espn.go.com/fba/tools/projections?&amp;leagueId=233928&amp;startIndex=240"
+               value-ref="espnNbaHoopDreamsProjectionsPageSix"/>
+        <entry key="http://games.espn.go.com/fba/tools/projections?&amp;leagueId=233928&amp;startIndex=280"
+               value-ref="espnNbaHoopDreamsProjectionsPageSeven"/>
+        <entry key="http://games.espn.go.com/fba/tools/projections?&amp;leagueId=233928&amp;startIndex=320"
+               value-ref="espnNbaHoopDreamsProjectionsPageEight"/>
+        <entry key="http://games.espn.go.com/fba/tools/projections?&amp;leagueId=233928&amp;startIndex=360"
+               value-ref="espnNbaHoopDreamsProjectionsPageNine"/>
+        <entry key="http://games.espn.go.com/fba/tools/projections?&amp;leagueId=233928&amp;startIndex=400"
+               value-ref="espnNbaHoopDreamsProjectionsPageTen"/>
+        <entry key="http://games.espn.go.com/fba/tools/projections?&amp;leagueId=233928&amp;startIndex=440"
+               value-ref="espnNbaHoopDreamsProjectionsPageEleven"/>
+        <entry key="http://games.espn.go.com/fba/tools/projections?&amp;leagueId=233928&amp;startIndex=480"
+               value-ref="espnNbaHoopDreamsProjectionsPageTwelve"/>
+        <entry key="http://games.espn.go.com/fba/tools/projections?&amp;leagueId=233928&amp;startIndex=520"
+               value-ref="espnNbaHoopDreamsProjectionsPageThirteen"/>
+        <entry key="http://games.espn.go.com/fba/tools/projections?&amp;leagueId=233928&amp;startIndex=560"
+               value-ref="espnNbaHoopDreamsProjectionsPageFourteen"/>
+        <entry key="http://games.espn.go.com/fba/tools/projections?&amp;leagueId=233928&amp;startIndex=600"
+               value-ref="espnNbaHoopDreamsProjectionsPageFifteen"/>
+        <entry key="http://games.espn.go.com/fba/tools/projections?&amp;leagueId=233928&amp;startIndex=640"
+               value-ref="espnNbaHoopDreamsProjectionsPageSixteen"/>
+    </util:map>
+</beans>

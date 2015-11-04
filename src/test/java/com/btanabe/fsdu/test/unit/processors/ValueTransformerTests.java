@@ -21,6 +21,9 @@ public class ValueTransformerTests {
     @Autowired
     private ValueTransformer nullToNegativeOneValueTransformer;
 
+    @Autowired
+    private ValueTransformer unescapeAmpersandsValueTransformer;
+
     @Test
     public void shouldBeAbleToHandleTransformationsOfNullInputs() throws Exception {
         assertThat(nullToNegativeOneValueTransformer.transformValue(null), is(equalTo(-1)));
@@ -29,5 +32,10 @@ public class ValueTransformerTests {
     @Test
     public void shouldBeAbleToTransformOneToOneSinceOnePlusZeroIsOne() throws Exception {
         assertThat(nullToNegativeOneValueTransformer.transformValue(1), is(equalTo(1)));
+    }
+
+    @Test
+    public void shouldBeAbleToUnescapeAmpersandsUsingValueTransformers() throws Exception {
+        assertThat(unescapeAmpersandsValueTransformer.transformValue("http://games.espn.go.com/fba/tools/projections?&amp;leagueId=233928&amp;startIndex=600"), is(equalTo(new String("http://games.espn.go.com/fba/tools/projections?&leagueId=233928&startIndex=600"))));
     }
 }

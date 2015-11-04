@@ -3,6 +3,14 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
+    <bean id="unescapeAmpersandsValueTransformer" class="com.btanabe.fsdu.processors.ValueTransformer">
+        <constructor-arg name="classWhichPerformsTheValueTransformation" value="org.apache.commons.lang3.StringEscapeUtils" />
+        <constructor-arg name="transformingMethodName" value="unescapeXml" />
+        <constructor-arg name="classTypeOfTheInputToTheTransformingMethod" ref="stringClass" />
+        <constructor-arg name="inputValueToTheTransformationMethod" ref="stringEscapeUtils" />
+        <constructor-arg name="defaultValueWhenNull" value="" />
+    </bean>
+
     <bean id="nullToNegativeOneValueTransformer" class="com.btanabe.fsdu.processors.ValueTransformer">
         <constructor-arg name="classWhichPerformsTheValueTransformation" value="com.btanabe.fsdu.models.factories.IntegerFactory" />
         <constructor-arg name="transformingMethodName" value="integerValue" />
@@ -15,6 +23,10 @@
         <constructor-arg value="java.lang.Integer" />
     </bean>
 
+    <bean id="stringClass" class="java.lang.Class" factory-method="forName">
+        <constructor-arg value="java.lang.String" />
+    </bean>
+
     <bean id="zeroInteger" class="java.lang.Integer">
         <constructor-arg value="0" />
     </bean>
@@ -22,4 +34,6 @@
     <bean id="negativeOneInteger" class="java.lang.Integer">
         <constructor-arg value="-1" />
     </bean>
+
+    <bean id="stringEscapeUtils" class="org.apache.commons.lang3.StringEscapeUtils"/>
 </beans>

@@ -42,7 +42,7 @@ public class ValueExtractorTests {
     @Test
     public void shouldBeAbleToExtractStrings() throws ClassNotFoundException, InvocationTargetException, IllegalAccessException {
         testStringValueExtraction.setInputStringToSearch(espnNflProjectionsPageOne);
-        assertThat(testStringValueExtraction.getValue(), equalTo("http://games.espn.go.com/ffl/tools/projections?&amp;startIndex=40"));
+        assertThat(testStringValueExtraction.getValue(), equalTo("http://games.espn.go.com/ffl/tools/projections?&startIndex=40"));
     }
 
     @Test

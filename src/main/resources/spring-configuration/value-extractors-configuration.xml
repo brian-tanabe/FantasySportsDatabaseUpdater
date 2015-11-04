@@ -12,10 +12,11 @@
                          value="&lt;tr id=&quot;.+?&quot; class=&quot;pncPlayerRow.+?&quot;&gt;(.|\n|\s)+?&lt;\/tr&gt;"/>
     </bean>
 
-    <bean id="espnProjectionsNextPageValueExtractor" class="com.btanabe.fsdu.parsers.ValueExtractor">
+    <bean id="espnProjectionsNextPageValueExtractor" class="com.btanabe.fsdu.processors.TransformingValueExtractor">
         <constructor-arg name="outputClasspath" value="java.lang.String"/>
         <constructor-arg name="outputMatchingRegex"
                          value="(?&lt;=href=&quot;).+startIndex.+(?=&quot;&gt;NEXT)"/>
+        <constructor-arg name="outputValueTransformer" ref="unescapeAmpersandsValueTransformer"/>
     </bean>
 
     <!-- ************ ESPN PLAYER PROJECTION VALUE EXTRACTORS: ************ -->

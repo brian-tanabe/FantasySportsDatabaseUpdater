@@ -395,12 +395,12 @@ public class EspnProjectionsPageValueExtractorTests {
     @Test
     public void shouldBeAbleToFindTheNextPageLinkOnEspnsNflProjectionsPage() throws Exception {
         espnProjectionsNextPageValueExtractor.setInputStringToSearch(espnNflProjectionsPageOne);
-        assertThat(espnProjectionsNextPageValueExtractor.getValue(), is(equalTo((Object) "http://games.espn.go.com/ffl/tools/projections?&amp;startIndex=40")));
+        assertThat(espnProjectionsNextPageValueExtractor.getValue(), is(equalTo((Object) "http://games.espn.go.com/ffl/tools/projections?&startIndex=40")));
     }
 
     @Test
     public void shouldBeAbleToFindTheNextPageLinkOnEspnsNbaProjectionsPage() throws Exception {
         espnProjectionsNextPageValueExtractor.setInputStringToSearch(espnNbaProjectionsPageOne);
-        assertThat(espnProjectionsNextPageValueExtractor.getValue(), is(equalTo((Object) "http://games.espn.go.com/fba/tools/projections?&amp;leagueId=233928&amp;startIndex=40")));
+        assertThat(espnProjectionsNextPageValueExtractor.getValue(), is(equalTo((Object) "http://games.espn.go.com/fba/tools/projections?&leagueId=233928&startIndex=40")));
     }
 }

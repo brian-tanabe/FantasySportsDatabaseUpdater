@@ -66,4 +66,69 @@
     <bean id="nflRunningBacksAmeerAbdullahFormatted" class="com.btanabe.fsdu.test.factories.FileTidiedStringFactory">
         <property name="inputFile" value="classpath:test-webpages/nfl/nfl-runningbacks-ameer-abdullah.html"/>
     </bean>
+
+    <!-- ESPN NBA Projection Pages: Hoop Dreams -->
+    <bean id="espnNbaHoopDreamsProjectionsPageOne" class="com.btanabe.fsdu.test.factories.FileTidiedStringFactory">
+        <property name="inputFile" value="classpath:test-webpages/espn/nba/projections/projections-hd-1.html"/>
+    </bean>
+
+    <bean id="espnNbaHoopDreamsProjectionsPageTwo" class="com.btanabe.fsdu.test.factories.FileTidiedStringFactory">
+        <property name="inputFile" value="classpath:test-webpages/espn/nba/projections/projections-hd-2.html"/>
+    </bean>
+
+    <bean id="espnNbaHoopDreamsProjectionsPageThree" class="com.btanabe.fsdu.test.factories.FileTidiedStringFactory">
+        <property name="inputFile" value="classpath:test-webpages/espn/nba/projections/projections-hd-3.html"/>
+    </bean>
+
+    <bean id="espnNbaHoopDreamsProjectionsPageFour" class="com.btanabe.fsdu.test.factories.FileTidiedStringFactory">
+        <property name="inputFile" value="classpath:test-webpages/espn/nba/projections/projections-hd-4.html"/>
+    </bean>
+
+    <bean id="espnNbaHoopDreamsProjectionsPageFive" class="com.btanabe.fsdu.test.factories.FileTidiedStringFactory">
+        <property name="inputFile" value="classpath:test-webpages/espn/nba/projections/projections-hd-5.html"/>
+    </bean>
+
+    <bean id="espnNbaHoopDreamsProjectionsPageSix" class="com.btanabe.fsdu.test.factories.FileTidiedStringFactory">
+        <property name="inputFile" value="classpath:test-webpages/espn/nba/projections/projections-hd-6.html"/>
+    </bean>
+
+    <bean id="espnNbaHoopDreamsProjectionsPageSeven" class="com.btanabe.fsdu.test.factories.FileTidiedStringFactory">
+        <property name="inputFile" value="classpath:test-webpages/espn/nba/projections/projections-hd-7.html"/>
+    </bean>
+
+    <bean id="espnNbaHoopDreamsProjectionsPageEight" class="com.btanabe.fsdu.test.factories.FileTidiedStringFactory">
+        <property name="inputFile" value="classpath:test-webpages/espn/nba/projections/projections-hd-8.html"/>
+    </bean>
+
+    <bean id="espnNbaHoopDreamsProjectionsPageNine" class="com.btanabe.fsdu.test.factories.FileTidiedStringFactory">
+        <property name="inputFile" value="classpath:test-webpages/espn/nba/projections/projections-hd-9.html"/>
+    </bean>
+
+    <bean id="espnNbaHoopDreamsProjectionsPageTen" class="com.btanabe.fsdu.test.factories.FileTidiedStringFactory">
+        <property name="inputFile" value="classpath:test-webpages/espn/nba/projections/projections-hd-10.html"/>
+    </bean>
+
+    <bean id="espnNbaHoopDreamsProjectionsPageEleven" class="com.btanabe.fsdu.test.factories.FileTidiedStringFactory">
+        <property name="inputFile" value="classpath:test-webpages/espn/nba/projections/projections-hd-11.html"/>
+    </bean>
+
+    <bean id="espnNbaHoopDreamsProjectionsPageTwelve" class="com.btanabe.fsdu.test.factories.FileTidiedStringFactory">
+        <property name="inputFile" value="classpath:test-webpages/espn/nba/projections/projections-hd-12.html"/>
+    </bean>
+
+    <bean id="espnNbaHoopDreamsProjectionsPageThirteen" class="com.btanabe.fsdu.test.factories.FileTidiedStringFactory">
+        <property name="inputFile" value="classpath:test-webpages/espn/nba/projections/projections-hd-13.html"/>
+    </bean>
+
+    <bean id="espnNbaHoopDreamsProjectionsPageFourteen" class="com.btanabe.fsdu.test.factories.FileTidiedStringFactory">
+        <property name="inputFile" value="classpath:test-webpages/espn/nba/projections/projections-hd-14.html"/>
+    </bean>
+
+    <bean id="espnNbaHoopDreamsProjectionsPageFifteen" class="com.btanabe.fsdu.test.factories.FileTidiedStringFactory">
+        <property name="inputFile" value="classpath:test-webpages/espn/nba/projections/projections-hd-15.html"/>
+    </bean>
+
+    <bean id="espnNbaHoopDreamsProjectionsPageSixteen" class="com.btanabe.fsdu.test.factories.FileTidiedStringFactory">
+        <property name="inputFile" value="classpath:test-webpages/espn/nba/projections/projections-hd-16.html"/>
+    </bean>
 </beans>
