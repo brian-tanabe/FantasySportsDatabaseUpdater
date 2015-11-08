@@ -11,12 +11,20 @@
         <constructor-arg name="defaultValueWhenNull" value="" />
     </bean>
 
-    <bean id="nullToNegativeOneValueTransformer" class="com.btanabe.fsdu.processors.ValueTransformer">
+    <bean id="nullToNegativeOneAsIntegerValueTransformer" class="com.btanabe.fsdu.processors.ValueTransformer">
         <constructor-arg name="classWhichPerformsTheValueTransformation" value="com.btanabe.fsdu.models.factories.IntegerFactory" />
         <constructor-arg name="transformingMethodName" value="integerValue" />
         <constructor-arg name="classTypeOfTheInputToTheTransformingMethod" ref="integerClass" />
         <constructor-arg name="inputValueToTheTransformationMethod" ref="zeroInteger" />
         <constructor-arg name="defaultValueWhenNull" ref="negativeOneInteger" />
+    </bean>
+
+    <bean id="nullToZeroAsDoubleValueTransformer" class="com.btanabe.fsdu.processors.ValueTransformer">
+        <constructor-arg name="classWhichPerformsTheValueTransformation" value="com.btanabe.fsdu.models.factories.DoubleFactory" />
+        <constructor-arg name="transformingMethodName" value="doubleValue" />
+        <constructor-arg name="classTypeOfTheInputToTheTransformingMethod" ref="doubleClass" />
+        <constructor-arg name="inputValueToTheTransformationMethod" ref="zeroInteger" />
+        <constructor-arg name="defaultValueWhenNull" ref="zeroDouble" />
     </bean>
 
     <bean id="integerClass" class="java.lang.Class" factory-method="forName">
@@ -27,8 +35,16 @@
         <constructor-arg value="java.lang.String" />
     </bean>
 
+    <bean id="doubleClass" class="java.lang.Class" factory-method="forName">
+        <constructor-arg value="java.lang.Double" />
+    </bean>
+
     <bean id="zeroInteger" class="java.lang.Integer">
         <constructor-arg value="0" />
+    </bean>
+
+    <bean id="zeroDouble" class="java.lang.Double">
+        <constructor-arg value="0.0" />
     </bean>
 
     <bean id="negativeOneInteger" class="java.lang.Integer">

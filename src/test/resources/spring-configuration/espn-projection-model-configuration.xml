@@ -137,4 +137,21 @@
         <property name="pointsPerGame" value="20.4"/>
     </bean>
 
+    <bean id="eltonBrandEspnProjectionModel" class="com.btanabe.fsdu.models.EspnNbaProjectionModel">
+        <property name="playerId" value="19"/>
+        <property name="rank" value="201"/>
+        <property name="name" value="Elton Brand"/>
+        <property name="team" value="Atl"/>
+        <property name="position" value="PF"/>
+        <property name="fieldGoalPercentage" value="0.0"/>
+        <property name="freeThrowPercentage" value="0.0"/>
+        <property name="threePointMadePerGame" value="0.0"/>
+        <property name="reboundsPerGame" value="0.0"/>
+        <property name="assistsPerGame" value="0.0"/>
+        <property name="stealsPerGame" value="0.0"/>
+        <property name="blocksPerGame" value="0.0"/>
+        <property name="turnoversPerGame" value="0.0"/>
+        <property name="pointsPerGame" value="0.0"/>
+    </bean>
+
 </beans>

@@ -28,6 +28,14 @@ public class EspnProjectionsPageValueExtractorTests {
     private String espnNbaProjectionsPageOne;
 
     @Autowired
+    @Qualifier("espnNbaHoopDreamsProjectionsPageSixteen")
+    private String espnNbaProjectionsPageSixteen;
+
+    @Autowired
+    @Qualifier("espnNbaHoopDreamsProjectionsPageTwo")
+    private String espnNbaProjectionPageTwo;
+
+    @Autowired
     @Qualifier("espnProjectionsPageEddieLacy")
     private String eddieLacyEspnProjectionPageHtml;
 
@@ -56,6 +64,10 @@ public class EspnProjectionsPageValueExtractorTests {
     private String kyrieIrvingEspnProjectionPageHtml;
 
     @Autowired
+    @Qualifier("espnProjectionsPageEltonBrand")
+    private String eltonBrandEspnProjectionPageHtml;
+
+    @Autowired
     @Qualifier("eddieLacyEspnProjectionModel")
     private EspnNflProjectionModel expectedEddieLacyProjectionModel;
 
@@ -82,6 +94,10 @@ public class EspnProjectionsPageValueExtractorTests {
     @Autowired
     @Qualifier("kyrieIrvingEspnProjectionModel")
     private EspnNbaProjectionModel expectedKyrieIrvingEspnNbaProjectionModel;
+
+    @Autowired
+    @Qualifier("eltonBrandEspnProjectionModel")
+    private EspnNbaProjectionModel expectedEltonBrandEspnNbaProjectionModel;
 
     @Autowired
     private ValueExtractor espnProjectionsPlayerIdValueExtractor;
@@ -402,5 +418,71 @@ public class EspnProjectionsPageValueExtractorTests {
     public void shouldBeAbleToFindTheNextPageLinkOnEspnsNbaProjectionsPage() throws Exception {
         espnProjectionsNextPageValueExtractor.setInputStringToSearch(espnNbaProjectionsPageOne);
         assertThat(espnProjectionsNextPageValueExtractor.getValue(), is(equalTo((Object) "http://games.espn.go.com/fba/tools/projections?&leagueId=233928&startIndex=40")));
+    }
+
+    @Test
+    public void shouldBeAbleToProperlyExtractNextPageLinksFromInnerPages() throws Exception {
+        espnProjectionsNextPageValueExtractor.setInputStringToSearch(espnNbaProjectionPageTwo);
+        assertThat(espnProjectionsNextPageValueExtractor.getValue(), is(equalTo((Object) "http://games.espn.go.com/fba/tools/projections?&leagueId=233928&startIndex=80")));
+    }
+
+    @Test
+    public void shouldBeAbleToReturnEmptyStringWhenNoNextPageLinkExists() throws Exception {
+        espnProjectionsNextPageValueExtractor.setInputStringToSearch(espnNbaProjectionsPageSixteen);
+        assertThat(espnProjectionsNextPageValueExtractor.getValue(), is(equalTo("")));
+    }
+
+    @Test
+    public void shouldBeAbleToTransformIllegalFieldGoalPercentagesIntoZero() throws Exception {
+        espnPlayerPageFieldGoalPercentageValueExtractor.setInputStringToSearch(eltonBrandEspnProjectionPageHtml);
+        assertThat(espnPlayerPageFieldGoalPercentageValueExtractor.getValue(), is(equalTo((Object) expectedEltonBrandEspnNbaProjectionModel.getFieldGoalPercentage())));
+    }
+
+    @Test
+    public void shouldBeAbleToTransformIllegalFreeThrowPercentagesIntoZero() throws Exception {
+        espnPlayerPageFreeThrowPercentageValueExtractor.setInputStringToSearch(eltonBrandEspnProjectionPageHtml);
+        assertThat(espnPlayerPageFreeThrowPercentageValueExtractor.getValue(), is(equalTo((Object) expectedEltonBrandEspnNbaProjectionModel.getFreeThrowPercentage())));
+    }
+
+    @Test
+    public void shouldBeAbleToTransformIllegalThreePointsMadeIntoZero() throws Exception {
+        espnPlayerPageThreePointersPerGameValueExtractor.setInputStringToSearch(eltonBrandEspnProjectionPageHtml);
+        assertThat(espnPlayerPageThreePointersPerGameValueExtractor.getValue(), is(equalTo((Object) expectedEltonBrandEspnNbaProjectionModel.getThreePointMadePerGame())));
+    }
+
+    @Test
+    public void shouldBeAbleToTransformIllegalReboundsIntoZero() throws Exception {
+        espnPlayerPageReboundsPerGameValueExtractor.setInputStringToSearch(eltonBrandEspnProjectionPageHtml);
+        assertThat(espnPlayerPageReboundsPerGameValueExtractor.getValue(), is(equalTo((Object) expectedEltonBrandEspnNbaProjectionModel.getReboundsPerGame())));
+    }
+
+    @Test
+    public void shouldBeAbleToTransformIllegalAssistsIntoZero() throws Exception {
+        espnPlayerPageAssistsPerGameValueExtractor.setInputStringToSearch(eltonBrandEspnProjectionPageHtml);
+        assertThat(espnPlayerPageAssistsPerGameValueExtractor.getValue(), is(equalTo((Object) expectedEltonBrandEspnNbaProjectionModel.getAssistsPerGame())));
+    }
+
+    @Test
+    public void shouldBeAbleToTransformIllegalStealsIntoZero() throws Exception {
+        espnPlayerPageStealsPerGameValueExtractor.setInputStringToSearch(eltonBrandEspnProjectionPageHtml);
+        assertThat(espnPlayerPageStealsPerGameValueExtractor.getValue(), is(equalTo((Object) expectedEltonBrandEspnNbaProjectionModel.getStealsPerGame())));
+    }
+
+    @Test
+    public void shouldBeAbleToTransformIllegalBlocksIntoZero() throws Exception {
+        espnPlayerPageBlocksPerGameValueExtractor.setInputStringToSearch(eltonBrandEspnProjectionPageHtml);
+        assertThat(espnPlayerPageBlocksPerGameValueExtractor.getValue(), is(equalTo((Object) expectedEltonBrandEspnNbaProjectionModel.getBlocksPerGame())));
+    }
+
+    @Test
+    public void shouldBeAbleToTransformIllegalTurnoversIntoNegativeOne() throws Exception {
+        espnPlayerPageTurnoversPerGameValueExtractor.setInputStringToSearch(eltonBrandEspnProjectionPageHtml);
+        assertThat(espnPlayerPageTurnoversPerGameValueExtractor.getValue(), is(equalTo((Object) expectedEltonBrandEspnNbaProjectionModel.getTurnoversPerGame())));
+    }
+
+    @Test
+    public void shouldBeAbleToTransformIllegalPointsIntoZero() throws Exception {
+        espnPlayerPagePointsPerGameValueExtractor.setInputStringToSearch(eltonBrandEspnProjectionPageHtml);
+        assertThat(espnPlayerPagePointsPerGameValueExtractor.getValue(), is(equalTo((Object) expectedEltonBrandEspnNbaProjectionModel.getPointsPerGame())));
     }
 }

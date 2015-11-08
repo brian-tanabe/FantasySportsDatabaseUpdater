@@ -47,6 +47,10 @@
         <property name="inputFile" value="classpath:test-webpages/espn/nba/projections-kyree-irving.html"/>
     </bean>
 
+    <bean id="espnProjectionsPageEltonBrand" class="com.btanabe.fsdu.test.factories.FileTidiedStringFactory">
+        <property name="inputFile" value="classpath:test-webpages/espn/nba/projections-elton-brand.html"/>
+    </bean>
+
     <bean id="espnPlayerPageEddieLacy" class="com.btanabe.fsdu.test.factories.FileTidiedStringFactory">
         <property name="inputFile" value="classpath:test-webpages/espn/player-page/player-page-15848-eddie-lacy.html"/>
     </bean>
