@@ -15,7 +15,7 @@
     <bean id="espnProjectionsNextPageValueExtractor" class="com.btanabe.fsdu.processors.TransformingValueExtractor">
         <constructor-arg name="outputClasspath" value="java.lang.String"/>
         <constructor-arg name="outputMatchingRegex"
-                         value="(?&lt;=href=&quot;).+startIndex.+(?=&quot;&gt;NEXT)"/>
+                         value="(?&lt;=&lt;a href=&quot;)https?://[a-zA-Z0-9./?&amp;amp;=]+(?=&quot;>NEXT)"/>
         <constructor-arg name="outputValueTransformer" ref="unescapeAmpersandsValueTransformer"/>
     </bean>
 
