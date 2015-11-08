@@ -33,14 +33,24 @@ public class RecordCollectorTests {
     @Qualifier("mockEspnNbaProjectionsPageWebRequest")
     private WebRequest mockWebRequest;
 
+    private List<EspnNbaProjectionModel> playerProjectionList;
+
+    // Consider moving to TestNG which allows for non-static BeforeClass methods:
     @Before
-    public void setupRecordCollector() {
-        espnNbaProjectionPageRecordCollector.setWebRequest(mockWebRequest);
+    public void parseAllNbaRecords() throws Exception {
+        if (playerProjectionList == null) {
+            espnNbaProjectionPageRecordCollector.setWebRequest(mockWebRequest);
+            playerProjectionList = espnNbaProjectionPageRecordCollector.getAllRecordsAsList("http://games.espn.go.com/fba/tools/projections?&leagueId=233928");
+        }
     }
 
     @Test
-    public void shouldBeAbleToCollectAllAvailableRecords() throws Exception {
-        List<EspnNbaProjectionModel> playerProjectionList = espnNbaProjectionPageRecordCollector.getAllRecordsAsList("http://games.espn.go.com/fba/tools/projections?&leagueId=233928");
+    public void shouldBeAbleToCollectAllAvailableNbaRecords() throws Exception {
         Assert.assertThat(playerProjectionList.size(), is(equalTo(621)));
+    }
+
+    @Test
+    public void shouldBeAbleToProperlyParseTopTwoHundredNbaPlayerProjections() throws Exception {
+
     }
 }
