@@ -3,7 +3,6 @@ package com.btanabe.fsdu.test.integration.collectors;
 import com.btanabe.fsdu.collectors.RecordCollector;
 import com.btanabe.fsdu.models.EspnNbaProjectionModel;
 import com.btanabe.fsdu.web.WebRequest;
-import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -14,8 +13,9 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import java.util.List;
 
-import static org.hamcrest.CoreMatchers.equalTo;
-import static org.hamcrest.CoreMatchers.is;
+import static org.hamcrest.CoreMatchers.*;
+import static org.hamcrest.core.IsNot.not;
+import static org.junit.Assert.assertThat;
 
 /**
  * XXX You must specify a larger-than-default thread heap size.  In it's current form this is
@@ -33,6 +33,14 @@ public class RecordCollectorTests {
     @Qualifier("mockEspnNbaProjectionsPageWebRequest")
     private WebRequest mockWebRequest;
 
+    @Autowired
+    @Qualifier("kyrieIrvingEspnProjectionModel")
+    private EspnNbaProjectionModel expectedKyrieIrvingRecord;
+
+    @Autowired
+    @Qualifier("eltonBrandEspnProjectionModel")
+    private EspnNbaProjectionModel expectedEltonBrandRecord;
+
     private List<EspnNbaProjectionModel> playerProjectionList;
 
     // Consider moving to TestNG which allows for non-static BeforeClass methods:
@@ -46,11 +54,20 @@ public class RecordCollectorTests {
 
     @Test
     public void shouldBeAbleToCollectAllAvailableNbaRecords() throws Exception {
-        Assert.assertThat(playerProjectionList.size(), is(equalTo(621)));
+        assertThat(playerProjectionList.size(), is(equalTo(621)));
     }
 
     @Test
     public void shouldBeAbleToProperlyParseTopTwoHundredNbaPlayerProjections() throws Exception {
+        EspnNbaProjectionModel collectedKyreeIrvingRecord = playerProjectionList.stream().filter(player -> player.getName().equals(expectedKyrieIrvingRecord.getName())).findFirst().get();
+        assertThat(collectedKyreeIrvingRecord, is(not(nullValue())));
+        assertThat(collectedKyreeIrvingRecord, is(equalTo(expectedKyrieIrvingRecord)));
+    }
 
+    @Test
+    public void shouldBeAbleToProperlyParseNonTopTwoHundredNbaPlayerProjections() throws Exception {
+        EspnNbaProjectionModel collectedEltonBrandRecord = playerProjectionList.stream().filter(player -> player.getName().equals(expectedEltonBrandRecord.getName())).findFirst().get();
+        assertThat(collectedEltonBrandRecord, is(not(nullValue())));
+        assertThat(collectedEltonBrandRecord, is(equalTo(collectedEltonBrandRecord)));
     }
 }
