@@ -4,6 +4,7 @@ package com.btanabe.fsdu.models;
  * Created by Brian on 10/10/15.
  */
 public class EspnNbaProjectionModel {
+
     private Integer playerId;
     private Integer rank;
     private String name;
@@ -19,9 +20,11 @@ public class EspnNbaProjectionModel {
     private Double turnoversPerGame;
     private Double pointsPerGame;
 
+    public EspnNbaProjectionModel() {}
+
     @Override
     public String toString() {
-        return String.format("rank=[%s], name=[%s], team=[%s], position=[%s], fieldGoalPercentage=[%s], freeThrowPercentage=[%s], threePointMadePerGame=[%s], reboundsPerGame=[%s], assistsPerGame=[%s], stealsPerGam[%s], blocksPerGame=[%s], turnoversPerGame=[%s], pointsPerGame=[%s]", rank, name, team, position, fieldGoalPercentage, freeThrowPercentage, threePointMadePerGame, reboundsPerGame, assistsPerGame, stealsPerGame, blocksPerGame, turnoversPerGame, pointsPerGame);
+        return String.format("playerId=[%s], rank=[%s], name=[%s], team=[%s], position=[%s], fieldGoalPercentage=[%s], freeThrowPercentage=[%s], threePointMadePerGame=[%s], reboundsPerGame=[%s], assistsPerGame=[%s], stealsPerGam[%s], blocksPerGame=[%s], turnoversPerGame=[%s], pointsPerGame=[%s]", playerId, rank, name, team, position, fieldGoalPercentage, freeThrowPercentage, threePointMadePerGame, reboundsPerGame, assistsPerGame, stealsPerGame, blocksPerGame, turnoversPerGame, pointsPerGame);
     }
 
     @Override

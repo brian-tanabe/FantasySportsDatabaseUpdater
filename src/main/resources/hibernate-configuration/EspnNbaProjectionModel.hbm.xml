@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="com.btanabe.fsdu.models.EspnNbaProjectionModel" table="ESPN_NBA_PROJECTIONS">
+        <meta attribute="class-description">
+            Persitance object representing a NBA player's ESPN season projection
+        </meta>
+        <id name="playerId" type="int" column="ID">
+            <generator class="assigned"/>
+        </id>
+        <property name="rank" column="RANK" type="int"/>
+        <property name="name" column="NAME" type="string"/>
+        <property name="team" column="TEAM" type="string"/>
+        <property name="position" column="POSITION" type="string"/>
+        <property name="fieldGoalPercentage" column="FIELD_GOAL_PERCENTAGE" type="double"/>
+        <property name="freeThrowPercentage" column="FREE_THROW_PERCENTAGE" type="double"/>
+        <property name="threePointMadePerGame" column="THREE_POINT_MADE_PER_GAME" type="double"/>
+        <property name="reboundsPerGame" column="REBOUNDS_PER_GAME" type="double"/>
+        <property name="assistsPerGame" column="ASSISTS_PER_GAME" type="double"/>
+        <property name="stealsPerGame" column="STEALS_PER_GAME" type="double"/>
+        <property name="blocksPerGame" column="BLOCKS_PER_GAME" type="double"/>
+        <property name="turnoversPerGame" column="TURNOVERS_PER_GAME" type="double"/>
+        <property name="pointsPerGame" column="POINTS_PER_GAME" type="double"/>
+    </class>
+</hibernate-mapping>
