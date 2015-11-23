@@ -3,7 +3,7 @@
        xmlns="http://www.springframework.org/schema/beans"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <import resource="value-transformer-configuration.xml"/>
+    <import resource="../value-transformer-configuration.xml"/>
 
     <!-- ************ ESPN PLAYER PROJECTIONS PAGE VALUE EXTRACTORS: ************ -->
     <bean id="espnProjectionsPagePlayerValueExtractor" class="com.btanabe.fsdu.parsers.PaginatedValueExtractor">
@@ -190,11 +190,6 @@
     <!-- ************ ESPN PLAYER PROJECTION VALUE EXTRACTORS: ************ -->
 
     <!-- *************** ESPN PLAYER PAGE VALUE EXTRACTORS: *************** -->
-    <!--
-     College
-     Draft pick taken
-     -->
-
     <bean id="espnPlayerPagePlayerIdValueExtractor" class="com.btanabe.fsdu.parsers.ValueExtractor">
         <constructor-arg name="outputClasspath" value="java.lang.Integer"/>
         <constructor-arg name="outputMatchingRegex" value="(?&lt;=var playerId = )\d{4,10}(?=;)"/>
@@ -244,49 +239,4 @@
         <constructor-arg name="outputValueTransformer" ref="nullToNegativeOneAsIntegerValueTransformer"/>
     </bean>
     <!-- *************** ESPN PLAYER PAGE VALUE EXTRACTORS: *************** -->
-
-    <!-- ************** NFL POSITION PAGE VALUE EXTRACTORS: *************** -->
-
-    <bean id="nflPositionPageRunningbacksValueExtractor" class="com.btanabe.fsdu.parsers.PaginatedValueExtractor">
-        <constructor-arg name="outputClasspath" value="java.lang.String"/>
-        <constructor-arg name="outputMatchingRegex"
-                         value="&lt;tr class=&quot;(odd|even)&quot;&gt;(.|\n|\s)+?&lt;\/tr&gt;"/>
-    </bean>
-
-    <bean id="nflPositionPagePositionValueExtractor" class="com.btanabe.fsdu.parsers.ValueExtractor">
-        <constructor-arg name="outputClasspath" value="java.lang.String"/>
-        <constructor-arg name="outputMatchingRegex"
-                         value="(?&lt;=&lt;td class=&quot;tbdy&quot;&gt;)(QB|RB|WR|TE|K)(?=&lt;/td&gt;)"/>
-    </bean>
-
-    <bean id="nflPositionPageFirstNameValueExtractor" class="com.btanabe.fsdu.parsers.ValueExtractor">
-        <constructor-arg name="outputClasspath" value="java.lang.String"/>
-        <constructor-arg name="outputMatchingRegex"
-                         value="(?&lt;=&lt;a href=&quot;/player/[a-z]{0,128}/\d{1,10}/profile&quot;&gt;[a-zA-Z]{0,128}, ).+(?=&lt;/a&gt;)"/>
-    </bean>
-
-    <bean id="nflPositionPageLastNameValueExtractor" class="com.btanabe.fsdu.parsers.ValueExtractor">
-        <constructor-arg name="outputClasspath" value="java.lang.String"/>
-        <constructor-arg name="outputMatchingRegex"
-                         value="(?&lt;=&lt;a href=&quot;/player/[a-z]{0,128}/\d{1,10}/profile&quot;&gt;).+(?=, [a-zA-Z]{0,128}&lt;/a&gt;)"/>
-    </bean>
-
-    <bean id="nflPositionPageCompleteNameValueExtractor" class="com.btanabe.fsdu.parsers.ValueExtractor">
-        <constructor-arg name="outputClasspath" value="java.lang.String"/>
-        <constructor-arg name="outputMatchingRegex"
-                         value="(?&lt;=&lt;a href=&quot;/player/[a-z]{0,128}/\d{1,10}/profile&quot;&gt;).+(?=&lt;/a&gt;)"/>
-    </bean>
-
-    <bean id="nflPositionPageNflTeamValueExtractor" class="com.btanabe.fsdu.parsers.ValueExtractor">
-        <constructor-arg name="outputClasspath" value="java.lang.String"/>
-        <constructor-arg name="outputMatchingRegex"
-                         value="(?&lt;=&lt;a href=&quot;/teams/[a-z]{0,128}/profile\?team=[A-Z]{2,3}&quot;&gt;).+(?=&lt;/a&gt;)"/>
-    </bean>
-
-    <bean id="nflPositionPagePlayerProfilePageLinkValueExtractor" class="com.btanabe.fsdu.parsers.ValueExtractor">
-        <constructor-arg name="outputClasspath" value="java.lang.String"/>
-        <constructor-arg name="outputMatchingRegex"
-                         value="/player/[a-z]{0,128}/\d{1,10}/profile"/>
-    </bean>
-    <!-- ************** NFL POSITION PAGE VALUE EXTRACTORS: *************** -->
 </beans>

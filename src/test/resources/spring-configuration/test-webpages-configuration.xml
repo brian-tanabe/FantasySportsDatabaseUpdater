@@ -135,4 +135,13 @@
     <bean id="espnNbaHoopDreamsProjectionsPageSixteen" class="com.btanabe.fsdu.test.factories.FileTidiedStringFactory">
         <property name="inputFile" value="classpath:test-webpages/espn/nba/projections/projections-hd-16.html"/>
     </bean>
+
+    <!-- basketball-reference season totals -->
+    <bean id="basketballReferenceSeasonTotals20142015Season" class="com.btanabe.fsdu.test.factories.FileTidiedStringFactory">
+        <property name="inputFile" value="classpath:test-webpages/basketball-reference/season-totals-2014-2015.html"/>
+    </bean>
+
+    <bean id="basketballReferenceSeasonTotals20142015QuincyAcy" class="com.btanabe.fsdu.test.factories.FileTidiedStringFactory">
+        <property name="inputFile" value="classpath:test-webpages/basketball-reference/season-totals.quincy-acy.html"/>
+    </bean>
 </beans>

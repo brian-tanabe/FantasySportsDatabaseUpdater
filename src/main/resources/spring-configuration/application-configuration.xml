@@ -4,6 +4,8 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
     <import resource="classpath:/spring-configuration/model-factory-configuration.xml"/>
-    <import resource="classpath:/spring-configuration/value-extractors-configuration.xml"/>
     <import resource="classpath:/spring-configuration/value-transformer-configuration.xml"/>
+    <import resource="classpath:/spring-configuration/value-extractors/espn-value-extractor-configuration.xml"/>
+    <import resource="classpath:/spring-configuration/value-extractors/basketball-reference-value-extractor-configurations.xml"/>
+    <import resource="classpath:/spring-configuration/value-extractors/nfl-value-extractor-configurations.xml"/>
 </beans>
