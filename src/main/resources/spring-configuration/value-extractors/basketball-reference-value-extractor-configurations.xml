@@ -3,4 +3,165 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
+    <bean id="basketballReferenceNameValueExtractor" class="com.btanabe.fsdu.parsers.ValueExtractor">
+        <constructor-arg name="outputClasspath" value="java.lang.String"/>
+        <constructor-arg name="outputMatchingRegex"
+                         value="(?&lt;=&quot;/players/a/.{0,50}\.html&quot;&gt;)(.*)(?=&lt;/a&gt;)"/>
+    </bean>
+
+    <bean id="basketballReferenceTeamNameValueExtractor" class="com.btanabe.fsdu.parsers.ValueExtractor">
+        <constructor-arg name="outputClasspath" value="java.lang.String"/>
+        <constructor-arg name="outputMatchingRegex"
+                         value="(?&lt;=&quot;/teams/.{0,3}/[0-9]{4}\.html&quot;&gt;)(.*)(?=&lt;/a&gt;)"/>
+    </bean>
+
+    <bean id="basketballReferenceGamesPlayedValueExtractor" class="com.btanabe.fsdu.parsers.ValueExtractor">
+        <constructor-arg name="outputClasspath" value="java.lang.Integer"/>
+        <constructor-arg name="outputMatchingRegex"
+                         value="(?&lt;=&lt;a href=&quot;/teams/.{0,3}/[0-9]{4}.html&quot;&gt;.{0,5}&lt;/a&gt;&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;)(.*)(?=&lt;/td&gt;)"/>
+    </bean>
+
+    <bean id="basketballReferenceGamesStartedValueExtractor" class="com.btanabe.fsdu.parsers.ValueExtractor">
+        <constructor-arg name="outputClasspath" value="java.lang.Integer"/>
+        <constructor-arg name="outputMatchingRegex"
+                         value="(?&lt;=&lt;a href=&quot;/teams/.{0,3}/[0-9]{4}.html&quot;&gt;.{0,5}&lt;/a&gt;&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;)(.*)(?=&lt;/td&gt;)"/>
+    </bean>
+
+    <bean id="basketballReferenceMinutesPlayedValueExtractor" class="com.btanabe.fsdu.parsers.ValueExtractor">
+        <constructor-arg name="outputClasspath" value="java.lang.Integer"/>
+        <constructor-arg name="outputMatchingRegex"
+                         value="(?&lt;=&lt;a href=&quot;/teams/.{0,3}/[0-9]{4}.html&quot;&gt;.{0,3}&lt;/a&gt;&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;)(.*)(?=&lt;/td&gt;)"/>
+    </bean>
+
+    <bean id="basketballReferenceFieldGoalsAttemptedValueExtractor" class="com.btanabe.fsdu.parsers.ValueExtractor">
+        <constructor-arg name="outputClasspath" value="java.lang.Integer"/>
+        <constructor-arg name="outputMatchingRegex"
+                         value="(?&lt;=&lt;a href=&quot;/teams/.{0,3}/[0-9]{4}.html&quot;&gt;.{0,5}&lt;/a&gt;&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;)(.*)(?=&lt;/td&gt;)"/>
+    </bean>
+
+    <bean id="basketballReferenceFieldGoalsMadeValueExtractor" class="com.btanabe.fsdu.parsers.ValueExtractor">
+        <constructor-arg name="outputClasspath" value="java.lang.Integer"/>
+        <constructor-arg name="outputMatchingRegex"
+                         value="(?&lt;=&lt;a href=&quot;/teams/.{0,3}/[0-9]{4}.html&quot;&gt;.{0,5}&lt;/a&gt;&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;)(.*)(?=&lt;/td&gt;)"/>
+    </bean>
+
+    <bean id="basketballReferenceFieldGoalPercentageValueExtractor" class="com.btanabe.fsdu.parsers.ValueExtractor">
+        <constructor-arg name="outputClasspath" value="java.lang.Double"/>
+        <constructor-arg name="outputMatchingRegex"
+                         value="(?&lt;=&lt;a href=&quot;/teams/.{0,3}/[0-9]{4}.html&quot;&gt;.{0,5}&lt;/a&gt;&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;)(.*)(?=&lt;/td&gt;)"/>
+    </bean>
+
+    <bean id="basketballReferenceThreePointersAttemptedValueExtractor" class="com.btanabe.fsdu.parsers.ValueExtractor">
+        <constructor-arg name="outputClasspath" value="java.lang.Integer"/>
+        <constructor-arg name="outputMatchingRegex"
+                         value="(?&lt;=&lt;a href=&quot;/teams/.{0,3}/[0-9]{4}.html&quot;&gt;.{0,5}&lt;/a&gt;&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;)(.*)(?=&lt;/td&gt;)"/>
+    </bean>
+    <bean id="basketballReferenceThreePointersMadeValueExtractor" class="com.btanabe.fsdu.parsers.ValueExtractor">
+        <constructor-arg name="outputClasspath" value="java.lang.Integer"/>
+        <constructor-arg name="outputMatchingRegex"
+                         value="(?&lt;=&lt;a href=&quot;/teams/.{0,3}/[0-9]{4}.html&quot;&gt;.{0,5}&lt;/a&gt;&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;)(.*)(?=&lt;/td&gt;)"/>
+    </bean>
+
+    <bean id="basketballReferenceThreePointPercentageValueExtractor" class="com.btanabe.fsdu.parsers.ValueExtractor">
+        <constructor-arg name="outputClasspath" value="java.lang.Double"/>
+        <constructor-arg name="outputMatchingRegex"
+                         value="(?&lt;=&lt;a href=&quot;/teams/.{0,3}/[0-9]{4}.html&quot;&gt;.{0,5}&lt;/a&gt;&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;)(.*)(?=&lt;/td&gt;)"/>
+    </bean>
+
+    <bean id="basketballReferenceTwoPointersAttemptedValueExtractor" class="com.btanabe.fsdu.parsers.ValueExtractor">
+        <constructor-arg name="outputClasspath" value="java.lang.Integer"/>
+        <constructor-arg name="outputMatchingRegex"
+                         value="(?&lt;=&lt;a href=&quot;/teams/.{0,3}/[0-9]{4}.html&quot;&gt;.{0,5}&lt;/a&gt;&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;)(.*)(?=&lt;/td&gt;)"/>
+    </bean>
+
+    <bean id="basketballReferenceTwoPointersMadeValueExtractor" class="com.btanabe.fsdu.parsers.ValueExtractor">
+        <constructor-arg name="outputClasspath" value="java.lang.Integer"/>
+        <constructor-arg name="outputMatchingRegex"
+                         value="(?&lt;=&lt;a href=&quot;/teams/.{0,3}/[0-9]{4}.html&quot;&gt;.{0,5}&lt;/a&gt;&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;)(.*)(?=&lt;/td&gt;)"/>
+    </bean>
+
+    <bean id="basketballReferenceTwoPointersPercentageValueExtractor" class="com.btanabe.fsdu.parsers.ValueExtractor">
+        <constructor-arg name="outputClasspath" value="java.lang.Double"/>
+        <constructor-arg name="outputMatchingRegex"
+                         value="(?&lt;=&lt;a href=&quot;/teams/.{0,3}/[0-9]{4}.html&quot;&gt;.{0,5}&lt;/a&gt;&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;)(.*)(?=&lt;/td&gt;)"/>
+    </bean>
+
+    <bean id="basketballReferenceEffectiveFieldGoalPercentageValueExtractor"
+          class="com.btanabe.fsdu.parsers.ValueExtractor">
+        <constructor-arg name="outputClasspath" value="java.lang.Double"/>
+        <constructor-arg name="outputMatchingRegex"
+                         value="(?&lt;=&lt;a href=&quot;/teams/.{0,3}/[0-9]{4}.html&quot;&gt;.{0,5}&lt;/a&gt;&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;)(.*)(?=&lt;/td&gt;)"/>
+    </bean>
+
+    <bean id="basketballReferenceFreeThrowsAttemptedValueExtractor" class="com.btanabe.fsdu.parsers.ValueExtractor">
+        <constructor-arg name="outputClasspath" value="java.lang.Integer"/>
+        <constructor-arg name="outputMatchingRegex"
+                         value="(?&lt;=&lt;a href=&quot;/teams/.{0,3}/[0-9]{4}.html&quot;&gt;.{0,5}&lt;/a&gt;&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;)(.*)(?=&lt;/td&gt;)"/>
+    </bean>
+
+    <bean id="basketballReferenceFreeThrowsMadeValueExtractor" class="com.btanabe.fsdu.parsers.ValueExtractor">
+        <constructor-arg name="outputClasspath" value="java.lang.Integer"/>
+        <constructor-arg name="outputMatchingRegex"
+                         value="(?&lt;=&lt;a href=&quot;/teams/.{0,3}/[0-9]{4}.html&quot;&gt;.{0,5}&lt;/a&gt;&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;)(.*)(?=&lt;/td&gt;)"/>
+    </bean>
+
+    <bean id="basketballReferenceFreeThrowPercentageValueExtractor" class="com.btanabe.fsdu.parsers.ValueExtractor">
+        <constructor-arg name="outputClasspath" value="java.lang.Double"/>
+        <constructor-arg name="outputMatchingRegex"
+                         value="(?&lt;=&lt;a href=&quot;/teams/.{0,3}/[0-9]{4}.html&quot;&gt;.{0,5}&lt;/a&gt;&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;)(.*)(?=&lt;/td&gt;)"/>
+    </bean>
+
+    <bean id="basketballReferenceOffensiveReboundsValueExtractor" class="com.btanabe.fsdu.parsers.ValueExtractor">
+        <constructor-arg name="outputClasspath" value="java.lang.Integer"/>
+        <constructor-arg name="outputMatchingRegex"
+                         value="(?&lt;=&lt;a href=&quot;/teams/.{0,3}/[0-9]{4}.html&quot;&gt;.{0,5}&lt;/a&gt;&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;)(.*)(?=&lt;/td&gt;)"/>
+    </bean>
+
+    <bean id="basketballReferenceDefensiveReboundsValueExtractor" class="com.btanabe.fsdu.parsers.ValueExtractor">
+        <constructor-arg name="outputClasspath" value="java.lang.Integer"/>
+        <constructor-arg name="outputMatchingRegex"
+                         value="(?&lt;=&lt;a href=&quot;/teams/.{0,3}/[0-9]{4}.html&quot;&gt;.{0,5}&lt;/a&gt;&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;)(.*)(?=&lt;/td&gt;)"/>
+    </bean>
+
+    <bean id="basketballReferenceTotalReboundsValueExtractor" class="com.btanabe.fsdu.parsers.ValueExtractor">
+        <constructor-arg name="outputClasspath" value="java.lang.Integer"/>
+        <constructor-arg name="outputMatchingRegex"
+                         value="(?&lt;=&lt;a href=&quot;/teams/.{0,3}/[0-9]{4}.html&quot;&gt;.{0,5}&lt;/a&gt;&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;)(.*)(?=&lt;/td&gt;)"/>
+    </bean>
+
+    <bean id="basketballReferenceAssistsValueExtractor" class="com.btanabe.fsdu.parsers.ValueExtractor">
+        <constructor-arg name="outputClasspath" value="java.lang.Integer"/>
+        <constructor-arg name="outputMatchingRegex"
+                         value="(?&lt;=&lt;a href=&quot;/teams/.{0,3}/[0-9]{4}.html&quot;&gt;.{0,5}&lt;/a&gt;&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;)(.*)(?=&lt;/td&gt;)"/>
+    </bean>
+
+    <bean id="basketballReferenceStealsValueExtractor" class="com.btanabe.fsdu.parsers.ValueExtractor">
+        <constructor-arg name="outputClasspath" value="java.lang.Integer"/>
+        <constructor-arg name="outputMatchingRegex"
+                         value="(?&lt;=&lt;a href=&quot;/teams/.{0,3}/[0-9]{4}.html&quot;&gt;.{0,5}&lt;/a&gt;&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;)(.*)(?=&lt;/td&gt;)"/>
+    </bean>
+
+    <bean id="basketballReferenceBlocksValueExtractor" class="com.btanabe.fsdu.parsers.ValueExtractor">
+        <constructor-arg name="outputClasspath" value="java.lang.Integer"/>
+        <constructor-arg name="outputMatchingRegex"
+                         value="(?&lt;=&lt;a href=&quot;/teams/.{0,3}/[0-9]{4}.html&quot;&gt;.{0,5}&lt;/a&gt;&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;)(.*)(?=&lt;/td&gt;)"/>
+    </bean>
+
+    <bean id="basketballReferenceTurnoversValueExtractor" class="com.btanabe.fsdu.parsers.ValueExtractor">
+        <constructor-arg name="outputClasspath" value="java.lang.Integer"/>
+        <constructor-arg name="outputMatchingRegex"
+                         value="(?&lt;=&lt;a href=&quot;/teams/.{0,3}/[0-9]{4}.html&quot;&gt;.{0,5}&lt;/a&gt;&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;)(.*)(?=&lt;/td&gt;)"/>
+    </bean>
+
+    <bean id="basketballReferencePersonalFoulsValueExtractor" class="com.btanabe.fsdu.parsers.ValueExtractor">
+        <constructor-arg name="outputClasspath" value="java.lang.Integer"/>
+        <constructor-arg name="outputMatchingRegex"
+                         value="(?&lt;=&lt;a href=&quot;/teams/.{0,3}/[0-9]{4}.html&quot;&gt;.{0,5}&lt;/a&gt;&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;)(.*)(?=&lt;/td&gt;)"/>
+    </bean>
+
+    <bean id="basketballReferencePointsValueExtractor" class="com.btanabe.fsdu.parsers.ValueExtractor">
+        <constructor-arg name="outputClasspath" value="java.lang.Integer"/>
+        <constructor-arg name="outputMatchingRegex"
+                         value="(?&lt;=&lt;a href=&quot;/teams/.{0,3}/[0-9]{4}.html&quot;&gt;.{0,5}&lt;/a&gt;&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;)(.*)(?=&lt;/td&gt;)"/>
+    </bean>
 </beans>

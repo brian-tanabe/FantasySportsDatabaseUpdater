@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="qunicyAcy20142015SeasonTotalsPlayerModel" class="com.btanabe.fsdu.models.BasketballReferenceSeasonTotalsModel">
+        <property name="name" value="Quincy Acy" />
+        <property name="team" value="NYK" />
+        <property name="gamesStarted" value="22" />
+        <property name="gamesPlayed" value="68" />
+        <property name="minutesPlayed" value="1287" />
+        <property name="fieldGoalsMade" value="152" />
+        <property name="fieldGoalsAttempted" value="331" />
+        <property name="fieldGoalPercentage" value="0.459" />
+        <property name="threePointersMade" value="18" />
+        <property name="threePointersAttempted" value="60" />
+        <property name="threePointPercentage" value="0.300" />
+        <property name="twoPointersMade" value="134" />
+        <property name="twoPointersAttempted" value="271" />
+        <property name="twoPointPercentage" value="0.494" />
+        <property name="effectiveFieldGoalPercentage" value="0.486" />
+        <property name="freeThrowsMade" value="76" />
+        <property name="freeThrowsAttempted" value="97" />
+        <property name="freeThrowPercentage" value="0.784" />
+        <property name="offensiveRebounds" value="79" />
+        <property name="defensiveRebounds" value="222" />
+        <property name="totalRebounds" value="301" />
+        <property name="assists" value="68" />
+        <property name="steals" value="27" />
+        <property name="blocks" value="22" />
+        <property name="turnovers" value="60" />
+        <property name="personalFouls" value="147" />
+        <property name="points" value="398" />
+    </bean>
+</beans>
