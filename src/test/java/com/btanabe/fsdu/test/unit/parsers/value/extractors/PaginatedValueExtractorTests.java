@@ -30,12 +30,20 @@ public class PaginatedValueExtractorTests {
     private PaginatedValueExtractor nflPositionPagePlayerValueExtractor;
 
     @Autowired
+    @Qualifier("basketballReferenceSeasonTotalsPlayerValueExtractor")
+    private PaginatedValueExtractor basketballReferenceSeasonTotalsPlayerValueExtractor;
+
+    @Autowired
     @Qualifier("espnNflProjectionsPageOneFormatted")
     private String espnProjectionsPageOne;
 
     @Autowired
     @Qualifier("nflRunningBacksPageOneFormatted")
     private String nflRunningbacksPageOne;
+
+    @Autowired
+    @Qualifier("basketballReferenceSeasonTotals20142015Season")
+    private String basketballReferenceSeasonTotalsPage;
 
     @Test
     public void shouldBeAbleToFindFortyPlayersOnOneEspnProjectionsPage() throws Exception {
@@ -49,5 +57,12 @@ public class PaginatedValueExtractorTests {
         nflPositionPagePlayerValueExtractor.setInputStringToSearch(nflRunningbacksPageOne);
         List<String> objectList = nflPositionPagePlayerValueExtractor.getValuesAsList();
         assertThat(objectList.size(), is(equalTo(75)));
+    }
+
+    @Test
+    public void shouldBeAbleToFindFourHundredNinetyTwoPlayersOnBasketballReferenceSeasonTotalsPage() throws Exception {
+        basketballReferenceSeasonTotalsPlayerValueExtractor.setInputStringToSearch(basketballReferenceSeasonTotalsPage);
+        List<String> objectList = basketballReferenceSeasonTotalsPlayerValueExtractor.getValuesAsList();
+        assertThat(objectList.size(), is(equalTo(492)));
     }
 }

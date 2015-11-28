@@ -3,6 +3,7 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
+    <!-- SEASON TOTALS VALUEEXTRACTORS -->
     <bean id="basketballReferenceNameValueExtractor" class="com.btanabe.fsdu.parsers.ValueExtractor">
         <constructor-arg name="outputClasspath" value="java.lang.String"/>
         <constructor-arg name="outputMatchingRegex"
@@ -163,5 +164,13 @@
         <constructor-arg name="outputClasspath" value="java.lang.Integer"/>
         <constructor-arg name="outputMatchingRegex"
                          value="(?&lt;=&lt;a href=&quot;/teams/.{0,3}/[0-9]{4}.html&quot;&gt;.{0,5}&lt;/a&gt;&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;)(.*)(?=&lt;/td&gt;)"/>
+    </bean>
+    <!-- END SEASON TOTALS VALUEEXTRACTORS -->
+
+    <!-- SEASON TOTALS PLAYER VALUE EXTRACTOR -->
+    <bean id="basketballReferenceSeasonTotalsPlayerValueExtractor" class="com.btanabe.fsdu.parsers.PaginatedValueExtractor">
+        <constructor-arg name="outputClasspath" value="java.lang.String"/>
+        <constructor-arg name="outputMatchingRegex"
+                         value="&lt;tr class=&quot;full_table?&quot;&gt;(.|\n|\s)+?&lt;\/tr&gt;"/>
     </bean>
 </beans>
