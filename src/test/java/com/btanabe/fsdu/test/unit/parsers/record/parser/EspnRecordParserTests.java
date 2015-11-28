@@ -1,6 +1,5 @@
 package com.btanabe.fsdu.test.unit.parsers.record.parser;
 
-import com.btanabe.fsdu.models.BasketballReferenceSeasonTotalsModel;
 import com.btanabe.fsdu.models.EspnNbaProjectionModel;
 import com.btanabe.fsdu.models.EspnNflProjectionModel;
 import com.btanabe.fsdu.parsers.RecordParser;
@@ -21,7 +20,7 @@ import static org.junit.Assert.assertThat;
  */
 @ContextConfiguration("classpath:spring-configuration/unit-testing-configuration.xml")
 @RunWith(SpringJUnit4ClassRunner.class)
-public class RecordParserTests {
+public class EspnRecordParserTests {
 
     @Autowired
     @Qualifier("espnNflPlayerProjectionPagePaginatedRecordParser")
@@ -30,10 +29,6 @@ public class RecordParserTests {
     @Autowired
     @Qualifier("espnNbaPlayerProjectionPagePaginatedRecordParser")
     private RecordParser<EspnNbaProjectionModel> nbaProjectionPageRecordParser;
-
-    @Autowired
-    @Qualifier("basketballReferenceSeasonTotalsPagePaginatedRecordParser")
-    private RecordParser<BasketballReferenceSeasonTotalsModel> basketballReferenceSeasonTotalsModelRecordParser;
 
     @Autowired
     @Qualifier("espnProjectionsPageAnthonyDavis")
@@ -48,10 +43,6 @@ public class RecordParserTests {
     private String espnProjectionsPageEddieLacy;
 
     @Autowired
-    @Qualifier("basketballReferenceSeasonTotals20142015QuincyAcy")
-    private String basketballReferenceSeasonTotalsPageQuincyAcy;
-
-    @Autowired
     @Qualifier("eddieLacyEspnProjectionModel")
     private EspnNflProjectionModel expectedEddieLacyEspnNflProjectionModel;
 
@@ -63,9 +54,6 @@ public class RecordParserTests {
     @Qualifier("anthonyDavisEspnProjectionModel")
     private EspnNbaProjectionModel expectedAnthonyDavisEspnNbaProjectionModel;
 
-    @Autowired
-    @Qualifier("qunicyAcy20142015SeasonTotalsPlayerModel")
-    private BasketballReferenceSeasonTotalsModel expectedQuincyAcyBasketballReferenceSeasonTotalsModel;
 
     @Test
     public void shouldBeAbleToParseEddieLacysNameProperly() throws Exception {
@@ -174,11 +162,5 @@ public class RecordParserTests {
     public void shouldBeAbleToParseNbaPlayerProjectionsProperly() throws Exception {
         nbaProjectionPageRecordParser.setInputHtml(espnProjectionsPageAnthonyDavis);
         assertThat(nbaProjectionPageRecordParser.getRecord(), is(equalTo((Object) expectedAnthonyDavisEspnNbaProjectionModel)));
-    }
-
-    @Test
-    public void shouldBeAbleToParseBasketballReferenceSeasonTotalsProperly() throws Exception {
-        basketballReferenceSeasonTotalsModelRecordParser.setInputHtml(basketballReferenceSeasonTotalsPageQuincyAcy);
-        assertThat(basketballReferenceSeasonTotalsModelRecordParser.getRecord(), is(equalTo((Object) expectedQuincyAcyBasketballReferenceSeasonTotalsModel)));
     }
 }
