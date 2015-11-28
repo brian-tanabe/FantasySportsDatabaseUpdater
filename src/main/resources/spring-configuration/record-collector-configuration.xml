@@ -4,7 +4,7 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
     <import resource="classpath:/spring-configuration/value-extractors/espn-value-extractor-configuration.xml"/>
-    <import resource="classpath:/spring-configuration/record-parser-configuration.xml"/>
+    <import resource="classpath:/spring-configuration/record-parsers/espn-record-parser-configuration.xml"/>
 
     <bean id="espnNbaProjectionPageRecordCollector" class="com.btanabe.fsdu.collectors.RecordCollector">
         <constructor-arg ref="espnProjectionsNextPageValueExtractor"/>
