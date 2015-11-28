@@ -37,6 +37,76 @@ public class BasketballReferenceSeasonTotalsModel {
         return String.format("name=[%s], team=[%s], gamesStarted=[%d], gamesPlayed=[%d], minutesPlayed=[%d], fieldGoalsMade=[%d], fieldGoalsAttempted=[%d], fieldGoalPercentage=[%d], threePointersMade=[%d], threePointersAttempted=[%d], threePointPercentage=[%d], twoPointersMade=[%d], twoPointersAttempted=[%d], twoPointPercentage=[%d], effectiveFieldGoalPercentage=[%d], freeThrowsMade=[%d], freeThrowsAttempted=[%d], freeThrowPercentage=[%d], offensiveRebounds=[%d], defensiveRebounds=[%d], totalRebounds=[%d], assists=[%d], steals=[%d], blocks=[%d], turnovers=[%d], points=[%d], personalFouls=[%d]", name, team, gamesStarted, gamesPlayed, minutesPlayed, fieldGoalsMade, fieldGoalsAttempted, fieldGoalPercentage, threePointersMade, threePointersAttempted, threePointPercentage, twoPointersMade, twoPointersAttempted, twoPointPercentage, effectiveFieldGoalPercentage, freeThrowsMade, freeThrowsAttempted, freeThrowPercentage, offensiveRebounds, defensiveRebounds, totalRebounds, assists, steals, blocks, turnovers, points, personalFouls);
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof BasketballReferenceSeasonTotalsModel)) return false;
+
+        BasketballReferenceSeasonTotalsModel that = (BasketballReferenceSeasonTotalsModel) o;
+
+        if (!assists.equals(that.assists)) return false;
+        if (!blocks.equals(that.blocks)) return false;
+        if (!defensiveRebounds.equals(that.defensiveRebounds)) return false;
+        if (!effectiveFieldGoalPercentage.equals(that.effectiveFieldGoalPercentage)) return false;
+        if (!fieldGoalPercentage.equals(that.fieldGoalPercentage)) return false;
+        if (!fieldGoalsAttempted.equals(that.fieldGoalsAttempted)) return false;
+        if (!fieldGoalsMade.equals(that.fieldGoalsMade)) return false;
+        if (!freeThrowPercentage.equals(that.freeThrowPercentage)) return false;
+        if (!freeThrowsAttempted.equals(that.freeThrowsAttempted)) return false;
+        if (!freeThrowsMade.equals(that.freeThrowsMade)) return false;
+        if (!gamesPlayed.equals(that.gamesPlayed)) return false;
+        if (!gamesStarted.equals(that.gamesStarted)) return false;
+        if (!minutesPlayed.equals(that.minutesPlayed)) return false;
+        if (!name.equals(that.name)) return false;
+        if (!offensiveRebounds.equals(that.offensiveRebounds)) return false;
+        if (!personalFouls.equals(that.personalFouls)) return false;
+        if (!points.equals(that.points)) return false;
+        if (!steals.equals(that.steals)) return false;
+        if (!team.equals(that.team)) return false;
+        if (!threePointPercentage.equals(that.threePointPercentage)) return false;
+        if (!threePointersAttempted.equals(that.threePointersAttempted)) return false;
+        if (!threePointersMade.equals(that.threePointersMade)) return false;
+        if (!totalRebounds.equals(that.totalRebounds)) return false;
+        if (!turnovers.equals(that.turnovers)) return false;
+        if (!twoPointPercentage.equals(that.twoPointPercentage)) return false;
+        if (!twoPointersAttempted.equals(that.twoPointersAttempted)) return false;
+        if (!twoPointersMade.equals(that.twoPointersMade)) return false;
+
+        return true;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = name.hashCode();
+        result = 31 * result + team.hashCode();
+        result = 31 * result + gamesStarted.hashCode();
+        result = 31 * result + gamesPlayed.hashCode();
+        result = 31 * result + minutesPlayed.hashCode();
+        result = 31 * result + fieldGoalsMade.hashCode();
+        result = 31 * result + fieldGoalsAttempted.hashCode();
+        result = 31 * result + fieldGoalPercentage.hashCode();
+        result = 31 * result + threePointersMade.hashCode();
+        result = 31 * result + threePointersAttempted.hashCode();
+        result = 31 * result + threePointPercentage.hashCode();
+        result = 31 * result + twoPointersMade.hashCode();
+        result = 31 * result + twoPointersAttempted.hashCode();
+        result = 31 * result + twoPointPercentage.hashCode();
+        result = 31 * result + effectiveFieldGoalPercentage.hashCode();
+        result = 31 * result + freeThrowsMade.hashCode();
+        result = 31 * result + freeThrowsAttempted.hashCode();
+        result = 31 * result + freeThrowPercentage.hashCode();
+        result = 31 * result + offensiveRebounds.hashCode();
+        result = 31 * result + defensiveRebounds.hashCode();
+        result = 31 * result + totalRebounds.hashCode();
+        result = 31 * result + assists.hashCode();
+        result = 31 * result + steals.hashCode();
+        result = 31 * result + blocks.hashCode();
+        result = 31 * result + turnovers.hashCode();
+        result = 31 * result + points.hashCode();
+        result = 31 * result + personalFouls.hashCode();
+        return result;
+    }
+
     public String getName() {
         return name;
     }

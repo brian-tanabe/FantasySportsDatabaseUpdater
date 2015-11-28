@@ -3,19 +3,28 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean id="espnNflProjectionModelFactory" class="com.btanabe.fsdu.models.factories.EspnProjectionModelFactory">
-        <property name="outputClazz" ref="espnNflProjectionModel" />
+    <bean id="espnNflProjectionModelFactory" class="com.btanabe.fsdu.models.factories.ModelFactory">
+        <property name="outputClazz" ref="espnNflProjectionModel"/>
     </bean>
 
-    <bean id="espnNbaProjectionModelFactory" class="com.btanabe.fsdu.models.factories.EspnProjectionModelFactory">
-        <property name="outputClazz" ref="espnNbaProjectionModel" />
+    <bean id="espnNbaProjectionModelFactory" class="com.btanabe.fsdu.models.factories.ModelFactory">
+        <property name="outputClazz" ref="espnNbaProjectionModel"/>
+    </bean>
+
+    <bean id="basketballReferneceSeasonTotalsModelFactory" class="com.btanabe.fsdu.models.factories.ModelFactory">
+        <property name="outputClazz" ref="basketballReferenceSeasonTotalsModel"/>
     </bean>
 
     <bean id="espnNflProjectionModel" class="java.lang.Class" factory-method="forName">
-        <constructor-arg value="com.btanabe.fsdu.models.EspnNflProjectionModel" />
+        <constructor-arg value="com.btanabe.fsdu.models.EspnNflProjectionModel"/>
+
     </bean>
 
     <bean id="espnNbaProjectionModel" class="java.lang.Class" factory-method="forName">
-        <constructor-arg value="com.btanabe.fsdu.models.EspnNbaProjectionModel" />
+        <constructor-arg value="com.btanabe.fsdu.models.EspnNbaProjectionModel"/>
+    </bean>
+
+    <bean id="basketballReferenceSeasonTotalsModel" class="java.lang.Class" factory-method="forName">
+        <constructor-arg value="com.btanabe.fsdu.models.BasketballReferenceSeasonTotalsModel"/>
     </bean>
 </beans>

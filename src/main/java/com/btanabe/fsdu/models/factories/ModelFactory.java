@@ -8,7 +8,7 @@ import java.util.Map;
 /**
  * Created by Brian on 8/23/15.
  */
-public class EspnProjectionModelFactory<OutputClazz> extends AbstractModelFactory {
+public class ModelFactory<OutputClazz> extends AbstractModelFactory {
     private Class<OutputClazz> outputClazzClass;
     private Map<String, ValueExtractor> setterMethodToValueMap;
 

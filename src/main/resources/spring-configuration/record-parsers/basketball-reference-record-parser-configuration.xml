@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+                           http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-2.5.xsd">
+
+    <import resource="classpath:/spring-configuration/common/model-factory-configuration.xml"/>
+    <import resource="classpath:/spring-configuration/value-extractors/basketball-reference-value-extractor-configurations.xml"/>
+
+    <bean id="basketballReferenceSeasonTotalsPagePaginatedRecordParser"
+          class="com.btanabe.fsdu.parsers.PaginatedRecordParser">
+        <constructor-arg ref="basketballReferenceSeasonTotalsPlayerValueExtractor"/>
+        <constructor-arg ref="basketballReferenceSeasonTotalsRecordParserValueExtractorMap"/>
+        <constructor-arg ref="&amp;basketballReferneceSeasonTotalsModelFactory"/>
+    </bean>
+
+    <util:map id="basketballReferenceSeasonTotalsRecordParserValueExtractorMap"
+              key-type="java.lang.String"
+              value-type="com.btanabe.fsdu.parsers.ValueExtractor">
+        <entry key="setName" value-ref="basketballReferenceNameValueExtractor"/>
+        <entry key="setTeam" value-ref="basketballReferenceTeamNameValueExtractor"/>
+        <entry key="setGamesStarted" value-ref="basketballReferenceGamesStartedValueExtractor"/>
+        <entry key="setGamesPlayed" value-ref="basketballReferenceGamesPlayedValueExtractor"/>
+        <entry key="setMinutesPlayed" value-ref="basketballReferenceMinutesPlayedValueExtractor"/>
+        <entry key="setFieldGoalsAttempted" value-ref="basketballReferenceFieldGoalsAttemptedValueExtractor"/>
+        <entry key="setFieldGoalsMade" value-ref="basketballReferenceFieldGoalsMadeValueExtractor"/>
+        <entry key="setFieldGoalPercentage" value-ref="basketballReferenceFieldGoalPercentageValueExtractor"/>
+        <entry key="setThreePointersMade" value-ref="basketballReferenceThreePointersMadeValueExtractor"/>
+        <entry key="setThreePointersAttempted" value-ref="basketballReferenceThreePointersAttemptedValueExtractor"/>
+        <entry key="setThreePointPercentage" value-ref="basketballReferenceThreePointPercentageValueExtractor"/>
+        <entry key="setTwoPointersMade" value-ref="basketballReferenceTwoPointersMadeValueExtractor"/>
+        <entry key="setTwoPointersAttempted" value-ref="basketballReferenceTwoPointersAttemptedValueExtractor"/>
+        <entry key="setTwoPointPercentage" value-ref="basketballReferenceTwoPointersPercentageValueExtractor"/>
+        <entry key="setEffectiveFieldGoalPercentage"
+               value-ref="basketballReferenceEffectiveFieldGoalPercentageValueExtractor"/>
+        <entry key="setFreeThrowsMade" value-ref="basketballReferenceFreeThrowsMadeValueExtractor"/>
+        <entry key="setFreeThrowsAttempted" value-ref="basketballReferenceFreeThrowsAttemptedValueExtractor"/>
+        <entry key="setFreeThrowPercentage" value-ref="basketballReferenceFreeThrowPercentageValueExtractor"/>
+        <entry key="setOffensiveRebounds" value-ref="basketballReferenceOffensiveReboundsValueExtractor"/>
+        <entry key="setDefensiveRebounds" value-ref="basketballReferenceDefensiveReboundsValueExtractor"/>
+        <entry key="setTotalRebounds" value-ref="basketballReferenceTotalReboundsValueExtractor"/>
+        <entry key="setAssists" value-ref="basketballReferenceAssistsValueExtractor"/>
+        <entry key="setSteals" value-ref="basketballReferenceStealsValueExtractor"/>
+        <entry key="setBlocks" value-ref="basketballReferenceBlocksValueExtractor"/>
+        <entry key="setTurnovers" value-ref="basketballReferenceTurnoversValueExtractor"/>
+        <entry key="setPoints" value-ref="basketballReferencePointsValueExtractor"/>
+        <entry key="setPersonalFouls" value-ref="basketballReferencePersonalFoulsValueExtractor"/>
+    </util:map>
+</beans>
