@@ -4,52 +4,66 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
     <bean id="unescapeAmpersandsValueTransformer" class="com.btanabe.fsdu.processors.ValueTransformer">
-        <constructor-arg name="classWhichPerformsTheValueTransformation" value="org.apache.commons.lang3.StringEscapeUtils" />
-        <constructor-arg name="transformingMethodName" value="unescapeXml" />
-        <constructor-arg name="classTypeOfTheInputToTheTransformingMethod" ref="stringClass" />
-        <constructor-arg name="inputValueToTheTransformationMethod" ref="stringEscapeUtils" />
-        <constructor-arg name="defaultValueWhenNull" value="" />
+        <constructor-arg name="classWhichPerformsTheValueTransformation"
+                         value="org.apache.commons.lang3.StringEscapeUtils"/>
+        <constructor-arg name="transformingMethodName" value="unescapeXml"/>
+        <constructor-arg name="classTypeOfTheInputToTheTransformingMethod" ref="stringClass"/>
+        <constructor-arg name="objectTheTransformingMethodIsInvokedFrom" ref="stringEscapeUtils"/>
+        <constructor-arg name="defaultValueWhenNull" value=""/>
     </bean>
 
     <bean id="nullToNegativeOneAsIntegerValueTransformer" class="com.btanabe.fsdu.processors.ValueTransformer">
-        <constructor-arg name="classWhichPerformsTheValueTransformation" value="com.btanabe.fsdu.models.factories.IntegerFactory" />
-        <constructor-arg name="transformingMethodName" value="integerValue" />
-        <constructor-arg name="classTypeOfTheInputToTheTransformingMethod" ref="integerClass" />
-        <constructor-arg name="inputValueToTheTransformationMethod" ref="zeroInteger" />
-        <constructor-arg name="defaultValueWhenNull" ref="negativeOneInteger" />
+        <constructor-arg name="classWhichPerformsTheValueTransformation"
+                         value="com.btanabe.fsdu.models.factories.IntegerFactory"/>
+        <constructor-arg name="transformingMethodName" value="integerValue"/>
+        <constructor-arg name="classTypeOfTheInputToTheTransformingMethod" ref="integerClass"/>
+        <constructor-arg name="objectTheTransformingMethodIsInvokedFrom" ref="zeroInteger"/>
+        <constructor-arg name="defaultValueWhenNull" ref="negativeOneInteger"/>
     </bean>
 
     <bean id="nullToZeroAsDoubleValueTransformer" class="com.btanabe.fsdu.processors.ValueTransformer">
-        <constructor-arg name="classWhichPerformsTheValueTransformation" value="com.btanabe.fsdu.models.factories.DoubleFactory" />
-        <constructor-arg name="transformingMethodName" value="doubleValue" />
-        <constructor-arg name="classTypeOfTheInputToTheTransformingMethod" ref="doubleClass" />
-        <constructor-arg name="inputValueToTheTransformationMethod" ref="zeroInteger" />
-        <constructor-arg name="defaultValueWhenNull" ref="zeroDouble" />
+        <constructor-arg name="classWhichPerformsTheValueTransformation"
+                         value="com.btanabe.fsdu.models.factories.DoubleFactory"/>
+        <constructor-arg name="transformingMethodName" value="doubleValue"/>
+        <constructor-arg name="classTypeOfTheInputToTheTransformingMethod" ref="doubleClass"/>
+        <constructor-arg name="objectTheTransformingMethodIsInvokedFrom" ref="zeroInteger"/>
+        <constructor-arg name="defaultValueWhenNull" ref="zeroDouble"/>
+    </bean>
+
+    <bean id="commaSeparatedStringConcatenatorValueTransformer" class="com.btanabe.fsdu.processors.ValueTransformer">
+        <constructor-arg name="classWhichPerformsTheValueTransformation"
+                         value="com.btanabe.fsdu.models.factories.CommaSeparatedStringFactory"/>
+        <constructor-arg name="transformingMethodName" value="commaSeparateInputStrings"/>
+        <constructor-arg name="classTypeOfTheInputToTheTransformingMethod" ref="stringClass"/>
+        <constructor-arg name="objectTheTransformingMethodIsInvokedFrom" ref="commaSeparatedStringFactory"/>
+        <constructor-arg name="defaultValueWhenNull" value=""/>
     </bean>
 
     <bean id="integerClass" class="java.lang.Class" factory-method="forName">
-        <constructor-arg value="java.lang.Integer" />
+        <constructor-arg value="java.lang.Integer"/>
     </bean>
 
     <bean id="stringClass" class="java.lang.Class" factory-method="forName">
-        <constructor-arg value="java.lang.String" />
+        <constructor-arg value="java.lang.String"/>
     </bean>
 
     <bean id="doubleClass" class="java.lang.Class" factory-method="forName">
-        <constructor-arg value="java.lang.Double" />
+        <constructor-arg value="java.lang.Double"/>
     </bean>
 
     <bean id="zeroInteger" class="java.lang.Integer">
-        <constructor-arg value="0" />
+        <constructor-arg value="0"/>
     </bean>
 
     <bean id="zeroDouble" class="java.lang.Double">
-        <constructor-arg value="0.0" />
+        <constructor-arg value="0.0"/>
     </bean>
 
     <bean id="negativeOneInteger" class="java.lang.Integer">
-        <constructor-arg value="-1" />
+        <constructor-arg value="-1"/>
     </bean>
 
     <bean id="stringEscapeUtils" class="org.apache.commons.lang3.StringEscapeUtils"/>
+
+    <bean id="commaSeparatedStringFactory" class="com.btanabe.fsdu.models.factories.CommaSeparatedStringFactory"/>
 </beans>

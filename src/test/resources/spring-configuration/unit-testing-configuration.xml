@@ -12,4 +12,5 @@
     <import resource="classpath:/spring-configuration/record-collectors/espn-record-collector-configuration.xml"/>
     <import resource="classpath:/spring-configuration/record-parsers/basketball-reference-record-parser-configuration.xml"/>
     <import resource="classpath:/spring-configuration/database-configuration.xml"/>
+    <import resource="classpath:/spring-configuration/record-combiner-tests-configuration.xml"/>
 </beans>

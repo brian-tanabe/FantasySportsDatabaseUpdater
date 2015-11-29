@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+                           http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-2.5.xsd">
+
+    <import resource="classpath:/spring-configuration/common/value-transformer-configuration.xml"/>
+
+    <bean id="basketballReferenceSeasonTotalsRecordCombiner" class="com.btanabe.fsdu.processors.RecordCombiner">
+        <constructor-arg value="com.btanabe.fsdu.models.BasketballReferenceSeasonTotalsModel"/>
+        <constructor-arg value="getTeam"/>
+        <constructor-arg value="TOT"/>
+        <constructor-arg value="getName"/>
+        <constructor-arg ref="basketballReferenceSeasonTotalsRecordCombinerValueTransformerMap"/>
+    </bean>
+
+    <util:map id="basketballReferenceSeasonTotalsRecordCombinerValueTransformerMap"
+              key-type="org.apache.commons.lang3.tuple.Pair"
+              value-type="com.btanabe.fsdu.processors.ValueTransformer">
+        <entry key-ref="teamNameGetterMethodSetterMethodNamePair" value-ref="commaSeparatedStringConcatenatorValueTransformer"/>
+    </util:map>
+
+    <bean id="teamNameGetterMethodSetterMethodNamePair" class="org.apache.commons.lang3.tuple.ImmutablePair" factory-method="of">
+        <constructor-arg value="getTeam"/>
+        <constructor-arg value="setTeam"/>
+    </bean>
+</beans>
+

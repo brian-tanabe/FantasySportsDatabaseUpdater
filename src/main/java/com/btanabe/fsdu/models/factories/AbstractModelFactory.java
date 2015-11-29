@@ -4,7 +4,6 @@ import com.btanabe.fsdu.parsers.ValueExtractor;
 import org.springframework.beans.factory.FactoryBean;
 import org.springframework.beans.factory.config.AbstractFactoryBean;
 
-import java.lang.reflect.InvocationTargetException;
 import java.util.Map;
 
 /**
@@ -14,5 +13,5 @@ public abstract class AbstractModelFactory<OutputClazz> extends AbstractFactoryB
 
     public abstract void setOutputClazz(Class<OutputClazz> outputModelClass);
     public abstract void setSetterMethodToValueMap(Map<String, ValueExtractor> setterMethodToValueMap);
-    public abstract OutputClazz createObject() throws ClassNotFoundException, InvocationTargetException, IllegalAccessException, InstantiationException, Exception;
+    public abstract OutputClazz createObject() throws Exception;
 }

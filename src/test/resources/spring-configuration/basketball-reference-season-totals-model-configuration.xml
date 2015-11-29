@@ -3,33 +3,252 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean id="qunicyAcy20142015SeasonTotalsPlayerModel" class="com.btanabe.fsdu.models.BasketballReferenceSeasonTotalsModel">
-        <property name="name" value="Quincy Acy" />
-        <property name="team" value="NYK" />
-        <property name="gamesStarted" value="22" />
-        <property name="gamesPlayed" value="68" />
-        <property name="minutesPlayed" value="1287" />
-        <property name="fieldGoalsMade" value="152" />
-        <property name="fieldGoalsAttempted" value="331" />
-        <property name="fieldGoalPercentage" value="0.459" />
-        <property name="threePointersMade" value="18" />
-        <property name="threePointersAttempted" value="60" />
-        <property name="threePointPercentage" value="0.300" />
-        <property name="twoPointersMade" value="134" />
-        <property name="twoPointersAttempted" value="271" />
-        <property name="twoPointPercentage" value="0.494" />
-        <property name="effectiveFieldGoalPercentage" value="0.486" />
-        <property name="freeThrowsMade" value="76" />
-        <property name="freeThrowsAttempted" value="97" />
-        <property name="freeThrowPercentage" value="0.784" />
-        <property name="offensiveRebounds" value="79" />
-        <property name="defensiveRebounds" value="222" />
-        <property name="totalRebounds" value="301" />
-        <property name="assists" value="68" />
-        <property name="steals" value="27" />
-        <property name="blocks" value="22" />
-        <property name="turnovers" value="60" />
-        <property name="personalFouls" value="147" />
-        <property name="points" value="398" />
+    <bean id="qunicyAcy20142015SeasonTotalsPlayerModel"
+          class="com.btanabe.fsdu.models.BasketballReferenceSeasonTotalsModel">
+        <property name="name" value="Quincy Acy"/>
+        <property name="team" value="NYK"/>
+        <property name="gamesStarted" value="22"/>
+        <property name="gamesPlayed" value="68"/>
+        <property name="minutesPlayed" value="1287"/>
+        <property name="fieldGoalsMade" value="152"/>
+        <property name="fieldGoalsAttempted" value="331"/>
+        <property name="fieldGoalPercentage" value="0.459"/>
+        <property name="threePointersMade" value="18"/>
+        <property name="threePointersAttempted" value="60"/>
+        <property name="threePointPercentage" value="0.300"/>
+        <property name="twoPointersMade" value="134"/>
+        <property name="twoPointersAttempted" value="271"/>
+        <property name="twoPointPercentage" value="0.494"/>
+        <property name="effectiveFieldGoalPercentage" value="0.486"/>
+        <property name="freeThrowsMade" value="76"/>
+        <property name="freeThrowsAttempted" value="97"/>
+        <property name="freeThrowPercentage" value="0.784"/>
+        <property name="offensiveRebounds" value="79"/>
+        <property name="defensiveRebounds" value="222"/>
+        <property name="totalRebounds" value="301"/>
+        <property name="assists" value="68"/>
+        <property name="steals" value="27"/>
+        <property name="blocks" value="22"/>
+        <property name="turnovers" value="60"/>
+        <property name="personalFouls" value="147"/>
+        <property name="points" value="398"/>
+    </bean>
+
+    <bean id="aaronAfflalo20142015SeasonTotalsTotalPlayerModel"
+          class="com.btanabe.fsdu.models.BasketballReferenceSeasonTotalsModel">
+        <property name="name" value="Aaron Afflalo"/>
+        <property name="team" value="TOT"/>
+        <property name="gamesStarted" value="72"/>
+        <property name="gamesPlayed" value="78"/>
+        <property name="minutesPlayed" value="2502"/>
+        <property name="fieldGoalsMade" value="375"/>
+        <property name="fieldGoalsAttempted" value="884"/>
+        <property name="fieldGoalPercentage" value="0.424"/>
+        <property name="threePointersMade" value="114"/>
+        <property name="threePointersAttempted" value="333"/>
+        <property name="threePointPercentage" value="0.354"/>
+        <property name="twoPointersMade" value="257"/>
+        <property name="twoPointersAttempted" value="551"/>
+        <property name="twoPointPercentage" value="0.466"/>
+        <property name="effectiveFieldGoalPercentage" value="0.491"/>
+        <property name="freeThrowsMade" value="167"/>
+        <property name="freeThrowsAttempted" value="198"/>
+        <property name="freeThrowPercentage" value="0.843"/>
+        <property name="offensiveRebounds" value="27"/>
+        <property name="defensiveRebounds" value="220"/>
+        <property name="totalRebounds" value="247"/>
+        <property name="assists" value="129"/>
+        <property name="steals" value="41"/>
+        <property name="blocks" value="7"/>
+        <property name="turnovers" value="116"/>
+        <property name="personalFouls" value="167"/>
+        <property name="points" value="1035"/>
+    </bean>
+
+    <bean id="aaronAfflalo20142015SeasonTotalsDenverPlayerModel"
+          class="com.btanabe.fsdu.models.BasketballReferenceSeasonTotalsModel">
+        <property name="name" value="Aaron Afflalo"/>
+        <property name="team" value="DEN"/>
+        <property name="gamesStarted" value="53"/>
+        <property name="gamesPlayed" value="53"/>
+        <property name="minutesPlayed" value="1750"/>
+        <property name="fieldGoalsMade" value="281"/>
+        <property name="fieldGoalsAttempted" value="657"/>
+        <property name="fieldGoalPercentage" value="0.428"/>
+        <property name="threePointersMade" value="82"/>
+        <property name="threePointersAttempted" value="243"/>
+        <property name="threePointPercentage" value="0.337"/>
+        <property name="twoPointersMade" value="199"/>
+        <property name="twoPointersAttempted" value="414"/>
+        <property name="twoPointPercentage" value="0.481"/>
+        <property name="effectiveFieldGoalPercentage" value="0.490"/>
+        <property name="freeThrowsMade" value="127"/>
+        <property name="freeThrowsAttempted" value="151"/>
+        <property name="freeThrowPercentage" value="0.841"/>
+        <property name="offensiveRebounds" value="21"/>
+        <property name="defensiveRebounds" value="159"/>
+        <property name="totalRebounds" value="180"/>
+        <property name="assists" value="101"/>
+        <property name="steals" value="32"/>
+        <property name="blocks" value="5"/>
+        <property name="turnovers" value="83"/>
+        <property name="personalFouls" value="108"/>
+        <property name="points" value="771"/>
+    </bean>
+
+    <bean id="aaronAfflalo20142015SeasonTotalsPortlandPlayerModel"
+          class="com.btanabe.fsdu.models.BasketballReferenceSeasonTotalsModel">
+        <property name="name" value="Aaron Afflalo"/>
+        <property name="team" value="POR"/>
+        <property name="gamesStarted" value="19"/>
+        <property name="gamesPlayed" value="25"/>
+        <property name="minutesPlayed" value="752"/>
+        <property name="fieldGoalsMade" value="94"/>
+        <property name="fieldGoalsAttempted" value="227"/>
+        <property name="fieldGoalPercentage" value="0.414"/>
+        <property name="threePointersMade" value="36"/>
+        <property name="threePointersAttempted" value="90"/>
+        <property name="threePointPercentage" value="0.400"/>
+        <property name="twoPointersMade" value="58"/>
+        <property name="twoPointersAttempted" value="137"/>
+        <property name="twoPointPercentage" value="0.423"/>
+        <property name="effectiveFieldGoalPercentage" value="0.493"/>
+        <property name="freeThrowsMade" value="40"/>
+        <property name="freeThrowsAttempted" value="47"/>
+        <property name="freeThrowPercentage" value="0.851"/>
+        <property name="offensiveRebounds" value="6"/>
+        <property name="defensiveRebounds" value="61"/>
+        <property name="totalRebounds" value="67"/>
+        <property name="assists" value="28"/>
+        <property name="steals" value="9"/>
+        <property name="blocks" value="2"/>
+        <property name="turnovers" value="33"/>
+        <property name="personalFouls" value="59"/>
+        <property name="points" value="264"/>
+    </bean>
+
+
+    <bean id="tonyDaniels20142015SeasonTotalsTotalPlayerModel"
+          class="com.btanabe.fsdu.models.BasketballReferenceSeasonTotalsModel">
+        <property name="name" value="Tony Daniels"/>
+        <property name="team" value="TOT"/>
+        <property name="gamesStarted" value="0"/>
+        <property name="gamesPlayed" value="47"/>
+        <property name="minutesPlayed" value="397"/>
+        <property name="fieldGoalsMade" value="61"/>
+        <property name="fieldGoalsAttempted" value="165"/>
+        <property name="fieldGoalPercentage" value="0.370"/>
+        <property name="threePointersMade" value="43"/>
+        <property name="threePointersAttempted" value="118"/>
+        <property name="threePointPercentage" value="0.364"/>
+        <property name="twoPointersMade" value="18"/>
+        <property name="twoPointersAttempted" value="47"/>
+        <property name="twoPointPercentage" value="0.383"/>
+        <property name="effectiveFieldGoalPercentage" value="0.500"/>
+        <property name="freeThrowsMade" value="11"/>
+        <property name="freeThrowsAttempted" value="13"/>
+        <property name="freeThrowPercentage" value="0.846"/>
+        <property name="offensiveRebounds" value="8"/>
+        <property name="defensiveRebounds" value="25"/>
+        <property name="totalRebounds" value="33"/>
+        <property name="assists" value="22"/>
+        <property name="steals" value="6"/>
+        <property name="blocks" value="1"/>
+        <property name="turnovers" value="20"/>
+        <property name="personalFouls" value="40"/>
+        <property name="points" value="176"/>
+    </bean>
+
+    <bean id="tonyDaniels20142015SeasonTotalsHoustonPlayerModel"
+          class="com.btanabe.fsdu.models.BasketballReferenceSeasonTotalsModel">
+        <property name="name" value="Tony Daniels"/>
+        <property name="team" value="HOU"/>
+        <property name="gamesStarted" value="0"/>
+        <property name="gamesPlayed" value="17"/>
+        <property name="minutesPlayed" value="108"/>
+        <property name="fieldGoalsMade" value="15"/>
+        <property name="fieldGoalsAttempted" value="47"/>
+        <property name="fieldGoalPercentage" value="0.319"/>
+        <property name="threePointersMade" value="13"/>
+        <property name="threePointersAttempted" value="43"/>
+        <property name="threePointPercentage" value="0.302"/>
+        <property name="twoPointersMade" value="2"/>
+        <property name="twoPointersAttempted" value="4"/>
+        <property name="twoPointPercentage" value="0.500"/>
+        <property name="effectiveFieldGoalPercentage" value="0.457"/>
+        <property name="freeThrowsMade" value="3"/>
+        <property name="freeThrowsAttempted" value="4"/>
+        <property name="freeThrowPercentage" value="0.750"/>
+        <property name="offensiveRebounds" value="0"/>
+        <property name="defensiveRebounds" value="6"/>
+        <property name="totalRebounds" value="6"/>
+        <property name="assists" value="4"/>
+        <property name="steals" value="0"/>
+        <property name="blocks" value="0"/>
+        <property name="turnovers" value="5"/>
+        <property name="personalFouls" value="14"/>
+        <property name="points" value="46"/>
+    </bean>
+
+    <bean id="tonyDaniels20142015SeasonTotalsMinneapolisPlayerModel"
+          class="com.btanabe.fsdu.models.BasketballReferenceSeasonTotalsModel">
+        <property name="name" value="Tony Daniels"/>
+        <property name="team" value="MIN"/>
+        <property name="gamesStarted" value="0"/>
+        <property name="gamesPlayed" value="19"/>
+        <property name="minutesPlayed" value="154"/>
+        <property name="fieldGoalsMade" value="19"/>
+        <property name="fieldGoalsAttempted" value="59"/>
+        <property name="fieldGoalPercentage" value="0.322"/>
+        <property name="threePointersMade" value="13"/>
+        <property name="threePointersAttempted" value="39"/>
+        <property name="threePointPercentage" value="0.333"/>
+        <property name="twoPointersMade" value="6"/>
+        <property name="twoPointersAttempted" value="20"/>
+        <property name="twoPointPercentage" value="0.300"/>
+        <property name="effectiveFieldGoalPercentage" value="0.432"/>
+        <property name="freeThrowsMade" value="2"/>
+        <property name="freeThrowsAttempted" value="2"/>
+        <property name="freeThrowPercentage" value="1.000"/>
+        <property name="offensiveRebounds" value="6"/>
+        <property name="defensiveRebounds" value="13"/>
+        <property name="totalRebounds" value="19"/>
+        <property name="assists" value="13"/>
+        <property name="steals" value="3"/>
+        <property name="blocks" value="0"/>
+        <property name="turnovers" value="8"/>
+        <property name="personalFouls" value="14"/>
+        <property name="points" value="53"/>
+    </bean>
+
+    <bean id="tonyDaniels20142015SeasonTotalsCharlottePlayerModel"
+          class="com.btanabe.fsdu.models.BasketballReferenceSeasonTotalsModel">
+        <property name="name" value="Tony Daniels"/>
+        <property name="team" value="CHO"/>
+        <property name="gamesStarted" value="0"/>
+        <property name="gamesPlayed" value="11"/>
+        <property name="minutesPlayed" value="135"/>
+        <property name="fieldGoalsMade" value="37"/>
+        <property name="fieldGoalsAttempted" value="59"/>
+        <property name="fieldGoalPercentage" value="0.458"/>
+        <property name="threePointersMade" value="17"/>
+        <property name="threePointersAttempted" value="36"/>
+        <property name="threePointPercentage" value="0.472"/>
+        <property name="twoPointersMade" value="10"/>
+        <property name="twoPointersAttempted" value="23"/>
+        <property name="twoPointPercentage" value="0.435"/>
+        <property name="effectiveFieldGoalPercentage" value="0.602"/>
+        <property name="freeThrowsMade" value="6"/>
+        <property name="freeThrowsAttempted" value="7"/>
+        <property name="freeThrowPercentage" value="0.857"/>
+        <property name="offensiveRebounds" value="2"/>
+        <property name="defensiveRebounds" value="6"/>
+        <property name="totalRebounds" value="8"/>
+        <property name="assists" value="5"/>
+        <property name="steals" value="3"/>
+        <property name="blocks" value="1"/>
+        <property name="turnovers" value="7"/>
+        <property name="personalFouls" value="12"/>
+        <property name="points" value="77"/>
     </bean>
 </beans>

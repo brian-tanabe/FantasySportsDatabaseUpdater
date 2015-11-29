@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+                           http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-2.5.xsd">
+
+    <import resource="classpath:/spring-configuration/basketball-reference-season-totals-model-configuration.xml"/>
+
+    <util:list id="basketballReferenceSeasonTotalsTwoTeamsInOneSeasonModelList"
+               value-type="com.btanabe.fsdu.models.BasketballReferenceSeasonTotalsModel"
+               list-class="java.util.ArrayList">
+        <ref bean="aaronAfflalo20142015SeasonTotalsTotalPlayerModel"/>
+        <ref bean="aaronAfflalo20142015SeasonTotalsDenverPlayerModel"/>
+        <ref bean="aaronAfflalo20142015SeasonTotalsPortlandPlayerModel"/>
+    </util:list>
+
+    <util:list id="basketballReferenceSeasonTotalsThreeTeamsInOneSeasonModelList"
+               value-type="com.btanabe.fsdu.models.BasketballReferenceSeasonTotalsModel"
+               list-class="java.util.ArrayList">
+        <ref bean="tonyDaniels20142015SeasonTotalsTotalPlayerModel"/>
+        <ref bean="tonyDaniels20142015SeasonTotalsHoustonPlayerModel"/>
+        <ref bean="tonyDaniels20142015SeasonTotalsMinneapolisPlayerModel"/>
+        <ref bean="tonyDaniels20142015SeasonTotalsCharlottePlayerModel"/>
+    </util:list>
+
+    <util:list id="basketballReferenceSeasonTotalsMultiplePlayersModelList"
+               value-type="com.btanabe.fsdu.models.BasketballReferenceSeasonTotalsModel"
+               list-class="java.util.ArrayList">
+        <ref bean="qunicyAcy20142015SeasonTotalsPlayerModel"/>
+        <ref bean="aaronAfflalo20142015SeasonTotalsTotalPlayerModel"/>
+        <ref bean="aaronAfflalo20142015SeasonTotalsDenverPlayerModel"/>
+        <ref bean="aaronAfflalo20142015SeasonTotalsPortlandPlayerModel"/>
+        <ref bean="tonyDaniels20142015SeasonTotalsTotalPlayerModel"/>
+        <ref bean="tonyDaniels20142015SeasonTotalsHoustonPlayerModel"/>
+        <ref bean="tonyDaniels20142015SeasonTotalsMinneapolisPlayerModel"/>
+        <ref bean="tonyDaniels20142015SeasonTotalsCharlottePlayerModel"/>
+    </util:list>
+</beans>
