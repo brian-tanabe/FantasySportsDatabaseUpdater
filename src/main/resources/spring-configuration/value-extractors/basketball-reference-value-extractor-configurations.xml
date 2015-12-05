@@ -11,7 +11,7 @@
     <bean id="basketballReferenceNameValueExtractor" class="com.btanabe.fsdu.parsers.ValueExtractor">
         <constructor-arg name="outputClasspath" value="java.lang.String"/>
         <constructor-arg name="outputMatchingRegex"
-                         value="(?&lt;=&quot;/players/a/.{0,50}\.html&quot;&gt;)(.*)(?=&lt;/a&gt;)"/>
+                         value="(?&lt;=&quot;/players/[a-z]/.{0,50}\.html&quot;&gt;)(.*)(?=&lt;/a&gt;)"/>
     </bean>
 
     <bean id="basketballReferenceTeamNameValueExtractor" class="com.btanabe.fsdu.parsers.ValueExtractor">
@@ -90,10 +90,12 @@
                          value="(?&lt;=&lt;td align=&quot;left&quot;&gt;(TOT|&lt;a href=&quot;/teams/.{0,3}/[0-9]{4}.html&quot;&gt;[A-Z]{0,5}&lt;/a&gt;)&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;)(.*)(?=&lt;/td&gt;)"/>
     </bean>
 
-    <bean id="basketballReferenceTwoPointersPercentageValueExtractor" class="com.btanabe.fsdu.parsers.ValueExtractor">
+    <bean id="basketballReferenceTwoPointersPercentageValueExtractor"
+          class="com.btanabe.fsdu.parsers.TransformingValueExtractor">
         <constructor-arg name="outputClasspath" value="java.lang.Double"/>
         <constructor-arg name="outputMatchingRegex"
                          value="(?&lt;=&lt;td align=&quot;left&quot;&gt;(TOT|&lt;a href=&quot;/teams/.{0,3}/[0-9]{4}.html&quot;&gt;[A-Z]{0,5}&lt;/a&gt;)&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;.{0,5}&lt;/td&gt;\n&lt;td align=&quot;right&quot;&gt;)(.*)(?=&lt;/td&gt;)"/>
+        <constructor-arg name="outputValueTransformer" ref="nullToZeroAsDoubleValueTransformer"/>
     </bean>
 
     <bean id="basketballReferenceEffectiveFieldGoalPercentageValueExtractor"
@@ -184,6 +186,6 @@
           class="com.btanabe.fsdu.parsers.PaginatedValueExtractor">
         <constructor-arg name="outputClasspath" value="java.lang.String"/>
         <constructor-arg name="outputMatchingRegex"
-                         value="&lt;tr class=&quot;full_table?&quot;&gt;(.|\n|\s)+?&lt;\/tr&gt;"/>
+                         value="&lt;tr class=&quot;(full|italic_text partial)_table&quot;&gt;(.|\n|\s)+?&lt;\/tr&gt;"/>
     </bean>
 </beans>

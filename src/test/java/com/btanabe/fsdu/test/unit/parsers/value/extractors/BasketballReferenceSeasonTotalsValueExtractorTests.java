@@ -33,6 +33,10 @@ public class BasketballReferenceSeasonTotalsValueExtractorTests {
     private String aaronAfflaloSeasonTotals;
 
     @Autowired
+    @Qualifier("basketballReferenceSeasonTotals20142015JeffAyers")
+    private String basketballReferenceJeffAyersRow;
+
+    @Autowired
     @Qualifier("qunicyAcy20142015SeasonTotalsPlayerModel")
     private BasketballReferenceSeasonTotalsModel expectedQuincyAcyModel;
 
@@ -43,6 +47,10 @@ public class BasketballReferenceSeasonTotalsValueExtractorTests {
     @Autowired
     @Qualifier("arronAfflalo20142015SeasonTotalsTotalPlayerModel")
     private BasketballReferenceSeasonTotalsModel expectedAaronAfflaloModel;
+
+    @Autowired
+    @Qualifier("jeffAyres20142015SeasonTotalsPlayerModel")
+    private BasketballReferenceSeasonTotalsModel expectedJeffAyresModel;
 
     @Autowired
     @Qualifier("basketballReferenceNameValueExtractor")
@@ -157,6 +165,12 @@ public class BasketballReferenceSeasonTotalsValueExtractorTests {
     public void shouldBeAbleToExtractFullNameFromSeasonsTotalsPage() throws Exception {
         nameValueExtractor.setInputStringToSearch(quincyAcySeasonTotals);
         assertThat(nameValueExtractor.getValue(), is(equalTo((Object) expectedQuincyAcyModel.getName())));
+    }
+
+    @Test
+    public void shouldBeAbleToExtractFullNameFromSeasonTotalsPageWhenTheUriContainsPInsteadOfA() throws Exception {
+        nameValueExtractor.setInputStringToSearch(basketballReferenceJeffAyersRow);
+        assertThat(nameValueExtractor.getValue(), is(equalTo((Object) expectedJeffAyresModel.getName())));
     }
 
     @Test

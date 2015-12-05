@@ -282,4 +282,66 @@
         <property name="personalFouls" value="0"/>
         <property name="points" value="0"/>
     </bean>
+
+    <bean id="djAugustinDet20142015SeasonTotalsPlayerModel"
+          class="com.btanabe.fsdu.models.BasketballReferenceSeasonTotalsModel">
+        <property name="name" value="D.J. Augustin"/>
+        <property name="team" value="DET"/>
+        <property name="gamesStarted" value="13"/>
+        <property name="gamesPlayed" value="54"/>
+        <property name="minutesPlayed" value="1287"/>
+        <property name="fieldGoalsMade" value="189"/>
+        <property name="fieldGoalsAttempted" value="461"/>
+        <property name="fieldGoalPercentage" value="0.410"/>
+        <property name="threePointersMade" value="49"/>
+        <property name="threePointersAttempted" value="150"/>
+        <property name="threePointPercentage" value="0.327"/>
+        <property name="twoPointersMade" value="140"/>
+        <property name="twoPointersAttempted" value="311"/>
+        <property name="twoPointPercentage" value="0.450"/>
+        <property name="effectiveFieldGoalPercentage" value="0.463"/>
+        <property name="freeThrowsMade" value="147"/>
+        <property name="freeThrowsAttempted" value="169"/>
+        <property name="freeThrowPercentage" value="0.870"/>
+        <property name="offensiveRebounds" value="13"/>
+        <property name="defensiveRebounds" value="87"/>
+        <property name="totalRebounds" value="100"/>
+        <property name="assists" value="265"/>
+        <property name="steals" value="33"/>
+        <property name="blocks" value="2"/>
+        <property name="turnovers" value="110"/>
+        <property name="personalFouls" value="61"/>
+        <property name="points" value="574"/>
+    </bean>
+
+    <bean id="jeffAyres20142015SeasonTotalsPlayerModel"
+          class="com.btanabe.fsdu.models.BasketballReferenceSeasonTotalsModel">
+        <property name="name" value="Jeff Ayres"/>
+        <property name="team" value="SAS"/>
+        <property name="gamesStarted" value="0"/>
+        <property name="gamesPlayed" value="51"/>
+        <property name="minutesPlayed" value="383"/>
+        <property name="fieldGoalsMade" value="55"/>
+        <property name="fieldGoalsAttempted" value="95"/>
+        <property name="fieldGoalPercentage" value="0.579"/>
+        <property name="threePointersMade" value="0"/>
+        <property name="threePointersAttempted" value="0"/>
+        <property name="threePointPercentage" value="0.0"/>
+        <property name="twoPointersMade" value="55"/>
+        <property name="twoPointersAttempted" value="95"/>
+        <property name="twoPointPercentage" value="0.579"/>
+        <property name="effectiveFieldGoalPercentage" value="0.579"/>
+        <property name="freeThrowsMade" value="27"/>
+        <property name="freeThrowsAttempted" value="36"/>
+        <property name="freeThrowPercentage" value="0.750"/>
+        <property name="offensiveRebounds" value="37"/>
+        <property name="defensiveRebounds" value="80"/>
+        <property name="totalRebounds" value="117"/>
+        <property name="assists" value="14"/>
+        <property name="steals" value="8"/>
+        <property name="blocks" value="8"/>
+        <property name="turnovers" value="26"/>
+        <property name="personalFouls" value="60"/>
+        <property name="points" value="137"/>
+    </bean>
 </beans>

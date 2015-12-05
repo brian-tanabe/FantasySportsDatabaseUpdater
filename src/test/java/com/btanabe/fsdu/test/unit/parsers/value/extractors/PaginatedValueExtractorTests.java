@@ -60,9 +60,9 @@ public class PaginatedValueExtractorTests {
     }
 
     @Test
-    public void shouldBeAbleToFindFourHundredNinetyTwoPlayersOnBasketballReferenceSeasonTotalsPage() throws Exception {
+    public void shouldBeAbleToFindSixHundredFiftySixPlayersOnBasketballReferenceSeasonTotalsPage() throws Exception {
         basketballReferenceSeasonTotalsPlayerValueExtractor.setInputStringToSearch(basketballReferenceSeasonTotalsPage);
         List<String> objectList = basketballReferenceSeasonTotalsPlayerValueExtractor.getValuesAsList();
-        assertThat(objectList.size(), is(equalTo(492)));
+        assertThat(objectList.size(), is(equalTo(651)));
     }
 }

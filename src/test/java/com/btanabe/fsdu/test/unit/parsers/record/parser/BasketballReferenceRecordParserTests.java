@@ -38,8 +38,7 @@ public class BasketballReferenceRecordParserTests {
 
     @Autowired
     @Qualifier("arronAfflalo20142015SeasonTotalsTotalPlayerModel")
-    private BasketballReferenceSeasonTotalsModel expectedAaronAfflaloBasketballReferenceSeasonTotalsModel;
-
+    private BasketballReferenceSeasonTotalsModel expectedArronAfflaloBasketballReferenceSeasonTotalsModel;
 
     @Test
     public void shouldBeAbleToParseBasketballReferenceSeasonTotalsProperly() throws Exception {
@@ -50,6 +49,6 @@ public class BasketballReferenceRecordParserTests {
     @Test
     public void shouldBeAbleToParseBasketballReferenceSeasonTotalsProperlyWhenThePlayerHasBeenTraded() throws Exception {
         basketballReferenceSeasonTotalsModelRecordParser.setInputHtml(basketballReferenceSeasonsTotalsPageArronAfflaloTotalRow);
-        assertThat(basketballReferenceSeasonTotalsModelRecordParser.getRecord(), is(equalTo(expectedAaronAfflaloBasketballReferenceSeasonTotalsModel)));
+        assertThat(basketballReferenceSeasonTotalsModelRecordParser.getRecord(), is(equalTo(expectedArronAfflaloBasketballReferenceSeasonTotalsModel)));
     }
 }

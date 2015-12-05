@@ -152,4 +152,12 @@
     <bean id="basketballReferenceSeasonTotals20142015ArronAfflaloTot" class="com.btanabe.fsdu.test.factories.FileTidiedStringFactory">
         <property name="inputFile" value="classpath:test-webpages/basketball-reference/season-totals.arron-afflaflo-tot.html"/>
     </bean>
+
+    <bean id="basketballReferenceSeasonTotals20142015DjAugustinDet" class="com.btanabe.fsdu.test.factories.FileTidiedStringFactory">
+        <property name="inputFile" value="classpath:test-webpages/basketball-reference/season-totals.dj-augustin-det.html"/>
+    </bean>
+
+    <bean id="basketballReferenceSeasonTotals20142015JeffAyers" class="com.btanabe.fsdu.test.factories.FileTidiedStringFactory">
+        <property name="inputFile" value="classpath:test-webpages/basketball-reference/season-totals.jeff-ayers.html"/>
+    </bean>
 </beans>
