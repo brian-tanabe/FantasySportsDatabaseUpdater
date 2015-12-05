@@ -75,10 +75,10 @@ public class RecordCombinerTests {
         assertThat(combinedRecords.stream().filter(player -> player.getName().equals("Tony Daniels") && player.getTeam().equals("MIN")).count(), is(equalTo(1L)));
         assertThat(combinedRecords.stream().filter(player -> player.getName().equals("Tony Daniels") && player.getTeam().equals("CHO")).count(), is(equalTo(1L)));
 
-        assertThat(combinedRecords.stream().filter(player -> player.getName().equals("Aaron Afflalo")).count(), is(equalTo(3L)));
-        assertThat(combinedRecords.stream().filter(player -> player.getName().equals("Aaron Afflalo") && player.getTeam().equals("TOT")).count(), is(equalTo(0L)));
-        assertThat(combinedRecords.stream().filter(player -> player.getName().equals("Aaron Afflalo") && player.getTeam().equals("DEN")).count(), is(equalTo(1L)));
-        assertThat(combinedRecords.stream().filter(player -> player.getName().equals("Aaron Afflalo") && player.getTeam().equals("POR")).count(), is(equalTo(1L)));
+        assertThat(combinedRecords.stream().filter(player -> player.getName().equals("Arron Afflalo")).count(), is(equalTo(3L)));
+        assertThat(combinedRecords.stream().filter(player -> player.getName().equals("Arron Afflalo") && player.getTeam().equals("TOT")).count(), is(equalTo(0L)));
+        assertThat(combinedRecords.stream().filter(player -> player.getName().equals("Arron Afflalo") && player.getTeam().equals("DEN")).count(), is(equalTo(1L)));
+        assertThat(combinedRecords.stream().filter(player -> player.getName().equals("Arron Afflalo") && player.getTeam().equals("POR")).count(), is(equalTo(1L)));
 
         assertThat(combinedRecords.stream().filter(player -> player.getName().equals("Quincy Acy")).count(), is(equalTo(1L)));
     }

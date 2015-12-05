@@ -34,9 +34,9 @@
         <property name="points" value="398"/>
     </bean>
 
-    <bean id="aaronAfflalo20142015SeasonTotalsTotalPlayerModel"
+    <bean id="arronAfflalo20142015SeasonTotalsTotalPlayerModel"
           class="com.btanabe.fsdu.models.BasketballReferenceSeasonTotalsModel">
-        <property name="name" value="Aaron Afflalo"/>
+        <property name="name" value="Arron Afflalo"/>
         <property name="team" value="TOT"/>
         <property name="gamesStarted" value="72"/>
         <property name="gamesPlayed" value="78"/>
@@ -65,9 +65,9 @@
         <property name="points" value="1035"/>
     </bean>
 
-    <bean id="aaronAfflalo20142015SeasonTotalsDenverPlayerModel"
+    <bean id="arronAfflalo20142015SeasonTotalsDenverPlayerModel"
           class="com.btanabe.fsdu.models.BasketballReferenceSeasonTotalsModel">
-        <property name="name" value="Aaron Afflalo"/>
+        <property name="name" value="Arron Afflalo"/>
         <property name="team" value="DEN"/>
         <property name="gamesStarted" value="53"/>
         <property name="gamesPlayed" value="53"/>
@@ -96,9 +96,9 @@
         <property name="points" value="771"/>
     </bean>
 
-    <bean id="aaronAfflalo20142015SeasonTotalsPortlandPlayerModel"
+    <bean id="arronAfflalo20142015SeasonTotalsPortlandPlayerModel"
           class="com.btanabe.fsdu.models.BasketballReferenceSeasonTotalsModel">
-        <property name="name" value="Aaron Afflalo"/>
+        <property name="name" value="Arron Afflalo"/>
         <property name="team" value="POR"/>
         <property name="gamesStarted" value="19"/>
         <property name="gamesPlayed" value="25"/>

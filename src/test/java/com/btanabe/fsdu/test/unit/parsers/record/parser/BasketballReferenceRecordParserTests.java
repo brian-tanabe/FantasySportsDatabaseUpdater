@@ -29,27 +29,27 @@ public class BasketballReferenceRecordParserTests {
     private String basketballReferenceSeasonTotalsPageQuincyAcy;
 
     @Autowired
-    @Qualifier("basketballReferenceSeasonTotals20142015AaronAfflaloTot")
-    private String basketballReferenceSeasonsTotalsPageAaronAfflaloTotalRow;
+    @Qualifier("basketballReferenceSeasonTotals20142015ArronAfflaloTot")
+    private String basketballReferenceSeasonsTotalsPageArronAfflaloTotalRow;
 
     @Autowired
     @Qualifier("qunicyAcy20142015SeasonTotalsPlayerModel")
     private BasketballReferenceSeasonTotalsModel expectedQuincyAcyBasketballReferenceSeasonTotalsModel;
 
     @Autowired
-    @Qualifier("aaronAfflalo20142015SeasonTotalsTotalPlayerModel")
+    @Qualifier("arronAfflalo20142015SeasonTotalsTotalPlayerModel")
     private BasketballReferenceSeasonTotalsModel expectedAaronAfflaloBasketballReferenceSeasonTotalsModel;
 
 
     @Test
     public void shouldBeAbleToParseBasketballReferenceSeasonTotalsProperly() throws Exception {
         basketballReferenceSeasonTotalsModelRecordParser.setInputHtml(basketballReferenceSeasonTotalsPageQuincyAcy);
-        assertThat(basketballReferenceSeasonTotalsModelRecordParser.getRecord(), is(equalTo((Object) expectedQuincyAcyBasketballReferenceSeasonTotalsModel)));
+        assertThat(basketballReferenceSeasonTotalsModelRecordParser.getRecord(), is(equalTo(expectedQuincyAcyBasketballReferenceSeasonTotalsModel)));
     }
 
     @Test
     public void shouldBeAbleToParseBasketballReferenceSeasonTotalsProperlyWhenThePlayerHasBeenTraded() throws Exception {
-        basketballReferenceSeasonTotalsModelRecordParser.setInputHtml(basketballReferenceSeasonsTotalsPageAaronAfflaloTotalRow);
-        assertThat(basketballReferenceSeasonTotalsModelRecordParser.getRecord(), is(equalTo((Object) expectedAaronAfflaloBasketballReferenceSeasonTotalsModel)));
+        basketballReferenceSeasonTotalsModelRecordParser.setInputHtml(basketballReferenceSeasonsTotalsPageArronAfflaloTotalRow);
+        assertThat(basketballReferenceSeasonTotalsModelRecordParser.getRecord(), is(equalTo(expectedAaronAfflaloBasketballReferenceSeasonTotalsModel)));
     }
 }

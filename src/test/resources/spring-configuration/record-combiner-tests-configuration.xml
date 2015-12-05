@@ -10,9 +10,9 @@
     <util:list id="basketballReferenceSeasonTotalsTwoTeamsInOneSeasonModelList"
                value-type="com.btanabe.fsdu.models.BasketballReferenceSeasonTotalsModel"
                list-class="java.util.ArrayList">
-        <ref bean="aaronAfflalo20142015SeasonTotalsTotalPlayerModel"/>
-        <ref bean="aaronAfflalo20142015SeasonTotalsDenverPlayerModel"/>
-        <ref bean="aaronAfflalo20142015SeasonTotalsPortlandPlayerModel"/>
+        <ref bean="arronAfflalo20142015SeasonTotalsTotalPlayerModel"/>
+        <ref bean="arronAfflalo20142015SeasonTotalsDenverPlayerModel"/>
+        <ref bean="arronAfflalo20142015SeasonTotalsPortlandPlayerModel"/>
     </util:list>
 
     <util:list id="basketballReferenceSeasonTotalsThreeTeamsInOneSeasonModelList"
@@ -28,9 +28,9 @@
                value-type="com.btanabe.fsdu.models.BasketballReferenceSeasonTotalsModel"
                list-class="java.util.ArrayList">
         <ref bean="qunicyAcy20142015SeasonTotalsPlayerModel"/>
-        <ref bean="aaronAfflalo20142015SeasonTotalsTotalPlayerModel"/>
-        <ref bean="aaronAfflalo20142015SeasonTotalsDenverPlayerModel"/>
-        <ref bean="aaronAfflalo20142015SeasonTotalsPortlandPlayerModel"/>
+        <ref bean="arronAfflalo20142015SeasonTotalsTotalPlayerModel"/>
+        <ref bean="arronAfflalo20142015SeasonTotalsDenverPlayerModel"/>
+        <ref bean="arronAfflalo20142015SeasonTotalsPortlandPlayerModel"/>
         <ref bean="tonyDaniels20142015SeasonTotalsTotalPlayerModel"/>
         <ref bean="tonyDaniels20142015SeasonTotalsHoustonPlayerModel"/>
         <ref bean="tonyDaniels20142015SeasonTotalsMinneapolisPlayerModel"/>

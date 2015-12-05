@@ -149,7 +149,7 @@
         <property name="inputFile" value="classpath:test-webpages/basketball-reference/season-totals.jerrelle-benimon.html"/>
     </bean>
 
-    <bean id="basketballReferenceSeasonTotals20142015AaronAfflaloTot" class="com.btanabe.fsdu.test.factories.FileTidiedStringFactory">
-        <property name="inputFile" value="classpath:test-webpages/basketball-reference/season-totals.aaron-afflaflo-tot.html"/>
+    <bean id="basketballReferenceSeasonTotals20142015ArronAfflaloTot" class="com.btanabe.fsdu.test.factories.FileTidiedStringFactory">
+        <property name="inputFile" value="classpath:test-webpages/basketball-reference/season-totals.arron-afflaflo-tot.html"/>
     </bean>
 </beans>

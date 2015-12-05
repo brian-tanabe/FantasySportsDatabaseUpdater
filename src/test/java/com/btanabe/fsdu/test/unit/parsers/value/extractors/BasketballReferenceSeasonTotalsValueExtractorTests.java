@@ -29,7 +29,7 @@ public class BasketballReferenceSeasonTotalsValueExtractorTests {
     private String jerrelleBenimonSeasonTotals;
 
     @Autowired
-    @Qualifier("basketballReferenceSeasonTotals20142015AaronAfflaloTot")
+    @Qualifier("basketballReferenceSeasonTotals20142015ArronAfflaloTot")
     private String aaronAfflaloSeasonTotals;
 
     @Autowired
@@ -41,7 +41,7 @@ public class BasketballReferenceSeasonTotalsValueExtractorTests {
     private BasketballReferenceSeasonTotalsModel expectedJerrelleBenimonModel;
 
     @Autowired
-    @Qualifier("aaronAfflalo20142015SeasonTotalsTotalPlayerModel")
+    @Qualifier("arronAfflalo20142015SeasonTotalsTotalPlayerModel")
     private BasketballReferenceSeasonTotalsModel expectedAaronAfflaloModel;
 
     @Autowired
