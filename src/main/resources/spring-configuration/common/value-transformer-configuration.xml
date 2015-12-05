@@ -14,7 +14,7 @@
 
     <bean id="nullToNegativeOneAsIntegerValueTransformer" class="com.btanabe.fsdu.processors.ValueTransformer">
         <constructor-arg name="classWhichPerformsTheValueTransformation"
-                         value="com.btanabe.fsdu.models.factories.IntegerFactory"/>
+                         value="com.btanabe.fsdu.processors.transformers.IntegerFactory"/>
         <constructor-arg name="transformingMethodName" value="integerValue"/>
         <constructor-arg name="classTypeOfTheInputToTheTransformingMethod" ref="integerClass"/>
         <constructor-arg name="objectTheTransformingMethodIsInvokedFrom" ref="zeroInteger"/>
@@ -23,7 +23,7 @@
 
     <bean id="nullToZeroAsDoubleValueTransformer" class="com.btanabe.fsdu.processors.ValueTransformer">
         <constructor-arg name="classWhichPerformsTheValueTransformation"
-                         value="com.btanabe.fsdu.models.factories.DoubleFactory"/>
+                         value="com.btanabe.fsdu.processors.transformers.DoubleFactory"/>
         <constructor-arg name="transformingMethodName" value="doubleValue"/>
         <constructor-arg name="classTypeOfTheInputToTheTransformingMethod" ref="doubleClass"/>
         <constructor-arg name="objectTheTransformingMethodIsInvokedFrom" ref="zeroInteger"/>
@@ -32,7 +32,7 @@
 
     <bean id="commaSeparatedStringConcatenatorValueTransformer" class="com.btanabe.fsdu.processors.ValueTransformer">
         <constructor-arg name="classWhichPerformsTheValueTransformation"
-                         value="com.btanabe.fsdu.models.factories.CommaSeparatedStringFactory"/>
+                         value="com.btanabe.fsdu.processors.transformers.CommaSeparatedStringFactory"/>
         <constructor-arg name="transformingMethodName" value="commaSeparateInputStrings"/>
         <constructor-arg name="classTypeOfTheInputToTheTransformingMethod" ref="stringClass"/>
         <constructor-arg name="objectTheTransformingMethodIsInvokedFrom" ref="commaSeparatedStringFactory"/>
@@ -65,5 +65,5 @@
 
     <bean id="stringEscapeUtils" class="org.apache.commons.lang3.StringEscapeUtils"/>
 
-    <bean id="commaSeparatedStringFactory" class="com.btanabe.fsdu.models.factories.CommaSeparatedStringFactory"/>
+    <bean id="commaSeparatedStringFactory" class="com.btanabe.fsdu.processors.transformers.CommaSeparatedStringFactory"/>
 </beans>

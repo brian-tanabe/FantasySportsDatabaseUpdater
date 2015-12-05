@@ -21,7 +21,7 @@ import static org.junit.Assert.assertThat;
  */
 @ContextConfiguration("classpath:spring-configuration/unit-testing-configuration.xml")
 @RunWith(SpringJUnit4ClassRunner.class)
-public class PaginatedRecordParserTests {
+public class EspnPaginatedRecordParserTests {
 
     @Autowired
     @Qualifier("espnNflPlayerProjectionPagePaginatedRecordParser")

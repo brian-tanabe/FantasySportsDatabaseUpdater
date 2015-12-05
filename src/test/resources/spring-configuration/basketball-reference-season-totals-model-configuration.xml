@@ -44,7 +44,7 @@
         <property name="fieldGoalsMade" value="375"/>
         <property name="fieldGoalsAttempted" value="884"/>
         <property name="fieldGoalPercentage" value="0.424"/>
-        <property name="threePointersMade" value="114"/>
+        <property name="threePointersMade" value="118"/>
         <property name="threePointersAttempted" value="333"/>
         <property name="threePointPercentage" value="0.354"/>
         <property name="twoPointersMade" value="257"/>
@@ -250,5 +250,36 @@
         <property name="turnovers" value="7"/>
         <property name="personalFouls" value="12"/>
         <property name="points" value="77"/>
+    </bean>
+
+    <bean id="jerrelleBenimon20142015SeasonTotalsPlayerModel"
+          class="com.btanabe.fsdu.models.BasketballReferenceSeasonTotalsModel">
+        <property name="name" value="Jerrelle Benimon"/>
+        <property name="team" value="UTH"/>
+        <property name="gamesStarted" value="0"/>
+        <property name="gamesPlayed" value="2"/>
+        <property name="minutesPlayed" value="3"/>
+        <property name="fieldGoalsMade" value="0"/>
+        <property name="fieldGoalsAttempted" value="0"/>
+        <property name="fieldGoalPercentage" value="0.0"/>
+        <property name="threePointersMade" value="0"/>
+        <property name="threePointersAttempted" value="0"/>
+        <property name="threePointPercentage" value="0.000"/>
+        <property name="twoPointersMade" value="0"/>
+        <property name="twoPointersAttempted" value="0"/>
+        <property name="twoPointPercentage" value="0.0"/>
+        <property name="effectiveFieldGoalPercentage" value="0.0"/>
+        <property name="freeThrowsMade" value="0"/>
+        <property name="freeThrowsAttempted" value="0"/>
+        <property name="freeThrowPercentage" value="0.0"/>
+        <property name="offensiveRebounds" value="1"/>
+        <property name="defensiveRebounds" value="2"/>
+        <property name="totalRebounds" value="3"/>
+        <property name="assists" value="0"/>
+        <property name="steals" value="0"/>
+        <property name="blocks" value="0"/>
+        <property name="turnovers" value="1"/>
+        <property name="personalFouls" value="0"/>
+        <property name="points" value="0"/>
     </bean>
 </beans>

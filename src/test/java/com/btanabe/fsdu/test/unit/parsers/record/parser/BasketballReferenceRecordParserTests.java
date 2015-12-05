@@ -21,7 +21,7 @@ import static org.junit.Assert.assertThat;
 public class BasketballReferenceRecordParserTests {
 
     @Autowired
-    @Qualifier("basketballReferenceSeasonTotalsPagePaginatedRecordParser")
+    @Qualifier("basketballReferenceSeasonTotalsRecordParser")
     private RecordParser<BasketballReferenceSeasonTotalsModel> basketballReferenceSeasonTotalsModelRecordParser;
 
     @Autowired
@@ -29,13 +29,27 @@ public class BasketballReferenceRecordParserTests {
     private String basketballReferenceSeasonTotalsPageQuincyAcy;
 
     @Autowired
+    @Qualifier("basketballReferenceSeasonTotals20142015AaronAfflaloTot")
+    private String basketballReferenceSeasonsTotalsPageAaronAfflaloTotalRow;
+
+    @Autowired
     @Qualifier("qunicyAcy20142015SeasonTotalsPlayerModel")
     private BasketballReferenceSeasonTotalsModel expectedQuincyAcyBasketballReferenceSeasonTotalsModel;
+
+    @Autowired
+    @Qualifier("aaronAfflalo20142015SeasonTotalsTotalPlayerModel")
+    private BasketballReferenceSeasonTotalsModel expectedAaronAfflaloBasketballReferenceSeasonTotalsModel;
 
 
     @Test
     public void shouldBeAbleToParseBasketballReferenceSeasonTotalsProperly() throws Exception {
         basketballReferenceSeasonTotalsModelRecordParser.setInputHtml(basketballReferenceSeasonTotalsPageQuincyAcy);
         assertThat(basketballReferenceSeasonTotalsModelRecordParser.getRecord(), is(equalTo((Object) expectedQuincyAcyBasketballReferenceSeasonTotalsModel)));
+    }
+
+    @Test
+    public void shouldBeAbleToParseBasketballReferenceSeasonTotalsProperlyWhenThePlayerHasBeenTraded() throws Exception {
+        basketballReferenceSeasonTotalsModelRecordParser.setInputHtml(basketballReferenceSeasonsTotalsPageAaronAfflaloTotalRow);
+        assertThat(basketballReferenceSeasonTotalsModelRecordParser.getRecord(), is(equalTo((Object) expectedAaronAfflaloBasketballReferenceSeasonTotalsModel)));
     }
 }

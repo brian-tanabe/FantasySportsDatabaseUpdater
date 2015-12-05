@@ -25,8 +25,24 @@ public class BasketballReferenceSeasonTotalsValueExtractorTests {
     private String quincyAcySeasonTotals;
 
     @Autowired
+    @Qualifier("basketballReferenceSeasonTotals20142015JerrelleBenimon")
+    private String jerrelleBenimonSeasonTotals;
+
+    @Autowired
+    @Qualifier("basketballReferenceSeasonTotals20142015AaronAfflaloTot")
+    private String aaronAfflaloSeasonTotals;
+
+    @Autowired
     @Qualifier("qunicyAcy20142015SeasonTotalsPlayerModel")
     private BasketballReferenceSeasonTotalsModel expectedQuincyAcyModel;
+
+    @Autowired
+    @Qualifier("jerrelleBenimon20142015SeasonTotalsPlayerModel")
+    private BasketballReferenceSeasonTotalsModel expectedJerrelleBenimonModel;
+
+    @Autowired
+    @Qualifier("aaronAfflalo20142015SeasonTotalsTotalPlayerModel")
+    private BasketballReferenceSeasonTotalsModel expectedAaronAfflaloModel;
 
     @Autowired
     @Qualifier("basketballReferenceNameValueExtractor")
@@ -150,9 +166,9 @@ public class BasketballReferenceSeasonTotalsValueExtractorTests {
     }
 
     @Test
-    public void shouldBeAbleToExtractGamesPlayedFromSeasonsTotalsPage() throws Exception {
-        gamesPlayedValueExtractor.setInputStringToSearch(quincyAcySeasonTotals);
-        assertThat(gamesPlayedValueExtractor.getValue(), is(equalTo((Object) expectedQuincyAcyModel.getGamesPlayed())));
+    public void shouldBeAbleToExtractTeamAbbreviationFromSeasonTotalsPageWhenPlayerHasBeenTraded() throws Exception {
+        teamNameValueExtractor.setInputStringToSearch(aaronAfflaloSeasonTotals);
+        assertThat(teamNameValueExtractor.getValue(), is(equalTo((Object) expectedAaronAfflaloModel.getTeam())));
     }
 
     @Test
@@ -162,9 +178,34 @@ public class BasketballReferenceSeasonTotalsValueExtractorTests {
     }
 
     @Test
+    public void shouldBeAbleToExtractGamesStartedFromSeasonsTotalsPageWhenPlayerHasBeenTraded() throws Exception {
+        gamesStartedValueExtractor.setInputStringToSearch(aaronAfflaloSeasonTotals);
+        assertThat(gamesStartedValueExtractor.getValue(), is(equalTo((Object) expectedAaronAfflaloModel.getGamesStarted())));
+    }
+
+
+    @Test
+    public void shouldBeAbleToExtractGamesPlayedFromSeasonsTotalsPage() throws Exception {
+        gamesPlayedValueExtractor.setInputStringToSearch(quincyAcySeasonTotals);
+        assertThat(gamesPlayedValueExtractor.getValue(), is(equalTo((Object) expectedQuincyAcyModel.getGamesPlayed())));
+    }
+
+    @Test
+    public void shouldBeAbleToExtractGamesPlayedFromSeasonsTotalsPageWhenPlayerHasBeenTraded() throws Exception {
+        gamesPlayedValueExtractor.setInputStringToSearch(aaronAfflaloSeasonTotals);
+        assertThat(gamesPlayedValueExtractor.getValue(), is(equalTo((Object) expectedAaronAfflaloModel.getGamesPlayed())));
+    }
+
+    @Test
     public void shouldBeAbleToExtractMinutesPlayedFromSeasonsTotalsPage() throws Exception {
         minutesPlayedValueExtractor.setInputStringToSearch(quincyAcySeasonTotals);
         assertThat(minutesPlayedValueExtractor.getValue(), is(equalTo((Object) expectedQuincyAcyModel.getMinutesPlayed())));
+    }
+
+    @Test
+    public void shouldBeAbleToExtractMinutesPlayedFromSeasonsTotalsPageWhenPlayerHasBeenTraded() throws Exception {
+        minutesPlayedValueExtractor.setInputStringToSearch(aaronAfflaloSeasonTotals);
+        assertThat(minutesPlayedValueExtractor.getValue(), is(equalTo((Object) expectedAaronAfflaloModel.getMinutesPlayed())));
     }
 
     @Test
@@ -174,9 +215,21 @@ public class BasketballReferenceSeasonTotalsValueExtractorTests {
     }
 
     @Test
+    public void shouldBeAbleToExtractFieldGoalsAttemptedFromSeasonsTotalsPageWhenPlayerHasBeenTraded() throws Exception {
+        fieldGoalsAttemptedValueExtractor.setInputStringToSearch(aaronAfflaloSeasonTotals);
+        assertThat(fieldGoalsAttemptedValueExtractor.getValue(), is(equalTo((Object) expectedAaronAfflaloModel.getFieldGoalsAttempted())));
+    }
+
+    @Test
     public void shouldBeAbleToExtractFieldGoalsMadeFromSeasonsTotalsPage() throws Exception {
         fieldGoalsMadeValueExtractor.setInputStringToSearch(quincyAcySeasonTotals);
         assertThat(fieldGoalsMadeValueExtractor.getValue(), is(equalTo((Object) expectedQuincyAcyModel.getFieldGoalsMade())));
+    }
+
+    @Test
+    public void shouldBeAbleToExtractFieldGoalsMadeFromSeasonsTotalsPageWhenPlayerHasBeenTraded() throws Exception {
+        fieldGoalsMadeValueExtractor.setInputStringToSearch(aaronAfflaloSeasonTotals);
+        assertThat(fieldGoalsMadeValueExtractor.getValue(), is(equalTo((Object) expectedAaronAfflaloModel.getFieldGoalsMade())));
     }
 
     @Test
@@ -186,9 +239,21 @@ public class BasketballReferenceSeasonTotalsValueExtractorTests {
     }
 
     @Test
+    public void shouldBeAbleToExtractFieldGoalPercentageFromSeasonsTotalsPageWhenPlayerHasBeenTraded() throws Exception {
+        fieldGoalPercentageValueExtractor.setInputStringToSearch(aaronAfflaloSeasonTotals);
+        assertThat(fieldGoalPercentageValueExtractor.getValue(), is(equalTo((Object) expectedAaronAfflaloModel.getFieldGoalPercentage())));
+    }
+
+    @Test
     public void shouldBeAbleToExtractThreePointersAttemptedFromSeasonsTotalsPage() throws Exception {
         threePointersAttemptedValueExtractor.setInputStringToSearch(quincyAcySeasonTotals);
         assertThat(threePointersAttemptedValueExtractor.getValue(), is(equalTo((Object) expectedQuincyAcyModel.getThreePointersAttempted())));
+    }
+
+    @Test
+    public void shouldBeAbleToExtractThreePointersAttemptedFromSeasonsTotalsPageWhenPlayerHasBeenTraded() throws Exception {
+        threePointersAttemptedValueExtractor.setInputStringToSearch(aaronAfflaloSeasonTotals);
+        assertThat(threePointersAttemptedValueExtractor.getValue(), is(equalTo((Object) expectedAaronAfflaloModel.getThreePointersAttempted())));
     }
 
     @Test
@@ -198,9 +263,21 @@ public class BasketballReferenceSeasonTotalsValueExtractorTests {
     }
 
     @Test
+    public void shouldBeAbleToExtractThreePointersMadeFromSeasonsTotalsPageWhenPlayerHasBeenTraded() throws Exception {
+        threePointersMadeValueExtractor.setInputStringToSearch(aaronAfflaloSeasonTotals);
+        assertThat(threePointersMadeValueExtractor.getValue(), is(equalTo((Object) expectedAaronAfflaloModel.getThreePointersMade())));
+    }
+
+    @Test
     public void shouldBeAbleToExtractThreePointPercentageFromSeasonsTotalsPage() throws Exception {
         threePointPercentageValueExtractor.setInputStringToSearch(quincyAcySeasonTotals);
         assertThat(threePointPercentageValueExtractor.getValue(), is(equalTo((Object) expectedQuincyAcyModel.getThreePointPercentage())));
+    }
+
+    @Test
+    public void shouldBeAbleToExtractThreePointPercentageFromSeasonsTotalsPageWhenPlayerHasBeenTraded() throws Exception {
+        threePointPercentageValueExtractor.setInputStringToSearch(aaronAfflaloSeasonTotals);
+        assertThat(threePointPercentageValueExtractor.getValue(), is(equalTo((Object) expectedAaronAfflaloModel.getThreePointPercentage())));
     }
 
     @Test
@@ -210,9 +287,21 @@ public class BasketballReferenceSeasonTotalsValueExtractorTests {
     }
 
     @Test
+    public void shouldBeAbleToExtractTwoPointersAttemptedFromSeasonsTotalsPageWhenPlayerHasBeenTraded() throws Exception {
+        twoPointersAttemptedValueExtractor.setInputStringToSearch(aaronAfflaloSeasonTotals);
+        assertThat(twoPointersAttemptedValueExtractor.getValue(), is(equalTo((Object) expectedAaronAfflaloModel.getTwoPointersAttempted())));
+    }
+
+    @Test
     public void shouldBeAbleToExtractTwoPointersMadeFromSeasonsTotalsPage() throws Exception {
         twoPointersMadeValueExtractor.setInputStringToSearch(quincyAcySeasonTotals);
         assertThat(twoPointersMadeValueExtractor.getValue(), is(equalTo((Object) expectedQuincyAcyModel.getTwoPointersMade())));
+    }
+
+    @Test
+    public void shouldBeAbleToExtractTwoPointersMadeFromSeasonsTotalsPageWhenPlayerHasBeenTraded() throws Exception {
+        twoPointersMadeValueExtractor.setInputStringToSearch(aaronAfflaloSeasonTotals);
+        assertThat(twoPointersMadeValueExtractor.getValue(), is(equalTo((Object) expectedAaronAfflaloModel.getTwoPointersMade())));
     }
 
     @Test
@@ -222,9 +311,21 @@ public class BasketballReferenceSeasonTotalsValueExtractorTests {
     }
 
     @Test
+    public void shouldBeAbleToExtractTwoPointersPercentageFromSeasonsTotalsPageWhenPlayerHasBeenTraded() throws Exception {
+        twoPointerPercentageValueExtractor.setInputStringToSearch(aaronAfflaloSeasonTotals);
+        assertThat(twoPointerPercentageValueExtractor.getValue(), is(equalTo((Object) expectedAaronAfflaloModel.getTwoPointPercentage())));
+    }
+
+    @Test
     public void shouldBeAbleToExtractEffectiveFieldGoalPercentageFromSeasonsTotalsPage() throws Exception {
         effectiveFieldGoalPercentageValueExtractor.setInputStringToSearch(quincyAcySeasonTotals);
         assertThat(effectiveFieldGoalPercentageValueExtractor.getValue(), is(equalTo((Object) expectedQuincyAcyModel.getEffectiveFieldGoalPercentage())));
+    }
+
+    @Test
+    public void shouldBeAbleToExtractEffectiveFieldGoalPercentageFromSeasonsTotalsPageWhenPlayerHasBeenTraded() throws Exception {
+        effectiveFieldGoalPercentageValueExtractor.setInputStringToSearch(aaronAfflaloSeasonTotals);
+        assertThat(effectiveFieldGoalPercentageValueExtractor.getValue(), is(equalTo((Object) expectedAaronAfflaloModel.getEffectiveFieldGoalPercentage())));
     }
 
     @Test
@@ -234,9 +335,21 @@ public class BasketballReferenceSeasonTotalsValueExtractorTests {
     }
 
     @Test
+    public void shouldBeAbleToExtractFreeThrowsAttemptedFromSeasonsTotalsPageWhenPlayerHasBeenTraded() throws Exception {
+        freeThrowsAttemptedValueExtractor.setInputStringToSearch(aaronAfflaloSeasonTotals);
+        assertThat(freeThrowsAttemptedValueExtractor.getValue(), is(equalTo((Object) expectedAaronAfflaloModel.getFreeThrowsAttempted())));
+    }
+
+    @Test
     public void shouldBeAbleToExtractFreeThrowsMadeFromSeasonsTotalsPage() throws Exception {
         freeThrowsMadeValueExtractor.setInputStringToSearch(quincyAcySeasonTotals);
         assertThat(freeThrowsMadeValueExtractor.getValue(), is(equalTo((Object) expectedQuincyAcyModel.getFreeThrowsMade())));
+    }
+
+    @Test
+    public void shouldBeAbleToExtractFreeThrowsMadeFromSeasonsTotalsPageWhenPlayerHasBeenTraded() throws Exception {
+        freeThrowsMadeValueExtractor.setInputStringToSearch(aaronAfflaloSeasonTotals);
+        assertThat(freeThrowsMadeValueExtractor.getValue(), is(equalTo((Object) expectedAaronAfflaloModel.getFreeThrowsMade())));
     }
 
     @Test
@@ -246,9 +359,21 @@ public class BasketballReferenceSeasonTotalsValueExtractorTests {
     }
 
     @Test
+    public void shouldBeAbleToExtractFreeThrowPercentageFromSeasonsTotalsPageWhenPlayerHasBeenTraded() throws Exception {
+        freeThrowsPercentageValueExtractor.setInputStringToSearch(aaronAfflaloSeasonTotals);
+        assertThat(freeThrowsPercentageValueExtractor.getValue(), is(equalTo((Object) expectedAaronAfflaloModel.getFreeThrowPercentage())));
+    }
+
+    @Test
     public void shouldBeAbleToExtractOffensiveReboundsFromSeasonsTotalsPage() throws Exception {
         offensiveReboundsValueExtractor.setInputStringToSearch(quincyAcySeasonTotals);
         assertThat(offensiveReboundsValueExtractor.getValue(), is(equalTo((Object) expectedQuincyAcyModel.getOffensiveRebounds())));
+    }
+
+    @Test
+    public void shouldBeAbleToExtractOffensiveReboundsFromSeasonsTotalsPageWhenPlayerHasBeenTraded() throws Exception {
+        offensiveReboundsValueExtractor.setInputStringToSearch(aaronAfflaloSeasonTotals);
+        assertThat(offensiveReboundsValueExtractor.getValue(), is(equalTo((Object) expectedAaronAfflaloModel.getOffensiveRebounds())));
     }
 
     @Test
@@ -258,9 +383,21 @@ public class BasketballReferenceSeasonTotalsValueExtractorTests {
     }
 
     @Test
+    public void shouldBeAbleToExtractDefensiveReboundsFromSeasonsTotalsPageWhenPlayerHasBeenTraded() throws Exception {
+        defensiveReboundsValueExtractor.setInputStringToSearch(aaronAfflaloSeasonTotals);
+        assertThat(defensiveReboundsValueExtractor.getValue(), is(equalTo((Object) expectedAaronAfflaloModel.getDefensiveRebounds())));
+    }
+
+    @Test
     public void shouldBeAbleToExtractTotalReboundsFromSeasonsTotalsPage() throws Exception {
         totalReboundsValueExtractor.setInputStringToSearch(quincyAcySeasonTotals);
         assertThat(totalReboundsValueExtractor.getValue(), is(equalTo((Object) expectedQuincyAcyModel.getTotalRebounds())));
+    }
+
+    @Test
+    public void shouldBeAbleToExtractTotalReboundsFromSeasonsTotalsPageWhenPlayerHasBeenTraded() throws Exception {
+        totalReboundsValueExtractor.setInputStringToSearch(aaronAfflaloSeasonTotals);
+        assertThat(totalReboundsValueExtractor.getValue(), is(equalTo((Object) expectedAaronAfflaloModel.getTotalRebounds())));
     }
 
     @Test
@@ -270,9 +407,21 @@ public class BasketballReferenceSeasonTotalsValueExtractorTests {
     }
 
     @Test
+    public void shouldBeAbleToExtractAssistsFromSeasonsTotalsPageWhenPlayerHasBeenTraded() throws Exception {
+        assistsValueExtractor.setInputStringToSearch(aaronAfflaloSeasonTotals);
+        assertThat(assistsValueExtractor.getValue(), is(equalTo((Object) expectedAaronAfflaloModel.getAssists())));
+    }
+
+    @Test
     public void shouldBeAbleToExtractStealsFromSeasonsTotalsPage() throws Exception {
         stealsValueExtractor.setInputStringToSearch(quincyAcySeasonTotals);
         assertThat(stealsValueExtractor.getValue(), is(equalTo((Object) expectedQuincyAcyModel.getSteals())));
+    }
+
+    @Test
+    public void shouldBeAbleToExtractStealsFromSeasonsTotalsPageWhenPlayerHasBeenTraded() throws Exception {
+        stealsValueExtractor.setInputStringToSearch(aaronAfflaloSeasonTotals);
+        assertThat(stealsValueExtractor.getValue(), is(equalTo((Object) expectedAaronAfflaloModel.getSteals())));
     }
 
     @Test
@@ -282,9 +431,21 @@ public class BasketballReferenceSeasonTotalsValueExtractorTests {
     }
 
     @Test
+    public void shouldBeAbleToExtractBlocksFromSeasonsTotalsPageWhenPlayerHasBeenTraded() throws Exception {
+        blocksValueExtractor.setInputStringToSearch(aaronAfflaloSeasonTotals);
+        assertThat(blocksValueExtractor.getValue(), is(equalTo((Object) expectedAaronAfflaloModel.getBlocks())));
+    }
+
+    @Test
     public void shouldBeAbleToExtractTurnoversFromSeasonsTotalsPage() throws Exception {
         turnoversValueExtractor.setInputStringToSearch(quincyAcySeasonTotals);
         assertThat(turnoversValueExtractor.getValue(), is(equalTo((Object) expectedQuincyAcyModel.getTurnovers())));
+    }
+
+    @Test
+    public void shouldBeAbleToExtractTurnoversFromSeasonsTotalsPageWhenPlayerHasBeenTraded() throws Exception {
+        turnoversValueExtractor.setInputStringToSearch(aaronAfflaloSeasonTotals);
+        assertThat(turnoversValueExtractor.getValue(), is(equalTo((Object) expectedAaronAfflaloModel.getTurnovers())));
     }
 
     @Test
@@ -294,8 +455,44 @@ public class BasketballReferenceSeasonTotalsValueExtractorTests {
     }
 
     @Test
+    public void shouldBeAbleToExtractPersonalFoulsFromSeasonsTotalsPageWhenPlayerHasBeenTraded() throws Exception {
+        personalFoulsValueExtractor.setInputStringToSearch(aaronAfflaloSeasonTotals);
+        assertThat(personalFoulsValueExtractor.getValue(), is(equalTo((Object) expectedAaronAfflaloModel.getPersonalFouls())));
+    }
+
+    @Test
     public void shouldBeAbleToExtractPointsFromSeasonsTotalsPage() throws Exception {
         pointsValueExtractor.setInputStringToSearch(quincyAcySeasonTotals);
         assertThat(pointsValueExtractor.getValue(), is(equalTo((Object) expectedQuincyAcyModel.getPoints())));
+    }
+
+    @Test
+    public void shouldBeAbleToExtractPointsFromSeasonsTotalsPageWhenPlayerHasBeenTraded() throws Exception {
+        pointsValueExtractor.setInputStringToSearch(aaronAfflaloSeasonTotals);
+        assertThat(pointsValueExtractor.getValue(), is(equalTo((Object) expectedAaronAfflaloModel.getPoints())));
+    }
+
+    @Test
+    public void shouldBeAbleToExtractFieldGoalPercentageWhenNoFieldGoalsWereAttempted() throws Exception {
+        fieldGoalPercentageValueExtractor.setInputStringToSearch(jerrelleBenimonSeasonTotals);
+        assertThat(fieldGoalPercentageValueExtractor.getValue(), is(equalTo((Object) expectedJerrelleBenimonModel.getFieldGoalPercentage())));
+    }
+
+    @Test
+    public void shouldBeAbleToExtractThreePointPercentageWhenNoThreesWereAttempted() throws Exception {
+        threePointPercentageValueExtractor.setInputStringToSearch(jerrelleBenimonSeasonTotals);
+        assertThat(threePointPercentageValueExtractor.getValue(), is(equalTo((Object) expectedJerrelleBenimonModel.getThreePointPercentage())));
+    }
+
+    @Test
+    public void shouldBeAbleToExtractFreeThrowPercentageWhenNoFreeThrowsWereAttempted() throws Exception {
+        freeThrowsPercentageValueExtractor.setInputStringToSearch(jerrelleBenimonSeasonTotals);
+        assertThat(freeThrowsPercentageValueExtractor.getValue(), is(equalTo((Object) expectedJerrelleBenimonModel.getFreeThrowPercentage())));
+    }
+
+    @Test
+    public void shouldBeAbleToExtractEffectiveFieldGoalPercentageWhenNoShotsWereAttempted() throws Exception {
+        effectiveFieldGoalPercentageValueExtractor.setInputStringToSearch(jerrelleBenimonSeasonTotals);
+        assertThat(effectiveFieldGoalPercentageValueExtractor.getValue(), is(equalTo((Object) expectedJerrelleBenimonModel.getEffectiveFieldGoalPercentage())));
     }
 }

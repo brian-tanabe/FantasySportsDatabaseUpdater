@@ -31,11 +31,28 @@ public class ValueTransformer<TransformerClass, TransformationValueClass, Output
         return (OutputType) ClassUtils.getMethod(classWhichPerformsTheValueTransformation, transformingMethodName, classTypeOfTheInputToTheTransformingMethod).invoke(objectTheTransformingMethodIsInvokedFrom, inputValue);
     }
 
+    public <InputClass> OutputType transformValues(InputClass... inputValues) throws InvocationTargetException, IllegalAccessException {
+        if (inputValues == null) {
+            return defaultValueWhenNull;
+        }
+
+        return (OutputType) ClassUtils.getMethod(classWhichPerformsTheValueTransformation, transformingMethodName, createInputClassTypeArrayTheSameSizeAsTheNumberOfInputValues(inputValues)).invoke(objectTheTransformingMethodIsInvokedFrom, inputValues);
+    }
+
     public <InputClass> OutputType transformValues(List<InputClass> inputValues) throws InvocationTargetException, IllegalAccessException {
-        if(inputValues == null) {
+        if (inputValues == null) {
             return defaultValueWhenNull;
         }
 
         return (OutputType) ClassUtils.getMethod(classWhichPerformsTheValueTransformation, transformingMethodName, inputValues.getClass()).invoke(objectTheTransformingMethodIsInvokedFrom, inputValues);
+    }
+
+    private <InputClass> Class[] createInputClassTypeArrayTheSameSizeAsTheNumberOfInputValues(InputClass... inputValues) {
+        Class[] inputParameterClassType = new Class[inputValues.length];
+        for (int index = 0; index < inputValues.length; index++) {
+            inputParameterClassType[index] = classTypeOfTheInputToTheTransformingMethod;
+        }
+
+        return inputParameterClassType;
     }
 }
