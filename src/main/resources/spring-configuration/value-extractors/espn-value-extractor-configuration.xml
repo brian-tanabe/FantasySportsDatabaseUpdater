@@ -257,8 +257,5 @@
                          value="(?&lt;=&lt;td style=&quot;text-align: center;&quot;&gt;&lt;a title=&quot;)(.*)(?=&quot; href=)"/>
         <constructor-arg name="outputValueTransformer" ref="nullToFaStringValueTransformer"/>
     </bean>
-
-    <!-- <td style="text-align: center;"> -->
-
     <!-- *************** ESPN PLAYER RATER PAGE VALUE EXTRACTORS: *************** -->
 </beans>
