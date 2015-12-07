@@ -27,8 +27,7 @@ public class RecordCollector<OutputType> {
         String nextPageUrl = seedWebPageToScrape;
         do {
             pageHtml = webRequest.downloadWebPageSource(nextPageUrl);
-            recordParser.setInputHtml(pageHtml);
-            collectedRecordList.addAll(recordParser.getRecordsAsList());
+            collectedRecordList.addAll(recordParser.getRecordsAsList(pageHtml));
 
             nextPageLinkExtractor.setInputStringToSearch(pageHtml);
             nextPageUrl = (String) nextPageLinkExtractor.getValue();

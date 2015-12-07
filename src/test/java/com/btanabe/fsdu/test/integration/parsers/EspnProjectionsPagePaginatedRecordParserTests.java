@@ -64,13 +64,11 @@ public class EspnProjectionsPagePaginatedRecordParserTests {
     @Before
     public void getTestRecords() throws Exception {
         if (playersNflFromRecordParser == null) {
-            nflProjectionPagePaginatedRecordParser.setInputHtml(espnNflProjectionsPageOne);
-            playersNflFromRecordParser = nflProjectionPagePaginatedRecordParser.getRecordsAsList();
+            playersNflFromRecordParser = nflProjectionPagePaginatedRecordParser.getRecordsAsList(espnNflProjectionsPageOne);
         }
 
         if (playersNbaFromRecordParser == null) {
-            nbaProjectionPageRecordParser.setInputHtml(espnNbaProjectionsPageOne);
-            playersNbaFromRecordParser = nbaProjectionPageRecordParser.getRecordsAsList();
+            playersNbaFromRecordParser = nbaProjectionPageRecordParser.getRecordsAsList(espnNbaProjectionsPageOne);
         }
     }
 

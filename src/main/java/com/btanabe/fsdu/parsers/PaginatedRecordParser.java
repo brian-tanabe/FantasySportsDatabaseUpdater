@@ -18,17 +18,16 @@ public class PaginatedRecordParser<T> extends RecordParser<T> {
         this.recordValueExtractor = recordValueExtractor;
     }
 
-    public List<T> getRecordsAsList() throws Exception {
+    public List<T> getRecordsAsList(final String inputHtml) throws Exception {
         List<T> parsedAndPopulatedObjects = new ArrayList<>();
-        for(String inputHtmlForSingleRecord : getAllRecordsAsListOfStrings()) {
-            setInputHtml(inputHtmlForSingleRecord);
-            parsedAndPopulatedObjects.add(getRecord());
+        for(String inputHtmlForSingleRecord : getAllRecordsAsListOfStrings(inputHtml)) {
+            parsedAndPopulatedObjects.add(getRecord(inputHtmlForSingleRecord));
         }
 
         return parsedAndPopulatedObjects;
     }
 
-    private List<String> getAllRecordsAsListOfStrings() throws ClassNotFoundException, InvocationTargetException, IllegalAccessException {
+    private List<String> getAllRecordsAsListOfStrings(final String inputHtml) throws ClassNotFoundException, InvocationTargetException, IllegalAccessException {
         recordValueExtractor.setInputStringToSearch(inputHtml);
         return recordValueExtractor.getValuesAsList();
     }

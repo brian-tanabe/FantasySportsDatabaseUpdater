@@ -42,13 +42,11 @@ public class EspnPlayerRaterPageRecordParserTests {
 
     @Test
     public void shouldBeAbleToExtractRussellWestbrookProperly() throws Exception {
-        playerOwnershipRecordParser.setInputHtml(russellWestbrookPlayerRaterRow);
-        assertThat(playerOwnershipRecordParser.getRecord(), is(equalTo(expectedRussellWestbrookOwnershipModel)));
+        assertThat(playerOwnershipRecordParser.getRecord(russellWestbrookPlayerRaterRow), is(equalTo(expectedRussellWestbrookOwnershipModel)));
     }
 
     @Test
     public void shouldBeAbleToExtractChristianWoodProperly() throws Exception {
-        playerOwnershipRecordParser.setInputHtml(christianWoodPlayerRaterRow);
-        assertThat(playerOwnershipRecordParser.getRecord(), is(equalTo(expectedChristianWoodOwnershipModel)));
+        assertThat(playerOwnershipRecordParser.getRecord(christianWoodPlayerRaterRow), is(equalTo(expectedChristianWoodOwnershipModel)));
     }
 }

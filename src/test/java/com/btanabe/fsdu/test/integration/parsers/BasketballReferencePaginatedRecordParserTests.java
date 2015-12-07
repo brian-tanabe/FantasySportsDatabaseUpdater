@@ -54,8 +54,7 @@ public class BasketballReferencePaginatedRecordParserTests {
     @Before
     public void parseAllBasketballReferenceSeasonTotalsRecords() {
         try {
-            seasonTotalsPaginatedRecordParser.setInputHtml(basketballReferenceSeasonTotalsPage);
-            allBasketballReferenceSeasonTotalsRecords = seasonTotalsPaginatedRecordParser.getRecordsAsList();
+            allBasketballReferenceSeasonTotalsRecords = seasonTotalsPaginatedRecordParser.getRecordsAsList(basketballReferenceSeasonTotalsPage);
         } catch (Exception ex) {
            /*
             Let's swallow this exception.  This is in a @Before block since parsing this list
@@ -81,13 +80,11 @@ public class BasketballReferencePaginatedRecordParserTests {
 
     @Test
     public void shouldBeAbleToExtractAndParsePlayersWhoseTrClassNameIsItalicTextPartialRow() throws Exception {
-        seasonTotalsPaginatedRecordParser.setInputHtml(basketballReferenceDjAugustinDetroitRow);
-        assertThat(seasonTotalsPaginatedRecordParser.getRecordsAsList().contains(expectedDjAugustinBasketballReferenceDetSeasonTotalsModel), is(true));
+        assertThat(seasonTotalsPaginatedRecordParser.getRecordsAsList(basketballReferenceDjAugustinDetroitRow).contains(expectedDjAugustinBasketballReferenceDetSeasonTotalsModel), is(true));
     }
 
     @Test
     public void shouldBeAbleToExtractAndParsePlayersWhoseNameUrisContainPsInsteadOfAs() throws Exception {
-        seasonTotalsPaginatedRecordParser.setInputHtml(basketballReferenceJeffAyersRow);
-        assertThat(seasonTotalsPaginatedRecordParser.getRecordsAsList().contains(expectedJeffAyresModel), is(true));
+        assertThat(seasonTotalsPaginatedRecordParser.getRecordsAsList(basketballReferenceJeffAyersRow).contains(expectedJeffAyresModel), is(true));
     }
 }

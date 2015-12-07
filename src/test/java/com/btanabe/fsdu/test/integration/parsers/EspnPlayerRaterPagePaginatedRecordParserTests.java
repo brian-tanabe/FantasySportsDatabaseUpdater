@@ -48,11 +48,9 @@ public class EspnPlayerRaterPagePaginatedRecordParserTests {
 
     @Before
     public void parsePlayerRaterPages() throws Exception {
-        playerOwnershipRecordParser.setInputHtml(playerRaterPageOne);
-        playerOwnershipModelListPageOne = playerOwnershipRecordParser.getRecordsAsList();
+        playerOwnershipModelListPageOne = playerOwnershipRecordParser.getRecordsAsList(playerRaterPageOne);
 
-        playerOwnershipRecordParser.setInputHtml(playerRaterPageSeven);
-        playerOwnershipModelListPageSeven = playerOwnershipRecordParser.getRecordsAsList();
+        playerOwnershipModelListPageSeven = playerOwnershipRecordParser.getRecordsAsList(playerRaterPageSeven);
     }
 
     @Test
