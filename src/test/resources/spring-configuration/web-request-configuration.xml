@@ -7,6 +7,7 @@
 
     <import resource="classpath:/spring-configuration/test-webpages-configuration.xml"/>
 
+    <!-- ESPN NBA player projections page -->
     <bean id="mockEspnNbaProjectionsPageWebRequest" class="com.btanabe.fsdu.test.factories.MockWebRequestFactory">
         <property name="urlToPageHtmlMap" ref="espnNbaProjectionPagesUrlToPageHtmlMap"/>
     </bean>
@@ -47,4 +48,42 @@
         <entry key="http://games.espn.go.com/fba/tools/projections?&amp;leagueId=233928&amp;startIndex=600"
                value-ref="espnNbaHoopDreamsProjectionsPageSixteen"/>
     </util:map>
+    <!-- END ESPN NBA player projections page -->
+
+    <!-- ESPN NBA player rater page -->
+    <bean id="mockEspnNbaPlayerRaterPageWebRequest" class="com.btanabe.fsdu.test.factories.MockWebRequestFactory">
+        <property name="urlToPageHtmlMap" ref="espnNbaPlayerRaterPagesUrlToPageHtmlMap"/>
+    </bean>
+
+    <util:map id="espnNbaPlayerRaterPagesUrlToPageHtmlMap"
+              key-type="java.lang.String"
+              value-type="java.lang.String">
+        <entry key="http://games.espn.go.com/fba/playerrater?leagueId=233928"
+               value-ref="espnNbaHoopDreamsPlayerRaterPageOne"/>
+        <entry key="http://games.espn.go.com/fba/playerrater?leagueId=233928&amp;startIndex=50"
+               value-ref="espnNbaHoopDreamsPlayerRaterPageTwo"/>
+        <entry key="http://games.espn.go.com/fba/playerrater?leagueId=233928&amp;startIndex=100"
+               value-ref="espnNbaHoopDreamsPlayerRaterPageThree"/>
+        <entry key="http://games.espn.go.com/fba/playerrater?leagueId=233928&amp;startIndex=150"
+               value-ref="espnNbaHoopDreamsPlayerRaterPageFour"/>
+        <entry key="http://games.espn.go.com/fba/playerrater?leagueId=233928&amp;startIndex=200"
+               value-ref="espnNbaHoopDreamsPlayerRaterPageFive"/>
+        <entry key="http://games.espn.go.com/fba/playerrater?leagueId=233928&amp;startIndex=250"
+               value-ref="espnNbaHoopDreamsPlayerRaterPageSix"/>
+        <entry key="http://games.espn.go.com/fba/playerrater?leagueId=233928&amp;startIndex=300"
+               value-ref="espnNbaHoopDreamsPlayerRaterPageSeven"/>
+        <entry key="http://games.espn.go.com/fba/playerrater?leagueId=233928&amp;startIndex=350"
+               value-ref="espnNbaHoopDreamsPlayerRaterPageEight"/>
+        <entry key="http://games.espn.go.com/fba/playerrater?leagueId=233928&amp;startIndex=400"
+               value-ref="espnNbaHoopDreamsPlayerRaterPageNine"/>
+        <entry key="http://games.espn.go.com/fba/playerrater?leagueId=233928&amp;startIndex=450"
+               value-ref="espnNbaHoopDreamsPlayerRaterPageTen"/>
+        <entry key="http://games.espn.go.com/fba/playerrater?leagueId=233928&amp;startIndex=500"
+               value-ref="espnNbaHoopDreamsPlayerRaterPageEleven"/>
+        <entry key="http://games.espn.go.com/fba/playerrater?leagueId=233928&amp;startIndex=550"
+               value-ref="espnNbaHoopDreamsPlayerRaterPageTwelve"/>
+        <entry key="http://games.espn.go.com/fba/playerrater?leagueId=233928&amp;startIndex=600"
+               value-ref="espnNbaHoopDreamsPlayerRaterPageThirteen"/>
+    </util:map>
+    <!-- END ESPN NBA player rater page -->
 </beans>

@@ -24,10 +24,11 @@ import static org.junit.Assert.assertThat;
  */
 @ContextConfiguration("classpath:spring-configuration/unit-testing-configuration.xml")
 @RunWith(SpringJUnit4ClassRunner.class)
-public class RecordCollectorTests {
+public class EspnProjectionsPageRecordCollectorTests {
 
     @Autowired
-    private RecordCollector espnNbaProjectionPageRecordCollector;
+    @Qualifier("espnNbaProjectionPageRecordCollector")
+    private RecordCollector nbaProjectionPageRecordCollector;
 
     @Autowired
     @Qualifier("mockEspnNbaProjectionsPageWebRequest")
@@ -47,8 +48,8 @@ public class RecordCollectorTests {
     @Before
     public void parseAllNbaRecords() throws Exception {
         if (playerProjectionList == null) {
-            espnNbaProjectionPageRecordCollector.setWebRequest(mockWebRequest);
-            playerProjectionList = espnNbaProjectionPageRecordCollector.getAllRecordsAsList("http://games.espn.go.com/fba/tools/projections?&leagueId=233928");
+            nbaProjectionPageRecordCollector.setWebRequest(mockWebRequest);
+            playerProjectionList = nbaProjectionPageRecordCollector.getAllRecordsAsList("http://games.espn.go.com/fba/tools/projections?&leagueId=233928");
         }
     }
 
