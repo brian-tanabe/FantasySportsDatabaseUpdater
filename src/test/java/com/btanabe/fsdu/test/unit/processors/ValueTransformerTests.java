@@ -34,6 +34,10 @@ public class ValueTransformerTests {
     @Qualifier("commaSeparatedStringConcatenatorValueTransformer")
     private ValueTransformer commaSeparatedStringConcatenatorValueTransformer;
 
+    @Autowired
+    @Qualifier("nullToFaStringValueTransformer")
+    private ValueTransformer nullToFaValueTransformer;
+
     @Test
     public void shouldBeAbleToHandleTransformationsOfNullInputs() throws Exception {
         assertThat(nullToNegativeOneValueTransformer.transformValue(null), is(equalTo(-1)));
@@ -56,5 +60,15 @@ public class ValueTransformerTests {
         teamList.add("DEN");
 
         assertThat(commaSeparatedStringConcatenatorValueTransformer.transformValues(teamList), is(equalTo((Object) "CHI,DEN")));
+    }
+
+    @Test
+    public void shouldBeAbleToTransformNullToFaAsString() throws Exception {
+        assertThat(nullToFaValueTransformer.transformValue(null), is(equalTo("FA")));
+    }
+
+    @Test
+    public void shouldNotTransformNonNullInputStringsWhenAttemptingToUseTheNullToFaStringValueTransformer() throws Exception {
+        assertThat(nullToFaValueTransformer.transformValue(new String("SOME-STRING")), is(equalTo("SOME-STRING")));
     }
 }

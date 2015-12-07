@@ -4,7 +4,7 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
     <bean id="espnNbaProjectionsPageOne" class="com.btanabe.fsdu.test.factories.FileTidiedStringFactory">
-        <property name="inputFile" value="classpath:test-webpages/espn/nba/projections-1.html"/>
+        <property name="inputFile" value="classpath:test-webpages/espn/nba/projections/projections-1.html"/>
     </bean>
 
     <bean id="espnNflProjectionsPageOne" class="com.btanabe.fsdu.test.factories.FileTidiedStringFactory">
@@ -40,15 +40,15 @@
     </bean>
 
     <bean id="espnProjectionsPageAnthonyDavis" class="com.btanabe.fsdu.test.factories.FileTidiedStringFactory">
-        <property name="inputFile" value="classpath:test-webpages/espn/nba/projections-anthony-davis.html"/>
+        <property name="inputFile" value="classpath:test-webpages/espn/nba/projections-players/projections-anthony-davis.html"/>
     </bean>
 
     <bean id="espnProjectionsPageKyrieIrving" class="com.btanabe.fsdu.test.factories.FileTidiedStringFactory">
-        <property name="inputFile" value="classpath:test-webpages/espn/nba/projections-kyree-irving.html"/>
+        <property name="inputFile" value="classpath:test-webpages/espn/nba/projections-players/projections-kyree-irving.html"/>
     </bean>
 
     <bean id="espnProjectionsPageEltonBrand" class="com.btanabe.fsdu.test.factories.FileTidiedStringFactory">
-        <property name="inputFile" value="classpath:test-webpages/espn/nba/projections-elton-brand.html"/>
+        <property name="inputFile" value="classpath:test-webpages/espn/nba/projections-players/projections-elton-brand.html"/>
     </bean>
 
     <bean id="espnPlayerPageEddieLacy" class="com.btanabe.fsdu.test.factories.FileTidiedStringFactory">
@@ -134,6 +134,67 @@
 
     <bean id="espnNbaHoopDreamsProjectionsPageSixteen" class="com.btanabe.fsdu.test.factories.FileTidiedStringFactory">
         <property name="inputFile" value="classpath:test-webpages/espn/nba/projections/projections-hd-16.html"/>
+    </bean>
+
+    <!-- ESPN NBA Player Rater Pages: Hoop Dreams -->
+    <bean id="espnNbaHoopDreamsPlayerRaterPageOne" class="com.btanabe.fsdu.test.factories.FileTidiedStringFactory">
+        <property name="inputFile" value="classpath:test-webpages/espn/nba/player-rater-pages/player-rater-1.html"/>
+    </bean>
+
+    <bean id="espnNbaHoopDreamsPlayerRaterPageTwo" class="com.btanabe.fsdu.test.factories.FileTidiedStringFactory">
+        <property name="inputFile" value="classpath:test-webpages/espn/nba/player-rater-pages/player-rater-2.html"/>
+    </bean>
+
+    <bean id="espnNbaHoopDreamsPlayerRaterPageThree" class="com.btanabe.fsdu.test.factories.FileTidiedStringFactory">
+        <property name="inputFile" value="classpath:test-webpages/espn/nba/player-rater-pages/player-rater-3.html"/>
+    </bean>
+
+    <bean id="espnNbaHoopDreamsPlayerRaterPageFour" class="com.btanabe.fsdu.test.factories.FileTidiedStringFactory">
+        <property name="inputFile" value="classpath:test-webpages/espn/nba/player-rater-pages/player-rater-4.html"/>
+    </bean>
+
+    <bean id="espnNbaHoopDreamsPlayerRaterPageFive" class="com.btanabe.fsdu.test.factories.FileTidiedStringFactory">
+        <property name="inputFile" value="classpath:test-webpages/espn/nba/player-rater-pages/player-rater-5.html"/>
+    </bean>
+
+    <bean id="espnNbaHoopDreamsPlayerRaterPageSix" class="com.btanabe.fsdu.test.factories.FileTidiedStringFactory">
+        <property name="inputFile" value="classpath:test-webpages/espn/nba/player-rater-pages/player-rater-6.html"/>
+    </bean>
+
+    <bean id="espnNbaHoopDreamsPlayerRaterPageSeven" class="com.btanabe.fsdu.test.factories.FileTidiedStringFactory">
+        <property name="inputFile" value="classpath:test-webpages/espn/nba/player-rater-pages/player-rater-7.html"/>
+    </bean>
+
+    <bean id="espnNbaHoopDreamsPlayerRaterPageEight" class="com.btanabe.fsdu.test.factories.FileTidiedStringFactory">
+        <property name="inputFile" value="classpath:test-webpages/espn/nba/player-rater-pages/player-rater-8.html"/>
+    </bean>
+
+    <bean id="espnNbaHoopDreamsPlayerRaterPageNine" class="com.btanabe.fsdu.test.factories.FileTidiedStringFactory">
+        <property name="inputFile" value="classpath:test-webpages/espn/nba/player-rater-pages/player-rater-9.html"/>
+    </bean>
+
+    <bean id="espnNbaHoopDreamsPlayerRaterPageTen" class="com.btanabe.fsdu.test.factories.FileTidiedStringFactory">
+        <property name="inputFile" value="classpath:test-webpages/espn/nba/player-rater-pages/player-rater-10.html"/>
+    </bean>
+
+    <bean id="espnNbaHoopDreamsPlayerRaterPageEleven" class="com.btanabe.fsdu.test.factories.FileTidiedStringFactory">
+        <property name="inputFile" value="classpath:test-webpages/espn/nba/player-rater-pages/player-rater-11.html"/>
+    </bean>
+
+    <bean id="espnNbaHoopDreamsPlayerRaterPageTwelve" class="com.btanabe.fsdu.test.factories.FileTidiedStringFactory">
+        <property name="inputFile" value="classpath:test-webpages/espn/nba/player-rater-pages/player-rater-12.html"/>
+    </bean>
+
+    <bean id="espnNbaHoopDreamsPlayerRaterPageThirteen" class="com.btanabe.fsdu.test.factories.FileTidiedStringFactory">
+        <property name="inputFile" value="classpath:test-webpages/espn/nba/player-rater-pages/player-rater-13.html"/>
+    </bean>
+
+    <bean id="espnNbaHoopDreamsPlayerRaterPageRussellWestbrook" class="com.btanabe.fsdu.test.factories.FileTidiedStringFactory">
+        <property name="inputFile" value="classpath:test-webpages/espn/nba/player-rater-players/player-rater.russell-westbrook.html"/>
+    </bean>
+
+    <bean id="espnNbaHoopDreamsPlayerRaterPageChristianWood" class="com.btanabe.fsdu.test.factories.FileTidiedStringFactory">
+        <property name="inputFile" value="classpath:test-webpages/espn/nba/player-rater-players/player-rater.christian-Wood.html"/>
     </bean>
 
     <!-- basketball-reference season totals -->

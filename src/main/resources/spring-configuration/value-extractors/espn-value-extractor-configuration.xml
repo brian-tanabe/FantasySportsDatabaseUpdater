@@ -5,6 +5,8 @@
 
     <import resource="../common/value-transformer-configuration.xml"/>
 
+    <!-- TODO: ADD URLS OF THE PAGES THEY SCRAPE FROM TO THE EXTRACTOR BLOCKS -->
+
     <!-- ************ ESPN PLAYER PROJECTIONS PAGE VALUE EXTRACTORS: ************ -->
     <bean id="espnProjectionsPagePlayerValueExtractor" class="com.btanabe.fsdu.parsers.PaginatedValueExtractor">
         <constructor-arg name="outputClasspath" value="java.lang.String"/>
@@ -239,4 +241,24 @@
         <constructor-arg name="outputValueTransformer" ref="nullToNegativeOneAsIntegerValueTransformer"/>
     </bean>
     <!-- *************** ESPN PLAYER PAGE VALUE EXTRACTORS: *************** -->
+
+    <!-- *************** ESPN PLAYER RATER PAGE VALUE EXTRACTORS: *************** -->
+    <bean id="espnPlayerRaterPageLeagueIdValueExtractor"
+          class="com.btanabe.fsdu.parsers.ValueExtractor">
+        <constructor-arg name="outputClasspath" value="java.lang.Integer"/>
+        <constructor-arg name="outputMatchingRegex"
+                         value="(?&lt;=leagueid=&quot;)[0-9]{1,10}(?=&quot;)"/>
+    </bean>
+
+    <bean id="espnPlayerRaterPageOwnerTeamNameValueExtractor"
+          class="com.btanabe.fsdu.parsers.TransformingValueExtractor">
+        <constructor-arg name="outputClasspath" value="java.lang.String"/>
+        <constructor-arg name="outputMatchingRegex"
+                         value="(?&lt;=&lt;td style=&quot;text-align: center;&quot;&gt;&lt;a title=&quot;)(.*)(?=&quot; href=)"/>
+        <constructor-arg name="outputValueTransformer" ref="nullToFaStringValueTransformer"/>
+    </bean>
+
+    <!-- <td style="text-align: center;"> -->
+
+    <!-- *************** ESPN PLAYER RATER PAGE VALUE EXTRACTORS: *************** -->
 </beans>

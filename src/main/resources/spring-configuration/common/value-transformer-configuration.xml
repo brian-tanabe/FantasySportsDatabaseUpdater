@@ -39,6 +39,14 @@
         <constructor-arg name="defaultValueWhenNull" value=""/>
     </bean>
 
+    <bean id="nullToFaStringValueTransformer" class="com.btanabe.fsdu.processors.ValueTransformer">
+        <constructor-arg name="classWhichPerformsTheValueTransformation" value="java.lang.String"/>
+        <constructor-arg name="transformingMethodName" value="concat"/>
+        <constructor-arg name="classTypeOfTheInputToTheTransformingMethod" ref="stringClass"/>
+        <constructor-arg name="objectTheTransformingMethodIsInvokedFrom" ref="emptyString"/>
+        <constructor-arg name="defaultValueWhenNull" value="FA" />
+    </bean>
+
     <bean id="integerClass" class="java.lang.Class" factory-method="forName">
         <constructor-arg value="java.lang.Integer"/>
     </bean>
@@ -61,6 +69,10 @@
 
     <bean id="negativeOneInteger" class="java.lang.Integer">
         <constructor-arg value="-1"/>
+    </bean>
+
+    <bean id="emptyString" class="java.lang.String">
+        <constructor-arg value=""/>
     </bean>
 
     <bean id="stringEscapeUtils" class="org.apache.commons.lang3.StringEscapeUtils"/>

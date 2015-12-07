@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="russellWestbrookOwnedEspnPlayerRaterOwnershipModel"
+          class="com.btanabe.fsdu.models.EspnFantasyLeaguePlayerOwnershipModel">
+        <property name="espnFantasyLeagueId" value="233928"/>
+        <property name="espnFantasyOwnerTeamName" value="Pau Wow"/>
+        <property name="espnPlayerId" value="527"/>
+    </bean>
+
+    <bean id="christianWoodUnownedEspnPlayerRaterOwnershipModel"
+          class="com.btanabe.fsdu.models.EspnFantasyLeaguePlayerOwnershipModel">
+        <property name="espnFantasyLeagueId" value="233928"/>
+        <property name="espnFantasyOwnerTeamName" value="FA"/>
+        <property name="espnPlayerId" value="1465"/>
+    </bean>
+</beans>
