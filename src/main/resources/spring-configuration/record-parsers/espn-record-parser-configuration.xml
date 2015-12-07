@@ -66,7 +66,8 @@
     <!-- end ESPN Projections page RecordParser configuration -->
 
     <!-- ESPN Player Rater page RecordParser configuration -->
-    <bean id="espnNbaPlayerRaterPagePaginatedRecordParser" class="com.btanabe.fsdu.parsers.RecordParser">
+    <bean id="espnNbaPlayerRaterPagePaginatedRecordParser" class="com.btanabe.fsdu.parsers.PaginatedRecordParser">
+        <constructor-arg ref="espnProjectionsPagePlayerValueExtractor"/>
         <constructor-arg ref="espnNbaPlayerRaterRecordParserValueExtractorMap"/>
         <constructor-arg ref="&amp;espnNbaPlayerRaterPagePlayerOwnershipModelFactory"/>
     </bean>

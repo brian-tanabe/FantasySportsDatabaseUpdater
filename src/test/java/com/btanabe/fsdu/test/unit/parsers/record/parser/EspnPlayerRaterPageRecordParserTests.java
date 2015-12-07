@@ -21,16 +21,16 @@ import static org.junit.Assert.assertThat;
 public class EspnPlayerRaterPageRecordParserTests {
 
     @Autowired
+    @Qualifier("espnNbaPlayerRaterPagePaginatedRecordParser")
+    private RecordParser<EspnFantasyLeaguePlayerOwnershipModel> playerOwnershipRecordParser;
+
+    @Autowired
     @Qualifier("espnNbaHoopDreamsPlayerRaterPageRussellWestbrook")
     private String russellWestbrookPlayerRaterRow;
 
     @Autowired
     @Qualifier("espnNbaHoopDreamsPlayerRaterPageChristianWood")
     private String christianWoodPlayerRaterRow;
-
-    @Autowired
-    @Qualifier("espnNbaPlayerRaterPagePaginatedRecordParser")
-    private RecordParser<EspnFantasyLeaguePlayerOwnershipModel> playerOwnershipRecordParser;
 
     @Autowired
     @Qualifier("russellWestbrookOwnedEspnPlayerRaterOwnershipModel")
