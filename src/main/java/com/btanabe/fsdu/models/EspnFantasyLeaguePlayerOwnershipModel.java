@@ -31,6 +31,11 @@ public class EspnFantasyLeaguePlayerOwnershipModel {
         return result;
     }
 
+    @Override
+    public String toString() {
+        return String.format("espnPlayerId=[%d], espnFantasyLeagueId=[%d], espnFantasyOwnerTeamName=[%s]", espnPlayerId, espnFantasyLeagueId, espnFantasyOwnerTeamName);
+    }
+
     public Integer getEspnPlayerId() {
         return espnPlayerId;
     }

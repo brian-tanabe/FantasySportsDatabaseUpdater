@@ -11,13 +11,16 @@
         <property name="outputClazz" ref="espnNbaProjectionModel"/>
     </bean>
 
+    <bean id="espnNbaPlayerRaterPagePlayerOwnershipModelFactory" class="com.btanabe.fsdu.models.factories.ModelFactory">
+        <property name="outputClazz" ref="espnNbaPlayerRaterPagePlayerOwnershipModel"/>
+    </bean>
+
     <bean id="basketballReferneceSeasonTotalsModelFactory" class="com.btanabe.fsdu.models.factories.ModelFactory">
         <property name="outputClazz" ref="basketballReferenceSeasonTotalsModel"/>
     </bean>
 
     <bean id="espnNflProjectionModel" class="java.lang.Class" factory-method="forName">
         <constructor-arg value="com.btanabe.fsdu.models.EspnNflProjectionModel"/>
-
     </bean>
 
     <bean id="espnNbaProjectionModel" class="java.lang.Class" factory-method="forName">
@@ -26,5 +29,9 @@
 
     <bean id="basketballReferenceSeasonTotalsModel" class="java.lang.Class" factory-method="forName">
         <constructor-arg value="com.btanabe.fsdu.models.BasketballReferenceSeasonTotalsModel"/>
+    </bean>
+
+    <bean id="espnNbaPlayerRaterPagePlayerOwnershipModel" class="java.lang.Class" factory-method="forName">
+        <constructor-arg value="com.btanabe.fsdu.models.EspnFantasyLeaguePlayerOwnershipModel"/>
     </bean>
 </beans>

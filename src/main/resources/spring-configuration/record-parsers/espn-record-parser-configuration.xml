@@ -8,7 +8,7 @@
     <import resource="classpath:/spring-configuration/test-webpages-configuration.xml"/>
     <import resource="classpath:/spring-configuration/value-extractors/espn-value-extractor-configuration.xml"/>
     <import resource="classpath:/spring-configuration/common/model-factory-configuration.xml"/>
-    <import resource="classpath:/spring-configuration/application-configuration.xml" />
+    <import resource="classpath:/spring-configuration/application-configuration.xml"/>
 
     <!-- ESPN Projections page RecordParser configuration -->
     <bean id="espnNflPlayerProjectionPagePaginatedRecordParser" class="com.btanabe.fsdu.parsers.PaginatedRecordParser">
@@ -26,7 +26,7 @@
     <util:map id="espnNflPlayerProjectionRecordParserValueExtractorMap"
               key-type="java.lang.String"
               value-type="com.btanabe.fsdu.parsers.ValueExtractor">
-        <entry key="setPlayerId" value-ref="espnProjectionsPlayerIdValueExtractor" />
+        <entry key="setPlayerId" value-ref="espnProjectionsPlayerIdValueExtractor"/>
         <entry key="setRank" value-ref="espnProjectionsRankValueExtractor"/>
         <entry key="setName" value-ref="espnProjectionsNameValueExtractor"/>
         <entry key="setTeam" value-ref="espnProjectionsTeamValueExtractor"/>
@@ -46,9 +46,9 @@
     </util:map>
 
     <util:map id="espnNbaPlayerProjectionRecordParserValueExtractorMap"
-            key-type="java.lang.String"
-            value-type="com.btanabe.fsdu.parsers.ValueExtractor">
-        <entry key="setPlayerId" value-ref="espnProjectionsPlayerIdValueExtractor" />
+              key-type="java.lang.String"
+              value-type="com.btanabe.fsdu.parsers.ValueExtractor">
+        <entry key="setPlayerId" value-ref="espnProjectionsPlayerIdValueExtractor"/>
         <entry key="setRank" value-ref="espnProjectionsRankValueExtractor"/>
         <entry key="setName" value-ref="espnProjectionsNameValueExtractor"/>
         <entry key="setTeam" value-ref="espnProjectionsTeamValueExtractor"/>
@@ -64,4 +64,20 @@
         <entry key="setPointsPerGame" value-ref="espnPlayerPagePointsPerGameValueExtractor"/>
     </util:map>
     <!-- end ESPN Projections page RecordParser configuration -->
+
+    <!-- ESPN Player Rater page RecordParser configuration -->
+    <bean id="espnNbaPlayerRaterPagePaginatedRecordParser" class="com.btanabe.fsdu.parsers.RecordParser">
+        <constructor-arg ref="espnNbaPlayerRaterRecordParserValueExtractorMap"/>
+        <constructor-arg ref="&amp;espnNbaPlayerRaterPagePlayerOwnershipModelFactory"/>
+    </bean>
+
+
+    <util:map id="espnNbaPlayerRaterRecordParserValueExtractorMap"
+              key-type="java.lang.String"
+              value-type="com.btanabe.fsdu.parsers.ValueExtractor">
+        <entry key="setEspnPlayerId" value-ref="espnProjectionsPlayerIdValueExtractor"/>
+        <entry key="setEspnFantasyLeagueId" value-ref="espnPlayerRaterPageLeagueIdValueExtractor"/>
+        <entry key="setEspnFantasyOwnerTeamName" value-ref="espnPlayerRaterPageOwnerTeamNameValueExtractor"/>
+    </util:map>
+
 </beans>
