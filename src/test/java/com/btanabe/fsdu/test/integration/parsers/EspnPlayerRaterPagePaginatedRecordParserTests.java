@@ -11,6 +11,7 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.CoreMatchers.is;
@@ -67,5 +68,19 @@ public class EspnPlayerRaterPagePaginatedRecordParserTests {
     @Test
     public void shouldBeAbleToParseChristianWoodProperly() throws Exception {
         assertThat(playerOwnershipModelListPageSeven.contains(expectedChristianWoodOwnershipModel), is(true));
+    }
+
+    @Test
+    public void shouldBeAbleToPopulateAllModelFieldsForPageOneProperly() throws Exception {
+        assertThat(playerOwnershipModelListPageOne.stream().map(EspnFantasyLeaguePlayerOwnershipModel::getEspnPlayerId).collect(Collectors.toSet()).contains(null), is(false));
+        assertThat(playerOwnershipModelListPageOne.stream().map(EspnFantasyLeaguePlayerOwnershipModel::getEspnFantasyLeagueId).collect(Collectors.toSet()).contains(null), is(false));
+        assertThat(playerOwnershipModelListPageOne.stream().map(EspnFantasyLeaguePlayerOwnershipModel::getEspnFantasyOwnerTeamName).collect(Collectors.toList()).contains(null), is(false));
+    }
+
+    @Test
+    public void shouldBeAbleToPopulateAllModelFieldsForPageSevenProperly() throws Exception {
+        assertThat(playerOwnershipModelListPageSeven.stream().map(EspnFantasyLeaguePlayerOwnershipModel::getEspnPlayerId).collect(Collectors.toSet()).contains(null), is(false));
+        assertThat(playerOwnershipModelListPageSeven.stream().map(EspnFantasyLeaguePlayerOwnershipModel::getEspnFantasyLeagueId).collect(Collectors.toSet()).contains(null), is(false));
+        assertThat(playerOwnershipModelListPageSeven.stream().map(EspnFantasyLeaguePlayerOwnershipModel::getEspnFantasyOwnerTeamName).collect(Collectors.toList()).contains(null), is(false));
     }
 }

@@ -3,23 +3,28 @@ package com.btanabe.fsdu.parsers;
 
 import com.btanabe.fsdu.models.factories.AbstractModelFactory;
 
+import java.util.Collections;
+import java.util.HashMap;
 import java.util.Map;
+import java.util.function.Function;
 
 /**
  * Created by Brian on 7/28/15.
  */
-public class RecordParser<T> {
-    private Map<String, ValueExtractor> valueExtractorMap;
-    private AbstractModelFactory<T> outputClassFactory;
+public class RecordParser<OutputClazz> implements Function<String, OutputClazz> {
+    private Map<String, ValueExtractor> setterMethodNamesMappedToValueExtractors;
+    private AbstractModelFactory<OutputClazz> outputClassFactory;
 
-    public RecordParser(Map<String, ValueExtractor> valueExtractorMap, AbstractModelFactory<T> outputClassFactory) {
-        this.valueExtractorMap = valueExtractorMap;
+    public RecordParser(Map<String, ValueExtractor> valueExtractorMap, AbstractModelFactory<OutputClazz> outputClassFactory) {
+        this.setterMethodNamesMappedToValueExtractors = Collections.synchronizedMap(valueExtractorMap);
         this.outputClassFactory = outputClassFactory;
     }
 
-    public T getRecord(final String inputHtml) throws Exception {
-        valueExtractorMap.values().forEach(valueExtractor -> valueExtractor.setInputStringToSearch(inputHtml));
-        outputClassFactory.setSetterMethodToValueMap(valueExtractorMap);
-        return outputClassFactory.createObject();
+    @Override
+    public OutputClazz apply(String inputHtml) {
+        Map<String, Object> setterMethodNamesMappedToValues = Collections.synchronizedMap(new HashMap<>(setterMethodNamesMappedToValueExtractors.size()));
+//        Map<String, Object> setterMethodNamesMappedToValues = new ConcurrentHashMap<>(setterMethodNamesMappedToValueExtractors.size());
+        setterMethodNamesMappedToValueExtractors.entrySet().stream().forEach(setterMethodNameAndItsValueExtractor -> setterMethodNamesMappedToValues.put(setterMethodNameAndItsValueExtractor.getKey(), setterMethodNameAndItsValueExtractor.getValue().apply(inputHtml)));
+        return outputClassFactory.apply(setterMethodNamesMappedToValues);
     }
 }

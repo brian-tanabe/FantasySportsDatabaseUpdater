@@ -42,11 +42,11 @@ public class BasketballSeasonTotalsReferenceRecordParserTests {
 
     @Test
     public void shouldBeAbleToParseBasketballReferenceSeasonTotalsProperly() throws Exception {
-        assertThat(basketballReferenceSeasonTotalsModelRecordParser.getRecord(basketballReferenceSeasonTotalsPageQuincyAcy), is(equalTo(expectedQuincyAcyBasketballReferenceSeasonTotalsModel)));
+        assertThat(basketballReferenceSeasonTotalsModelRecordParser.apply(basketballReferenceSeasonTotalsPageQuincyAcy), is(equalTo(expectedQuincyAcyBasketballReferenceSeasonTotalsModel)));
     }
 
     @Test
     public void shouldBeAbleToParseBasketballReferenceSeasonTotalsProperlyWhenThePlayerHasBeenTraded() throws Exception {
-        assertThat(basketballReferenceSeasonTotalsModelRecordParser.getRecord(basketballReferenceSeasonsTotalsPageArronAfflaloTotalRow), is(equalTo(expectedArronAfflaloBasketballReferenceSeasonTotalsModel)));
+        assertThat(basketballReferenceSeasonTotalsModelRecordParser.apply(basketballReferenceSeasonsTotalsPageArronAfflaloTotalRow), is(equalTo(expectedArronAfflaloBasketballReferenceSeasonTotalsModel)));
     }
 }

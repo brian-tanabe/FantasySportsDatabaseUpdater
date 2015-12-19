@@ -8,8 +8,6 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import java.lang.reflect.InvocationTargetException;
-
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
@@ -34,25 +32,27 @@ public class ValueExtractorTests {
     private ValueExtractor testFloatValueExtraction;
 
     @Autowired
+    @Qualifier("espnNflProjectionsPageOne")
     private String espnNflProjectionsPageOne;
 
     @Autowired
+    @Qualifier("espnProjectionsPageEddieLacy")
     private String espnProjectionsPageEddieLacy;
 
     @Test
-    public void shouldBeAbleToExtractStrings() throws ClassNotFoundException, InvocationTargetException, IllegalAccessException {
+    public void shouldBeAbleToExtractStrings() throws Exception {
         testStringValueExtraction.setInputStringToSearch(espnNflProjectionsPageOne);
         assertThat(testStringValueExtraction.getValue(), equalTo("http://games.espn.go.com/ffl/tools/projections?&startIndex=40"));
     }
 
     @Test
-    public void shouldBeAbleToExtractIntegers() throws ClassNotFoundException, InvocationTargetException, IllegalAccessException {
+    public void shouldBeAbleToExtractIntegers() throws Exception {
         testIntegerValueExtraction.setInputStringToSearch(espnProjectionsPageEddieLacy);
         assertThat(testIntegerValueExtraction.getValue(), is(equalTo(1297)));
     }
 
     @Test
-    public void shouldBeAbleToExtractFloats() throws ClassNotFoundException, InvocationTargetException, IllegalAccessException {
+    public void shouldBeAbleToExtractFloats() throws Exception {
         testFloatValueExtraction.setInputStringToSearch(espnProjectionsPageEddieLacy);
         assertThat(testFloatValueExtraction.getValue(), is(equalTo((Object) 229.6)));
     }
