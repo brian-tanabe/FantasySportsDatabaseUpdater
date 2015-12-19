@@ -8,6 +8,7 @@
         <property name="espnFantasyLeagueId" value="233928"/>
         <property name="espnFantasyOwnerTeamName" value="Pau Wow"/>
         <property name="espnPlayerId" value="527"/>
+        <property name="playerFullName" value="Russell Westbrook"/>
     </bean>
 
     <bean id="christianWoodUnownedEspnPlayerRaterOwnershipModel"
@@ -15,5 +16,6 @@
         <property name="espnFantasyLeagueId" value="233928"/>
         <property name="espnFantasyOwnerTeamName" value="FA"/>
         <property name="espnPlayerId" value="1465"/>
+        <property name="playerFullName" value="Christian Wood"/>
     </bean>
 </beans>

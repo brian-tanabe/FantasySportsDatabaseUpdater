@@ -41,6 +41,10 @@ public class EspnPlayerRaterPageValueExtractorTests {
     private ValueExtractor ownerTeamNameValueExtractor;
 
     @Autowired
+    @Qualifier("espnProjectionsNameValueExtractor")
+    private ValueExtractor nameValueExtractor;
+
+    @Autowired
     @Qualifier("russellWestbrookOwnedEspnPlayerRaterOwnershipModel")
     private EspnFantasyLeaguePlayerOwnershipModel expectedRussellWestbrookOwnershipModel;
 
@@ -50,25 +54,26 @@ public class EspnPlayerRaterPageValueExtractorTests {
 
     @Test
     public void shouldBeAbleToExtractPlayerIdFromPlayerRaterRow() throws Exception {
-        playerIdValueExtractor.setInputStringToSearch(russellWestbrookPlayerRaterRow);
-        assertThat(playerIdValueExtractor.getValue(), is(equalTo(expectedRussellWestbrookOwnershipModel.getEspnPlayerId())));
+        assertThat(playerIdValueExtractor.apply(russellWestbrookPlayerRaterRow), is(equalTo(expectedRussellWestbrookOwnershipModel.getEspnPlayerId())));
     }
 
     @Test
     public void shouldBeAbleToExtractLeagueIdFromPlayerRaterRow() throws Exception {
-        leagueIdValueExtractor.setInputStringToSearch(russellWestbrookPlayerRaterRow);
-        assertThat(leagueIdValueExtractor.getValue(), is(equalTo(expectedRussellWestbrookOwnershipModel.getEspnFantasyLeagueId())));
+        assertThat(leagueIdValueExtractor.apply(russellWestbrookPlayerRaterRow), is(equalTo(expectedRussellWestbrookOwnershipModel.getEspnFantasyLeagueId())));
+    }
+
+    @Test
+    public void shouldBeAbleToExtractFullNameFromPlayerRaterRow() throws Exception {
+        assertThat(nameValueExtractor.apply(christianWoodPlayerRaterRow), is(equalTo(expectedChristianWoodOwnershipModel.getPlayerFullName())));
     }
 
     @Test
     public void shouldBeAbleToExtractOwnerTeamIdFromPlayerRaterRowForPlayersWhichAreOwned() throws Exception {
-        ownerTeamNameValueExtractor.setInputStringToSearch(russellWestbrookPlayerRaterRow);
-        assertThat(ownerTeamNameValueExtractor.getValue(), is(equalTo((Object) expectedRussellWestbrookOwnershipModel.getEspnFantasyOwnerTeamName())));
+        assertThat(ownerTeamNameValueExtractor.apply(russellWestbrookPlayerRaterRow), is(equalTo(expectedRussellWestbrookOwnershipModel.getEspnFantasyOwnerTeamName())));
     }
 
     @Test
     public void shouldBeAbleToExtractOwnerTeamIdFromPlayerRaterRowForPlayersWhichAreNotOwned() throws Exception {
-        ownerTeamNameValueExtractor.setInputStringToSearch(christianWoodPlayerRaterRow);
-        assertThat(ownerTeamNameValueExtractor.getValue(), is(equalTo((Object) expectedChristianWoodOwnershipModel.getEspnFantasyOwnerTeamName())));
+        assertThat(ownerTeamNameValueExtractor.apply(christianWoodPlayerRaterRow), is(equalTo(expectedChristianWoodOwnershipModel.getEspnFantasyOwnerTeamName())));
     }
 }

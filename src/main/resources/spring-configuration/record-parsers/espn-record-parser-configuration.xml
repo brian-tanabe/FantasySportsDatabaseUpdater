@@ -79,6 +79,7 @@
         <entry key="setEspnPlayerId" value-ref="espnProjectionsPlayerIdValueExtractor"/>
         <entry key="setEspnFantasyLeagueId" value-ref="espnPlayerRaterPageLeagueIdValueExtractor"/>
         <entry key="setEspnFantasyOwnerTeamName" value-ref="espnPlayerRaterPageOwnerTeamNameValueExtractor"/>
+        <entry key="setPlayerFullName" value-ref="espnProjectionsNameValueExtractor"/>
     </util:map>
 
 </beans>
