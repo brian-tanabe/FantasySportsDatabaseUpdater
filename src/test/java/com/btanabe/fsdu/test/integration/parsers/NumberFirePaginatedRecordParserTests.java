@@ -11,6 +11,7 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.CoreMatchers.is;
@@ -74,5 +75,35 @@ public class NumberFirePaginatedRecordParserTests {
     @Test
     public void shouldBeAbleToParseStephenCurry() throws Exception {
         assertThat(guardsYearlyProjections.contains(expectedStephenCurryModel), is(true));
+    }
+
+    @Test
+    public void shouldBeAbleToParseAllPlayerIdModelFieldsForAllGuards() throws Exception {
+        assertThat(guardsYearlyProjections.stream().map(player -> player.getFirstName()).collect(Collectors.toSet()).contains(null), is(false));
+        assertThat(guardsYearlyProjections.stream().map(player -> player.getLastName()).collect(Collectors.toSet()).contains(null), is(false));
+        assertThat(guardsYearlyProjections.stream().map(player -> player.getFullName()).collect(Collectors.toSet()).contains(null), is(false));
+        assertThat(guardsYearlyProjections.stream().map(player -> player.getBasketballReferenceId()).collect(Collectors.toSet()).contains(null), is(false));
+        assertThat(guardsYearlyProjections.stream().map(player -> player.getEspnId()).collect(Collectors.toSet()).contains(null), is(false));
+        assertThat(guardsYearlyProjections.stream().map(player -> player.getYahooId()).collect(Collectors.toSet()).contains(null), is(false));
+    }
+
+    @Test
+    public void shouldBeAbleToParseAllPlayerIdModelFieldsForAllForwards() throws Exception {
+        assertThat(forwardsYearlyProjections.stream().map(player -> player.getFirstName()).collect(Collectors.toSet()).contains(null), is(false));
+        assertThat(forwardsYearlyProjections.stream().map(player -> player.getLastName()).collect(Collectors.toSet()).contains(null), is(false));
+        assertThat(forwardsYearlyProjections.stream().map(player -> player.getFullName()).collect(Collectors.toSet()).contains(null), is(false));
+        assertThat(forwardsYearlyProjections.stream().map(player -> player.getBasketballReferenceId()).collect(Collectors.toSet()).contains(null), is(false));
+        assertThat(forwardsYearlyProjections.stream().map(player -> player.getEspnId()).collect(Collectors.toSet()).contains(null), is(false));
+        assertThat(forwardsYearlyProjections.stream().map(player -> player.getYahooId()).collect(Collectors.toSet()).contains(null), is(false));
+    }
+
+    @Test
+    public void shouldBeAbleToParseAllPlayerIdModelFieldsForAllCenters() throws Exception {
+        assertThat(centersYearlyProjections.stream().map(player -> player.getFirstName()).collect(Collectors.toSet()).contains(null), is(false));
+        assertThat(centersYearlyProjections.stream().map(player -> player.getLastName()).collect(Collectors.toSet()).contains(null), is(false));
+        assertThat(centersYearlyProjections.stream().map(player -> player.getFullName()).collect(Collectors.toSet()).contains(null), is(false));
+        assertThat(centersYearlyProjections.stream().map(player -> player.getBasketballReferenceId()).collect(Collectors.toSet()).contains(null), is(false));
+        assertThat(centersYearlyProjections.stream().map(player -> player.getEspnId()).collect(Collectors.toSet()).contains(null), is(false));
+        assertThat(centersYearlyProjections.stream().map(player -> player.getYahooId()).collect(Collectors.toSet()).contains(null), is(false));
     }
 }
