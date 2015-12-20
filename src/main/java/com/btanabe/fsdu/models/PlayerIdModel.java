@@ -9,8 +9,8 @@ public class PlayerIdModel {
     private String fullName;
 
     private String basketballReferenceId;
-    private int yahooId;
-    private int espnId;
+    private Integer yahooId;
+    private Integer espnId;
 
     @Override
     public String toString() {
@@ -20,16 +20,16 @@ public class PlayerIdModel {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (!(o instanceof PlayerIdModel)) return false;
 
         PlayerIdModel that = (PlayerIdModel) o;
 
-        if (espnId != that.espnId) return false;
-        if (yahooId != that.yahooId) return false;
         if (!basketballReferenceId.equals(that.basketballReferenceId)) return false;
+        if (!espnId.equals(that.espnId)) return false;
         if (!firstName.equals(that.firstName)) return false;
         if (!fullName.equals(that.fullName)) return false;
         if (!lastName.equals(that.lastName)) return false;
+        if (!yahooId.equals(that.yahooId)) return false;
 
         return true;
     }
@@ -40,8 +40,8 @@ public class PlayerIdModel {
         result = 31 * result + lastName.hashCode();
         result = 31 * result + fullName.hashCode();
         result = 31 * result + basketballReferenceId.hashCode();
-        result = 31 * result + yahooId;
-        result = 31 * result + espnId;
+        result = 31 * result + yahooId.hashCode();
+        result = 31 * result + espnId.hashCode();
         return result;
     }
 
@@ -77,19 +77,19 @@ public class PlayerIdModel {
         this.basketballReferenceId = basketballReferenceId;
     }
 
-    public int getYahooId() {
+    public Integer getYahooId() {
         return yahooId;
     }
 
-    public void setYahooId(int yahooId) {
+    public void setYahooId(Integer yahooId) {
         this.yahooId = yahooId;
     }
 
-    public int getEspnId() {
+    public Integer getEspnId() {
         return espnId;
     }
 
-    public void setEspnId(int espnId) {
+    public void setEspnId(Integer espnId) {
         this.espnId = espnId;
     }
 }
