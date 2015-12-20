@@ -10,9 +10,9 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.CoreMatchers.is;
@@ -70,12 +70,10 @@ public class BasketballReferencePaginatedRecordParserTests {
         assertThat(allBasketballReferenceSeasonTotalsRecords.size(), is(equalTo(651)));
     }
 
-    // TODO When I have Internet check if I can use stream().collect(...) to make this more efficient
     @Test
     public void shouldBeAbleToFindFourHundredNinetyTwoRecordsUniquePlayers() throws Exception {
-        final Set<String> playerNames = new HashSet<>(allBasketballReferenceSeasonTotalsRecords.size());
-        allBasketballReferenceSeasonTotalsRecords.stream().forEach(player -> playerNames.add(player.getName()));
-        assertThat(playerNames.size(), is(equalTo(492)));
+        final Set<String> playerFullNames = allBasketballReferenceSeasonTotalsRecords.stream().map(player -> player.getName()).collect(Collectors.toSet());
+        assertThat(playerFullNames.size(), is(equalTo(492)));
     }
 
     @Test

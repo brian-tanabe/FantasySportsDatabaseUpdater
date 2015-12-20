@@ -6,7 +6,12 @@
     <import resource="classpath:/spring-configuration/common/model-factory-configuration.xml"/>
     <import resource="classpath:/spring-configuration/common/value-transformer-configuration.xml"/>
     <import resource="classpath:/spring-configuration/common/record-combiner-configuration.xml"/>
+
     <import resource="classpath:/spring-configuration/value-extractors/espn-value-extractor-configuration.xml"/>
     <import resource="classpath:/spring-configuration/value-extractors/basketball-reference-value-extractor-configurations.xml"/>
     <import resource="classpath:/spring-configuration/value-extractors/nfl-value-extractor-configurations.xml"/>
+    <import resource="classpath:/spring-configuration/value-extractors/number-fire-value-extractor-configuration.xml"/>
+
+    <import resource="classpath:/spring-configuration/record-parsers/basketball-reference-record-parser-configuration.xml"/>
+    <import resource="classpath:/spring-configuration/record-parsers/number-fire-record-parser-configuration.xml"/>
 </beans>

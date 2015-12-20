@@ -86,4 +86,19 @@
                value-ref="espnNbaHoopDreamsPlayerRaterPageThirteen"/>
     </util:map>
     <!-- END ESPN NBA player rater page -->
+
+    <!-- basketball-reference season totals page -->
+    <bean id="mockBasketballReferenceSeasonsTotalsWebRequest"
+          class="com.btanabe.fsdu.test.factories.MockWebRequestFactory">
+        <property name="urlToPageHtmlMap" ref="basketballReferenceSeasonTotals20142015PageHtmlMap"/>
+    </bean>
+
+    <util:map id="basketballReferenceSeasonTotals20142015PageHtmlMap" key-type="java.lang.String"
+              value-type="java.lang.String">
+        <entry key="http://www.basketball-reference.com/leagues/NBA_2015_totals.html"
+               value-ref="basketballReferenceSeasonTotals20142015Season"/>
+        <entry key="http://www.basketball-reference.com/leagues/NBA_2016_totals.html"
+               value-ref="basketballReferenceSeasonTotals20152016Season"/>
+    </util:map>
+
 </beans>

@@ -188,4 +188,11 @@
         <constructor-arg name="outputMatchingRegex"
                          value="&lt;tr class=&quot;(full|italic_text partial)_table&quot;&gt;(.|\n|\s)+?&lt;\/tr&gt;"/>
     </bean>
+
+    <!-- FAKE NEXT PAGE VALUE EXTRACTOR...ALL VALUES ARE ON ONE PAGE -->
+    <bean id="basketballReferenceNextPageValueExtractor" class="com.btanabe.fsdu.parsers.ValueExtractor">
+        <constructor-arg name="outputClasspath" value="java.lang.String"/>
+        <constructor-arg name="outputMatchingRegex" value="$a"/>
+    </bean>
+
 </beans>

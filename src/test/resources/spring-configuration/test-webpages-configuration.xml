@@ -59,10 +59,6 @@
         <property name="inputFile" value="classpath:test-webpages/espn/player-page/player-page-16339-brandon-mcmanus.html"/>
     </bean>
 
-    <bean id="numberNflFireAnonymousLeagueProjections" class="com.btanabe.fsdu.test.factories.FileTidiedStringFactory">
-        <property name="inputFile" value="classpath:test-webpages/numberFire/projections-anonymous-league.html"/>
-    </bean>
-
     <bean id="nflRunningBacksPageOneFormatted" class="com.btanabe.fsdu.test.factories.FileTidiedStringFactory">
         <property name="inputFile" value="classpath:test-webpages/nfl/nfl-runningbacks-1.html"/>
     </bean>
@@ -224,5 +220,18 @@
 
     <bean id="basketballReferenceSeasonTotals20142015JeffAyers" class="com.btanabe.fsdu.test.factories.FileTidiedStringFactory">
         <property name="inputFile" value="classpath:test-webpages/basketball-reference/season-totals.jeff-ayers.html"/>
+    </bean>
+
+    <!-- numberFire yearly projections page -->
+    <bean id="numberFireYearlyProjectionsGuards" class="com.btanabe.fsdu.test.factories.FileTidiedStringFactory">
+        <property name="inputFile" value="classpath:test-webpages/numberfire/numberfire-yearly-projections-guards.html"/>
+    </bean>
+
+    <bean id="numberFireYearlyProjectionsForwards" class="com.btanabe.fsdu.test.factories.FileTidiedStringFactory">
+        <property name="inputFile" value="classpath:test-webpages/numberfire/numberfire-yearly-projections-forwards.html"/>
+    </bean>
+
+    <bean id="numberFireYearlyProjectionsCenters" class="com.btanabe.fsdu.test.factories.FileTidiedStringFactory">
+        <property name="inputFile" value="classpath:test-webpages/numberfire/numberfire-yearly-projections-centers.html"/>
     </bean>
 </beans>

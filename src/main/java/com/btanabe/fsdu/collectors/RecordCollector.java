@@ -23,15 +23,12 @@ public class RecordCollector<OutputType> {
     public List<OutputType> getAllRecordsAsList(String seedWebPageToScrape) throws Exception {
         List<OutputType> collectedRecordList = new ArrayList<>();
 
-        String pageHtml;
         String nextPageUrl = seedWebPageToScrape;
         do {
-            pageHtml = webRequest.downloadWebPageSource(nextPageUrl);
+            String pageHtml = webRequest.downloadWebPageSource(nextPageUrl);
             collectedRecordList.addAll(recordParser.getRecordsAsList(pageHtml));
-
-            nextPageLinkExtractor.setInputStringToSearch(pageHtml);
-            nextPageUrl = (String) nextPageLinkExtractor.getValue();
-        } while (!nextPageUrl.isEmpty());
+            nextPageUrl = nextPageLinkExtractor.apply(pageHtml);
+        } while (nextPageUrl != null && !nextPageUrl.isEmpty());
 
         return collectedRecordList;
     }
