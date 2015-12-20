@@ -202,6 +202,10 @@
         <property name="inputFile" value="classpath:test-webpages/basketball-reference/season-totals-2014-2015.html"/>
     </bean>
 
+    <bean id="basketballReferenceSeasonTotals20152016Season" class="com.btanabe.fsdu.test.factories.FileTidiedStringFactory">
+        <property name="inputFile" value="classpath:test-webpages/basketball-reference/season-totals-2015-2016.html"/>
+    </bean>
+
     <bean id="basketballReferenceSeasonTotals20142015QuincyAcy" class="com.btanabe.fsdu.test.factories.FileTidiedStringFactory">
         <property name="inputFile" value="classpath:test-webpages/basketball-reference/season-totals.quincy-acy.html"/>
     </bean>
