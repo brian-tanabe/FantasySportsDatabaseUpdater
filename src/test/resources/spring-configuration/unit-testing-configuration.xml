@@ -7,13 +7,17 @@
     <import resource="application-configuration.xml"/>
 
     <import resource="classpath:/spring-configuration/test-webpages-configuration.xml"/>
+
     <import resource="classpath:/spring-configuration/model-configurations/espn-projection-model-configuration.xml"/>
     <import resource="classpath:/spring-configuration/model-configurations/espn-player-page-model-configuration.xml"/>
     <import resource="classpath:/spring-configuration/model-configurations/basketball-reference-season-totals-model-configuration.xml"/>
     <import resource="classpath:/spring-configuration/model-configurations/espn-player-rater-model-configuration.xml"/>
+    <import resource="classpath:/spring-configuration/model-configurations/number-fire-yearly-projections-model-configuration.xml"/>
+
+    <import resource="classpath:/spring-configuration/record-combiner-tests-configuration.xml"/>
+
     <import resource="classpath:/spring-configuration/web-request-configuration.xml"/>
     <import resource="classpath:/spring-configuration/database-configuration.xml"/>
-    <import resource="classpath:/spring-configuration/record-combiner-tests-configuration.xml"/>
 
     <!-- These belong in application-configuration.xml but I can't figure out how to not have them introduce a dependency cycle -->
     <!-- Leaving them here for now -->

@@ -1,7 +1,7 @@
 package com.btanabe.fsdu.test.unit.parsers.value.extractors;
 
+import com.btanabe.fsdu.models.PlayerIdModel;
 import com.btanabe.fsdu.parsers.ValueExtractor;
-import org.json.JSONObject;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,10 +10,8 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import static org.hamcrest.CoreMatchers.equalTo;
-import static org.hamcrest.CoreMatchers.notNullValue;
-import static org.hamcrest.core.Is.is;
+import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
-import static org.junit.Assert.fail;
 
 /**
  * Created by brian on 12/19/15.
@@ -23,62 +21,64 @@ import static org.junit.Assert.fail;
 public class NumberFireYearlyProjectionsValueExtractorTests {
 
     @Autowired
-    @Qualifier("numberFireYearlyProjectionsPagePlayerValueExtractor")
-    private ValueExtractor<String> numberFireYearlyProjectionsPlayerValueExtractor;
+    @Qualifier("numberFireFullNameValueExtractor")
+    private ValueExtractor fullNameValueExtractor;
 
     @Autowired
-    @Qualifier("numberFireYearlyProjectionsGuards")
-    private String numberFireGuardsPage;
+    @Qualifier("numberFireFirstNameValueExtractor")
+    private ValueExtractor firstNameValueExtractor;
 
     @Autowired
-    @Qualifier("numberFireYearlyProjectionsForwards")
-    private String numberFireForwardsPage;
+    @Qualifier("numberFireLastNameValueExtractor")
+    private ValueExtractor lastNameValueExtractor;
 
     @Autowired
-    @Qualifier("numberFireYearlyProjectionsCenters")
-    private String numberFireCentersPage;
+    @Qualifier("numberFireEspnIdValueExtractor")
+    private ValueExtractor espnIdValueExtractor;
 
+    @Autowired
+    @Qualifier("numberFireYahooIdValueExtractor")
+    private ValueExtractor yahooIdValueExtractor;
 
-    @Test
-    public void shouldBeAbleToFindTwoHundredEightGuardsOnNumberFiresYearlyGuardProjectionsPage() throws Exception {
-        String playerObjects = numberFireYearlyProjectionsPlayerValueExtractor.apply(numberFireGuardsPage);
+    @Autowired
+    @Qualifier("numberFireBasketballReferenceIdValueExtractor")
+    private ValueExtractor basketballReferenceIdValueExtractor;
 
-        assertThat(playerObjects, is(notNullValue()));
+    @Autowired
+    @Qualifier("stephenCurryPlayerIdModel")
+    private PlayerIdModel expectedStephenCurryModel;
 
-        JSONObject jsonArray = new JSONObject(playerObjects);
-        jsonArray.keySet().forEach(key -> System.out.println(String.format("[[[%s]]] ", jsonArray.get(key))));
-        assertThat(jsonArray.keySet().size(), is(equalTo(208)));
-
-//        assertThat(playerObjects.size(), is(equalTo(208)));
-    }
+    @Autowired
+    @Qualifier("numberFireYearlyProjectionsStephenCurry")
+    private String numberFireYearlyProjectionsStephenCurry;
 
     @Test
     public void shouldBeAbleToExtractFirstNamesFromNumberFireYearlyProjectionsPage() throws Exception {
-        fail("Not yet implemented!");
+        assertThat(firstNameValueExtractor.apply(numberFireYearlyProjectionsStephenCurry), is(equalTo(expectedStephenCurryModel.getFirstName())));
     }
 
     @Test
     public void shouldBeAbleToExtractLastNameFromNumberFireYearlyProjectionsPage() throws Exception {
-        fail("Not yet implemented!");
+        assertThat(lastNameValueExtractor.apply(numberFireYearlyProjectionsStephenCurry), is(equalTo(expectedStephenCurryModel.getLastName())));
     }
 
     @Test
     public void shouldBeAbleToExtractFullNameFromNumberFireYearlyProjectionsPage() throws Exception {
-        fail("Not yet implemented!");
+        assertThat(fullNameValueExtractor.apply(numberFireYearlyProjectionsStephenCurry), is(equalTo(expectedStephenCurryModel.getFullName())));
     }
 
     @Test
     public void shouldBeAbleToExtractEspnIdFromNumberFireYearlyProjectionsPage() throws Exception {
-        fail("Not yet implemented!");
+        assertThat(espnIdValueExtractor.apply(numberFireYearlyProjectionsStephenCurry), is(equalTo(expectedStephenCurryModel.getEspnId())));
     }
 
     @Test
     public void shouldBeAbleToExtractBasketballReferenceIdFromNumberFireYearlyProjectionsPage() throws Exception {
-        fail("Not yet implemented!");
+        assertThat(basketballReferenceIdValueExtractor.apply(numberFireYearlyProjectionsStephenCurry), is(equalTo(expectedStephenCurryModel.getBasketballReferenceId())));
     }
 
     @Test
     public void shouldBeAbleToExtractYahooIdFromNumberFireYearlyProjectionsPage() throws Exception {
-        fail("Not yet implemented!");
+        assertThat(yahooIdValueExtractor.apply(numberFireYearlyProjectionsStephenCurry), is(equalTo(expectedStephenCurryModel.getYahooId())));
     }
 }

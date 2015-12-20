@@ -222,7 +222,7 @@
         <property name="inputFile" value="classpath:test-webpages/basketball-reference/season-totals.jeff-ayers.html"/>
     </bean>
 
-    <!-- numberFire yearly projections page -->
+    <!-- numberfire yearly projections page -->
     <bean id="numberFireYearlyProjectionsGuards" class="com.btanabe.fsdu.test.factories.FileTidiedStringFactory">
         <property name="inputFile" value="classpath:test-webpages/numberfire/numberfire-yearly-projections-guards.html"/>
     </bean>
@@ -233,5 +233,9 @@
 
     <bean id="numberFireYearlyProjectionsCenters" class="com.btanabe.fsdu.test.factories.FileTidiedStringFactory">
         <property name="inputFile" value="classpath:test-webpages/numberfire/numberfire-yearly-projections-centers.html"/>
+    </bean>
+
+    <bean id="numberFireYearlyProjectionsStephenCurry" class="com.btanabe.fsdu.test.factories.FileTidiedStringFactory">
+        <property name="inputFile" value="classpath:test-webpages/numberfire/number-fire-yearly-projections.stephen-curry.html"/>
     </bean>
 </beans>

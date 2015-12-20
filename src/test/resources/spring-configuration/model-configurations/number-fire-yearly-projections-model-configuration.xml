@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="stephenCurryPlayerIdModel" class="com.btanabe.fsdu.models.PlayerIdModel">
+        <property name="firstName" value="Stephen"/>
+        <property name="lastName" value="Curry"/>
+        <property name="fullName" value="Stephen Curry"/>
+        <property name="basketballReferenceId" value="curryst01"/>
+        <property name="espnId" value="3975"/>
+        <property name="yahooId" value="4612"/>
+    </bean>
+</beans>
