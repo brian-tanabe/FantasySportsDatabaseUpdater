@@ -95,6 +95,8 @@
 
     <util:map id="basketballReferenceSeasonTotals20142015PageHtmlMap" key-type="java.lang.String"
               value-type="java.lang.String">
+        <entry key="http://www.basketball-reference.com/leagues/NBA_2014_totals.html"
+               value-ref="basketballReferenceSeasonTotals20132014Season"/>
         <entry key="http://www.basketball-reference.com/leagues/NBA_2015_totals.html"
                value-ref="basketballReferenceSeasonTotals20142015Season"/>
         <entry key="http://www.basketball-reference.com/leagues/NBA_2016_totals.html"
