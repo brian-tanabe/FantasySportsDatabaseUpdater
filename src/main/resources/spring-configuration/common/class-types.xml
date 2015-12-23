@@ -3,8 +3,69 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-
+    <!-- Sets -->
     <bean id="hashSetClass" class="java.lang.Class" factory-method="forName">
         <constructor-arg value="java.util.HashSet"/>
     </bean>
+
+    <!-- Integers -->
+    <bean id="integerClass" class="java.lang.Class" factory-method="forName">
+        <constructor-arg value="java.lang.Integer"/>
+    </bean>
+
+    <bean id="stringClass" class="java.lang.Class" factory-method="forName">
+        <constructor-arg value="java.lang.String"/>
+    </bean>
+
+    <bean id="doubleClass" class="java.lang.Class" factory-method="forName">
+        <constructor-arg value="java.lang.Double"/>
+    </bean>
+
+    <bean id="zeroInteger" class="java.lang.Integer">
+        <constructor-arg value="0"/>
+    </bean>
+
+    <bean id="zeroDouble" class="java.lang.Double">
+        <constructor-arg value="0.0"/>
+    </bean>
+
+    <bean id="negativeOneInteger" class="java.lang.Integer">
+        <constructor-arg value="-1"/>
+    </bean>
+
+    <!-- Strings -->
+    <bean id="emptyString" class="java.lang.String">
+        <constructor-arg value=""/>
+    </bean>
+
+    <bean id="numberFireBaseUri" class="java.lang.String">
+        <constructor-arg value="https://www.numberfire.com"/>
+    </bean>
+
+    <!-- Custome types -->
+    <bean id="espnNflProjectionModel" class="java.lang.Class" factory-method="forName">
+        <constructor-arg value="com.btanabe.fsdu.models.EspnNflProjectionModel"/>
+    </bean>
+
+    <bean id="espnNbaProjectionModel" class="java.lang.Class" factory-method="forName">
+        <constructor-arg value="com.btanabe.fsdu.models.EspnNbaProjectionModel"/>
+    </bean>
+
+    <bean id="basketballReferenceSeasonTotalsModel" class="java.lang.Class" factory-method="forName">
+        <constructor-arg value="com.btanabe.fsdu.models.BasketballReferenceSeasonTotalsModel"/>
+    </bean>
+
+    <bean id="espnNbaPlayerRaterPagePlayerOwnershipModel" class="java.lang.Class" factory-method="forName">
+        <constructor-arg value="com.btanabe.fsdu.models.EspnFantasyLeaguePlayerOwnershipModel"/>
+    </bean>
+
+    <bean id="numberFirePlayerIdModel" class="java.lang.Class" factory-method="forName">
+        <constructor-arg value="com.btanabe.fsdu.models.PlayerIdModel"/>
+    </bean>
+
+    <!-- 3rd party custom types -->
+    <bean id="stringEscapeUtils" class="org.apache.commons.lang3.StringEscapeUtils"/>
+
+    <bean id="commaSeparatedStringFactory"
+          class="com.btanabe.fsdu.processors.transformers.CommaSeparatedStringFactory"/>
 </beans>

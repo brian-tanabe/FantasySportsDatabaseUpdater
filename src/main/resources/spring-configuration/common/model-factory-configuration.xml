@@ -3,6 +3,8 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
+    <import resource="classpath:/spring-configuration/common/class-types.xml"/>
+
     <bean id="espnNflProjectionModelFactory" class="com.btanabe.fsdu.models.factories.ModelFactory">
         <property name="outputClazz" ref="espnNflProjectionModel"/>
     </bean>
@@ -21,25 +23,5 @@
 
     <bean id="numberFireYearlyProjectionsModelFactory" class="com.btanabe.fsdu.models.factories.ModelFactory">
         <property name="outputClazz" ref="numberFirePlayerIdModel"/>
-    </bean>
-
-    <bean id="espnNflProjectionModel" class="java.lang.Class" factory-method="forName">
-        <constructor-arg value="com.btanabe.fsdu.models.EspnNflProjectionModel"/>
-    </bean>
-
-    <bean id="espnNbaProjectionModel" class="java.lang.Class" factory-method="forName">
-        <constructor-arg value="com.btanabe.fsdu.models.EspnNbaProjectionModel"/>
-    </bean>
-
-    <bean id="basketballReferenceSeasonTotalsModel" class="java.lang.Class" factory-method="forName">
-        <constructor-arg value="com.btanabe.fsdu.models.BasketballReferenceSeasonTotalsModel"/>
-    </bean>
-
-    <bean id="espnNbaPlayerRaterPagePlayerOwnershipModel" class="java.lang.Class" factory-method="forName">
-        <constructor-arg value="com.btanabe.fsdu.models.EspnFantasyLeaguePlayerOwnershipModel"/>
-    </bean>
-
-    <bean id="numberFirePlayerIdModel" class="java.lang.Class" factory-method="forName">
-        <constructor-arg value="com.btanabe.fsdu.models.PlayerIdModel"/>
     </bean>
 </beans>
