@@ -11,7 +11,6 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
 
@@ -34,13 +33,12 @@ public class BasketballReferencePaginatedRecordCollectorTests {
     @Qualifier("mockBasketballReferenceSeasonsTotalsWebRequest")
     private WebRequest mockWebRequest;
 
-    private List<BasketballReferenceSeasonTotalsModel> allBasketballReferenceSeasonTotalsRecords;
+    private Set<BasketballReferenceSeasonTotalsModel> allBasketballReferenceSeasonTotalsRecords;
 
     @Before
     public void parseAllBasketballReferenceSeasonTotalsRecords() {
         try {
-            basketballReferenceSeasonTotalsPageRecordCollector.setWebRequest(mockWebRequest);
-            allBasketballReferenceSeasonTotalsRecords = basketballReferenceSeasonTotalsPageRecordCollector.getAllRecordsAsList("http://www.basketball-reference.com/leagues/NBA_2015_totals.html");
+            allBasketballReferenceSeasonTotalsRecords = (Set<BasketballReferenceSeasonTotalsModel>) basketballReferenceSeasonTotalsPageRecordCollector.apply("http://www.basketball-reference.com/leagues/NBA_2015_totals.html", mockWebRequest);
         } catch (Exception ex) {
            /*
             Let's swallow this exception.  This is in a @Before block since parsing this list
@@ -53,7 +51,6 @@ public class BasketballReferencePaginatedRecordCollectorTests {
 
     @Test
     public void shouldBeAbleToFindFourHundredNinetyTwoRecordsUniquePlayers() throws Exception {
-        final Set<String> playerFullNames = allBasketballReferenceSeasonTotalsRecords.stream().map(player -> player.getName()).collect(Collectors.toSet());
-        assertThat(playerFullNames.size(), is(equalTo(492)));
+        assertThat(allBasketballReferenceSeasonTotalsRecords.stream().map(player -> player.getName()).collect(Collectors.toSet()).size(), is(equalTo(492)));
     }
 }

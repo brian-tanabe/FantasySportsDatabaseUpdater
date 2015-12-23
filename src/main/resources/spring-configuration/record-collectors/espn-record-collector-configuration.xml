@@ -5,14 +5,17 @@
 
     <import resource="classpath:/spring-configuration/value-extractors/espn-value-extractor-configuration.xml"/>
     <import resource="classpath:/spring-configuration/record-parsers/espn-record-parser-configuration.xml"/>
+    <import resource="classpath:/spring-configuration/common/class-types.xml"/>
 
     <bean id="espnNbaProjectionPageRecordCollector" class="com.btanabe.fsdu.collectors.RecordCollector">
         <constructor-arg ref="espnProjectionsNextPageValueExtractor"/>
         <constructor-arg ref="espnNbaPlayerProjectionPagePaginatedRecordParser"/>
+        <constructor-arg ref="hashSetClass"/>
     </bean>
 
     <bean id="espnNbaPlayerRaterPageRecordCollector" class="com.btanabe.fsdu.collectors.RecordCollector">
         <constructor-arg ref="espnProjectionsNextPageValueExtractor"/>
         <constructor-arg ref="espnNbaPlayerRaterPagePaginatedRecordParser"/>
+        <constructor-arg ref="hashSetClass"/>
     </bean>
 </beans>

@@ -5,6 +5,7 @@
 
     <import resource="classpath:/spring-configuration/value-extractors/number-fire-value-extractor-configuration.xml"/>
     <import resource="classpath:/spring-configuration/record-parsers/number-fire-record-parser-configuration.xml"/>
+    <import resource="classpath:/spring-configuration/common/class-types.xml"/>
 
     <bean id="numberFireYearlyProjectionsPageRecordCollector" class="com.btanabe.fsdu.collectors.RecordCollector">
         <constructor-arg ref="numberFireNextPageValueExtractor"/>
@@ -12,7 +13,4 @@
         <constructor-arg ref="hashSetClass"/>
     </bean>
 
-    <bean id="hashSetClass" class="java.lang.Class" factory-method="forName">
-        <constructor-arg value="java.util.HashSet"/>
-    </bean>
 </beans>

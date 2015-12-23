@@ -11,7 +11,7 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import java.util.List;
+import java.util.Set;
 
 import static org.hamcrest.CoreMatchers.*;
 import static org.hamcrest.core.IsNot.not;
@@ -42,14 +42,14 @@ public class EspnProjectionsPageRecordCollectorTests {
     @Qualifier("eltonBrandEspnProjectionModel")
     private EspnNbaProjectionModel expectedEltonBrandRecord;
 
-    private List<EspnNbaProjectionModel> playerProjectionList;
+    private Set<EspnNbaProjectionModel> playerProjectionList;
 
     // Consider moving to TestNG which allows for non-static BeforeClass methods:
     @Before
     public void parseAllNbaRecords() throws Exception {
         if (playerProjectionList == null) {
             nbaProjectionPageRecordCollector.setWebRequest(mockWebRequest);
-            playerProjectionList = nbaProjectionPageRecordCollector.getAllRecordsAsList("http://games.espn.go.com/fba/tools/projections?&leagueId=233928");
+            playerProjectionList = (Set<EspnNbaProjectionModel>) nbaProjectionPageRecordCollector.apply("http://games.espn.go.com/fba/tools/projections?&leagueId=233928", mockWebRequest);
         }
     }
 

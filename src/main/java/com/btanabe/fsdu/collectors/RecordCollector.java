@@ -53,7 +53,7 @@ public class RecordCollector<OutputType, OutputContainerType extends Collection>
             OutputContainerType outputCollection = ConstructorUtils.getAccessibleConstructor(outputContainerClazz).newInstance();
             String nextPageUrl = seedWebPageToScrape;
             do {
-                String pageHtml = webRequest.downloadWebPageSource(nextPageUrl);
+                final String pageHtml = webRequest.downloadWebPageSource(nextPageUrl);
                 outputCollection.addAll(recordParser.getRecordsAsList(pageHtml));
                 nextPageUrl = nextPageLinkExtractor.apply(pageHtml);
             } while (nextPageUrl != null && !nextPageUrl.isEmpty());

@@ -5,9 +5,11 @@
 
     <import resource="classpath:/spring-configuration/value-extractors/basketball-reference-value-extractor-configurations.xml"/>
     <import resource="classpath:/spring-configuration/record-parsers/basketball-reference-record-parser-configuration.xml"/>
+    <import resource="classpath:/spring-configuration/common/class-types.xml"/>
 
     <bean id="basketballReferenceSeasonTotalsPageRecordCollector" class="com.btanabe.fsdu.collectors.RecordCollector">
         <constructor-arg ref="basketballReferenceNextPageValueExtractor"/>
         <constructor-arg ref="basketballReferenceSeasonTotalsPagePaginatedRecordParser"/>
+        <constructor-arg ref="hashSetClass"/>
     </bean>
 </beans>
