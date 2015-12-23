@@ -3,9 +3,20 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean id="numberFireYearlyProjectionsPagePlayerValueExtractor" class="com.btanabe.fsdu.parsers.PaginatedValueExtractor">
+    <import resource="classpath:/spring-configuration/common/value-transformer-configuration.xml"/>
+
+    <bean id="numberFireNextPageValueExtractor" class="com.btanabe.fsdu.parsers.TransformingValueExtractor">
         <constructor-arg name="outputClasspath" value="java.lang.String"/>
-        <constructor-arg name="outputMatchingRegex" value="&quot;\d{0,4}&quot;:\{&quot;id&quot;:&quot;\d{0,4}&quot;,&quot;name&quot;:&quot;[A-Za-z \-'\.]{1,50}&quot;,&quot;slug&quot;:&quot;[a-z\-0-9]{1,50}&quot;,&quot;first_name&quot;:&quot;[A-Za-z \-'\.]{1,50}&quot;,&quot;last_name&quot;:&quot;[A-Za-z \-'\.]{1,50}&quot;,&quot;race&quot;:&quot;\d&quot;,.*?depth_rank&quot;:&quot;\d&quot;\}"/>
+        <constructor-arg name="outputMatchingRegex"
+                         value="(?&lt;=a href=&quot;/nba/fantasy/yearly-projections/(guards|forwards)&quot; class=&quot;strong&quot;&gt;(Guards|Forwards)&lt;/a&gt; · &lt;a href=&quot;)(.*?)(?=&quot;&gt;)"/>
+        <constructor-arg name="outputValueTransformer" ref="numberFireBaseUrlValueTransformer"/>
+    </bean>
+
+    <bean id="numberFireYearlyProjectionsPagePlayerValueExtractor"
+          class="com.btanabe.fsdu.parsers.PaginatedValueExtractor">
+        <constructor-arg name="outputClasspath" value="java.lang.String"/>
+        <constructor-arg name="outputMatchingRegex"
+                         value="&quot;\d{0,4}&quot;:\{&quot;id&quot;:&quot;\d{0,4}&quot;,&quot;name&quot;:&quot;[A-Za-z \-'\.]{1,50}&quot;,&quot;slug&quot;:&quot;[a-z\-0-9]{1,50}&quot;,&quot;first_name&quot;:&quot;[A-Za-z \-'\.]{1,50}&quot;,&quot;last_name&quot;:&quot;[A-Za-z \-'\.]{1,50}&quot;,&quot;race&quot;:&quot;\d&quot;,.*?depth_rank&quot;:&quot;\d&quot;\}"/>
     </bean>
 
     <bean id="numberFireFullNameValueExtractor" class="com.btanabe.fsdu.parsers.ValueExtractor">
@@ -35,6 +46,7 @@
 
     <bean id="numberFireBasketballReferenceIdValueExtractor" class="com.btanabe.fsdu.parsers.ValueExtractor">
         <constructor-arg name="outputClasspath" value="java.lang.String"/>
-        <constructor-arg name="outputMatchingRegex" value="(?&lt;=&quot;sports_reference_id&quot;:&quot;)(.+?)(?=&quot;,)"/>
+        <constructor-arg name="outputMatchingRegex"
+                         value="(?&lt;=&quot;sports_reference_id&quot;:&quot;)(.+?)(?=&quot;,)"/>
     </bean>
 </beans>

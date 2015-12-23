@@ -90,10 +90,10 @@
     <!-- basketball-reference season totals page -->
     <bean id="mockBasketballReferenceSeasonsTotalsWebRequest"
           class="com.btanabe.fsdu.test.factories.MockWebRequestFactory">
-        <property name="urlToPageHtmlMap" ref="basketballReferenceSeasonTotals20142015PageHtmlMap"/>
+        <property name="urlToPageHtmlMap" ref="basketballReferenceSeasonTotalsPageMap"/>
     </bean>
 
-    <util:map id="basketballReferenceSeasonTotals20142015PageHtmlMap" key-type="java.lang.String"
+    <util:map id="basketballReferenceSeasonTotalsPageMap" key-type="java.lang.String"
               value-type="java.lang.String">
         <entry key="http://www.basketball-reference.com/leagues/NBA_2014_totals.html"
                value-ref="basketballReferenceSeasonTotals20132014Season"/>
@@ -103,4 +103,17 @@
                value-ref="basketballReferenceSeasonTotals20152016Season"/>
     </util:map>
 
+    <!-- numberFire yearly projections page -->
+    <bean id="mockNumberFireYearlyProjectionsWebRequest" class="com.btanabe.fsdu.test.factories.MockWebRequestFactory">
+        <property name="urlToPageHtmlMap" ref="numberFireYearlyProjectionsPageHtmlMap"/>
+    </bean>
+
+    <util:map id="numberFireYearlyProjectionsPageHtmlMap" key-type="java.lang.String" value-type="java.lang.String">
+        <entry key="https://www.numberfire.com/nba/fantasy/yearly-projections/guards"
+               value-ref="numberFireYearlyProjectionsGuards"/>
+        <entry key="https://www.numberfire.com/nba/fantasy/yearly-projections/forwards"
+               value-ref="numberFireYearlyProjectionsForwards"/>
+        <entry key="https://www.numberfire.com/nba/fantasy/yearly-projections/centers"
+               value-ref="numberFireYearlyProjectionsCenters"/>
+    </util:map>
 </beans>

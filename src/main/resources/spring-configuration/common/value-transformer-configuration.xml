@@ -44,7 +44,15 @@
         <constructor-arg name="transformingMethodName" value="concat"/>
         <constructor-arg name="classTypeOfTheInputToTheTransformingMethod" ref="stringClass"/>
         <constructor-arg name="objectTheTransformingMethodIsInvokedFrom" ref="emptyString"/>
-        <constructor-arg name="defaultValueWhenNull" value="FA" />
+        <constructor-arg name="defaultValueWhenNull" value="FA"/>
+    </bean>
+
+    <bean id="numberFireBaseUrlValueTransformer" class="com.btanabe.fsdu.processors.ValueTransformer">
+        <constructor-arg name="classWhichPerformsTheValueTransformation" value="java.lang.String"/>
+        <constructor-arg name="transformingMethodName" value="concat"/>
+        <constructor-arg name="classTypeOfTheInputToTheTransformingMethod" ref="stringClass"/>
+        <constructor-arg name="objectTheTransformingMethodIsInvokedFrom" ref="numberFireBaseUri"/>
+        <constructor-arg name="defaultValueWhenNull" value=""/>
     </bean>
 
     <bean id="integerClass" class="java.lang.Class" factory-method="forName">
@@ -75,7 +83,12 @@
         <constructor-arg value=""/>
     </bean>
 
+    <bean id="numberFireBaseUri" class="java.lang.String">
+        <constructor-arg value="https://www.numberfire.com"/>
+    </bean>
+
     <bean id="stringEscapeUtils" class="org.apache.commons.lang3.StringEscapeUtils"/>
 
-    <bean id="commaSeparatedStringFactory" class="com.btanabe.fsdu.processors.transformers.CommaSeparatedStringFactory"/>
+    <bean id="commaSeparatedStringFactory"
+          class="com.btanabe.fsdu.processors.transformers.CommaSeparatedStringFactory"/>
 </beans>

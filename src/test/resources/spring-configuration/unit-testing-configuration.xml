@@ -23,4 +23,5 @@
     <!-- Leaving them here for now -->
     <import resource="classpath:/spring-configuration/record-collectors/espn-record-collector-configuration.xml"/>
     <import resource="classpath:/spring-configuration/record-collectors/basketball-reference-record-collector-configuration.xml"/>
+    <import resource="classpath:/spring-configuration/record-collectors/number-fire-record-collector-configuration.xml"/>
 </beans>

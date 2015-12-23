@@ -45,12 +45,28 @@ public class NumberFireYearlyProjectionsValueExtractorTests {
     private ValueExtractor basketballReferenceIdValueExtractor;
 
     @Autowired
+    @Qualifier("numberFireNextPageValueExtractor")
+    private ValueExtractor nextPageValueExtractor;
+
+    @Autowired
     @Qualifier("stephenCurryPlayerIdModel")
     private PlayerIdModel expectedStephenCurryModel;
 
     @Autowired
     @Qualifier("numberFireYearlyProjectionsStephenCurry")
     private String numberFireYearlyProjectionsStephenCurry;
+
+    @Autowired
+    @Qualifier("numberFireYearlyProjectionsGuards")
+    private String numberFireYearlyProjectionsGuardsPage;
+
+    @Autowired
+    @Qualifier("numberFireYearlyProjectionsForwards")
+    private String numberFireYearlyProjectionsForwardsPage;
+
+    @Autowired
+    @Qualifier("numberFireYearlyProjectionsCenters")
+    private String numberFireYearlyProjectionsCentersPage;
 
     @Test
     public void shouldBeAbleToExtractFirstNamesFromNumberFireYearlyProjectionsPage() throws Exception {
@@ -80,5 +96,20 @@ public class NumberFireYearlyProjectionsValueExtractorTests {
     @Test
     public void shouldBeAbleToExtractYahooIdFromNumberFireYearlyProjectionsPage() throws Exception {
         assertThat(yahooIdValueExtractor.apply(numberFireYearlyProjectionsStephenCurry), is(equalTo(expectedStephenCurryModel.getYahooId())));
+    }
+
+    @Test
+    public void shouldBeAbleToFindTheSecondPagesLinkFromTheGuardsPage() throws Exception {
+        assertThat(nextPageValueExtractor.apply(numberFireYearlyProjectionsGuardsPage), is(equalTo("https://www.numberfire.com/nba/fantasy/yearly-projections/forwards")));
+    }
+
+    @Test
+    public void shouldBeAbleToFindTheThirdPagesLinkFromTheForwardsPage() throws Exception {
+        assertThat(nextPageValueExtractor.apply(numberFireYearlyProjectionsForwardsPage), is(equalTo("https://www.numberfire.com/nba/fantasy/yearly-projections/centers")));
+    }
+
+    @Test
+    public void shouldNotFindAnotherLinkFromTheCentersPage() throws Exception {
+        assertThat(nextPageValueExtractor.apply(numberFireYearlyProjectionsCentersPage), is(equalTo("")));
     }
 }
