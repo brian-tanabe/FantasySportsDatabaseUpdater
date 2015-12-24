@@ -14,7 +14,7 @@ public class EspnPlayerPageModel {
 
     @Override
     public boolean equals(Object obj) {
-        if(obj instanceof  EspnPlayerPageModel) {
+        if (obj instanceof EspnPlayerPageModel) {
             EspnPlayerPageModel rhs = (EspnPlayerPageModel) obj;
             return playerId.equals(rhs.getPlayerId()) && height.equals(rhs.getHeight()) && weightInPounds.equals(rhs.getWeightInPounds()) && birthday.equals(rhs.getBirthday()) && experienceInYears.equals(rhs.getExperienceInYears()) && college.equals(rhs.getCollege()) && draftPickTaken.equals(rhs.getDraftPickTaken());
         }

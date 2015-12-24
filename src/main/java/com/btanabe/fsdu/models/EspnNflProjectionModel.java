@@ -43,7 +43,9 @@ public class EspnNflProjectionModel {
         return String.format("rank=[%d], name=[%s], team=[%s], position=[%s], passingCompletions=[%d], passingAttempts=[%d], passingYards=[%d], passingTouchdowns=[%d], interceptions=[%d], rushingAttempts=[%d], rushingYards=[%d], rushingTouchdowns=[%d], receptions=[%d], receivingYards=[%d], receivingTouchdowns=[%d], fantasyPoints=[%f]", rank, name, team, position, passingCompletions, passingAttempts, passingYards, passingTouchdowns, interceptions, rushingAttempts, rushingYards, rushingTouchdowns, receptions, receivingYards, receivingTouchdowns, fantasyPoints);
     }
 
-    public void setPlayerId(Integer playerId) { this.playerId = playerId; }
+    public void setPlayerId(Integer playerId) {
+        this.playerId = playerId;
+    }
 
     public void setRank(Integer rank) {
         this.rank = rank;
@@ -109,7 +111,9 @@ public class EspnNflProjectionModel {
         this.fantasyPoints = fantasyPoints;
     }
 
-    public Integer getPlayerId() { return playerId; }
+    public Integer getPlayerId() {
+        return playerId;
+    }
 
     public Integer getRank() {
         return rank;

@@ -40,15 +40,18 @@
     </bean>
 
     <bean id="espnProjectionsPageAnthonyDavis" class="com.btanabe.fsdu.test.factories.FileTidiedStringFactory">
-        <property name="inputFile" value="classpath:test-webpages/espn/nba/projections-players/projections-anthony-davis.html"/>
+        <property name="inputFile"
+                  value="classpath:test-webpages/espn/nba/projections-players/projections-anthony-davis.html"/>
     </bean>
 
     <bean id="espnProjectionsPageKyrieIrving" class="com.btanabe.fsdu.test.factories.FileTidiedStringFactory">
-        <property name="inputFile" value="classpath:test-webpages/espn/nba/projections-players/projections-kyree-irving.html"/>
+        <property name="inputFile"
+                  value="classpath:test-webpages/espn/nba/projections-players/projections-kyree-irving.html"/>
     </bean>
 
     <bean id="espnProjectionsPageEltonBrand" class="com.btanabe.fsdu.test.factories.FileTidiedStringFactory">
-        <property name="inputFile" value="classpath:test-webpages/espn/nba/projections-players/projections-elton-brand.html"/>
+        <property name="inputFile"
+                  value="classpath:test-webpages/espn/nba/projections-players/projections-elton-brand.html"/>
     </bean>
 
     <bean id="espnPlayerPageEddieLacy" class="com.btanabe.fsdu.test.factories.FileTidiedStringFactory">
@@ -56,7 +59,8 @@
     </bean>
 
     <bean id="espnPlayerPageBrandonMcManus" class="com.btanabe.fsdu.test.factories.FileTidiedStringFactory">
-        <property name="inputFile" value="classpath:test-webpages/espn/player-page/player-page-16339-brandon-mcmanus.html"/>
+        <property name="inputFile"
+                  value="classpath:test-webpages/espn/player-page/player-page-16339-brandon-mcmanus.html"/>
     </bean>
 
     <bean id="nflRunningBacksPageOneFormatted" class="com.btanabe.fsdu.test.factories.FileTidiedStringFactory">
@@ -185,61 +189,85 @@
         <property name="inputFile" value="classpath:test-webpages/espn/nba/player-rater-pages/player-rater-13.html"/>
     </bean>
 
-    <bean id="espnNbaHoopDreamsPlayerRaterPageRussellWestbrook" class="com.btanabe.fsdu.test.factories.FileTidiedStringFactory">
-        <property name="inputFile" value="classpath:test-webpages/espn/nba/player-rater-players/player-rater.russell-westbrook.html"/>
+    <bean id="espnNbaHoopDreamsPlayerRaterPageRussellWestbrook"
+          class="com.btanabe.fsdu.test.factories.FileTidiedStringFactory">
+        <property name="inputFile"
+                  value="classpath:test-webpages/espn/nba/player-rater-players/player-rater.russell-westbrook.html"/>
     </bean>
 
-    <bean id="espnNbaHoopDreamsPlayerRaterPageChristianWood" class="com.btanabe.fsdu.test.factories.FileTidiedStringFactory">
-        <property name="inputFile" value="classpath:test-webpages/espn/nba/player-rater-players/player-rater.christian-Wood.html"/>
+    <bean id="espnNbaHoopDreamsPlayerRaterPageChristianWood"
+          class="com.btanabe.fsdu.test.factories.FileTidiedStringFactory">
+        <property name="inputFile"
+                  value="classpath:test-webpages/espn/nba/player-rater-players/player-rater.christian-Wood.html"/>
     </bean>
 
     <!-- basketball-reference season totals -->
-    <bean id="basketballReferenceSeasonTotals20132014Season" class="com.btanabe.fsdu.test.factories.FileTidiedStringFactory">
-        <property name="inputFile" value="classpath:test-webpages/basketball-reference/season-totals/season-totals-2013-2014.html"/>
+    <bean id="basketballReferenceSeasonTotals20132014Season"
+          class="com.btanabe.fsdu.test.factories.FileTidiedStringFactory">
+        <property name="inputFile"
+                  value="classpath:test-webpages/basketball-reference/season-totals/season-totals-2013-2014.html"/>
     </bean>
 
-    <bean id="basketballReferenceSeasonTotals20142015Season" class="com.btanabe.fsdu.test.factories.FileTidiedStringFactory">
-        <property name="inputFile" value="classpath:test-webpages/basketball-reference/season-totals/season-totals-2014-2015.html"/>
+    <bean id="basketballReferenceSeasonTotals20142015Season"
+          class="com.btanabe.fsdu.test.factories.FileTidiedStringFactory">
+        <property name="inputFile"
+                  value="classpath:test-webpages/basketball-reference/season-totals/season-totals-2014-2015.html"/>
     </bean>
 
-    <bean id="basketballReferenceSeasonTotals20152016Season" class="com.btanabe.fsdu.test.factories.FileTidiedStringFactory">
-        <property name="inputFile" value="classpath:test-webpages/basketball-reference/season-totals/season-totals-2015-2016.html"/>
+    <bean id="basketballReferenceSeasonTotals20152016Season"
+          class="com.btanabe.fsdu.test.factories.FileTidiedStringFactory">
+        <property name="inputFile"
+                  value="classpath:test-webpages/basketball-reference/season-totals/season-totals-2015-2016.html"/>
     </bean>
 
-    <bean id="basketballReferenceSeasonTotals20142015QuincyAcy" class="com.btanabe.fsdu.test.factories.FileTidiedStringFactory">
-        <property name="inputFile" value="classpath:test-webpages/basketball-reference/individual-season-totals/season-totals.quincy-acy.html"/>
+    <bean id="basketballReferenceSeasonTotals20142015QuincyAcy"
+          class="com.btanabe.fsdu.test.factories.FileTidiedStringFactory">
+        <property name="inputFile"
+                  value="classpath:test-webpages/basketball-reference/individual-season-totals/season-totals.quincy-acy.html"/>
     </bean>
 
-    <bean id="basketballReferenceSeasonTotals20142015JerrelleBenimon" class="com.btanabe.fsdu.test.factories.FileTidiedStringFactory">
-        <property name="inputFile" value="classpath:test-webpages/basketball-reference/individual-season-totals/season-totals.jerrelle-benimon.html"/>
+    <bean id="basketballReferenceSeasonTotals20142015JerrelleBenimon"
+          class="com.btanabe.fsdu.test.factories.FileTidiedStringFactory">
+        <property name="inputFile"
+                  value="classpath:test-webpages/basketball-reference/individual-season-totals/season-totals.jerrelle-benimon.html"/>
     </bean>
 
-    <bean id="basketballReferenceSeasonTotals20142015ArronAfflaloTot" class="com.btanabe.fsdu.test.factories.FileTidiedStringFactory">
-        <property name="inputFile" value="classpath:test-webpages/basketball-reference/individual-season-totals/season-totals.arron-afflaflo-tot.html"/>
+    <bean id="basketballReferenceSeasonTotals20142015ArronAfflaloTot"
+          class="com.btanabe.fsdu.test.factories.FileTidiedStringFactory">
+        <property name="inputFile"
+                  value="classpath:test-webpages/basketball-reference/individual-season-totals/season-totals.arron-afflaflo-tot.html"/>
     </bean>
 
-    <bean id="basketballReferenceSeasonTotals20142015DjAugustinDet" class="com.btanabe.fsdu.test.factories.FileTidiedStringFactory">
-        <property name="inputFile" value="classpath:test-webpages/basketball-reference/individual-season-totals/season-totals.dj-augustin-det.html"/>
+    <bean id="basketballReferenceSeasonTotals20142015DjAugustinDet"
+          class="com.btanabe.fsdu.test.factories.FileTidiedStringFactory">
+        <property name="inputFile"
+                  value="classpath:test-webpages/basketball-reference/individual-season-totals/season-totals.dj-augustin-det.html"/>
     </bean>
 
-    <bean id="basketballReferenceSeasonTotals20142015JeffAyers" class="com.btanabe.fsdu.test.factories.FileTidiedStringFactory">
-        <property name="inputFile" value="classpath:test-webpages/basketball-reference/individual-season-totals/season-totals.jeff-ayers.html"/>
+    <bean id="basketballReferenceSeasonTotals20142015JeffAyers"
+          class="com.btanabe.fsdu.test.factories.FileTidiedStringFactory">
+        <property name="inputFile"
+                  value="classpath:test-webpages/basketball-reference/individual-season-totals/season-totals.jeff-ayers.html"/>
     </bean>
 
     <!-- numberfire yearly projections page -->
     <bean id="numberFireYearlyProjectionsGuards" class="com.btanabe.fsdu.test.factories.FileTidiedStringFactory">
-        <property name="inputFile" value="classpath:test-webpages/numberfire/numberfire-yearly-projections-guards.html"/>
+        <property name="inputFile"
+                  value="classpath:test-webpages/numberfire/numberfire-yearly-projections-guards.html"/>
     </bean>
 
     <bean id="numberFireYearlyProjectionsForwards" class="com.btanabe.fsdu.test.factories.FileTidiedStringFactory">
-        <property name="inputFile" value="classpath:test-webpages/numberfire/numberfire-yearly-projections-forwards.html"/>
+        <property name="inputFile"
+                  value="classpath:test-webpages/numberfire/numberfire-yearly-projections-forwards.html"/>
     </bean>
 
     <bean id="numberFireYearlyProjectionsCenters" class="com.btanabe.fsdu.test.factories.FileTidiedStringFactory">
-        <property name="inputFile" value="classpath:test-webpages/numberfire/numberfire-yearly-projections-centers.html"/>
+        <property name="inputFile"
+                  value="classpath:test-webpages/numberfire/numberfire-yearly-projections-centers.html"/>
     </bean>
 
     <bean id="numberFireYearlyProjectionsStephenCurry" class="com.btanabe.fsdu.test.factories.FileTidiedStringFactory">
-        <property name="inputFile" value="classpath:test-webpages/numberfire/numberfire-yearly-projections.stephen-curry.html"/>
+        <property name="inputFile"
+                  value="classpath:test-webpages/numberfire/numberfire-yearly-projections.stephen-curry.html"/>
     </bean>
 </beans>

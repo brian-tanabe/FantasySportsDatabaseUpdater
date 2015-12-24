@@ -17,7 +17,7 @@
         <property name="outputClazz" ref="espnNbaPlayerRaterPagePlayerOwnershipModel"/>
     </bean>
 
-    <bean id="basketballReferneceSeasonTotalsModelFactory" class="com.btanabe.fsdu.models.factories.ModelFactory">
+    <bean id="basketballReferenceSeasonTotalsModelFactory" class="com.btanabe.fsdu.models.factories.ModelFactory">
         <property name="outputClazz" ref="basketballReferenceSeasonTotalsModel"/>
     </bean>
 

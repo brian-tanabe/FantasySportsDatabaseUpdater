@@ -9,7 +9,7 @@ public class CommaSeparatedStringFactory {
 
     public static String commaSeparateInputStrings(ArrayList<Object> unseparatedObjects) {
         StringBuilder commaSeparatedObjects = new StringBuilder();
-        for(Object objectToCommaSeparate : unseparatedObjects) {
+        for (Object objectToCommaSeparate : unseparatedObjects) {
             commaSeparatedObjects.append(objectToCommaSeparate).append(",");
         }
         commaSeparatedObjects.deleteCharAt(commaSeparatedObjects.length() - 1);

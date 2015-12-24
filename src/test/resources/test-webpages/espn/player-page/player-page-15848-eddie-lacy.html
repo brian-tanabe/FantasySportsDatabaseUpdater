@@ -1,31 +1,59 @@
-
 <!DOCTYPE html>
 <html xmlns:fb="http://www.facebook.com/2008/fbml">
-<head><script src="http://sports-ak.espn.go.com/sports/optimizely.js"></script><meta charset="iso-8859-1">
+<head>
+    <script src="http://sports-ak.espn.go.com/sports/optimizely.js"></script>
+    <meta charset="iso-8859-1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <link rel="icon" sizes="any" mask href="http://a.espncdn.com/prod/assets/icons/E.svg">
     <meta name="theme-color" content="#CC0000">
     <script type="text/javascript">
-        if(true && navigator && navigator.userAgent.toLowerCase().indexOf("teamstream") >= 0) {
+        if (true && navigator && navigator.userAgent.toLowerCase().indexOf("teamstream") >= 0) {
             window.location = 'http://a.m.espn.go.com/mobilecache/general/apps/sc';
         }
     </script>
-    <script>(function(){function r(a){a=a.replace(/[\[]/,"\\[").replace(/[\]]/,"\\]");var c=new RegExp("[\\?&]"+a+"=([^&#]*)"),b=c.exec(location.search);return b==null?"":decodeURIComponent(b[1].replace(/\+/g," "));}var p=navigator.userAgent,o=window.location,l=document.cookie,f=document.referrer,n=(f===""||f.indexOf(".go.com")!==-1),d=(n)?"http://m.espn.go.com/nfl/playercard?playerId=15848&src=desktop":"http://m.espn.go.com/nfl/playercard?playerId=15848&src=desktop&rand=ref~%7B%22ref%22%3A%22"+encodeURIComponent(f)+"%22%7D",i=(p.match(/iPad/i)||(p.match(/Android/i)&&!p.match(/Mobile/i))||p.match(/RIM Tablet/i)||p.match(/Silk/i)),k=(p.match(/Mobile/i)||p.match(/Mini/i)),g=o.href.match(/src=mobile/i),q=l.indexOf("iphone_redirect=false")>-1,e=l.indexOf("iphone_redirect=true")>-1,j=r("addata"),h=r("ex_cid"),m=r("rand");if(j!=""){d+="&addata="+j;}if(h!=""){d+="&ex_cid="+h;}if(m==="beta"){d+="&rand=beta";}if(i){document.documentElement.className+=" tablet ";if((!p.match(/iPad/i)||e)&&!q){o.href=d;}}else{if(k&&!q&&!g){o.href=d;}}})();</script>
+    <script>(function () {
+        function r(a) {
+            a = a.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+            var c = new RegExp("[\\?&]" + a + "=([^&#]*)"), b = c.exec(location.search);
+            return b == null ? "" : decodeURIComponent(b[1].replace(/\+/g, " "));
+        }
+
+        var p = navigator.userAgent, o = window.location, l = document.cookie, f = document.referrer, n = (f === "" || f.indexOf(".go.com") !== -1), d = (n) ? "http://m.espn.go.com/nfl/playercard?playerId=15848&src=desktop" : "http://m.espn.go.com/nfl/playercard?playerId=15848&src=desktop&rand=ref~%7B%22ref%22%3A%22" + encodeURIComponent(f) + "%22%7D", i = (p.match(/iPad/i) || (p.match(/Android/i) && !p.match(/Mobile/i)) || p.match(/RIM Tablet/i) || p.match(/Silk/i)), k = (p.match(/Mobile/i) || p.match(/Mini/i)), g = o.href.match(/src=mobile/i), q = l.indexOf("iphone_redirect=false") > -1, e = l.indexOf("iphone_redirect=true") > -1, j = r("addata"), h = r("ex_cid"), m = r("rand");
+        if (j != "") {
+            d += "&addata=" + j;
+        }
+        if (h != "") {
+            d += "&ex_cid=" + h;
+        }
+        if (m === "beta") {
+            d += "&rand=beta";
+        }
+        if (i) {
+            document.documentElement.className += " tablet ";
+            if ((!p.match(/iPad/i) || e) && !q) {
+                o.href = d;
+            }
+        } else {
+            if (k && !q && !g) {
+                o.href = d;
+            }
+        }
+    })();</script>
     <title>Eddie Lacy Stats, News, Videos, Highlights, Pictures, Bio - Green Bay Packers - ESPN</title>
-    <meta name="slice" scheme="IE" content="off" />
-    <meta name="google-site-verification" content="xuj1ODRluWa0frM-BjIr_aSHoUC7HB5C1MgmYAM_GkA" />
-    <meta name="msvalidate.01" content="B1FEB7C682C46C8FCDA3130F3D18AC28" />
-    <meta name="googlebot" content="noodp" />
-    <meta name="robots" content="index, follow" />
-    <meta name="description" content="Get the latest news, stats, videos, highlights and more about Green Bay Packers running back Eddie Lacy on ESPN.com." />
-    <meta name="keywords" content="eddie lacy, eddie lacy bio, eddie lacy news, eddie lacy stats, eddie lacy videos, eddie lacy highlights, eddie lacy pictures" />
+    <meta name="slice" scheme="IE" content="off"/>
+    <meta name="google-site-verification" content="xuj1ODRluWa0frM-BjIr_aSHoUC7HB5C1MgmYAM_GkA"/>
+    <meta name="msvalidate.01" content="B1FEB7C682C46C8FCDA3130F3D18AC28"/>
+    <meta name="googlebot" content="noodp"/>
+    <meta name="robots" content="index, follow"/>
+    <meta name="description" content="Get the latest news, stats, videos, highlights and more about Green Bay Packers running back Eddie Lacy on ESPN.com."/>
+    <meta name="keywords" content="eddie lacy, eddie lacy bio, eddie lacy news, eddie lacy stats, eddie lacy videos, eddie lacy highlights, eddie lacy pictures"/>
     <meta property="fb:app_id" content="116656161708917">
     <meta property="og:site_name" content="ESPN.com">
-    <meta property="og:title" content="Eddie Lacy" />
-    <meta property="og:type" content="athlete" />
-    <meta property="og:description" content="Get the latest news, stats, videos, highlights and more about Green Bay Packers running back Eddie Lacy on ESPN.com." />
-    <meta property="og:image" content="http://a.espncdn.com/combiner/i?img=/i/headshots/nfl/players/full/15848.png&h=90" />
-    <meta property="og:url" content="http://espn.go.com/nfl/player/_/id/15848/eddie-lacy" />
+    <meta property="og:title" content="Eddie Lacy"/>
+    <meta property="og:type" content="athlete"/>
+    <meta property="og:description" content="Get the latest news, stats, videos, highlights and more about Green Bay Packers running back Eddie Lacy on ESPN.com."/>
+    <meta property="og:image" content="http://a.espncdn.com/combiner/i?img=/i/headshots/nfl/players/full/15848.png&h=90"/>
+    <meta property="og:url" content="http://espn.go.com/nfl/player/_/id/15848/eddie-lacy"/>
     <meta name="twitter:site" content="espn">
     <meta name="twitter:title" content="Eddie Lacy">
     <meta name="twitter:card" content="summary">
@@ -36,60 +64,125 @@
     <meta name="twitter:app:id:iphone" content="317469184"/>
     <meta name="twitter:app:name:googleplay" content="ESPN"/>
     <meta name="twitter:app:id:googleplay" content="com.espn.score_center"/>
-    <link rel="canonical" href="http://espn.go.com/nfl/player/_/id/15848/eddie-lacy" />
+    <link rel="canonical" href="http://espn.go.com/nfl/player/_/id/15848/eddie-lacy"/>
 
-    <script>var _sf_startpt=(new Date()).getTime();</script>
-    <link rel="search" type="application/opensearchdescription+xml" href="http://a.espncdn.com/search/opensearch.xml" title="ESPN Search" />
-    <link rel="stylesheet" href="http://a.espncdn.com/combiner/c/201501211964?css=global_reset.r1.css,base.r236.css,modules.r462.css,global_header.r44.css,header_topbar.r1.css,modules/global_nav.r54.css,modules/insider_enhanced.r1.css,modules/mem/mem.r12.1.css,modules/mem/mem_espn360.r8.4.css,modules/mem/skirmish.r8.css,modules/twin.r1.css,modules/facebook/button.r2.css,universal_overlay/universal_overlay.css,universal_overlay/media_overlay.css,universal_overlay/video_overlay.css,universal_overlay/photo_overlay.css,universal_overlay/dyk_overlay.css,fonts/bentonsans.css,fonts/bentonsansmedium.css" type="text/css" media="screen" charset="utf-8" />
-    <link rel="stylesheet" href="http://a.espncdn.com/combiner/c/201508060924?css=sprites/teamlogos.r19.css" type="text/css" media="screen" charset="utf-8" />
-    <link rel="stylesheet" href="http://a.espncdn.com/combiner/c/20120509325?css=modules/master_tables_10.r3.css" type="text/css" media="screen" charset="utf-8" />
-    <link rel="stylesheet" href="http://a.espncdn.com/combiner/c/20120509325?css=modules/tabs-page-nav.3.css" type="text/css" media="screen" charset="utf-8" />
-    <link rel="stylesheet" href="http://a.espncdn.com/combiner/c/20120509326?css=pagetype/tier3.r10.css" type="text/css" media="screen" charset="utf-8" />
-    <link rel="stylesheet" href="http://a.espncdn.com/combiner/c?css=/tier3/tier3_nfl.css,playercard_10.css,playercard_nfl_10.css" type="text/css" media="screen" charset="utf-8" />
+    <script>var _sf_startpt = (new Date()).getTime();</script>
+    <link rel="search" type="application/opensearchdescription+xml" href="http://a.espncdn.com/search/opensearch.xml" title="ESPN Search"/>
+    <link rel="stylesheet" href="http://a.espncdn.com/combiner/c/201501211964?css=global_reset.r1.css,base.r236.css,modules.r462.css,global_header.r44.css,header_topbar.r1.css,modules/global_nav.r54.css,modules/insider_enhanced.r1.css,modules/mem/mem.r12.1.css,modules/mem/mem_espn360.r8.4.css,modules/mem/skirmish.r8.css,modules/twin.r1.css,modules/facebook/button.r2.css,universal_overlay/universal_overlay.css,universal_overlay/media_overlay.css,universal_overlay/video_overlay.css,universal_overlay/photo_overlay.css,universal_overlay/dyk_overlay.css,fonts/bentonsans.css,fonts/bentonsansmedium.css" type="text/css" media="screen" charset="utf-8"/>
+    <link rel="stylesheet" href="http://a.espncdn.com/combiner/c/201508060924?css=sprites/teamlogos.r19.css" type="text/css" media="screen" charset="utf-8"/>
+    <link rel="stylesheet" href="http://a.espncdn.com/combiner/c/20120509325?css=modules/master_tables_10.r3.css" type="text/css" media="screen" charset="utf-8"/>
+    <link rel="stylesheet" href="http://a.espncdn.com/combiner/c/20120509325?css=modules/tabs-page-nav.3.css" type="text/css" media="screen" charset="utf-8"/>
+    <link rel="stylesheet" href="http://a.espncdn.com/combiner/c/20120509326?css=pagetype/tier3.r10.css" type="text/css" media="screen" charset="utf-8"/>
+    <link rel="stylesheet" href="http://a.espncdn.com/combiner/c?css=/tier3/tier3_nfl.css,playercard_10.css,playercard_nfl_10.css" type="text/css" media="screen" charset="utf-8"/>
     <script type="text/javascript">
         var _vrq = _vrq || [];
         _vrq.push(['id', 489]);
         _vrq.push(['automate', false]);
-        _vrq.push(['track', function(){}]);
-        (function(d, a){var s = d.createElement(a),x = d.getElementsByTagName(a)[0];
+        _vrq.push(['track', function () {
+        }]);
+        (function (d, a) {
+            var s = d.createElement(a), x = d.getElementsByTagName(a)[0];
             s.async = true;
             s.src = 'http://a.visualrevenue.com/vrs.js';
-            x.parentNode.insertBefore(s, x);})(document, 'script'); </script>
+            x.parentNode.insertBefore(s, x);
+        })(document, 'script'); </script>
     <script src="http://a.espncdn.com/combiner/c?js=jquery-1.7.1.js,plugins/json2.r3.js,plugins/teacrypt.js,plugins/jquery.metadata.js,plugins/jquery.bgiframe.r3.js,plugins/jquery.easing.1.3.js,plugins/jquery.hoverIntent.js,plugins/jquery.jcarousel.0.2.9.js,plugins/jquery.tinysort.r4.js,plugins/jquery.pubsub.r5.js,ui/1.8.16/jquery.ui.core.js,ui/1.8.16/jquery.ui.widget.js,ui/1.8.16/jquery.ui.tabs.js,ui/1.8.16/jquery.ui.accordion.js,plugins/ba-debug-0.4.js,espn.l10n.r12.js,swfobject/2.2/swfobject.js,flashObjWrapper.r7.js,plugins/jquery.colorbox.1.3.14.js,plugins/jquery.ba-postmessage.js,espn.core.duo.r57.js,m/beta/betacheck.r6.js,espn.mem.r39.js,stub.search.r9.js,espn.nav.mega.r39b.js,espn.storage.r6.js,espn.p13n.r20.js,espn.geo.r3.js,espn.video.r81.r5.js,registration/staticLogin.r12.06102014.js,espn.universal.overlay.r19.js,insider/espn.insider.20140915.js,espn.espn360.stub.r9.js,espn.myHeadlines.stub.r16.js,espn.myfaves.stub.r3.js,tsscoreboard.20090612.js,ie9pinning.r3.js,espn.f8.noauth.r3.js,espn.socialmediamod.r7.js"></script>
     <script src="http://a.espncdn.com/combiner/c?js=analytics/chartbeat/video/strategy_comprehensive.r1.js"></script>
     <script>espn.core.navVersion = 'a';</script>
-    <script>var ad_site="espn.us.com.nfl",ad_zone="nflplayer",ad_kvps="pgtyp=nflplayer;sp=nfl;tm=gb;pl=15848;nav=true;",ad_swid="",ad_counter=1,ad_ord=Math.floor(9999999999*Math.random()),ad_seg="",ad_mnr=-1<document.cookie.indexOf("grif=1")?"t":"f",ad_ref="other",ref=document.referrer,refsMap={"facebook.com":"facebook","twitter.com|t.co":"twitter","plus.url.google.com|plus.google.com":"googleplus","google.com":"google","bing.com":"bing","yahoo.com":"yahoo","espn.go.com":"espn"},refKey;for(refKey in refsMap)ref.match(refKey)&&(ad_ref=refsMap[refKey]);
-    ad_kvps=ad_kvps+"ref="+ad_ref+";mnr="+ad_mnr+";";ad_swid=jQuery.cookie("SWID");"function"===typeof espn.core.ad_segments&&(ad_seg=espn.core.ad_segments(),null!=ad_seg&&""!=ad_seg&&(ad_kvps+=ad_seg));var ad_u="";null!=ad_swid&&""!=ad_swid&&(ad_u="swid="+ad_swid+";");</script>
-    <link rel="stylesheet" href="http://a.espncdn.com/prod/styles/transitionalHeader/transitional-header.css" type="text/css" media="screen" charset="utf-8" />
+    <script>var ad_site = "espn.us.com.nfl", ad_zone = "nflplayer", ad_kvps = "pgtyp=nflplayer;sp=nfl;tm=gb;pl=15848;nav=true;", ad_swid = "", ad_counter = 1, ad_ord = Math.floor(9999999999 * Math.random()), ad_seg = "", ad_mnr = -1 < document.cookie.indexOf("grif=1") ? "t" : "f", ad_ref = "other", ref = document.referrer, refsMap = {"facebook.com": "facebook", "twitter.com|t.co": "twitter", "plus.url.google.com|plus.google.com": "googleplus", "google.com": "google", "bing.com": "bing", "yahoo.com": "yahoo", "espn.go.com": "espn"}, refKey;
+    for (refKey in refsMap)ref.match(refKey) && (ad_ref = refsMap[refKey]);
+    ad_kvps = ad_kvps + "ref=" + ad_ref + ";mnr=" + ad_mnr + ";";
+    ad_swid = jQuery.cookie("SWID");
+    "function" === typeof espn.core.ad_segments && (ad_seg = espn.core.ad_segments(), null != ad_seg && "" != ad_seg && (ad_kvps += ad_seg));
+    var ad_u = "";
+    null != ad_swid && "" != ad_swid && (ad_u = "swid=" + ad_swid + ";");</script>
+    <link rel="stylesheet" href="http://a.espncdn.com/prod/styles/transitionalHeader/transitional-header.css" type="text/css" media="screen" charset="utf-8"/>
 </head>
-<body class="nfl {sportId:28, teamId:9} tier3 player-card teamId-9 gb"  data-sport="nfl">
-<div class="mboxDefault"><link rel="stylesheet" charset="utf-8" media="screen" href="http://a.espncdn.com/prod/styles/modules/hideGravity.css" type="text/css" /></div><script>mboxCreate('ESPN_global');</script><!--[if IE 5]><div class="ie5"><![endif]-->
-<!--[if IE 6]><div class="ie ie6"><![endif]-->
-<!--[if IE 7]><div class="ie ie7"><![endif]-->
-<!--[if IE 8]><div class="ie ie8"><![endif]-->
-<!--[if IE 9]><div class="ie9"><![endif]-->
-<!-- begin bg-elements -->
+<body class="nfl {sportId:28, teamId:9} tier3 player-card teamId-9 gb" data-sport="nfl">
+<div class="mboxDefault">
+    <link rel="stylesheet" charset="utf-8" media="screen" href="http://a.espncdn.com/prod/styles/modules/hideGravity.css" type="text/css"/>
+</div>
+<script>mboxCreate('ESPN_global');</script>
+<!--[if IE 5]>
+<div class="ie5"><![endif]--><!--[if IE 6]>
+<div class="ie ie6"><![endif]--><!--[if IE 7]>
+<div class="ie ie7"><![endif]--><!--[if IE 8]>
+<div class="ie ie8"><![endif]--><!--[if IE 9]>
+<div class="ie9"><![endif]--><!-- begin bg-elements -->
 <div class="bg-elements">
 <!--espn.us.com.nfl sitezone--><!--http://ad.Doubleclick.net hostUrl-->
-<script>if("undefined"!=typeof ad_kvps&&"undefined"!=typeof ad_u&&"undefined"!=typeof ad_counter&&"undefined"!=typeof ad_ord){if("undefined"==typeof ad_site||"undefined"==typeof ad_zone)var ad_site="espn.us.com.nfl",ad_zone="nflplayer";var ad_finalString="http://ad.Doubleclick.net/adj/"+ad_site+"/"+ad_zone+";"+ad_kvps+"pos=Background_Skin;"+ad_u+"sz=1280x946,200x800,1x1;tile="+ad_counter+";ord="+ad_ord;document.write('<div data-cb-ad-id="Background_Skin" data-cb-dfp-id="'+ad_kvps+'sz=1280x946,200x800,1x1"><script src='+ad_finalString+'>\x3c/script></div>');ad_counter++};</script>
-<noscript><a href="http://ad.Doubleclick.net/jump/espn.us.com.nfl/nflplayer;pgtyp=nflplayer;sp=nfl;tm=gb;pl=15848;nav=true;sz=1280x946,200x800,1x1;" target="_blank"><img src="http://ad.Doubleclick.net/ad/espn.us.com.nfl/nflplayer;pgtyp=nflplayer;sp=nfl;tm=gb;pl=15848;nav=true;sz=1280x946,200x800,1x1;" border="0" alt=""></a></noscript>
+<script>if ("undefined" != typeof ad_kvps && "undefined" != typeof ad_u && "undefined" != typeof ad_counter && "undefined" != typeof ad_ord) {
+    if ("undefined" == typeof ad_site || "undefined" == typeof ad_zone)var ad_site = "espn.us.com.nfl", ad_zone = "nflplayer";
+    var ad_finalString = "http://ad.Doubleclick.net/adj/" + ad_site + "/" + ad_zone + ";" + ad_kvps + "pos=Background_Skin;" + ad_u + "sz=1280x946,200x800,1x1;tile=" + ad_counter + ";ord=" + ad_ord;
+    document.write('<div data-cb-ad-id="Background_Skin" data-cb-dfp-id="' + ad_kvps + 'sz=1280x946,200x800,1x1"><script src=' + ad_finalString + '>\x3c/script></div>');
+    ad_counter++
+}
+;</script>
+<noscript>
+    <a href="http://ad.Doubleclick.net/jump/espn.us.com.nfl/nflplayer;pgtyp=nflplayer;sp=nfl;tm=gb;pl=15848;nav=true;sz=1280x946,200x800,1x1;" target="_blank"><img src="http://ad.Doubleclick.net/ad/espn.us.com.nfl/nflplayer;pgtyp=nflplayer;sp=nfl;tm=gb;pl=15848;nav=true;sz=1280x946,200x800,1x1;" border="0" alt=""></a>
+</noscript>
 <!-- begin subheader -->
 <div id="subheader">
 <!-- begin content -->
 <div id="content-wrapper">
 <div id="ad-top" class="container">
     <!-- begin Banner ad -->
-    <div class="span-6 ad banner top"><div class="ad-center"><div class="ad-wrapper"><!--espn.us.com.nfl sitezone--><!--http://ad.Doubleclick.net hostUrl-->
-        <script>if("undefined"!=typeof ad_kvps&&"undefined"!=typeof ad_u&&"undefined"!=typeof ad_counter&&"undefined"!=typeof ad_ord){if("undefined"==typeof ad_site||"undefined"==typeof ad_zone)var ad_site="espn.us.com.nfl",ad_zone="nflplayer";var ad_finalString="http://ad.Doubleclick.net/adj/"+ad_site+"/"+ad_zone+";"+ad_kvps+"pos=Banner;"+ad_u+"sz=728x90,970x66,924x50,1x1;tile="+ad_counter+";ord="+ad_ord;document.write('<div data-cb-ad-id="Banner" data-cb-dfp-id="'+ad_kvps+'sz=728x90,970x66,924x50,1x1"><script src='+ad_finalString+'>\x3c/script></div>');ad_counter++};</script>
-        <noscript><a href="http://ad.Doubleclick.net/jump/espn.us.com.nfl/nflplayer;pgtyp=nflplayer;sp=nfl;tm=gb;pl=15848;nav=true;sz=728x90,970x66,924x50,1x1;" target="_blank"><img src="http://ad.Doubleclick.net/ad/espn.us.com.nfl/nflplayer;pgtyp=nflplayer;sp=nfl;tm=gb;pl=15848;nav=true;sz=728x90,970x66,924x50,1x1;" border="0" alt=""></a></noscript>
-    </div></div></div>
+    <div class="span-6 ad banner top">
+        <div class="ad-center">
+            <div class="ad-wrapper"><!--espn.us.com.nfl sitezone--><!--http://ad.Doubleclick.net hostUrl-->
+                <script>if ("undefined" != typeof ad_kvps && "undefined" != typeof ad_u && "undefined" != typeof ad_counter && "undefined" != typeof ad_ord) {
+                    if ("undefined" == typeof ad_site || "undefined" == typeof ad_zone)var ad_site = "espn.us.com.nfl", ad_zone = "nflplayer";
+                    var ad_finalString = "http://ad.Doubleclick.net/adj/" + ad_site + "/" + ad_zone + ";" + ad_kvps + "pos=Banner;" + ad_u + "sz=728x90,970x66,924x50,1x1;tile=" + ad_counter + ";ord=" + ad_ord;
+                    document.write('<div data-cb-ad-id="Banner" data-cb-dfp-id="' + ad_kvps + 'sz=728x90,970x66,924x50,1x1"><script src=' + ad_finalString + '>\x3c/script></div>');
+                    ad_counter++
+                }
+                ;</script>
+                <noscript>
+                    <a href="http://ad.Doubleclick.net/jump/espn.us.com.nfl/nflplayer;pgtyp=nflplayer;sp=nfl;tm=gb;pl=15848;nav=true;sz=728x90,970x66,924x50,1x1;" target="_blank"><img src="http://ad.Doubleclick.net/ad/espn.us.com.nfl/nflplayer;pgtyp=nflplayer;sp=nfl;tm=gb;pl=15848;nav=true;sz=728x90,970x66,924x50,1x1;" border="0" alt=""></a>
+                </noscript>
+            </div>
+        </div>
+    </div>
     <!-- end Banner ad -->
 </div>
 <div id="content" class="container">
-<div id="fb-root"></div><!--[if lte IE 7]><link rel="stylesheet" charset="utf-8" media="screen" href="http://a.espncdn.com/combiner/c?css=modules/browser-alert.r7.css" type="text/css" /><div class="span-6" id="browser-alert-wrapper" style="display:none;"><div class="mod-container mod-no-header-footer browser-alert"><div class="mod-content"><div class="gradient-container"><h1><span>Your Web Browser</span> is no longer supported</h1><p>To experience everything that ESPN.com has to offer, we recommend that you upgrade to a newer version of your web browser. Click the upgrade button to the right or <a href="http://espn.go.com/espn/news/story?id=5630562">learn more</a>.</p><ul><li><a class="btn-upgrade" href="http://www.microsoft.com/windows/internet-explorer/default.aspx">Upgrade</a></li><li><a class="btn-faq" href="http://espn.go.com/espn/news/story?id=5630562">FAQs</a></li></ul></div></div></div></div><script>(function(b){setTimeout(function(){var a=b("#browser-alert-wrapper");if(espn.cookie.get("browseralert")!="true"){b('<a class="btn-close" href="#">Close</a>').bind("click",function(){a.hide();espn.cookie.set("browseralert","true",30);return false}).appendTo(a.find(".gradient-container"));a.show();espn.cookie.set("browseralert","true")}},100)})(jQuery);</script><![endif]-->
+<div id="fb-root"></div>
+<!--[if lte IE 7]>
+<link rel="stylesheet" charset="utf-8" media="screen" href="http://a.espncdn.com/combiner/c?css=modules/browser-alert.r7.css" type="text/css"/>
+<div class="span-6" id="browser-alert-wrapper" style="display:none;">
+    <div class="mod-container mod-no-header-footer browser-alert">
+        <div class="mod-content">
+            <div class="gradient-container"><h1><span>Your Web Browser</span> is no longer supported</h1>
+
+                <p>To experience everything that ESPN.com has to offer, we recommend that you upgrade to a newer version of your web browser. Click the upgrade button to the right or
+                    <a href="http://espn.go.com/espn/news/story?id=5630562">learn more</a>.</p>
+                <ul>
+                    <li>
+                        <a class="btn-upgrade" href="http://www.microsoft.com/windows/internet-explorer/default.aspx">Upgrade</a>
+                    </li>
+                    <li><a class="btn-faq" href="http://espn.go.com/espn/news/story?id=5630562">FAQs</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<script>(function (b) {
+    setTimeout(function () {
+        var a = b("#browser-alert-wrapper");
+        if (espn.cookie.get("browseralert") != "true") {
+            b('<a class="btn-close" href="#">Close</a>').bind("click", function () {
+                a.hide();
+                espn.cookie.set("browseralert", "true", 30);
+                return false
+            }).appendTo(a.find(".gradient-container"));
+            a.show();
+            espn.cookie.set("browseralert", "true")
+        }
+    }, 100)
+})(jQuery);</script><![endif]-->
 <div id="fb-root"></div>
 <script>
-    window.fbAsyncInit = function() {
+    window.fbAsyncInit = function () {
         FB.init({
             appId: "116656161708917",
             cookie: true, // these two are not required for partners that
@@ -99,15 +192,16 @@
         });
         jQuery(document).ready(function () {
             FB.XFBML.parse();
-            FB.Event.subscribe('edge.create', function(href, widget) {
-                if(typeof anTrackLink === 'function') {
-                    anTrackLink(jQuery('.fb_iframe_widget')[0],'espn','facebook','like');
+            FB.Event.subscribe('edge.create', function (href, widget) {
+                if (typeof anTrackLink === 'function') {
+                    anTrackLink(jQuery('.fb_iframe_widget')[0], 'espn', 'facebook', 'like');
                 }
             });
         });
     };
-    (function() {
-        var e = document.createElement('script'); e.async = true;
+    (function () {
+        var e = document.createElement('script');
+        e.async = true;
         e.src = document.location.protocol + '//connect.facebook.net/en_US/all.js';
         document.getElementById('fb-root').appendChild(e);
     }());
@@ -119,19 +213,23 @@
 
         padding: 10px;
 
-        margin:0px;
+        margin: 0px;
 
     }
 
-    .mod-page-header ul.player-favorites a.btn-add-fave-player { color: #ddd !important; }
+    .mod-page-header ul.player-favorites a.btn-add-fave-player {
+        color: #ddd !important;
+    }
 
-    .mod-page-header ul.player-favorites a.btn-add-fave-player.favorite { color: #000 !important; }
+    .mod-page-header ul.player-favorites a.btn-add-fave-player.favorite {
+        color: #000 !important;
+    }
 
 </style>
 
 <script type="text/javascript">
 
-(function($) {
+(function ($) {
 
     var loggedIn = espn.core.loggedIn;
 
@@ -151,7 +249,7 @@
 
     var playerName = 'Eddie Lacy';
 
-    var abbrevs = {10:'mlb',46:'nba',28:'nfl',90:'nhl',23:'ncf',41:'ncb',600:'soccer',850:'tennis',1106:'golf',2020:'nascar',3301:'mma', 3540:'ncfrecruit', 3550:'ncbrecruit', 3551:'hs_bsbrecruit', 3552:'hs_sfbrecruit'}
+    var abbrevs = {10: 'mlb', 46: 'nba', 28: 'nfl', 90: 'nhl', 23: 'ncf', 41: 'ncb', 600: 'soccer', 850: 'tennis', 1106: 'golf', 2020: 'nascar', 3301: 'mma', 3540: 'ncfrecruit', 3550: 'ncbrecruit', 3551: 'hs_bsbrecruit', 3552: 'hs_sfbrecruit'}
 
     var sportAbbrev = abbrevs[sportId];
 
@@ -171,29 +269,29 @@
 
     }
 
-    if(sportId == 3540 || sportId == 3550){
+    if (sportId == 3540 || sportId == 3550) {
 
         tabName = "recruits"
 
     }
 
-    function resetData(checkSport, checkPlayer){
+    function resetData(checkSport, checkPlayer) {
 
-        if (loggedIn){
+        if (loggedIn) {
 
             espn.p13n.reset({
 
-                success: function(data){
+                success: function (data) {
 
-                    if (data != null && data != 'UNDEF' && typeof(data.myPlayers) != 'UNDEF' && data.myPlayers != null){
+                    if (data != null && data != 'UNDEF' && typeof(data.myPlayers) != 'UNDEF' && data.myPlayers != null) {
 
                         var count = 0;
 
-                        var sportTypes = {10:'mlb',46:'nba',28:'nfl',90:'nhl',850:'tennis',1106:'golf',2020:'nascar',3301:'mma'}
+                        var sportTypes = {10: 'mlb', 46: 'nba', 28: 'nfl', 90: 'nhl', 850: 'tennis', 1106: 'golf', 2020: 'nascar', 3301: 'mma'}
 
-                        var sportAbbrevs = {10:'MLB',46:'NBA',28:'NFL',90:'NHL',850:'Tennis',1106:'Golf',2020:'NASCAR',3301:'MMA'}
+                        var sportAbbrevs = {10: 'MLB', 46: 'NBA', 28: 'NFL', 90: 'NHL', 850: 'Tennis', 1106: 'Golf', 2020: 'NASCAR', 3301: 'MMA'}
 
-                        $.each(data.myPlayers, function(i,item){
+                        $.each(data.myPlayers, function (i, item) {
 
                             if (typeof(item.sport) != 'UNDEF' && item.sport != null && item.sport == sportId && count < 12) {
 
@@ -209,13 +307,13 @@
 
                                 swabbrev = '';
 
-                                if (typeof(item.abbrev) != 'UNDEF' && item.abbrev != null){
+                                if (typeof(item.abbrev) != 'UNDEF' && item.abbrev != null) {
 
                                     abbrev = item.abbrev.toLowerCase();
 
                                 }
 
-                                if (typeof(item.sw_abbrev) != 'UNDEF' && item.sw_abbrev != null){
+                                if (typeof(item.sw_abbrev) != 'UNDEF' && item.sw_abbrev != null) {
 
                                     swabbrev = item.sw_abbrev.toLowerCase();
 
@@ -225,11 +323,11 @@
 
                                 descSEO = desc;
 
-                                while(descSEO.indexOf(' ')!=-1)descSEO=descSEO.replace(' ','-');
+                                while (descSEO.indexOf(' ') != -1)descSEO = descSEO.replace(' ', '-');
 
                                 var classname = '';
 
-                                if (sport == 46 || sport == 10 || sport == 90 || sport == 28 || sport == 1106 || sport == 850){
+                                if (sport == 46 || sport == 10 || sport == 90 || sport == 28 || sport == 1106 || sport == 850) {
 
                                     image = 'href="http://espn.go.com/' + sportType + baseRef + 'player/_/id/' + item.id + '/' + descSEO.toLowerCase() + '"  title="' + desc + '"><img src="http://a.espncdn.com/combiner/i?img=/i/headshots/' + sportType + '/players/full/' + item.id + '.png&w=35&h=48&scale=crop&background=0xcccccc&transparent=false"></a>';
 
@@ -239,13 +337,13 @@
 
                                 }
 
-                                if (count == 0 && !displayModule){
+                                if (count == 0 && !displayModule) {
 
                                     $('.mod-myespn .personalization-teams').html('');
 
                                 }
 
-                                if (image != ''){
+                                if (image != '') {
 
                                     if (count == 14) {
 
@@ -257,9 +355,9 @@
 
                                     }
 
-                                    if (checkPlayer == item.id && checkSport == item.sport){
+                                    if (checkPlayer == item.id && checkSport == item.sport) {
 
-                                        $('.mod-myespn .personalization-teams').prepend(image).fadeIn(fadeTime, function(){
+                                        $('.mod-myespn .personalization-teams').prepend(image).fadeIn(fadeTime, function () {
 
                                             $('#lastplayer').remove();
 
@@ -279,7 +377,7 @@
 
                                 count++;
 
-                                if (count == 1 && !displayModule){
+                                if (count == 1 && !displayModule) {
 
                                     $('#myespn-personalization').show();
 
@@ -293,7 +391,7 @@
 
                         if (count < 15) {
 
-                            $.each(data.myPlayers, function(i,item){
+                            $.each(data.myPlayers, function (i, item) {
 
                                 if (typeof(item.sport) != 'UNDEF' && item.sport != null && item.sport != sportId && count < 15) {
 
@@ -309,13 +407,13 @@
 
                                     swabbrev = '';
 
-                                    if (typeof(item.abbrev) != 'UNDEF' && item.abbrev != null){
+                                    if (typeof(item.abbrev) != 'UNDEF' && item.abbrev != null) {
 
                                         abbrev = item.abbrev.toLowerCase();
 
                                     }
 
-                                    if (typeof(item.sw_abbrev) != 'UNDEF' && item.sw_abbrev != null){
+                                    if (typeof(item.sw_abbrev) != 'UNDEF' && item.sw_abbrev != null) {
 
                                         swabbrev = item.sw_abbrev.toLowerCase();
 
@@ -325,9 +423,9 @@
 
                                     descSEO = desc;
 
-                                    while(descSEO.indexOf(' ')!=-1)descSEO=descSEO.replace(' ','-');
+                                    while (descSEO.indexOf(' ') != -1)descSEO = descSEO.replace(' ', '-');
 
-                                    if (sport == 46 || sport == 10 || sport == 90 || sport == 850){
+                                    if (sport == 46 || sport == 10 || sport == 90 || sport == 850) {
 
                                         image = 'href="http://espn.go.com/' + sportType + baseRef + 'player/_/id/' + item.id + '/' + descSEO.toLowerCase() + '"  title="' + desc + '"><img src="http://a.espncdn.com/combiner/i?img=/i/headshots/' + sportType + '/players/full/' + item.id + '.png&w=35&h=48&scale=crop&background=0xcccccc&transparent=false"></a>';
 
@@ -345,13 +443,13 @@
 
                                     }
 
-                                    if (count == 0 && !displayModule){
+                                    if (count == 0 && !displayModule) {
 
                                         $('.mod-myespn .personalization-teams').html('');
 
                                     }
 
-                                    if (image != ''){
+                                    if (image != '') {
 
                                         if (count == 14) {
 
@@ -363,9 +461,9 @@
 
                                         }
 
-                                        if (checkPlayer == item.id && checkSport == item.sport){
+                                        if (checkPlayer == item.id && checkSport == item.sport) {
 
-                                            $('.mod-myespn .personalization-teams').prepend(image).fadeIn(fadeTime, function(){
+                                            $('.mod-myespn .personalization-teams').prepend(image).fadeIn(fadeTime, function () {
 
                                                 $('#lastplayer').remove();
 
@@ -385,7 +483,7 @@
 
                                     count++;
 
-                                    if (count == 1 && !displayModule){
+                                    if (count == 1 && !displayModule) {
 
                                         $('#myespn-personalization').show();
 
@@ -409,15 +507,15 @@
 
     }
 
-    $(document).ready(function() {
+    $(document).ready(function () {
 
         resetData(0, 0);
 
-        if (sportAbbrevFav != 'ncf' && sportAbbrevFav != 'ncb' && sportAbbrevFav != 'mma'){
+        if (sportAbbrevFav != 'ncf' && sportAbbrevFav != 'ncb' && sportAbbrevFav != 'mma') {
 
-            if (loggedIn){
+            if (loggedIn) {
 
-                if ($('.add-fave-player').length > 0){
+                if ($('.add-fave-player').length > 0) {
 
                     $('.add-fave-player').html('<a class="btn-add-fave-player"></a>');
 
@@ -425,15 +523,15 @@
 
                 espn.p13n.get({
 
-                    "success" : function(data) {
+                    "success": function (data) {
 
-                        if (data!=null && data!='UNDEF' && typeof(data.myPlayers) != 'UNDEF' && data.myPlayers != null) {
+                        if (data != null && data != 'UNDEF' && typeof(data.myPlayers) != 'UNDEF' && data.myPlayers != null) {
 
-                            $.each(data.myPlayers, function(i,item) {
+                            $.each(data.myPlayers, function (i, item) {
 
                                 if (typeof(item.sport) != 'UNDEF' && item.sport != null) {
 
-                                    if (item.sport == sportId && item.id == playerId){
+                                    if (item.sport == sportId && item.id == playerId) {
 
                                         showAddButton = false;
 
@@ -445,15 +543,15 @@
 
                         }
 
-                        if (showAddButton){
+                        if (showAddButton) {
 
-                            $('.add-fave-player a.btn-add-fave-player').html('Add to my favorites').show().attr("onclick","anTrackLink(this,'espn','playerprofile','" + sportAbbrevFav + "_player_addfavorite_loggedin-add'); return false;");
+                            $('.add-fave-player a.btn-add-fave-player').html('Add to my favorites').show().attr("onclick", "anTrackLink(this,'espn','playerprofile','" + sportAbbrevFav + "_player_addfavorite_loggedin-add'); return false;");
 
                         }
 
-                        else{
+                        else {
 
-                            $('.add-fave-player a.btn-add-fave-player').html('Favorite Player').show().addClass('favorite cbOverlay').attr({href:'',name:'&lpos=playerprofile&lid=' + sportAbbrevFav + '_player_addfavorite_loggedin-modify',tref:'/personalization/v3_1/personalization','data-language':lang.toLowerCase(),tab:tabName});
+                            $('.add-fave-player a.btn-add-fave-player').html('Favorite Player').show().addClass('favorite cbOverlay').attr({href: '', name: '&lpos=playerprofile&lid=' + sportAbbrevFav + '_player_addfavorite_loggedin-modify', tref: '/personalization/v3_1/personalization', 'data-language': lang.toLowerCase(), tab: tabName});
 
                         }
 
@@ -461,38 +559,35 @@
 
                 }, {appId: appId});
 
-                $('.add-fave-player a.btn-add-fave-player').click(function(){
+                $('.add-fave-player a.btn-add-fave-player').click(function () {
 
-                    if (showAddButton){ // don't allow the button to click through if it is informing you of their favorite player
+                    if (showAddButton) { // don't allow the button to click through if it is informing you of their favorite player
 
                         showAddButton = false; // don't allow multiple clicks during the transition
 
                         espn.p13n.add(
-
                                 {
 
-                                    "players": sportId+":"+playerId+":::"+appId
+                                    "players": sportId + ":" + playerId + ":::" + appId
 
                                 },
 
                                 {
 
-                                    "success" : function() {
+                                    "success": function () {
 
-                                        $('.add-fave-player a.btn-add-fave-player').html('Added').addClass('favorite').css('cursor','default');
+                                        $('.add-fave-player a.btn-add-fave-player').html('Added').addClass('favorite').css('cursor', 'default');
 
                                         resetData(sportId, playerId);
 
                                     },
 
-                                    "error" : function() {
-
+                                    "error": function () {
 
 
                                     }
 
                                 }
-
                         );
 
                     }
@@ -501,53 +596,48 @@
 
             }
 
-            else{
+            else {
 
-                if ($('.add-fave-player').length > 0){
+                if ($('.add-fave-player').length > 0) {
 
                     $('.add-fave-player').html('<a class="btn-add-fave-player">Sign in to personalize</a>');
 
                 }
 
-                $('.add-fave-player a.btn-add-fave-player').show().attr('href','','name','&lpos=playerprofile&lpos=playerprofile&lid=' + sportAbbrevFav + '_player_addfavorite_loggedout').attr('tref','/members/v3_1/login').attr('data-options','{"addPlayers":"'+sportId+':'+playerId+'","width":"820","height":"385"}').addClass("cbOverlay");
+                $('.add-fave-player a.btn-add-fave-player').show().attr('href', '', 'name', '&lpos=playerprofile&lpos=playerprofile&lid=' + sportAbbrevFav + '_player_addfavorite_loggedout').attr('tref', '/members/v3_1/login').attr('data-options', '{"addPlayers":"' + sportId + ':' + playerId + '","width":"820","height":"385"}').addClass("cbOverlay");
 
             }
 
         }
 
 
-
         $('.add-fave-player a.btn-add-fave-player').hover(
-
-                function(){
+                function () {
 
                     $(this).addClass('favorite');
 
                 },
 
-                function(){
+                function () {
 
-                    if (showAddButton){
+                    if (showAddButton) {
 
                         $(this).removeClass('favorite');
 
                     }
 
                 }
-
         );
 
 
-
-        $('.inline-header ul.links li a').addClass('cbOverlay').attr({href:'',tref:'/personalization/v3_1/personalization','data-language':lang.toLowerCase(),tab:tabName});
-
+        $('.inline-header ul.links li a').addClass('cbOverlay').attr({href: '', tref: '/personalization/v3_1/personalization', 'data-language': lang.toLowerCase(), tab: tabName});
 
 
-        if (sportAbbrevFav != 'ncf'){
+        if (sportAbbrevFav != 'ncf') {
 
-            $(".split-select").click(function(){
+            $(".split-select").click(function () {
 
-                if ($('.split-level-items').length > 0){
+                if ($('.split-level-items').length > 0) {
 
                     $(".split-level-items").toggle();
 
@@ -569,15 +659,15 @@
 
                     $.ajax({
 
-                        type:"GET",
+                        type: "GET",
 
                         url: dlink,
 
-                        data: 'teamId='+teamId+'&posId='+posId+'&lang='+lang,
+                        data: 'teamId=' + teamId + '&posId=' + posId + '&lang=' + lang,
 
                         dataType: "html",
 
-                        success: function(html){
+                        success: function (html) {
 
                             $('.mod-split-menu').append(html);
 
@@ -585,7 +675,7 @@
 
                             $(".split-level-content").toggle();
 
-                            $(".main-items a").bind('mouseover click', function(){
+                            $(".main-items a").bind('mouseover click', function () {
 
                                 $('.main-items li.split-hover-bg').removeClass('split-hover-bg');
 
@@ -593,19 +683,19 @@
 
                                 var thisId = $(this).attr('id');
 
-                                $('.split-level-content-list').each(function(){
+                                $('.split-level-content-list').each(function () {
 
                                     $(this).hide();
 
                                 });
 
-                                $('#'+thisId+'list').show();
+                                $('#' + thisId + 'list').show();
 
                                 return false;
 
                             });
 
-                            $(document).click(function(e){
+                            $(document).click(function (e) {
 
                                 if (e.button != 2) {
 
@@ -630,15 +720,11 @@
         }
 
 
-
-
-
-        $("#player-status-main").click(function(){
+        $("#player-status-main").click(function () {
 
             $("#player-status-main #full-content").toggle();
 
         });
-
 
 
     });
@@ -648,8 +734,8 @@
 </script>
 <script type="text/javascript">
 var loggedIn = espn.core.loggedIn;
-(function($) {
-    $(document).ready(function() {
+(function ($) {
+    $(document).ready(function () {
         var playerId = 15848;
         var playerName = 'Eddie Lacy';
         var leagueId = '';
@@ -659,11 +745,11 @@ var loggedIn = espn.core.loggedIn;
 
         function getFantasyData(league, name, updatetext) {
             $.ajax({
-                type:"GET",
+                type: "GET",
                 url: '/nfl/format/player/design09/fantasy',
-                data: 'playerId='+playerId+'&leagueId='+league,
+                data: 'playerId=' + playerId + '&leagueId=' + league,
                 dataType: "json",
-                success: function(obj){
+                success: function (obj) {
                     printFantasyData(obj, '', league, name, updatetext);
                 }
             });
@@ -688,7 +774,7 @@ var loggedIn = espn.core.loggedIn;
                         if (data["mostRecentNews"]["news"] != null) {
                             fhtml += "<p><span>News: </span>" + data["mostRecentNews"]["news"];
                             if (data["mostRecentNews"]["date"] != null) {
-                                fhtml += " (" +  data["mostRecentNews"]["date"] + ")";
+                                fhtml += " (" + data["mostRecentNews"]["date"] + ")";
                             }
                             fhtml += "</p>";
                         }
@@ -718,7 +804,7 @@ var loggedIn = espn.core.loggedIn;
                         if (leaguearray != null && leaguearray.length > 0) {
                             fhtml += '<select id="fantasy-teams">';
                             fhtml += '<option value="#">Select a League</option>';
-                            for (i=0; i<leaguearray.length; i++) {
+                            for (i = 0; i < leaguearray.length; i++) {
                                 if (namesarray.length > i) {
                                     fhtml += '<option ';
                                     if (leaguearray[i] == league) {
@@ -801,12 +887,14 @@ var loggedIn = espn.core.loggedIn;
                         fhtml += '<li class="last">15 Days<div>' + data["points15DAY"] + '</div></li>';
                     }
                     fhtml += '</ul></li></ul>';
-                } else if (data["percentOwned"] != null){
+                } else if (data["percentOwned"] != null) {
                     fhtml += '<h5 style="width: 56%; float:left;">2015 RANKINGS</h5>'
                 }
                 if (data["percentOwned"] != null) {
                     var className = 'floatright';
-                    if (data["playerRaterSEASON"] == null && data["averagePoints"] == null){ className = 'floatleft'; }
+                    if (data["playerRaterSEASON"] == null && data["averagePoints"] == null) {
+                        className = 'floatleft';
+                    }
                     fhtml += '<ul class="split ' + className + '"><li><ul>';
                     if (data["positionRank"] != null) {
                         fhtml += '<li>POSITION RK<div>' + data["positionRank"] + '</div></li>';
@@ -838,19 +926,19 @@ var loggedIn = espn.core.loggedIn;
                         $('#fantasy-stats').html(fhtml);
                     }
                 }
-                $('#fantasy-teams').change(function(){
+                $('#fantasy-teams').change(function () {
                     getFantasyData($(this).val(), $('#fantasy-teams option:selected').text(), false);
                     return false;
                 });
             }
         }
 
-        if (loggedIn){
-            $.getJSON("http://games.espn.go.com/ffl/api/v1/userEntries?callback=?",	function(data) {
+        if (loggedIn) {
+            $.getJSON("http://games.espn.go.com/ffl/api/v1/userEntries?callback=?", function (data) {
                 if (data != null) {
                     userentries = data["userEntries"];
                     if (userentries != null && userentries.length > 0) {
-                        for (i=0; i<userentries.length; i++) {
+                        for (i = 0; i < userentries.length; i++) {
                             thisleague = userentries[i];
                             if (thisleague["seasonId"] == "2015" && (thisleague["fantasyGame"] == "FFL" || thisleague["fantasyGame"] == "ffl")) {
                                 if (leagues == '') {
@@ -866,292 +954,962 @@ var loggedIn = espn.core.loggedIn;
                         }
                     }
                 } else {
-                    printFantasyData(null, '','','',true);
+                    printFantasyData(null, '', '', '', true);
                 }
                 if (leagues != '') {
                     getFantasyData(leagueId, leagueName, true);
                 } else {
-                    printFantasyData(null, '','','',true);
+                    printFantasyData(null, '', '', '', true);
                 }
             });
         } else {
-            printFantasyData(null, '','','',true);
+            printFantasyData(null, '', '', '', true);
         }
     });
 })(jQuery);
 </script>
 
-<div class="mod-container mod-no-header-footer mod-page-header"><div class="player-shadows"><div class="shadow-right"></div><div class="shadow-left"></div></div><div class="mod-content"><div class="team-logo"></div><div class="main-headshot"><img src="http://a.espncdn.com/combiner/i?img=/i/headshots/nfl/players/full/15848.png&w=350&h=254" alt=""/></div><h1>Eddie Lacy</h1><div class="player-bio"><div class="line-divider"></div><ul class="general-info"><li class="first">#27 RB</li><li>5' 11", 234 lbs</li><li class="last"><a href="http://espn.go.com/nfl/team/_/name/gb/green-bay-packers">Green Bay Packers</a></li></ul><ul class="player-metadata floatleft"><li><span>Born</span>Jun 2, 1990 in Gretna, LA (Age: 25)</li><li><span>Drafted</span>  2013: 2nd Rnd, 61st by GB<li><span>Experience</span>3rd season</li><li><span>College</span>Alabama</li></ul></div><div class="player-stats"><p>2015 Season</p><table class="header-stats"><thead><th>ATT</th><th>YDS</th><th>TD</th></thead><tr><td>19</td><td>85</td><td>1</td></tr><tr class="title"><td colspan="3"><p>Career</p></td></tr><tr class="career"><td>549</td><td>2,402</td><td>21</td></tr></table><p class="footer"><a href="/nfl/player/stats/_/id/15848/eddie-lacy">Complete Stats &#187;</a></p></div></div><div class="header-bg"></div><div class="field"></div><div class="header-overlay"></div></div><div class="player-select-header"><p>Go to</p><div class="mod-split-menu"><div class="split-select" id="9" rel="9"><a class="btn-split-btn">Eddie Lacy</a></div></div></div><div class="mod-page-tabs mod-pagenav-tabs"><ul class="ui-tabs"><li class="active"><a href="/nfl/player/_/id/15848/eddie-lacy">Player Profile</a></li><li><a href="/nfl/player/stats/_/id/15848/eddie-lacy">Stats</a></li><li><a href="/nfl/player/splits/_/id/15848/eddie-lacy">Splits</a></li><li><a href="/nfl/player/gamelog/_/id/15848/eddie-lacy">Game Log</a></li><li><a href="/nfl/player/videos/_/id/15848/eddie-lacy">Videos</a></li><li><a href="/nfl/player/photos/_/id/15848/eddie-lacy">Photos</a></li><li><a target="_new" href="http://www.dickssportinggoods.com/family/index.jsp?categoryId=24767506&camp=Part:ESPNpart::nflplayercardnav:EddieLacy" rel="nofollow">Shop&nbsp;<img src="http://a.espncdn.com/prod/assets/icon_externallink_wht.png"></a></li></ul></div><div class="bg-opaque"><div class="span-6 last"><table class="player-profile-container"><tr><td class="profile-overview"><div class="mod-container mod-game matchup-splits current scores mod-table mod-no-footer"><div class="mod-header"><h4>PREVIOUS GAME</h4></div><div class="mod-content"><div class="gradient-container"><div class="game-details"><div class="venue">Lambeau Field</div><div class="time">Sun, Sept 20<br/>Final</div><div class="overview" style="padding-left:90px;"><div class="team team-away"><a href="http://espn.go.com/nfl/team/_/name/sea/seattle-seahawks"><div class="logo logo-medium logo-nfl-medium nfl-medium-26"></div></a><div class="record"><h6 style="padding-left:25px;font-size:16px;">17</h6></div></div><div class="symbol">@</div><div class="team team-home"><a href="http://espn.go.com/nfl/team/_/name/gb/green-bay-packers"><div class="logo logo-medium logo-nfl-medium nfl-medium-9"></div></a><div class="record"><h6 style="padding-right:25px;font-size:16px;">27</h6></div></div></div><p class="links"><a href="/nfl/recap?gameId=400791708">Recap &#187;</a><a href="/nfl/boxscore?gameId=400791708">Box&nbsp;Score &#187;</a></p></div></div><table cellspacing="1" cellpadding="3" class="tablehead"><tr class="colhead"><th>STATS</th><th style="text-align:right !important;" title="Rushing attempts">ATT</th><th style="text-align:right !important;" title="Total rushing yards">YDS</th><th style="text-align:right !important;" title="Average yards per carry">AVG</th><th style="text-align:right !important;" title="Longest run">LNG</th><th style="text-align:right !important;" title="Rushing touchdowns">TD</th><th style="text-align:right !important;" title="Total receptions">REC</th><th style="text-align:right !important;" title="Total receiving yards">YDS</th><th style="text-align:right !important;" title="Receiving yards per reception">AVG</th><th style="text-align:right !important;" title="Longest reception">LNG</th><th style="text-align:right !important;" title="Receiving touchdowns">TD</th><th style="text-align:right !important;" title="Fumbles">FUM</th><th style="text-align:right !important;" title="Fumbles lost">LST</th></tr><tr class="oddrow"><td>This Game</td><td style="text-align:right;">3</td><td style="text-align:right;">9</td><td style="text-align:right;">3.0</td><td style="text-align:right;">8</td><td style="text-align:right;">0</td><td style="text-align:right;">0</td><td style="text-align:right;">0</td><td style="text-align:right;">.0</td><td style="text-align:right;">0</td><td style="text-align:right;">0</td><td style="text-align:right;">0</td><td style="text-align:right;">0</td></tr><tr class="evenrow"><td>September</td><td style="text-align:right;">19</td><td style="text-align:right;">85</td><td style="text-align:right;">4.5</td><td style="text-align:right;">16</td><td style="text-align:right;">1</td><td style="text-align:right;">2</td><td style="text-align:right;">14</td><td style="text-align:right;">7.0</td><td style="text-align:right;">9</td><td style="text-align:right;">0</td><td style="text-align:right;">0</td><td style="text-align:right;">0</td></tr><tr class="oddrow"><td>In Wins</td><td style="text-align:right;">19</td><td style="text-align:right;">85</td><td style="text-align:right;">4.5</td><td style="text-align:right;">16</td><td style="text-align:right;">1</td><td style="text-align:right;">2</td><td style="text-align:right;">14</td><td style="text-align:right;">7.0</td><td style="text-align:right;">9</td><td style="text-align:right;">0</td><td style="text-align:right;">0</td><td style="text-align:right;">0</td></tr></table><p class="footer"><span style="text-align: left;">*Splits are updated nightly.</span><a href="/nfl/player/splits/_/id/15848/eddie-lacy">Complete Splits &#187;</a></p></div></div></td><td class="profile-media"><style type="text/css">.videoplayer-show{ height: 217px !important; } .mod-inline.video-player.full-box { padding: 1px; }.mod-video-playlist {border-width: 0px; width: 384px; margin: 0 0 10px; 0; float: none; }.mod-video-playlist a, .mod-video-tags a { color: #225DB7; }.mod-inline.video-player.with-playlist #videoInfo { width:384px; }</style><div class="mod-inline video-player full-box with-playlist"><div class="videoplayer videoplayer-playercard_embed09" style="margin-top:0px !important;"><img src="http://a.espncdn.com/combiner/i?img=/media/motion/2015/0921/dm_150921_nfl_seahawks_packers/dm_150921_nfl_seahawks_packers.jpg&w=384&h=216" /></div><div id="videoInfo"></div><a id="videotoplay" style="display:none;" class="{trackingName: 'playercard_embed09', playRelatedExternally: 'false'}" href="http://espn.go.com/video/clip?id=13708136">Packers drop Seahawks to 0-2</a><div class="mod-video-playlist"><h6>VIDEO PLAYLIST <img width="15" height="8" alt="video" src="http://a.espncdn.com/icons/video2.png" /></h6><ul class="bulletlinks"><li class=" first active"><a class="{trackingName: 'playercard_embed09', playRelatedExternally: 'false'}" href="http://espn.go.com/video/clip?id=13708136">Packers drop Seahawks to 0-2</a><span style="display:none;"></span></li><li class=" next last"><a class="{trackingName: 'playercard_embed09', playRelatedExternally: 'false'}" href="http://espn.go.com/video/clip?id=13684554">What to expect from Eddie Lacy</a><span style="display:none;"></span></li></ul></div></div>
-    <script>
-        var ESPN_GLOBALS = {
-            "videoPlayers":{
-                "playercard_embed09":{
-                    "height":216,
-                    "width":384,
+<div class="mod-container mod-no-header-footer mod-page-header">
+    <div class="player-shadows">
+        <div class="shadow-right"></div>
+        <div class="shadow-left"></div>
+    </div>
+    <div class="mod-content">
+        <div class="team-logo"></div>
+        <div class="main-headshot">
+            <img src="http://a.espncdn.com/combiner/i?img=/i/headshots/nfl/players/full/15848.png&w=350&h=254" alt=""/>
+        </div>
+        <h1>Eddie Lacy</h1>
 
-                    "autostart":"false",
-                    "trackingName":"playercard_embed09"
-                }
-            }
-        };
-
-        espn.video.embeded.play();
-    </script>
-</td></tr></table><div class="mod-container mod-table mod-no-footer" style="padding-top:5px;"><div class="mod-header"><h4>STATS</h4></div><div class="mod-content"><table cellspacing="1" cellpadding="3" class="tablehead"><tr class="colhead"><th></th><th style="text-align:right !important;" title="Rushing attempts">ATT</th><th style="text-align:right !important;" title="Total rushing yards">YDS</th><th style="text-align:right !important;" title="Average yards per carry">AVG</th><th style="text-align:right !important;" title="Longest run">LNG</th><th style="text-align:right !important;" title="Rushing touchdowns">TD</th><th style="text-align:right !important;" title="First downs">FD</th><th style="text-align:right !important;" title="Total receptions">REC</th><th style="text-align:right !important;" title="Total receiving yards">YDS</th><th style="text-align:right !important;" title="Receiving yards per reception">AVG</th><th style="text-align:right !important;" title="Longest reception">LNG</th><th style="text-align:right !important;" title="Receiving touchdowns">TD</th><th style="text-align:right !important;" title="Fumbles">FUM</th><th style="text-align:right !important;" title="Fumbles lost">LST</th><tr class="oddrow"><td>2015 Regular Season</td><td style="text-align:right;">19</td><td style="text-align:right;">85</td><td style="text-align:right;">4.5</td><td style="text-align:right;">16</td><td style="text-align:right;">1</td><td style="text-align:right;">5</td><td style="text-align:right;">2</td><td style="text-align:right;">14</td><td style="text-align:right;">7.0</td><td style="text-align:right;">9</td><td style="text-align:right;">0</td><td style="text-align:right;">0</td><td style="text-align:right;">0</td></tr><tr class="evenrow"><td>Career</td><td style="text-align:right;">549</td><td style="text-align:right;">2,402</td><td style="text-align:right;">4.4</td><td style="text-align:right;">60</td><td style="text-align:right;">21</td><td style="text-align:right;">124</td><td style="text-align:right;">79</td><td style="text-align:right;">698</td><td style="text-align:right;">8.8</td><td style="text-align:right;">67</td><td style="text-align:right;">4</td><td style="text-align:right;">4</td><td style="text-align:right;">3</td></tr><tr class="oddrow"><td>Projected</td><td style="text-align:right;">304</td><td style="text-align:right;">1,360</td><td style="text-align:right;">4.5</td><td style="text-align:right;">16</td><td style="text-align:right;">16</td><td style="text-align:right;">80</td><td style="text-align:right;">32</td><td style="text-align:right;">224</td><td style="text-align:right;">7.0</td><td style="text-align:right;">9</td><td style="text-align:right;">0</td><td style="text-align:right;">0</td><td style="text-align:right;">0</td></tr></table><p class="footer"><a href="/nfl/player/stats/_/id/15848/eddie-lacy">Complete Stats &#187;</a></p></div></div><style type="text/css">.textright.bleft{ border-left: 1px solid #aaa !important; }</style><div class="mod-container mod-table mod-player-stats"><div class="mod-content"><table cellspacing="1" cellpadding="3" class="tablehead"><tr class="stathead"><td colspan="3">GAME LOG</td><td colspan="5" class="textcenter">RUSHING</td><td colspan="5" class="textcenter">RECEIVING</td><td colspan="2" class="textcenter">FUMBLES</td></tr><tr class="colhead"><td>DATE</td><td>OPP</td><td>RESULT</td><td class="textright"title="Rushing attempts">ATT</td><td class="textright"title="Total rushing yards">YDS</td><td class="textright"title="Average yards per carry">AVG</td><td class="textright"title="Longest run">LNG</td><td class="textright"title="Rushing touchdowns">TD</td><td class="textright bleft"title="Total receptions">REC</td><td class="textright"title="Total receiving yards">YDS</td><td class="textright"title="Receiving yards per reception">AVG</td><td class="textright"title="Longest reception">LNG</td><td class="textright"title="Receiving touchdowns">TD</td><td class="textright bleft"title="Fumbles">FUM</td><td class="textright"title="Fumbles lost">LST</td></tr><tr class="oddrow team-28-3"><td>Sun 9/13</td><td><ul class="game-schedule"><li class="game-location">@ </li><li class="team-logo-small logo-nfl-small nfl-small-3"><a href="http://espn.go.com/nfl/team/_/name/chi/chicago-bears"></a></li><li class="team-name"><a href="http://espn.go.com/nfl/team/_/name/chi/chicago-bears">CHI</a></li></ul></td><td><span class="greenfont">W</span> <a href="/nfl/boxscore?gameId=400791489">31-23</a></td><td class="textright">19</td><td class="textright">85</td><td class="textright">4.5</td><td class="textright">16</td><td class="textright">1</td><td class="textright bleft">2</td><td class="textright">14</td><td class="textright">7.0</td><td class="textright">9</td><td class="textright">0</td><td class="textright bleft">0</td><td class="textright">0</td></tr><tr class="evenrow team-28-26"><td>Sun 9/20</td><td><ul class="game-schedule"><li class="game-location">vs </li><li class="team-logo-small logo-nfl-small nfl-small-26"><a href="http://espn.go.com/nfl/team/_/name/sea/seattle-seahawks"></a></li><li class="team-name"><a href="http://espn.go.com/nfl/team/_/name/sea/seattle-seahawks">SEA</a></li></ul></td><td><span class="greenfont">W</span> <a href="/nfl/boxscore?gameId=400791708">27-17</a></td><td class="textright">3</td><td class="textright">9</td><td class="textright">3.0</td><td class="textright">8</td><td class="textright">0</td><td class="textright bleft">0</td><td class="textright">0</td><td class="textright">.0</td><td class="textright">0</td><td class="textright">0</td><td class="textright bleft">0</td><td class="textright">0</td></tr></table><p class="footer"><a href="/nfl/player/gamelog/_/id/15848/eddie-lacy">Complete Game Log &#187;</a></p></div></div>
-    <style type="text/css">
-        .mod-fanshop .mod-content ul li {float:left;width:33.33%;}
-        .mod-fanshop .mod-content ul li dd {float:left;width:100px;text-align:center;margin-top:5px;}
-        .mod-fanshop .mod-content ul li dt {float:left;width:160px;margin-top:10px;}
-    </style>
-    <div class="mod-container mod-no-footer mod-fanshop"><div class="mod-header"><h4>ESPN FAN SHOP <span style="position: relative; top: 4px; margin-right: 5px;"><a href="http://www.dickssportinggoods.com/family/index.jsp?categoryId=24767506&camp=Part:ESPNpart::nflplayercardfeed:EddieLacy" rel="nofollow" target="_blank"><img src="http://a.espncdn.com/i/shop/dsg_presby.gif"/></a></span></h4></div><div class="mod-content"><ul><li><dl><dd><a href="http://www.dickssportinggoods.com/product/index.jsp?productId=34624576&camp=Part:ESPNpart::nflplayercardfeed:EddieLacy" rel="nofollow" target="_blank"><img width="80" src="http://www.dickssportinggoods.com/graphics/product_images/pDSP1-18338730nm.jpg"/></a></dd><dt>Nike Boys' Home Game Jersey Green Bay Packers Eddie Lacy #27</br> <a href="http://www.dickssportinggoods.com/product/index.jsp?productId=34624576&camp=Part:ESPNpart::nflplayercardfeed:EddieLacy" rel="nofollow" target="_blank"><b><nobr>Shop &#187;</nobr></b></a></dt></dl></li><li><dl><dd><a href="http://www.dickssportinggoods.com/product/index.jsp?productId=24730046&camp=Part:ESPNpart::nflplayercardfeed:EddieLacy" rel="nofollow" target="_blank"><img width="80" src="http://www.dickssportinggoods.com/graphics/product_images/pDSP1-16988601nm.jpg"/></a></dd><dt>Nike Men's Home Game Jersey Green Bay Packers Eddie Lacy #27</br> <a href="http://www.dickssportinggoods.com/product/index.jsp?productId=24730046&camp=Part:ESPNpart::nflplayercardfeed:EddieLacy" rel="nofollow" target="_blank"><b><nobr>Shop &#187;</nobr></b></a></dt></dl></li><li><dl><dd><a href="http://www.dickssportinggoods.com/product/index.jsp?productId=34624646&camp=Part:ESPNpart::nflplayercardfeed:EddieLacy" rel="nofollow" target="_blank"><img width="80" src="http://www.dickssportinggoods.com/graphics/product_images/pDSP1-18338751nm.jpg"/></a></dd><dt>Nike Youth Home Game Jersey Green Bay Packers Eddie Lacy #27</br> <a href="http://www.dickssportinggoods.com/product/index.jsp?productId=34624646&camp=Part:ESPNpart::nflplayercardfeed:EddieLacy" rel="nofollow" target="_blank"><b><nobr>Shop &#187;</nobr></b></a></dt></dl></li></ul></div></div></div><div class="span-4"><span style="display:none;" id="showproj" value="true"></span><div class="mod-container mod-no-footer mod-fantasy" id="fantasy-container" style="display:none;"><div class="mod-header"><h4>FANTASY FOOTBALL</h4></div><div class="mod-content" id="fantasy-content">{"averagePoints":15,"percentOwned":100,"lastPoints":15,"pointsSEASON":15,"seasonOutlook":{"outlook":"Cursed with difficult matchups last September, Lacy earned ire from fantasy owners by ranking 43rd in RB points after four games. But as the season continued, the tape proved an indisputable fact: Lacy is no fun to tackle. At 230 pounds with nimble feet and bad intentions, he pushes a pile as aggressively as any RB in the NFL. The Packers will never be run-centric while Aaron Rodgers is under center, but Lacy also has terrific hands -- he finished sixth in RB receiving yards in 2014 -- and can serve as his own third-down back. Heading into a season with no clear-cut No. 1 overall pick, Lacy has our favorite combo of upside and safety.","seasonId":2015,"date":"Wed May 20"},"positionRank":7,"playerId":15848,"percentChange":0,"averageDraftPosition":4.9,"fullName":"Eddie Lacy","mostRecentNews":{"news":"X-rays on Lacy's ankle came back negative, ESPN's Adam Schefter reports","spin":"Lacy left Sunday's game against the Seahawks in the first quarter, initially considered questionable to return. He was then ruled out around halftime, but he at least seems to have avoided a fracture. James Starks took over as the lead back, serving as a three-down workhorse in Lacy's absence.","date":"Sun Sep 20"},"projectedDifference":-2.19121092,"totalPoints":15,"projectedPoints":12.80878908}</div></div>
-    <div class="mod-container mod-tabs mod-tabs-header mod-no-footer mod-content-feed">
-        <div id="feed-tabs" class="mod-header">
-            <h4>EDDIE LACY NEWS FEED</h4>
-            <ul>
-                <li class="ui-tabs-selected"><a href="#default-tab">ALL</a></li>
-                <li><a href="http://espn.go.com/nfl/player/_/id/15848/view/video/eddie-lacy">VIDEO</a></li>
-                <li><a href="http://espn.go.com/nfl/player/_/id/15848/view/audio/eddie-lacy">AUDIO</a></li>
-                <li><a href="http://espn.go.com/nfl/player/_/id/15848/view/status alerts/eddie-lacy">STATUS ALERTS</a></li>
-
+        <div class="player-bio">
+            <div class="line-divider"></div>
+            <ul class="general-info">
+                <li class="first">#27 RB</li>
+                <li>5' 11", 234 lbs</li>
+                <li class="last"><a href="http://espn.go.com/nfl/team/_/name/gb/green-bay-packers">Green Bay Packers</a>
+                </li>
+            </ul>
+            <ul class="player-metadata floatleft">
+                <li><span>Born</span>Jun 2, 1990 in Gretna, LA (Age: 25)</li>
+                <li><span>Drafted</span> 2013: 2nd Rnd, 61st by GB
+                <li><span>Experience</span>3rd season</li>
+                <li><span>College</span>Alabama</li>
             </ul>
         </div>
-        <div class="mod-content">
-            <div id="default-tab">
-                <ol>
-                    <li id="13708136" class="result">
-                        <a rel="js-video" class="vid-thumb floatleft" href="http://espn.go.com/video/clip?id=13708136&ex_cid=espnapi_public"><div class="vid-icon"></div><img class="floatleft" height="75" width="134" src="http://a.espncdn.com/media/motion/2015/0921/dm_150921_nfl_seahawks_packers/dm_150921_nfl_seahawks_packers.jpg"/>
-                        </a>
-
-                        <h3><a rel="js-video" class="{playerType:'redesign_clubhouse10'}" href="http://espn.go.com/video/clip?id=13708136&ex_cid=espnapi_public">Packers drop Seahawks to 0-2</a> <img src="http://a.espncdn.com/icons/watch.png" alt="Watch" /></h3>
-                        <p>Aaron Rodgers throws for 249 yards and two touchdowns in the Packers' 27-17 victory over the Seahawks.</p>
-                        <cite>47 minutes ago</cite>
-                    </li>
-                    <li id="23294" class="result">
-                        <a href="http://espn.go.com/blog/green-bay-packers/post/_/id/23294/aaron-rodgers-delivers-epic-fourth-quarter-drive-to-beat-seahawks?ex_cid=espnapi_public"><img class="floatleft" height="75" width="134" src="http://a.espncdn.com/media/motion/2015/0921/dm_150921_nfl_seahawks_packers/dm_150921_nfl_seahawks_packers.jpg"/>
-                        </a>
-
-                        <h3><a href="http://espn.go.com/blog/green-bay-packers/post/_/id/23294/aaron-rodgers-delivers-epic-fourth-quarter-drive-to-beat-seahawks?ex_cid=espnapi_public">Aaron Rodgers delivers epic fourth-quarter drive to beat Seahawks</a></h3>
-                        <p>Aaron Rodgers rallied the Packers with a precise go-ahead drive in the fourth quarter as Green Bay took down Seattle in an emotional 27-17 victory.</p>
-                        <cite>about 1 hour ago | Rob Demovsky | ESPN.com</cite>
-                    </li>
-                    <li id="13707738" class="result">
-                        <a href="http://espn.go.com/nfl/story/_/id/13707738/eddie-lacy-green-bay-packers-seattle-seahawks-ankle-injury?ex_cid=espnapi_public"><img class="floatleft" height="75" width="134" src="http://a.espncdn.com/photo/2015/0920/ap_161764672307_r10590_600x400_3-2.jpg"/>
-                        </a>
-
-                        <h3><a href="http://espn.go.com/nfl/story/_/id/13707738/eddie-lacy-green-bay-packers-seattle-seahawks-ankle-injury?ex_cid=espnapi_public">Packers RB Lacy carted off with ankle injury</a></h3>
-                        <p>The Green Bay Packers lost running back Eddie Lacy to an ankle injury in the first quarter of Sunday's game against the Seattle Seahawks.</p>
-                        <cite>about 2 hours ago | Rob Demovsky | ESPN.com</cite>
-                    </li>
-                    <li id="23281" class="result">
-                        <h3><a href="http://espn.go.com/blog/green-bay-packers/post/_/id/23281/packers-rb-eddie-lacy-leaves-with-ankle-injury?ex_cid=espnapi_public">Packers' Eddie Lacy, Davante Adams both leave with ankle injuries</a></h3>
-                        <p>Shortly after Packers running back Eddie Lacy was taken to the locker room with an ankle injury, teammate Davante Adams joined him.</p>
-                        <cite>about 3 hours ago | Rob Demovsky | ESPN.com</cite>
-                    </li>
-                    <li id="13684554" class="result">
-                        <a rel="js-video" class="vid-thumb floatleft" href="http://espn.go.com/video/clip?id=13684554&ex_cid=espnapi_public"><div class="vid-icon"></div><img class="floatleft" height="75" width="134" src="http://a.espncdn.com/media/motion/2015/0918/dm_150918_ithlacy/dm_150918_ithlacy.jpg"/>
-                        </a>
-
-                        <h3><a rel="js-video" class="{playerType:'redesign_clubhouse10'}" href="http://espn.go.com/video/clip?id=13684554&ex_cid=espnapi_public">What to expect from Eddie Lacy</a> <img src="http://a.espncdn.com/icons/watch.png" alt="Watch" /></h3>
-                        <p>ESPN's John Clayton breaks down how the loss of Packers right tackle Bryan Bulaga will impact running back Eddie Lacy's performance.</p>
-                        <cite>about 2 days ago</cite>
-                    </li>
-                    <li id="13684364" class="result">
-                        <a href="http://espn.go.com/nfl/story/_/id/13684364/green-bay-packers-wide-receiver-randall-cobb-says-matchup-clay-matthews-marshawn-lynch-beast-vs-predator?ex_cid=espnapi_public"><img class="floatleft" height="75" width="134" src="http://a.espncdn.com/photo/2015/0918/nfl_g_lynch_matthews1x_1296x729_r9706_600x400_3-2.jpg"/>
-                        </a>
-
-                        <h3><a href="http://espn.go.com/nfl/story/_/id/13684364/green-bay-packers-wide-receiver-randall-cobb-says-matchup-clay-matthews-marshawn-lynch-beast-vs-predator?ex_cid=espnapi_public">Cobb: Lynch-Matthews matchup 'like a movie'</a></h3>
-                        <p>One of the most intriguing matchups in Sunday night's Seahawks-Packers game at Lambeau Field is Marshawn Lynch versus Clay Matthews.</p>
-                        <cite>about 2 days ago | Rob Demovsky | ESPN.com</cite>
-                    </li>
-                    <li id="14489" class="result">
-                        <h3><a href="http://espn.go.com/blog/seattle-seahawks/post/_/id/14489/with-kam-chancellor-out-expect-aaron-rodgers-to-target-bailey?ex_cid=espnapi_public">With Kam Chancellor out, expect Aaron Rodgers to target Dion Bailey</a></h3>
-                        <p>Seattle safety Kam Chancellor's fill-in, Dion Bailey, should expect to get picked on early and often by Packers quarterback Aaron Rodgers.</p>
-                        <cite>about 3 days ago | Sheil Kapadia | ESPN.com</cite>
-                    </li>
-                    <li id="23150" class="result">
-                        <h3><a href="http://espn.go.com/blog/green-bay-packers/post/_/id/23150/ty-montgomery-fully-embraces-role-as-packers-kickoff-returner?ex_cid=espnapi_public">Ty Montgomery 'fully embraces' role as Packers' kickoff returner</a></h3>
-                        <p>Packers third-round pick Ty Montgomery lost a role in the offense when the Packers re-signed James Jones, but he is all-in as the kickoff returner.</p>
-                        <cite>about 6 days ago | Rob Demovsky | ESPN.com</cite>
-                    </li>
-                    <li id="23121" class="result">
-                        <a href="http://espn.go.com/blog/green-bay-packers/post/_/id/23121/packers-receiver-james-jones-playing-like-its-2012-all-over-again?ex_cid=espnapi_public"><img class="floatleft" height="75" width="134" src="http://a.espncdn.com/media/motion/2015/0913/dm_150913_bears_packers/dm_150913_bears_packers.jpg"/>
-                        </a>
-
-                        <h3><a href="http://espn.go.com/blog/green-bay-packers/post/_/id/23121/packers-receiver-james-jones-playing-like-its-2012-all-over-again?ex_cid=espnapi_public">Packers' James Jones turns back clock, plays like it's 2012 again</a></h3>
-                        <p>The Packers' red-zone trips will go a lot smoother if James Jones continues to play like it's 2012, when he led the NFL in touchdown receptions.</p>
-                        <cite>about 7 days ago | Rob Demovsky | ESPN.com</cite>
-                    </li>
-                    <li id="23107" class="result">
-                        <h3><a href="http://espn.go.com/blog/green-bay-packers/post/_/id/23107/james-jones-catches-green-bay-packers-first-td-of-the-season?ex_cid=espnapi_public">James Jones carries Packers' offense in win over Bears</a></h3>
-                        <p>James Jones, who wasn't on the roster last weekend, caught the Green Bay Packers' first touchdown pass of the season.</p>
-                        <cite>about 7 days ago | Rob Demovsky | ESPN.com</cite>
-                    </li>
-                    <li style="list-style: none"><a class="view-more-posts" href="http://espn.go.com/nfl/player/_/id/15848/start/11/eddie-lacy">more</a></li>
-                </ol>
-            </div>
-            <div id="clubhouse-video-player" class="videoplayer1 videoplayer-redesign_clubhouse10">
-                <!-- placeholder -->
-            </div>
-        </div>
+        <div class="player-stats"><p>2015 Season</p>
+            <table class="header-stats">
+                <thead>
+                <th>ATT</th>
+                <th>YDS</th>
+                <th>TD</th>
+                </thead>
+                <tr>
+                    <td>19</td>
+                    <td>85</td>
+                    <td>1</td>
+                </tr>
+                <tr class="title">
+                    <td colspan="3"><p>Career</p></td>
+                </tr>
+                <tr class="career">
+                    <td>549</td>
+                    <td>2,402</td>
+                    <td>21</td>
+                </tr>
+            </table>
+            <p class="footer"><a href="/nfl/player/stats/_/id/15848/eddie-lacy">Complete Stats &#187;</a></p></div>
     </div>
-    <script>
-        jQuery.getScriptCache('http://a.espncdn.com/combiner/c/?js=espn.newsfeed.r5.js', function() { //r3
-            espn.core.init.newsfeed();
-        });
-    </script>
-</div><div class="span-2 last"><div class="mod-container mod-no-footer mod-open-list mod-quick-facts"><div class="mod-header"><h4>QUICK FACTS</h4></div><div class="mod-content"><ul><li class="last"><dl><dt>2015 League Ranks: <br/>&nbsp;&bull; <strong>7th in NFL in YDS</strong> (85)<br/>&nbsp;&bull; <strong>7th in NFL in RUSH YPG</strong> (85.0)<br/>&nbsp;&bull; <strong>5th in NFL in TD</strong> (1)</dl></dt></li></ul></div></div><!--espn.us.com.nfl sitezone--><!--http://ad.Doubleclick.net hostUrl-->
-    <script>if("undefined"!=typeof ad_kvps&&"undefined"!=typeof ad_u&&"undefined"!=typeof ad_counter&&"undefined"!=typeof ad_ord){if("undefined"==typeof ad_site||"undefined"==typeof ad_zone)var ad_site="espn.us.com.nfl",ad_zone="nflplayer";var ad_finalString="http://ad.Doubleclick.net/adj/"+ad_site+"/"+ad_zone+";"+ad_kvps+"pos=InContent;"+ad_u+"dcopt=ist;sz=300x600,300x250,1x1;tile="+ad_counter+";ord="+ad_ord;document.write('<div data-cb-ad-id="InContent" data-cb-dfp-id="'+ad_kvps+'sz=300x600,300x250,1x1"><script src='+ad_finalString+'>\x3c/script></div>');ad_counter++};</script>
-    <noscript><a href="http://ad.Doubleclick.net/jump/espn.us.com.nfl/nflplayer;pgtyp=nflplayer;sp=espn;pl=15848;nav=true;sz=300x600,300x250,1x1;" target="_blank"><img src="http://ad.Doubleclick.net/ad/espn.us.com.nfl/nflplayer;pgtyp=nflplayer;sp=espn;pl=15848;nav=true;sz=300x600,300x250,1x1;" border="0" alt=""></a></noscript>
-    <!-- begin sponsored links -->
-    <div id="sponsored" class="mod-container mod-no-footer">
-        <!-- begin sp links -->
-        <div style="margin: 10px 0 0 0;">
-            <!-- CONTENT: 09story304, SPORT: nfl--><div style="margin:0px 0px 5px 0px; text-align: center; width: 304px;"><ins id="splinks-82136"></ins>
-            <script type="text/javascript">
-                (function($) {
-                    // config params
-                    var width = '304',
-                            height = '300',
-                            client = 'ca-espn-q-players',
-                            channel = 'nfl right',
-                            lang = 'null';
+    <div class="header-bg"></div>
+    <div class="field"></div>
+    <div class="header-overlay"></div>
+</div>
+<div class="player-select-header"><p>Go to</p>
 
-                    // builds iframe HTML
-                    function buildIframe(width, height, client, channel) {
-                        var path = 'http://sports-ak.espn.go.com/espn/sponsoredlinks/adsense/iframeCached';
-                        // pass params as the hash as they are only needed on the client
-                        var hash = '82136|' + width + '|' + height + '|' + client + '|' + channel + '|' + lang;
-                        var iframe = '<iframe seamless scrolling="no" frameborder="0" height="' + height + '" width="' + width + '" src="' + path + '#' + hash + '"></iframe>';
-                        return iframe;
-                    }
-
-                    // handles messages from child iframe
-                    function handleMessage(event) {
-                        if (event.origin === 'http://sports-ak.espn.go.com') {
-                            $('#splinks-' + event.data).html('<!-- no ads served -->');
-                        }
-                    }
-
-                    if (typeof window.addEventListener === 'function') {
-                        window.addEventListener('message', handleMessage, false);
-                    } else {
-                        window.attachEvent('onmessage', handleMessage);
-                    }
-
-                    // insert the iframe
-                    if (espn.geo) {
-                        espn.geo.getLocation().done(function(loc) {
-                            if (loc.country.isoCode !== 'usa' || espn.core.mobileApple || espn.core.android) {
-                                // outside US or not on desktop
-                                client = 'ca-espn-nq';
-                            }
-                            $('#splinks-82136').html(buildIframe(width, height, client, channel));
-                        }).fail(function() {
-                            $('#splinks-82136').html(buildIframe(width, height, 'ca-espn-nq', channel));
-                        });
-                    } else {
-                        // can't locate them, assume they are outside US
-                        $('#splinks-82136').html(buildIframe(width, height, 'ca-espn-nq', channel));
-                    }
-                })(jQuery);
-            </script>
-        </div></div>
-        <!-- end sp links -->
+    <div class="mod-split-menu">
+        <div class="split-select" id="9" rel="9"><a class="btn-split-btn">Eddie Lacy</a></div>
     </div>
-    <!-- end sponsored links -->
-</div><div class="clear"><div style="margin:5px 0;" class="tablesm">Data provided by Elias Sports Bureau</div></div></div></div>
-<div id="global-viewport" data-behavior="global_nav_condensed global_nav_full"  class =" interior" >
+</div>
+<div class="mod-page-tabs mod-pagenav-tabs">
+    <ul class="ui-tabs">
+        <li class="active"><a href="/nfl/player/_/id/15848/eddie-lacy">Player Profile</a></li>
+        <li><a href="/nfl/player/stats/_/id/15848/eddie-lacy">Stats</a></li>
+        <li><a href="/nfl/player/splits/_/id/15848/eddie-lacy">Splits</a></li>
+        <li><a href="/nfl/player/gamelog/_/id/15848/eddie-lacy">Game Log</a></li>
+        <li><a href="/nfl/player/videos/_/id/15848/eddie-lacy">Videos</a></li>
+        <li><a href="/nfl/player/photos/_/id/15848/eddie-lacy">Photos</a></li>
+        <li>
+            <a target="_new" href="http://www.dickssportinggoods.com/family/index.jsp?categoryId=24767506&camp=Part:ESPNpart::nflplayercardnav:EddieLacy" rel="nofollow">Shop&nbsp;<img src="http://a.espncdn.com/prod/assets/icon_externallink_wht.png"></a>
+        </li>
+    </ul>
+</div>
+<div class="bg-opaque">
+    <div class="span-6 last">
+        <table class="player-profile-container">
+            <tr>
+                <td class="profile-overview">
+                    <div class="mod-container mod-game matchup-splits current scores mod-table mod-no-footer">
+                        <div class="mod-header"><h4>PREVIOUS GAME</h4></div>
+                        <div class="mod-content">
+                            <div class="gradient-container">
+                                <div class="game-details">
+                                    <div class="venue">Lambeau Field</div>
+                                    <div class="time">Sun, Sept 20<br/>Final</div>
+                                    <div class="overview" style="padding-left:90px;">
+                                        <div class="team team-away">
+                                            <a href="http://espn.go.com/nfl/team/_/name/sea/seattle-seahawks">
+                                                <div class="logo logo-medium logo-nfl-medium nfl-medium-26"></div>
+                                            </a>
 
-    <nav id="global-nav-mobile" data-loadtype="server">
-    </nav><div class="menu-overlay-primary"></div><div id="header-wrapper" data-behavior="global_header">
-    <header id="global-header" class="espn-en">
-        <div class="menu-overlay-secondary"></div>
+                                            <div class="record"><h6 style="padding-left:25px;font-size:16px;">17</h6>
+                                            </div>
+                                        </div>
+                                        <div class="symbol">@</div>
+                                        <div class="team team-home">
+                                            <a href="http://espn.go.com/nfl/team/_/name/gb/green-bay-packers">
+                                                <div class="logo logo-medium logo-nfl-medium nfl-medium-9"></div>
+                                            </a>
 
-        <div class="container">
-            <a id="global-nav-mobile-trigger" href="#" data-route="false"><span>Menu</span></a><h1><a name="&lpos=sitenavdefault&lid=sitenav_main-logo" href='http://espn.go.com' >ESPN</a></h1>
-            <ul class="tools">
-                <li class="search">
-
-                    <a href="#" class="icon-font-after icon-search-solid-after" id="global-search-trigger"></a>
-                    <div id="global-search" class="global-search">
-                        <input type="text" class="search-box" placeholder="Search Sports, Teams or Players..."><input type="submit" class="btn-search">
+                                            <div class="record"><h6 style="padding-right:25px;font-size:16px;">27</h6>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <p class="links">
+                                        <a href="/nfl/recap?gameId=400791708">Recap &#187;</a><a href="/nfl/boxscore?gameId=400791708">Box&nbsp;Score &#187;</a>
+                                    </p></div>
+                            </div>
+                            <table cellspacing="1" cellpadding="3" class="tablehead">
+                                <tr class="colhead">
+                                    <th>STATS</th>
+                                    <th style="text-align:right !important;" title="Rushing attempts">ATT</th>
+                                    <th style="text-align:right !important;" title="Total rushing yards">YDS</th>
+                                    <th style="text-align:right !important;" title="Average yards per carry">AVG</th>
+                                    <th style="text-align:right !important;" title="Longest run">LNG</th>
+                                    <th style="text-align:right !important;" title="Rushing touchdowns">TD</th>
+                                    <th style="text-align:right !important;" title="Total receptions">REC</th>
+                                    <th style="text-align:right !important;" title="Total receiving yards">YDS</th>
+                                    <th style="text-align:right !important;" title="Receiving yards per reception">AVG</th>
+                                    <th style="text-align:right !important;" title="Longest reception">LNG</th>
+                                    <th style="text-align:right !important;" title="Receiving touchdowns">TD</th>
+                                    <th style="text-align:right !important;" title="Fumbles">FUM</th>
+                                    <th style="text-align:right !important;" title="Fumbles lost">LST</th>
+                                </tr>
+                                <tr class="oddrow">
+                                    <td>This Game</td>
+                                    <td style="text-align:right;">3</td>
+                                    <td style="text-align:right;">9</td>
+                                    <td style="text-align:right;">3.0</td>
+                                    <td style="text-align:right;">8</td>
+                                    <td style="text-align:right;">0</td>
+                                    <td style="text-align:right;">0</td>
+                                    <td style="text-align:right;">0</td>
+                                    <td style="text-align:right;">.0</td>
+                                    <td style="text-align:right;">0</td>
+                                    <td style="text-align:right;">0</td>
+                                    <td style="text-align:right;">0</td>
+                                    <td style="text-align:right;">0</td>
+                                </tr>
+                                <tr class="evenrow">
+                                    <td>September</td>
+                                    <td style="text-align:right;">19</td>
+                                    <td style="text-align:right;">85</td>
+                                    <td style="text-align:right;">4.5</td>
+                                    <td style="text-align:right;">16</td>
+                                    <td style="text-align:right;">1</td>
+                                    <td style="text-align:right;">2</td>
+                                    <td style="text-align:right;">14</td>
+                                    <td style="text-align:right;">7.0</td>
+                                    <td style="text-align:right;">9</td>
+                                    <td style="text-align:right;">0</td>
+                                    <td style="text-align:right;">0</td>
+                                    <td style="text-align:right;">0</td>
+                                </tr>
+                                <tr class="oddrow">
+                                    <td>In Wins</td>
+                                    <td style="text-align:right;">19</td>
+                                    <td style="text-align:right;">85</td>
+                                    <td style="text-align:right;">4.5</td>
+                                    <td style="text-align:right;">16</td>
+                                    <td style="text-align:right;">1</td>
+                                    <td style="text-align:right;">2</td>
+                                    <td style="text-align:right;">14</td>
+                                    <td style="text-align:right;">7.0</td>
+                                    <td style="text-align:right;">9</td>
+                                    <td style="text-align:right;">0</td>
+                                    <td style="text-align:right;">0</td>
+                                    <td style="text-align:right;">0</td>
+                                </tr>
+                            </table>
+                            <p class="footer">
+                                <span style="text-align: left;">*Splits are updated nightly.</span><a href="/nfl/player/splits/_/id/15848/eddie-lacy">Complete Splits &#187;</a>
+                            </p></div>
                     </div>
-                </li>
-                <li class="user" data-behavior="favorites_mgmt"></li>
-                <li>
-                    <a href="#" id="global-scoreboard-trigger" data-route="false">Scores</a>
-                </li>
-            </ul>
+                </td>
+                <td class="profile-media">
+                    <style type="text/css">.videoplayer-show {
+                        height: 217px !important;
+                    }
 
+                    .mod-inline.video-player.full-box {
+                        padding: 1px;
+                    }
 
+                    .mod-video-playlist {
+                        border-width: 0px;
+                        width: 384px;
+                        margin: 0 0 10px;
+                        0;
+                        float: none;
+                    }
+
+                    .mod-video-playlist a, .mod-video-tags a {
+                        color: #225DB7;
+                    }
+
+                    .mod-inline.video-player.with-playlist #videoInfo {
+                        width: 384px;
+                    }</style>
+                    <div class="mod-inline video-player full-box with-playlist">
+                        <div class="videoplayer videoplayer-playercard_embed09" style="margin-top:0px !important;">
+                            <img src="http://a.espncdn.com/combiner/i?img=/media/motion/2015/0921/dm_150921_nfl_seahawks_packers/dm_150921_nfl_seahawks_packers.jpg&w=384&h=216"/>
+                        </div>
+                        <div id="videoInfo"></div>
+                        <a id="videotoplay" style="display:none;" class="{trackingName: 'playercard_embed09', playRelatedExternally: 'false'}" href="http://espn.go.com/video/clip?id=13708136">Packers drop Seahawks to 0-2</a>
+
+                        <div class="mod-video-playlist"><h6>VIDEO PLAYLIST
+                            <img width="15" height="8" alt="video" src="http://a.espncdn.com/icons/video2.png"/></h6>
+                            <ul class="bulletlinks">
+                                <li class=" first active">
+                                    <a class="{trackingName: 'playercard_embed09', playRelatedExternally: 'false'}" href="http://espn.go.com/video/clip?id=13708136">Packers drop Seahawks to 0-2</a><span style="display:none;"></span>
+                                </li>
+                                <li class=" next last">
+                                    <a class="{trackingName: 'playercard_embed09', playRelatedExternally: 'false'}" href="http://espn.go.com/video/clip?id=13684554">What to expect from Eddie Lacy</a><span style="display:none;"></span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <script>
+                        var ESPN_GLOBALS = {
+                            "videoPlayers": {
+                                "playercard_embed09": {
+                                    "height": 216,
+                                    "width": 384,
+
+                                    "autostart": "false",
+                                    "trackingName": "playercard_embed09"
+                                }
+                            }
+                        };
+
+                        espn.video.embeded.play();
+                    </script>
+                </td>
+            </tr>
+        </table>
+        <div class="mod-container mod-table mod-no-footer" style="padding-top:5px;">
+            <div class="mod-header"><h4>STATS</h4></div>
+            <div class="mod-content">
+                <table cellspacing="1" cellpadding="3" class="tablehead">
+                    <tr class="colhead">
+                        <th></th>
+                        <th style="text-align:right !important;" title="Rushing attempts">ATT</th>
+                        <th style="text-align:right !important;" title="Total rushing yards">YDS</th>
+                        <th style="text-align:right !important;" title="Average yards per carry">AVG</th>
+                        <th style="text-align:right !important;" title="Longest run">LNG</th>
+                        <th style="text-align:right !important;" title="Rushing touchdowns">TD</th>
+                        <th style="text-align:right !important;" title="First downs">FD</th>
+                        <th style="text-align:right !important;" title="Total receptions">REC</th>
+                        <th style="text-align:right !important;" title="Total receiving yards">YDS</th>
+                        <th style="text-align:right !important;" title="Receiving yards per reception">AVG</th>
+                        <th style="text-align:right !important;" title="Longest reception">LNG</th>
+                        <th style="text-align:right !important;" title="Receiving touchdowns">TD</th>
+                        <th style="text-align:right !important;" title="Fumbles">FUM</th>
+                        <th style="text-align:right !important;" title="Fumbles lost">LST</th>
+                    <tr class="oddrow">
+                        <td>2015 Regular Season</td>
+                        <td style="text-align:right;">19</td>
+                        <td style="text-align:right;">85</td>
+                        <td style="text-align:right;">4.5</td>
+                        <td style="text-align:right;">16</td>
+                        <td style="text-align:right;">1</td>
+                        <td style="text-align:right;">5</td>
+                        <td style="text-align:right;">2</td>
+                        <td style="text-align:right;">14</td>
+                        <td style="text-align:right;">7.0</td>
+                        <td style="text-align:right;">9</td>
+                        <td style="text-align:right;">0</td>
+                        <td style="text-align:right;">0</td>
+                        <td style="text-align:right;">0</td>
+                    </tr>
+                    <tr class="evenrow">
+                        <td>Career</td>
+                        <td style="text-align:right;">549</td>
+                        <td style="text-align:right;">2,402</td>
+                        <td style="text-align:right;">4.4</td>
+                        <td style="text-align:right;">60</td>
+                        <td style="text-align:right;">21</td>
+                        <td style="text-align:right;">124</td>
+                        <td style="text-align:right;">79</td>
+                        <td style="text-align:right;">698</td>
+                        <td style="text-align:right;">8.8</td>
+                        <td style="text-align:right;">67</td>
+                        <td style="text-align:right;">4</td>
+                        <td style="text-align:right;">4</td>
+                        <td style="text-align:right;">3</td>
+                    </tr>
+                    <tr class="oddrow">
+                        <td>Projected</td>
+                        <td style="text-align:right;">304</td>
+                        <td style="text-align:right;">1,360</td>
+                        <td style="text-align:right;">4.5</td>
+                        <td style="text-align:right;">16</td>
+                        <td style="text-align:right;">16</td>
+                        <td style="text-align:right;">80</td>
+                        <td style="text-align:right;">32</td>
+                        <td style="text-align:right;">224</td>
+                        <td style="text-align:right;">7.0</td>
+                        <td style="text-align:right;">9</td>
+                        <td style="text-align:right;">0</td>
+                        <td style="text-align:right;">0</td>
+                        <td style="text-align:right;">0</td>
+                    </tr>
+                </table>
+                <p class="footer"><a href="/nfl/player/stats/_/id/15848/eddie-lacy">Complete Stats &#187;</a></p></div>
         </div>
-
-
-        <nav id="global-nav" data-loadtype="server">
-            <ul itemscope="" itemtype="http://www.schema.org/SiteNavigationElement">
-                <li itemprop="name"><a itemprop="url" href="/nfl/">NFL</a></li><li itemprop="name"><a itemprop="url" href="/nba/">NBA</a></li><li itemprop="name"><a itemprop="url" href="/mlb/">MLB</a></li><li itemprop="name"><a itemprop="url" href="/college-football/">NCAAF</a></li><li itemprop="name"><a itemprop="url" href="/tennis/">Tennis</a></li><li itemprop="name"><a itemprop="url" href="http://espnfc.com/">Soccer</a></li><li itemprop="name"><a itemprop="url" href="#">&hellip;</a><div><ul class="split"><li itemprop="name"><a itemprop="url" href="/nhl/">NHL</a></li><li itemprop="name"><a itemprop="url" href="/mens-college-basketball/">NCAAM</a></li><li itemprop="name"><a itemprop="url" href="/racing/nascar/">NASCAR</a></li><li itemprop="name"><a itemprop="url" href="/golf/">Golf</a></li><li itemprop="name"><a itemprop="url" href="/racing/">Racing</a></li><li itemprop="name"><a itemprop="url" href="/olympics/">Olympics</a></li><li itemprop="name"><a itemprop="url" href="http://espn.go.com/extra/specialolympics/">Special Olympics</a></li><li itemprop="name"><a itemprop="url" href="/college-sports/">NCAA</a></li><li itemprop="name"><a itemprop="url" href="/womens-basketball/">NCAAW</a></li><li itemprop="name"><a itemprop="url" href="/horse-racing/">Horse</a></li><li itemprop="name"><a itemprop="url" href="/mma/">MMA</a></li><li itemprop="name"><a itemprop="url" href="/boxing/">Boxing</a></li><li itemprop="name"><a itemprop="url" href="/womens-basketball/">WNBA</a></li><li itemprop="name"><a itemprop="url" href="http://espn.go.com/college-sports/football/recruiting/">RN FB</a></li><li itemprop="name"><a itemprop="url" href="http://espn.go.com/college-sports/basketball/recruiting/index">RN BB</a></li><li itemprop="name"><a itemprop="url" href="http://espncricinfo.com/">Cricket</a></li><li itemprop="name"><a itemprop="url" href="http://www.espnscrum.com/">Rugby</a></li><li itemprop="name"><a itemprop="url" href="http://xgames.com/">X Games</a></li><li itemprop="name"><a itemprop="url" href="/chalk/">Chalk</a></li><li itemprop="name"><a itemprop="url" href="/endurance/">Endurance</a></li><li itemprop="name"><a itemprop="url" href="http://www.tsn.ca/cfl">CFL</a></li><li itemprop="name"><a itemprop="url" href="http://espn.go.com/espys/2015/">ESPYS</a></li><li itemprop="name"><a itemprop="url" href="http://espn.go.com/sports/llws15/story/_/page/LittleLeagueWorldSeries/little-league-world-series-espn">LLWS</a></li></ul></div></li><li class="pillar more-espn"><a href="#">More ESPN</a></li><li class="pillar fantasy"><a href="/fantasy/">Fantasy</a></li><li class="pillar listen"><a href="http://espn.go.com/espnradio/index">Listen</a></li><li class="pillar watch"><a href="http://espn.go.com/watchespn/index">Watch</a></li></ul>
-
-        </nav>
-
-
-
-
-        <nav id="global-nav-secondary" data-loadtype="server" >
-            <div class="global-nav-container">
-                <ul class="first-group"><li class="sports" itemprop="name"><span class="positioning"><a href="/nfl/"><a href="/nfl/"><span class="brand-logo "><img src="http://a.espncdn.com/combiner/i?img=/i/teamlogos/leagues/500/nfl.png&w=80&h=80&transparent=true"></span><span class="link-text">NFL</span></a></span></li><li class="sub"><a href="/nfl/"  data-breakpoints="desktop,desktop-lg"  data-mobile="false" ><span class="link-text">Home</span><span class="link-text-short">Home</span></a></li><li class="sub"><a href="/nfl/scoreboard" ><span class="link-text">Scores</span><span class="link-text-short">Scores</span></a></li><li class="sub"><a href="/nfl/schedule" ><span class="link-text">Schedule</span><span class="link-text-short">Schedule</span></a></li><li class="sub"><a href="/blog/nflnation"  data-blog="true" ><span class="link-text">NFL Nation</span><span class="link-text-short">NFL Nation</span></a></li><li class="sub"><a href="http://espn.go.com/nfl/draft"  data-mobile="false" ><span class="link-text">Draft</span><span class="link-text-short">Draft</span></a></li><li class="sub"><a href="/nfl/standings"  data-match-url="/standings/" ><span class="link-text">Standings</span><span class="link-text-short">Standings</span></a></li><li class="sub"><a href="http://espn.go.com/nfl/teams"  data-sportAbbrev="nfl" ><span class="link-text">Teams</span><span class="link-text-short">Teams</span></a></li><li class="sub"><a href="http://espn.go.com/nfl/statistics"  data-mobile="false" ><span class="link-text">Stats</span><span class="link-text-short">Stats</span></a></li><li class='sub sub-more-nolink sub-more-more has-sub'><a href='#'>More</a><div><ul class="split"><li class="sub"><a href="http://espn.go.com/nfl/transactions"  data-mobile="false" ><span class="link-text">Transactions</span><span class="link-text-short">Transactions</span></a></li><li class="sub"><a href="http://insider.espn.go.com/nfl/freeagency/"  data-mobile="false" ><span class="link-text">Free Agency</span><span class="link-text-short">Free Agency</span></a></li><li class="sub"><a href="http://espn.go.com/nfl/players"  data-mobile="false" ><span class="link-text">Players</span><span class="link-text-short">Players</span></a></li><li class="sub"><a href=" http://espn.go.com/nfl/story/_/page/MNFHQ/monday-night-football-hq-nfl" ><span class="link-text">MNF HQ</span><span class="link-text-short">MNF HQ</span></a></li><li class="sub"><a href="/blog/nfl/rumors/insider/" ><span class="link-text">Rumors</span><span class="link-text-short">Rumors</span></a></li><li class="sub"><a href="http://games.espn.go.com/frontpage/football"  data-mobile="false" ><span class="link-text">Fantasy Football</span><span class="link-text-short">Fantasy</span></a></li><li class="sub"><a href="/chalk/" ><span class="link-text">Odds & Info</span><span class="link-text-short">Odds & Info</span></a></li><li class="sub"><a href="http://espn.go.com/nfl/powerrankings"  data-mobile="false" ><span class="link-text">Power Rankings</span><span class="link-text-short">Power Rankings</span></a></li><li class="sub"><a href="http://espn.go.com/nfl/qbr"  data-mobile="false" ><span class="link-text">QBR</span><span class="link-text-short">QBR</span></a></li><li class="sub"><a href="http://espn.go.com/nfl/weekly/leaders"  data-mobile="false" ><span class="link-text">Weekly Leaders</span><span class="link-text-short">Weekly Leaders</span></a></li><li class="sub"><a href="http://espn.go.com/nfl/attendance"  data-mobile="false" ><span class="link-text">Attendance</span><span class="link-text-short">Attendance</span></a></li><li class="sub"><a href="http://espn.go.com/nfl/coaches"  data-mobile="false" ><span class="link-text">Coaches</span><span class="link-text-short">Coaches</span></a></li><li class="sub insider"><a href="http://insider.espn.go.com/insider/pickcenter/index?sport=nfl"  data-mobile="false" ><span class="link-text">PickCenter</span><span class="link-text-short">PickCenter</span></a></li><li class="sub"><a href="http://espn.go.com/nfl/lines"  data-mobile="false" ><span class="link-text">Daily Lines</span><span class="link-text-short">Daily Lines</span></a></li><li class="sub external"><a href="http://www.dickssportinggoods.com/category/index.jsp?categoryId=15496176&camp=Part:ESPNPart_NFLNav:Shop:SubNavLink"  data-nofollow="true" ><span class="link-text">Shop</span><span class="link-text-short">Shop</span></a></li><li class="sub external"><a href=" http://www.stubhub.com/nfl-tickets/grouping/121/?gcid=C12289x522&gtkw=NFL+Sub+Nav" ><span class="link-text">Tickets</span><span class="link-text-short">Tickets</span></a></li><li class="sub"><a href="http://espn.go.com/extra/afl/index"  data-mobile="false" ><span class="link-text">AFL</span><span class="link-text-short">AFL</span></a></li></ul></div></li></ul>
-                <script type="text/javascript">
-                    var espn = espn || {};
-                    espn.nav = espn.nav || {};
-                    espn.nav.navId = 11929946;
-                    espn.nav.isFallback = false;
-
-
-
-                </script>
+        <style type="text/css">.textright.bleft {
+            border-left: 1px solid #aaa !important;
+        }</style>
+        <div class="mod-container mod-table mod-player-stats">
+            <div class="mod-content">
+                <table cellspacing="1" cellpadding="3" class="tablehead">
+                    <tr class="stathead">
+                        <td colspan="3">GAME LOG</td>
+                        <td colspan="5" class="textcenter">RUSHING</td>
+                        <td colspan="5" class="textcenter">RECEIVING</td>
+                        <td colspan="2" class="textcenter">FUMBLES</td>
+                    </tr>
+                    <tr class="colhead">
+                        <td>DATE</td>
+                        <td>OPP</td>
+                        <td>RESULT</td>
+                        <td class="textright" title="Rushing attempts">ATT</td>
+                        <td class="textright" title="Total rushing yards">YDS</td>
+                        <td class="textright" title="Average yards per carry">AVG</td>
+                        <td class="textright" title="Longest run">LNG</td>
+                        <td class="textright" title="Rushing touchdowns">TD</td>
+                        <td class="textright bleft" title="Total receptions">REC</td>
+                        <td class="textright" title="Total receiving yards">YDS</td>
+                        <td class="textright" title="Receiving yards per reception">AVG</td>
+                        <td class="textright" title="Longest reception">LNG</td>
+                        <td class="textright" title="Receiving touchdowns">TD</td>
+                        <td class="textright bleft" title="Fumbles">FUM</td>
+                        <td class="textright" title="Fumbles lost">LST</td>
+                    </tr>
+                    <tr class="oddrow team-28-3">
+                        <td>Sun 9/13</td>
+                        <td>
+                            <ul class="game-schedule">
+                                <li class="game-location">@</li>
+                                <li class="team-logo-small logo-nfl-small nfl-small-3">
+                                    <a href="http://espn.go.com/nfl/team/_/name/chi/chicago-bears"></a></li>
+                                <li class="team-name">
+                                    <a href="http://espn.go.com/nfl/team/_/name/chi/chicago-bears">CHI</a></li>
+                            </ul>
+                        </td>
+                        <td><span class="greenfont">W</span> <a href="/nfl/boxscore?gameId=400791489">31-23</a></td>
+                        <td class="textright">19</td>
+                        <td class="textright">85</td>
+                        <td class="textright">4.5</td>
+                        <td class="textright">16</td>
+                        <td class="textright">1</td>
+                        <td class="textright bleft">2</td>
+                        <td class="textright">14</td>
+                        <td class="textright">7.0</td>
+                        <td class="textright">9</td>
+                        <td class="textright">0</td>
+                        <td class="textright bleft">0</td>
+                        <td class="textright">0</td>
+                    </tr>
+                    <tr class="evenrow team-28-26">
+                        <td>Sun 9/20</td>
+                        <td>
+                            <ul class="game-schedule">
+                                <li class="game-location">vs</li>
+                                <li class="team-logo-small logo-nfl-small nfl-small-26">
+                                    <a href="http://espn.go.com/nfl/team/_/name/sea/seattle-seahawks"></a></li>
+                                <li class="team-name">
+                                    <a href="http://espn.go.com/nfl/team/_/name/sea/seattle-seahawks">SEA</a></li>
+                            </ul>
+                        </td>
+                        <td><span class="greenfont">W</span> <a href="/nfl/boxscore?gameId=400791708">27-17</a></td>
+                        <td class="textright">3</td>
+                        <td class="textright">9</td>
+                        <td class="textright">3.0</td>
+                        <td class="textright">8</td>
+                        <td class="textright">0</td>
+                        <td class="textright bleft">0</td>
+                        <td class="textright">0</td>
+                        <td class="textright">.0</td>
+                        <td class="textright">0</td>
+                        <td class="textright">0</td>
+                        <td class="textright bleft">0</td>
+                        <td class="textright">0</td>
+                    </tr>
+                </table>
+                <p class="footer"><a href="/nfl/player/gamelog/_/id/15848/eddie-lacy">Complete Game Log &#187;</a></p>
             </div>
-        </nav>
+        </div>
+        <style type="text/css">
+            .mod-fanshop .mod-content ul li {
+                float: left;
+                width: 33.33%;
+            }
 
-    </header></div></div></div>
+            .mod-fanshop .mod-content ul li dd {
+                float: left;
+                width: 100px;
+                text-align: center;
+                margin-top: 5px;
+            }
+
+            .mod-fanshop .mod-content ul li dt {
+                float: left;
+                width: 160px;
+                margin-top: 10px;
+            }
+        </style>
+        <div class="mod-container mod-no-footer mod-fanshop">
+            <div class="mod-header"><h4>ESPN FAN SHOP
+                <span style="position: relative; top: 4px; margin-right: 5px;"><a href="http://www.dickssportinggoods.com/family/index.jsp?categoryId=24767506&camp=Part:ESPNpart::nflplayercardfeed:EddieLacy" rel="nofollow" target="_blank"><img src="http://a.espncdn.com/i/shop/dsg_presby.gif"/></a></span>
+            </h4></div>
+            <div class="mod-content">
+                <ul>
+                    <li>
+                        <dl>
+                            <dd>
+                                <a href="http://www.dickssportinggoods.com/product/index.jsp?productId=34624576&camp=Part:ESPNpart::nflplayercardfeed:EddieLacy" rel="nofollow" target="_blank"><img width="80" src="http://www.dickssportinggoods.com/graphics/product_images/pDSP1-18338730nm.jpg"/></a>
+                            </dd>
+                            <dt>Nike Boys' Home Game Jersey Green Bay Packers Eddie Lacy #27</br>
+                                <a href="http://www.dickssportinggoods.com/product/index.jsp?productId=34624576&camp=Part:ESPNpart::nflplayercardfeed:EddieLacy" rel="nofollow" target="_blank"><b>
+                                    <nobr>Shop &#187;</nobr>
+                                </b></a></dt>
+                        </dl>
+                    </li>
+                    <li>
+                        <dl>
+                            <dd>
+                                <a href="http://www.dickssportinggoods.com/product/index.jsp?productId=24730046&camp=Part:ESPNpart::nflplayercardfeed:EddieLacy" rel="nofollow" target="_blank"><img width="80" src="http://www.dickssportinggoods.com/graphics/product_images/pDSP1-16988601nm.jpg"/></a>
+                            </dd>
+                            <dt>Nike Men's Home Game Jersey Green Bay Packers Eddie Lacy #27</br>
+                                <a href="http://www.dickssportinggoods.com/product/index.jsp?productId=24730046&camp=Part:ESPNpart::nflplayercardfeed:EddieLacy" rel="nofollow" target="_blank"><b>
+                                    <nobr>Shop &#187;</nobr>
+                                </b></a></dt>
+                        </dl>
+                    </li>
+                    <li>
+                        <dl>
+                            <dd>
+                                <a href="http://www.dickssportinggoods.com/product/index.jsp?productId=34624646&camp=Part:ESPNpart::nflplayercardfeed:EddieLacy" rel="nofollow" target="_blank"><img width="80" src="http://www.dickssportinggoods.com/graphics/product_images/pDSP1-18338751nm.jpg"/></a>
+                            </dd>
+                            <dt>Nike Youth Home Game Jersey Green Bay Packers Eddie Lacy #27</br>
+                                <a href="http://www.dickssportinggoods.com/product/index.jsp?productId=34624646&camp=Part:ESPNpart::nflplayercardfeed:EddieLacy" rel="nofollow" target="_blank"><b>
+                                    <nobr>Shop &#187;</nobr>
+                                </b></a></dt>
+                        </dl>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="span-4"><span style="display:none;" id="showproj" value="true"></span>
+
+        <div class="mod-container mod-no-footer mod-fantasy" id="fantasy-container" style="display:none;">
+            <div class="mod-header"><h4>FANTASY FOOTBALL</h4></div>
+            <div class="mod-content" id="fantasy-content">{"averagePoints":15,"percentOwned":100,"lastPoints":15,"pointsSEASON":15,"seasonOutlook":{"outlook":"Cursed with difficult matchups last September, Lacy earned ire from fantasy owners by ranking 43rd in RB points after four games. But as the season continued, the tape proved an indisputable fact: Lacy is no fun to tackle. At 230 pounds with nimble feet and bad intentions, he pushes a pile as aggressively as any RB in the NFL. The Packers will never be run-centric while Aaron Rodgers is under center, but Lacy also has terrific hands -- he finished sixth in RB receiving yards in 2014 -- and can serve as his own third-down back. Heading into a season with no clear-cut No. 1 overall pick, Lacy has our favorite combo of upside and safety.","seasonId":2015,"date":"Wed May 20"},"positionRank":7,"playerId":15848,"percentChange":0,"averageDraftPosition":4.9,"fullName":"Eddie Lacy","mostRecentNews":{"news":"X-rays on Lacy's ankle came back negative, ESPN's Adam Schefter reports","spin":"Lacy left Sunday's game against the Seahawks in the first quarter, initially considered questionable to return. He was then ruled out around halftime, but he at least seems to have avoided a fracture. James Starks took over as the lead back, serving as a three-down workhorse in Lacy's absence.","date":"Sun Sep 20"},"projectedDifference":-2.19121092,"totalPoints":15,"projectedPoints":12.80878908}</div>
+        </div>
+        <div class="mod-container mod-tabs mod-tabs-header mod-no-footer mod-content-feed">
+            <div id="feed-tabs" class="mod-header">
+                <h4>EDDIE LACY NEWS FEED</h4>
+                <ul>
+                    <li class="ui-tabs-selected"><a href="#default-tab">ALL</a></li>
+                    <li><a href="http://espn.go.com/nfl/player/_/id/15848/view/video/eddie-lacy">VIDEO</a></li>
+                    <li><a href="http://espn.go.com/nfl/player/_/id/15848/view/audio/eddie-lacy">AUDIO</a></li>
+                    <li>
+                        <a href="http://espn.go.com/nfl/player/_/id/15848/view/status alerts/eddie-lacy">STATUS ALERTS</a>
+                    </li>
+
+                </ul>
+            </div>
+            <div class="mod-content">
+                <div id="default-tab">
+                    <ol>
+                        <li id="13708136" class="result">
+                            <a rel="js-video" class="vid-thumb floatleft" href="http://espn.go.com/video/clip?id=13708136&ex_cid=espnapi_public">
+                                <div class="vid-icon"></div>
+                                <img class="floatleft" height="75" width="134" src="http://a.espncdn.com/media/motion/2015/0921/dm_150921_nfl_seahawks_packers/dm_150921_nfl_seahawks_packers.jpg"/>
+                            </a>
+
+                            <h3>
+                                <a rel="js-video" class="{playerType:'redesign_clubhouse10'}" href="http://espn.go.com/video/clip?id=13708136&ex_cid=espnapi_public">Packers drop Seahawks to 0-2</a>
+                                <img src="http://a.espncdn.com/icons/watch.png" alt="Watch"/></h3>
+
+                            <p>Aaron Rodgers throws for 249 yards and two touchdowns in the Packers' 27-17 victory over the Seahawks.</p>
+                            <cite>47 minutes ago</cite>
+                        </li>
+                        <li id="23294" class="result">
+                            <a href="http://espn.go.com/blog/green-bay-packers/post/_/id/23294/aaron-rodgers-delivers-epic-fourth-quarter-drive-to-beat-seahawks?ex_cid=espnapi_public"><img class="floatleft" height="75" width="134" src="http://a.espncdn.com/media/motion/2015/0921/dm_150921_nfl_seahawks_packers/dm_150921_nfl_seahawks_packers.jpg"/>
+                            </a>
+
+                            <h3>
+                                <a href="http://espn.go.com/blog/green-bay-packers/post/_/id/23294/aaron-rodgers-delivers-epic-fourth-quarter-drive-to-beat-seahawks?ex_cid=espnapi_public">Aaron Rodgers delivers epic fourth-quarter drive to beat Seahawks</a>
+                            </h3>
+
+                            <p>Aaron Rodgers rallied the Packers with a precise go-ahead drive in the fourth quarter as Green Bay took down Seattle in an emotional 27-17 victory.</p>
+                            <cite>about 1 hour ago | Rob Demovsky | ESPN.com</cite>
+                        </li>
+                        <li id="13707738" class="result">
+                            <a href="http://espn.go.com/nfl/story/_/id/13707738/eddie-lacy-green-bay-packers-seattle-seahawks-ankle-injury?ex_cid=espnapi_public"><img class="floatleft" height="75" width="134" src="http://a.espncdn.com/photo/2015/0920/ap_161764672307_r10590_600x400_3-2.jpg"/>
+                            </a>
+
+                            <h3>
+                                <a href="http://espn.go.com/nfl/story/_/id/13707738/eddie-lacy-green-bay-packers-seattle-seahawks-ankle-injury?ex_cid=espnapi_public">Packers RB Lacy carted off with ankle injury</a>
+                            </h3>
+
+                            <p>The Green Bay Packers lost running back Eddie Lacy to an ankle injury in the first quarter of Sunday's game against the Seattle Seahawks.</p>
+                            <cite>about 2 hours ago | Rob Demovsky | ESPN.com</cite>
+                        </li>
+                        <li id="23281" class="result">
+                            <h3>
+                                <a href="http://espn.go.com/blog/green-bay-packers/post/_/id/23281/packers-rb-eddie-lacy-leaves-with-ankle-injury?ex_cid=espnapi_public">Packers' Eddie Lacy, Davante Adams both leave with ankle injuries</a>
+                            </h3>
+
+                            <p>Shortly after Packers running back Eddie Lacy was taken to the locker room with an ankle injury, teammate Davante Adams joined him.</p>
+                            <cite>about 3 hours ago | Rob Demovsky | ESPN.com</cite>
+                        </li>
+                        <li id="13684554" class="result">
+                            <a rel="js-video" class="vid-thumb floatleft" href="http://espn.go.com/video/clip?id=13684554&ex_cid=espnapi_public">
+                                <div class="vid-icon"></div>
+                                <img class="floatleft" height="75" width="134" src="http://a.espncdn.com/media/motion/2015/0918/dm_150918_ithlacy/dm_150918_ithlacy.jpg"/>
+                            </a>
+
+                            <h3>
+                                <a rel="js-video" class="{playerType:'redesign_clubhouse10'}" href="http://espn.go.com/video/clip?id=13684554&ex_cid=espnapi_public">What to expect from Eddie Lacy</a>
+                                <img src="http://a.espncdn.com/icons/watch.png" alt="Watch"/></h3>
+
+                            <p>ESPN's John Clayton breaks down how the loss of Packers right tackle Bryan Bulaga will impact running back Eddie Lacy's performance.</p>
+                            <cite>about 2 days ago</cite>
+                        </li>
+                        <li id="13684364" class="result">
+                            <a href="http://espn.go.com/nfl/story/_/id/13684364/green-bay-packers-wide-receiver-randall-cobb-says-matchup-clay-matthews-marshawn-lynch-beast-vs-predator?ex_cid=espnapi_public"><img class="floatleft" height="75" width="134" src="http://a.espncdn.com/photo/2015/0918/nfl_g_lynch_matthews1x_1296x729_r9706_600x400_3-2.jpg"/>
+                            </a>
+
+                            <h3>
+                                <a href="http://espn.go.com/nfl/story/_/id/13684364/green-bay-packers-wide-receiver-randall-cobb-says-matchup-clay-matthews-marshawn-lynch-beast-vs-predator?ex_cid=espnapi_public">Cobb: Lynch-Matthews matchup 'like a movie'</a>
+                            </h3>
+
+                            <p>One of the most intriguing matchups in Sunday night's Seahawks-Packers game at Lambeau Field is Marshawn Lynch versus Clay Matthews.</p>
+                            <cite>about 2 days ago | Rob Demovsky | ESPN.com</cite>
+                        </li>
+                        <li id="14489" class="result">
+                            <h3>
+                                <a href="http://espn.go.com/blog/seattle-seahawks/post/_/id/14489/with-kam-chancellor-out-expect-aaron-rodgers-to-target-bailey?ex_cid=espnapi_public">With Kam Chancellor out, expect Aaron Rodgers to target Dion Bailey</a>
+                            </h3>
+
+                            <p>Seattle safety Kam Chancellor's fill-in, Dion Bailey, should expect to get picked on early and often by Packers quarterback Aaron Rodgers.</p>
+                            <cite>about 3 days ago | Sheil Kapadia | ESPN.com</cite>
+                        </li>
+                        <li id="23150" class="result">
+                            <h3>
+                                <a href="http://espn.go.com/blog/green-bay-packers/post/_/id/23150/ty-montgomery-fully-embraces-role-as-packers-kickoff-returner?ex_cid=espnapi_public">Ty Montgomery 'fully embraces' role as Packers' kickoff returner</a>
+                            </h3>
+
+                            <p>Packers third-round pick Ty Montgomery lost a role in the offense when the Packers re-signed James Jones, but he is all-in as the kickoff returner.</p>
+                            <cite>about 6 days ago | Rob Demovsky | ESPN.com</cite>
+                        </li>
+                        <li id="23121" class="result">
+                            <a href="http://espn.go.com/blog/green-bay-packers/post/_/id/23121/packers-receiver-james-jones-playing-like-its-2012-all-over-again?ex_cid=espnapi_public"><img class="floatleft" height="75" width="134" src="http://a.espncdn.com/media/motion/2015/0913/dm_150913_bears_packers/dm_150913_bears_packers.jpg"/>
+                            </a>
+
+                            <h3>
+                                <a href="http://espn.go.com/blog/green-bay-packers/post/_/id/23121/packers-receiver-james-jones-playing-like-its-2012-all-over-again?ex_cid=espnapi_public">Packers' James Jones turns back clock, plays like it's 2012 again</a>
+                            </h3>
+
+                            <p>The Packers' red-zone trips will go a lot smoother if James Jones continues to play like it's 2012, when he led the NFL in touchdown receptions.</p>
+                            <cite>about 7 days ago | Rob Demovsky | ESPN.com</cite>
+                        </li>
+                        <li id="23107" class="result">
+                            <h3>
+                                <a href="http://espn.go.com/blog/green-bay-packers/post/_/id/23107/james-jones-catches-green-bay-packers-first-td-of-the-season?ex_cid=espnapi_public">James Jones carries Packers' offense in win over Bears</a>
+                            </h3>
+
+                            <p>James Jones, who wasn't on the roster last weekend, caught the Green Bay Packers' first touchdown pass of the season.</p>
+                            <cite>about 7 days ago | Rob Demovsky | ESPN.com</cite>
+                        </li>
+                        <li style="list-style: none">
+                            <a class="view-more-posts" href="http://espn.go.com/nfl/player/_/id/15848/start/11/eddie-lacy">more</a>
+                        </li>
+                    </ol>
+                </div>
+                <div id="clubhouse-video-player" class="videoplayer1 videoplayer-redesign_clubhouse10">
+                    <!-- placeholder -->
+                </div>
+            </div>
+        </div>
+        <script>
+            jQuery.getScriptCache('http://a.espncdn.com/combiner/c/?js=espn.newsfeed.r5.js', function () { //r3
+                espn.core.init.newsfeed();
+            });
+        </script>
+    </div>
+    <div class="span-2 last">
+        <div class="mod-container mod-no-footer mod-open-list mod-quick-facts">
+            <div class="mod-header"><h4>QUICK FACTS</h4></div>
+            <div class="mod-content">
+                <ul>
+                    <li class="last">
+                        <dl>
+                            <dt>2015 League Ranks: <br/>&nbsp;&bull; <strong>7th in NFL in YDS</strong> (85)<br/>&nbsp;&bull;
+                                <strong>7th in NFL in RUSH YPG</strong> (85.0)<br/>&nbsp;&bull;
+                                <strong>5th in NFL in TD</strong> (1)
+                        </dl>
+                        </dt></li>
+                </ul>
+            </div>
+        </div>
+        <!--espn.us.com.nfl sitezone--><!--http://ad.Doubleclick.net hostUrl-->
+        <script>if ("undefined" != typeof ad_kvps && "undefined" != typeof ad_u && "undefined" != typeof ad_counter && "undefined" != typeof ad_ord) {
+            if ("undefined" == typeof ad_site || "undefined" == typeof ad_zone)var ad_site = "espn.us.com.nfl", ad_zone = "nflplayer";
+            var ad_finalString = "http://ad.Doubleclick.net/adj/" + ad_site + "/" + ad_zone + ";" + ad_kvps + "pos=InContent;" + ad_u + "dcopt=ist;sz=300x600,300x250,1x1;tile=" + ad_counter + ";ord=" + ad_ord;
+            document.write('<div data-cb-ad-id="InContent" data-cb-dfp-id="' + ad_kvps + 'sz=300x600,300x250,1x1"><script src=' + ad_finalString + '>\x3c/script></div>');
+            ad_counter++
+        }
+        ;</script>
+        <noscript>
+            <a href="http://ad.Doubleclick.net/jump/espn.us.com.nfl/nflplayer;pgtyp=nflplayer;sp=espn;pl=15848;nav=true;sz=300x600,300x250,1x1;" target="_blank"><img src="http://ad.Doubleclick.net/ad/espn.us.com.nfl/nflplayer;pgtyp=nflplayer;sp=espn;pl=15848;nav=true;sz=300x600,300x250,1x1;" border="0" alt=""></a>
+        </noscript>
+        <!-- begin sponsored links -->
+        <div id="sponsored" class="mod-container mod-no-footer">
+            <!-- begin sp links -->
+            <div style="margin: 10px 0 0 0;">
+                <!-- CONTENT: 09story304, SPORT: nfl-->
+                <div style="margin:0px 0px 5px 0px; text-align: center; width: 304px;">
+                    <ins id="splinks-82136"></ins>
+                    <script type="text/javascript">
+                        (function ($) {
+                            // config params
+                            var width = '304',
+                                    height = '300',
+                                    client = 'ca-espn-q-players',
+                                    channel = 'nfl right',
+                                    lang = 'null';
+
+                            // builds iframe HTML
+                            function buildIframe(width, height, client, channel) {
+                                var path = 'http://sports-ak.espn.go.com/espn/sponsoredlinks/adsense/iframeCached';
+                                // pass params as the hash as they are only needed on the client
+                                var hash = '82136|' + width + '|' + height + '|' + client + '|' + channel + '|' + lang;
+                                var iframe = '<iframe seamless scrolling="no" frameborder="0" height="' + height + '" width="' + width + '" src="' + path + '#' + hash + '"></iframe>';
+                                return iframe;
+                            }
+
+                            // handles messages from child iframe
+                            function handleMessage(event) {
+                                if (event.origin === 'http://sports-ak.espn.go.com') {
+                                    $('#splinks-' + event.data).html('
+                                    <!-- no ads served -->
+                                    ');
+                                }
+                            }
+
+                            if (typeof window.addEventListener === 'function') {
+                                window.addEventListener('message', handleMessage, false);
+                            } else {
+                                window.attachEvent('onmessage', handleMessage);
+                            }
+
+                            // insert the iframe
+                            if (espn.geo) {
+                                espn.geo.getLocation().done(function (loc) {
+                                    if (loc.country.isoCode !== 'usa' || espn.core.mobileApple || espn.core.android) {
+                                        // outside US or not on desktop
+                                        client = 'ca-espn-nq';
+                                    }
+                                    $('#splinks-82136').html(buildIframe(width, height, client, channel));
+                                }).fail(function () {
+                                    $('#splinks-82136').html(buildIframe(width, height, 'ca-espn-nq', channel));
+                                });
+                            } else {
+                                // can't locate them, assume they are outside US
+                                $('#splinks-82136').html(buildIframe(width, height, 'ca-espn-nq', channel));
+                            }
+                        })(jQuery);
+                    </script>
+                </div>
+            </div>
+            <!-- end sp links -->
+        </div>
+        <!-- end sponsored links -->
+    </div>
+    <div class="clear">
+        <div style="margin:5px 0;" class="tablesm">Data provided by Elias Sports Bureau</div>
+    </div>
+</div>
+</div>
+<div id="global-viewport" data-behavior="global_nav_condensed global_nav_full" class=" interior">
+
+    <nav id="global-nav-mobile" data-loadtype="server"></nav>
+    <div class="menu-overlay-primary"></div>
+    <div id="header-wrapper" data-behavior="global_header">
+        <header id="global-header" class="espn-en">
+            <div class="menu-overlay-secondary"></div>
+
+            <div class="container">
+                <a id="global-nav-mobile-trigger" href="#" data-route="false"><span>Menu</span></a>
+
+                <h1><a name="&lpos=sitenavdefault&lid=sitenav_main-logo" href='http://espn.go.com'>ESPN</a></h1>
+                <ul class="tools">
+                    <li class="search">
+
+                        <a href="#" class="icon-font-after icon-search-solid-after" id="global-search-trigger"></a>
+
+                        <div id="global-search" class="global-search">
+                            <input type="text" class="search-box" placeholder="Search Sports, Teams or Players..."><input type="submit" class="btn-search">
+                        </div>
+                    </li>
+                    <li class="user" data-behavior="favorites_mgmt"></li>
+                    <li>
+                        <a href="#" id="global-scoreboard-trigger" data-route="false">Scores</a>
+                    </li>
+                </ul>
+
+
+            </div>
+
+
+            <nav id="global-nav" data-loadtype="server">
+                <ul itemscope="" itemtype="http://www.schema.org/SiteNavigationElement">
+                    <li itemprop="name"><a itemprop="url" href="/nfl/">NFL</a></li>
+                    <li itemprop="name"><a itemprop="url" href="/nba/">NBA</a></li>
+                    <li itemprop="name"><a itemprop="url" href="/mlb/">MLB</a></li>
+                    <li itemprop="name"><a itemprop="url" href="/college-football/">NCAAF</a></li>
+                    <li itemprop="name"><a itemprop="url" href="/tennis/">Tennis</a></li>
+                    <li itemprop="name"><a itemprop="url" href="http://espnfc.com/">Soccer</a></li>
+                    <li itemprop="name"><a itemprop="url" href="#">&hellip;</a>
+
+                        <div>
+                            <ul class="split">
+                                <li itemprop="name"><a itemprop="url" href="/nhl/">NHL</a></li>
+                                <li itemprop="name"><a itemprop="url" href="/mens-college-basketball/">NCAAM</a></li>
+                                <li itemprop="name"><a itemprop="url" href="/racing/nascar/">NASCAR</a></li>
+                                <li itemprop="name"><a itemprop="url" href="/golf/">Golf</a></li>
+                                <li itemprop="name"><a itemprop="url" href="/racing/">Racing</a></li>
+                                <li itemprop="name"><a itemprop="url" href="/olympics/">Olympics</a></li>
+                                <li itemprop="name">
+                                    <a itemprop="url" href="http://espn.go.com/extra/specialolympics/">Special Olympics</a>
+                                </li>
+                                <li itemprop="name"><a itemprop="url" href="/college-sports/">NCAA</a></li>
+                                <li itemprop="name"><a itemprop="url" href="/womens-basketball/">NCAAW</a></li>
+                                <li itemprop="name"><a itemprop="url" href="/horse-racing/">Horse</a></li>
+                                <li itemprop="name"><a itemprop="url" href="/mma/">MMA</a></li>
+                                <li itemprop="name"><a itemprop="url" href="/boxing/">Boxing</a></li>
+                                <li itemprop="name"><a itemprop="url" href="/womens-basketball/">WNBA</a></li>
+                                <li itemprop="name">
+                                    <a itemprop="url" href="http://espn.go.com/college-sports/football/recruiting/">RN FB</a>
+                                </li>
+                                <li itemprop="name">
+                                    <a itemprop="url" href="http://espn.go.com/college-sports/basketball/recruiting/index">RN BB</a>
+                                </li>
+                                <li itemprop="name"><a itemprop="url" href="http://espncricinfo.com/">Cricket</a></li>
+                                <li itemprop="name"><a itemprop="url" href="http://www.espnscrum.com/">Rugby</a></li>
+                                <li itemprop="name"><a itemprop="url" href="http://xgames.com/">X Games</a></li>
+                                <li itemprop="name"><a itemprop="url" href="/chalk/">Chalk</a></li>
+                                <li itemprop="name"><a itemprop="url" href="/endurance/">Endurance</a></li>
+                                <li itemprop="name"><a itemprop="url" href="http://www.tsn.ca/cfl">CFL</a></li>
+                                <li itemprop="name"><a itemprop="url" href="http://espn.go.com/espys/2015/">ESPYS</a>
+                                </li>
+                                <li itemprop="name">
+                                    <a itemprop="url" href="http://espn.go.com/sports/llws15/story/_/page/LittleLeagueWorldSeries/little-league-world-series-espn">LLWS</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="pillar more-espn"><a href="#">More ESPN</a></li>
+                    <li class="pillar fantasy"><a href="/fantasy/">Fantasy</a></li>
+                    <li class="pillar listen"><a href="http://espn.go.com/espnradio/index">Listen</a></li>
+                    <li class="pillar watch"><a href="http://espn.go.com/watchespn/index">Watch</a></li>
+                </ul>
+
+            </nav>
+
+
+            <nav id="global-nav-secondary" data-loadtype="server">
+                <div class="global-nav-container">
+                    <ul class="first-group">
+                        <li class="sports" itemprop="name">
+                            <span class="positioning"><a href="/nfl/"><a href="/nfl/"><span class="brand-logo "><img src="http://a.espncdn.com/combiner/i?img=/i/teamlogos/leagues/500/nfl.png&w=80&h=80&transparent=true"></span><span class="link-text">NFL</span></a></span>
+                        </li>
+                        <li class="sub">
+                            <a href="/nfl/" data-breakpoints="desktop,desktop-lg" data-mobile="false"><span class="link-text">Home</span><span class="link-text-short">Home</span></a>
+                        </li>
+                        <li class="sub">
+                            <a href="/nfl/scoreboard"><span class="link-text">Scores</span><span class="link-text-short">Scores</span></a>
+                        </li>
+                        <li class="sub">
+                            <a href="/nfl/schedule"><span class="link-text">Schedule</span><span class="link-text-short">Schedule</span></a>
+                        </li>
+                        <li class="sub">
+                            <a href="/blog/nflnation" data-blog="true"><span class="link-text">NFL Nation</span><span class="link-text-short">NFL Nation</span></a>
+                        </li>
+                        <li class="sub">
+                            <a href="http://espn.go.com/nfl/draft" data-mobile="false"><span class="link-text">Draft</span><span class="link-text-short">Draft</span></a>
+                        </li>
+                        <li class="sub">
+                            <a href="/nfl/standings" data-match-url="/standings/"><span class="link-text">Standings</span><span class="link-text-short">Standings</span></a>
+                        </li>
+                        <li class="sub">
+                            <a href="http://espn.go.com/nfl/teams" data-sportAbbrev="nfl"><span class="link-text">Teams</span><span class="link-text-short">Teams</span></a>
+                        </li>
+                        <li class="sub">
+                            <a href="http://espn.go.com/nfl/statistics" data-mobile="false"><span class="link-text">Stats</span><span class="link-text-short">Stats</span></a>
+                        </li>
+                        <li class='sub sub-more-nolink sub-more-more has-sub'><a href='#'>More</a>
+
+                            <div>
+                                <ul class="split">
+                                    <li class="sub">
+                                        <a href="http://espn.go.com/nfl/transactions" data-mobile="false"><span class="link-text">Transactions</span><span class="link-text-short">Transactions</span></a>
+                                    </li>
+                                    <li class="sub">
+                                        <a href="http://insider.espn.go.com/nfl/freeagency/" data-mobile="false"><span class="link-text">Free Agency</span><span class="link-text-short">Free Agency</span></a>
+                                    </li>
+                                    <li class="sub">
+                                        <a href="http://espn.go.com/nfl/players" data-mobile="false"><span class="link-text">Players</span><span class="link-text-short">Players</span></a>
+                                    </li>
+                                    <li class="sub">
+                                        <a href=" http://espn.go.com/nfl/story/_/page/MNFHQ/monday-night-football-hq-nfl"><span class="link-text">MNF HQ</span><span class="link-text-short">MNF HQ</span></a>
+                                    </li>
+                                    <li class="sub">
+                                        <a href="/blog/nfl/rumors/insider/"><span class="link-text">Rumors</span><span class="link-text-short">Rumors</span></a>
+                                    </li>
+                                    <li class="sub">
+                                        <a href="http://games.espn.go.com/frontpage/football" data-mobile="false"><span class="link-text">Fantasy Football</span><span class="link-text-short">Fantasy</span></a>
+                                    </li>
+                                    <li class="sub">
+                                        <a href="/chalk/"><span class="link-text">Odds & Info</span><span class="link-text-short">Odds & Info</span></a>
+                                    </li>
+                                    <li class="sub">
+                                        <a href="http://espn.go.com/nfl/powerrankings" data-mobile="false"><span class="link-text">Power Rankings</span><span class="link-text-short">Power Rankings</span></a>
+                                    </li>
+                                    <li class="sub">
+                                        <a href="http://espn.go.com/nfl/qbr" data-mobile="false"><span class="link-text">QBR</span><span class="link-text-short">QBR</span></a>
+                                    </li>
+                                    <li class="sub"><a href="http://espn.go.com/nfl/weekly/leaders" data-mobile="false"><span class="link-text">Weekly Leaders</span><span class="link-text-short">Weekly Leaders</span></a>
+                                    </li>
+                                    <li class="sub">
+                                        <a href="http://espn.go.com/nfl/attendance" data-mobile="false"><span class="link-text">Attendance</span><span class="link-text-short">Attendance</span></a>
+                                    </li>
+                                    <li class="sub">
+                                        <a href="http://espn.go.com/nfl/coaches" data-mobile="false"><span class="link-text">Coaches</span><span class="link-text-short">Coaches</span></a>
+                                    </li>
+                                    <li class="sub insider">
+                                        <a href="http://insider.espn.go.com/insider/pickcenter/index?sport=nfl" data-mobile="false"><span class="link-text">PickCenter</span><span class="link-text-short">PickCenter</span></a>
+                                    </li>
+                                    <li class="sub">
+                                        <a href="http://espn.go.com/nfl/lines" data-mobile="false"><span class="link-text">Daily Lines</span><span class="link-text-short">Daily Lines</span></a>
+                                    </li>
+                                    <li class="sub external">
+                                        <a href="http://www.dickssportinggoods.com/category/index.jsp?categoryId=15496176&camp=Part:ESPNPart_NFLNav:Shop:SubNavLink" data-nofollow="true"><span class="link-text">Shop</span><span class="link-text-short">Shop</span></a>
+                                    </li>
+                                    <li class="sub external">
+                                        <a href=" http://www.stubhub.com/nfl-tickets/grouping/121/?gcid=C12289x522&gtkw=NFL+Sub+Nav"><span class="link-text">Tickets</span><span class="link-text-short">Tickets</span></a>
+                                    </li>
+                                    <li class="sub">
+                                        <a href="http://espn.go.com/extra/afl/index" data-mobile="false"><span class="link-text">AFL</span><span class="link-text-short">AFL</span></a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                    <script type="text/javascript">
+                        var espn = espn || {};
+                        espn.nav = espn.nav || {};
+                        espn.nav.navId = 11929946;
+                        espn.nav.isFallback = false;
+
+
+                    </script>
+                </div>
+            </nav>
+
+        </header>
+    </div>
+</div>
+</div>
 <!-- end content -->
 </div>
-<!-- end subheader -->
-<!-- begin footer -->
+<!-- end subheader --><!-- begin footer -->
 <div id="footer" class="container">
     <script type="text/javascript">
-        void 0!==window.jQuery&&jQuery(document).on("track.search",function(n,o,c,e,t){"function"==typeof t&&t.call()});
+        void 0 !== window.jQuery && jQuery(document).on("track.search", function (n, o, c, e, t) {
+            "function" == typeof t && t.call()
+        });
 
         //<![CDATA[
         var link = window.location;
         var bugText = '<a href="#" onclick="window.open(\'http://dynamic.espn.go.com/espn/bugs?url=' + escape(link) + '\', \'Bugs\',\'noresizable,noscrollbars,height=400,width=400\');">Report a Bug</a> | ';
         //]]>
     </script>
-    <span style="font-weight:bold;">ESPN.com:</span> <a href="http://sports.espn.go.com/espn/news/story?page=help/index">Help</a> | <a href="http://espnmediazone.com/us/" rel="nofollow">Press</a> | <a href="http://www.espncms.com/Advertise-on-ESPN.aspx" rel="nofollow">Advertise on ESPN.com</a> | <a href="http://www.espncms.com" rel="nofollow">Sales Media Kit</a> | <a href="http://preferences.truste.com/2.0/?type=espn&affiliateId=148" onclick="window.open('http://preferences.truste.com/2.0/?type=espn&affiliateId=148','popup','width=986,height=878,scrollbars=yes,resizable=no,toolbar=no,directories=no,location=no,menubar=no,status=no,left=0,top=0'); return false">Interest-Based Ads</a> | <script type="text/javascript">document.write(bugText);</script><a href="http://espn.go.com/espn/corrections">Corrections</a> | <a href="http://sports.espn.go.com/espn/news/story?page=contact/index">Contact Us</a> | <a href="http://espn.go.com/espn/sitemap">Site Map</a> | <a href="http://espncareers.com">Jobs at ESPN</a> | <!--a href="http://corporate.disney.go.com/corporate/sourcing.html" rel="nofollow"><span style="font-weight:bold;">Supplier Information</span></a--><a href="http://go.com">Go.com</a><br/>&copy; 2015  ESPN Internet Ventures. <a href="http://disneytermsofuse.com/" rel="nofollow">Terms of Use</a>, <a href="http://disneyprivacycenter.com/" rel="nofollow">Privacy Policy</a>, <a href="https://disneyprivacycenter.com/notice-to-california-residents/" rel="nofollow">Your California Privacy Rights</a>,  <a href="https://disneyprivacycenter.com/kids-privacy-policy/english/">Children's Online Privacy Policy</a> and <a href="http://preferences-mgr.truste.com/?type=espn&affiliateId=148">Interest-Based Ads</a> are applicable to you.  All rights reserved.
+    <span style="font-weight:bold;">ESPN.com:</span>
+    <a href="http://sports.espn.go.com/espn/news/story?page=help/index">Help</a> |
+    <a href="http://espnmediazone.com/us/" rel="nofollow">Press</a> |
+    <a href="http://www.espncms.com/Advertise-on-ESPN.aspx" rel="nofollow">Advertise on ESPN.com</a> |
+    <a href="http://www.espncms.com" rel="nofollow">Sales Media Kit</a> |
+    <a href="http://preferences.truste.com/2.0/?type=espn&affiliateId=148" onclick="window.open('http://preferences.truste.com/2.0/?type=espn&affiliateId=148','popup','width=986,height=878,scrollbars=yes,resizable=no,toolbar=no,directories=no,location=no,menubar=no,status=no,left=0,top=0'); return false">Interest-Based Ads</a> |
+    <script type="text/javascript">document.write(bugText);</script>
+    <a href="http://espn.go.com/espn/corrections">Corrections</a> |
+    <a href="http://sports.espn.go.com/espn/news/story?page=contact/index">Contact Us</a> |
+    <a href="http://espn.go.com/espn/sitemap">Site Map</a> |
+    <a href="http://espncareers.com">Jobs at ESPN</a> | <!--a href="http://corporate.disney.go.com/corporate/sourcing.html" rel="nofollow"><span style="font-weight:bold;">Supplier Information</span></a--><a href="http://go.com">Go.com</a><br/>&copy; 2015 ESPN Internet Ventures.
+    <a href="http://disneytermsofuse.com/" rel="nofollow">Terms of Use</a>,
+    <a href="http://disneyprivacycenter.com/" rel="nofollow">Privacy Policy</a>,
+    <a href="https://disneyprivacycenter.com/notice-to-california-residents/" rel="nofollow">Your California Privacy Rights</a>,
+    <a href="https://disneyprivacycenter.com/kids-privacy-policy/english/">Children's Online Privacy Policy</a> and
+    <a href="http://preferences-mgr.truste.com/?type=espn&affiliateId=148">Interest-Based Ads</a> are applicable to you. All rights reserved.
 
     <!--
     <a href="http://www.espnshop.com/" onClick="location.href('http://log.go.com/log?srvc=sz&guid=73B641A0-6660-4EFC-B8FF-9DE23E8CD9BD&drop=0&addata=3374:65:478847:65&a=1&goto=http://www.espnshop.com/');return false">Shop</a>
     --></div>
-<!-- end footer -->
-<!--[if lte IE 9]></div><![endif]-->
+<!-- end footer --><!--[if lte IE 9]></div><![endif]-->
 </div>
 <!-- end bg-elements -->
-<script type="text/javascript">jQuery(document).ready(function() {var ua = navigator.userAgent;if (ua && ua.indexOf("Trident/4.0") >= 0) { jQuery(".webicon").show(); }if (ua && ua.indexOf("Trident/4.0") >= 0) { jQuery(".webiconmod").show(); }});</script><script type="text/javascript" src="http://a.espncdn.com/combiner/c/080420141219?js=transitionalHeader/espn.i18n-espn-en.js,transitionalHeader/nav-external-domestic.js"></script>
+<script type="text/javascript">jQuery(document).ready(function () {
+    var ua = navigator.userAgent;
+    if (ua && ua.indexOf("Trident/4.0") >= 0) {
+        jQuery(".webicon").show();
+    }
+    if (ua && ua.indexOf("Trident/4.0") >= 0) {
+        jQuery(".webiconmod").show();
+    }
+});</script>
+<script type="text/javascript" src="http://a.espncdn.com/combiner/c/080420141219?js=transitionalHeader/espn.i18n-espn-en.js,transitionalHeader/nav-external-domestic.js"></script>
 
 <!-- SiteCatalyst code version: H.21.3 Copyright 1997-2010 Omniture, Inc. http://www.omniture.com -->
 <script type="text/javascript">
     var undef = "undefined";
-    var s_account="wdgespcom";
+    var s_account = "wdgespcom";
     var omniSite = "espn";
     var omniPageName = "espn:nfl:profile";
 
     var insiderStatus = ""
-            ,anGen = ""
-            ,anYear = ""
-            ,anDateString = ""
-            ,anLoginStatus = ""
-            ,callOmniture = function(){
+            , anGen = ""
+            , anYear = ""
+            , anDateString = ""
+            , anLoginStatus = ""
+            , callOmniture = function () {
                 /*-- core story s_omni properties --*/
-                if (typeof anCV != "undefined"){anParseLoginBarInfo(anCV);}
-                s_omni.pageName="nfl:profile";
+                if (typeof anCV != "undefined") {
+                    anParseLoginBarInfo(anCV);
+                }
+                s_omni.pageName = "nfl:profile";
                 s_omni.server = window.location.host; // Server from the Host
                 s_omni.channel = "nfl";
                 s_omni.prop1 = "espn";
@@ -1168,12 +1926,12 @@ var loggedIn = espn.core.loggedIn;
                 s_omni.eVar19 = "football";
                 s_omni.eVar21 = "nfl";
 
-                if (s_omni.prop11=="anonymous:premium-yes" || s_omni.prop11=="insider-no:premium-yes" && typeof s_omni.prop4!="undefined" &&
-                        (s_omni.prop4=="story" || s_omni.prop4=="blog")) {
-                    if (typeof s_omni.events != "undefined" && s_omni.events!="") {
-                        s_omni.events = s_omni.events+",event8";
+                if (s_omni.prop11 == "anonymous:premium-yes" || s_omni.prop11 == "insider-no:premium-yes" && typeof s_omni.prop4 != "undefined" &&
+                        (s_omni.prop4 == "story" || s_omni.prop4 == "blog")) {
+                    if (typeof s_omni.events != "undefined" && s_omni.events != "") {
+                        s_omni.events = s_omni.events + ",event8";
                     } else {
-                        s_omni.events="event8";
+                        s_omni.events = "event8";
                     }
                 }
 
@@ -1186,15 +1944,17 @@ var loggedIn = espn.core.loggedIn;
                 /************* DO NOT ALTER ANYTHING BELOW THIS LINE ! **************/
 
                 var s_code = s_omni.t();
-                if(s_code) {
-                    var sci = new Image(1,1);
-                    sci.onload = function() {console.log("loaded no append")};
+                if (s_code) {
+                    var sci = new Image(1, 1);
+                    sci.onload = function () {
+                        console.log("loaded no append")
+                    };
                     sci.src = s_code;
                 }
 
 
                 // init blueKai
-                if(espn && espn.track && typeof espn.track.bluekai === "function") {
+                if (espn && espn.track && typeof espn.track.bluekai === "function") {
                     espn.track.bluekai();
                 }
 
@@ -1202,19 +1962,18 @@ var loggedIn = espn.core.loggedIn;
 </script>
 
 
-
 <script type="text/javascript">
     if (typeof(s_omni) === 'undefined') {
-        (function($) {
+        (function ($) {
             // we want to load the analytics files from the cache if possible - so, let's use full $.ajax() calls
             $.ajax({
-                type:'GET',
+                type: 'GET',
                 url: 'http://a.espncdn.com/combiner/c?js=analytics/sOmni.js,analytics/analytics.js,analytics/externalnielsen.js&v=15',
                 dataType: 'script',
                 cache: true,
-                success: function() {
+                success: function () {
                     var lgSrc;
-                    if(typeof anCV !== undef && anCV === '' && $('#form-memberarea').length > 0) {
+                    if (typeof anCV !== undef && anCV === '' && $('#form-memberarea').length > 0) {
                         lgSrc = 'https://r.espn.go.com/members/util/getUserInfo?cb=runOmnitureIndependently&regType=true';
                         $.getScript(lgSrc); // we don't want this to be cached - so we'll use the $.getScript() method
                     } else {
@@ -1233,8 +1992,8 @@ var loggedIn = espn.core.loggedIn;
 <!-- Begin comScore Tag -->
 <script type="text/javascript">
     if (typeof(jQuery) !== 'undefined') {
-        jQuery(function($) {
-            if(typeof window._comscore === 'undefined') {
+        jQuery(function ($) {
+            if (typeof window._comscore === 'undefined') {
                 window._comscore = window._comscore || [];
                 window._comscore.push({ c1: "2", c2: "3000005" });
                 jQuery.getScript((document.location.protocol == "https:" ? "https://sb" : "http://b") + ".scorecardresearch.com/beacon.js");
@@ -1242,15 +2001,14 @@ var loggedIn = espn.core.loggedIn;
         });
     }
 </script>
-<!-- End comScore Tag -->
-<!-- Begin blueKai Tag -->
+<!-- End comScore Tag --><!-- Begin blueKai Tag -->
 <script type="text/javascript">
     espn = window.espn || {};
     espn.track = espn.track || {};
-    espn.track.bluekai = function(){
-        window.bk_async = function(){
-            try{
-                if(typeof s_omni !== 'undefined'){
+    espn.track.bluekai = function () {
+        window.bk_async = function () {
+            try {
+                if (typeof s_omni !== 'undefined') {
                     bk_addPageCtx("pageName", (typeof s_omni.pageName !== 'undefined' ? s_omni.pageName : ''));
                     bk_addPageCtx("channel", (typeof s_omni.channel !== 'undefined' ? s_omni.channel : ''));
                     bk_addPageCtx("eVar34", (typeof s_omni.prop45 !== 'undefined' ? s_omni.prop45 : ''));
@@ -1267,14 +2025,17 @@ var loggedIn = espn.core.loggedIn;
                     bk_addPageCtx("prop45", (typeof s_omni.prop45 !== 'undefined' ? s_omni.prop45 : '')); // set for tv channels, which we don't have right now
                 }
             }
-            catch(e){}
+            catch (e) {
+            }
             window.bk_allow_multiple_calls = true;
             window.bk_use_multiple_iframes = true;
             window.bk_pixel_url = 'https://tags.bluekai.com/';
             window.bk_pixel_secure = 'https://tags.bluekai.com/';
-            if(window.BKTAG) { window.BKTAG.doTag(24667, 10); }
+            if (window.BKTAG) {
+                window.BKTAG.doTag(24667, 10);
+            }
         };
-        if(espn.track.bluekai.init === undefined){
+        if (espn.track.bluekai.init === undefined) {
             var scripts = document.getElementsByTagName('script')[0];
             var s = document.createElement('script');
             s.async = true;
@@ -1289,40 +2050,46 @@ var loggedIn = espn.core.loggedIn;
 <!-- End blueKai Tag -->
 
 <script>
-    var _sf_async_config={
-        "uid":22222,
-        "domain":"espn.go.com",
-        "pingServer":"pespn.chartbeat.net",
-        "useCanonical":true,
-        "useSubDomains":false,
-        "sections":"nfl",
-        "authors":"playerprofile"
+    var _sf_async_config = {
+        "uid": 22222,
+        "domain": "espn.go.com",
+        "pingServer": "pespn.chartbeat.net",
+        "useCanonical": true,
+        "useSubDomains": false,
+        "sections": "nfl",
+        "authors": "playerprofile"
     };
-    if (typeof(ad_site) !== 'undefined') { _sf_async_config.zone = ad_site; }
+    if (typeof(ad_site) !== 'undefined') {
+        _sf_async_config.zone = ad_site;
+    }
 
     // load both chartbeat_pub and chartbeat_video
     (function () {
         function a() {
             window._sf_endpt = (new Date()).getTime();
 
-            var cbDomain = (("https:"==document.location.protocol)?"https://a248.e.akamai.net/chartbeat.download.akamai.com/102508/":"http://static.chartbeat.com/");
+            var cbDomain = (("https:" == document.location.protocol) ? "https://a248.e.akamai.net/chartbeat.download.akamai.com/102508/" : "http://static.chartbeat.com/");
 
             var c = document.createElement("script");
-            c.setAttribute("language","javascript");
-            c.setAttribute("type","text/javascript");
-            c.setAttribute("src", cbDomain+"js/chartbeat_pub.js");
+            c.setAttribute("language", "javascript");
+            c.setAttribute("type", "text/javascript");
+            c.setAttribute("src", cbDomain + "js/chartbeat_pub.js");
             document.body.appendChild(c);
 
-            if(typeof StrategyInterface !== 'undefined' && (typeof espn !== 'undefined' && typeof espn.video !== 'undefined')){
+            if (typeof StrategyInterface !== 'undefined' && (typeof espn !== 'undefined' && typeof espn.video !== 'undefined')) {
                 var e = document.createElement("script");
-                e.setAttribute("language",	"javascript");
+                e.setAttribute("language", "javascript");
                 e.setAttribute("type", "text/javascript");
-                e.setAttribute("src", cbDomain+"js/chartbeat_video.js");
+                e.setAttribute("src", cbDomain + "js/chartbeat_video.js");
                 document.body.appendChild(e);
             }
         }
+
         var b = window.onload;
-        window.onload = (typeof window.onload != "function") ? a : function () { b(); a() }
+        window.onload = (typeof window.onload != "function") ? a : function () {
+            b();
+            a()
+        }
     })();
     //(function(){function a(){window._sf_endpt=(new Date()).getTime();var c=document.createElement("script");c.setAttribute("language","javascript");c.setAttribute("type","text/javascript");c.setAttribute("src",(("https:"==document.location.protocol)?"https://a248.e.akamai.net/chartbeat.download.akamai.com/102508/":"http://static.chartbeat.com/")+"js/chartbeat_pub.js");document.body.appendChild(c)}var b=window.onload;window.onload=(typeof window.onload!="function")?a:function(){b();a()}})();
 </script>
@@ -1333,18 +2100,37 @@ var loggedIn = espn.core.loggedIn;
 <script type="text/javascript" charset="utf-8">buildOutHeadlinesForPinnedSite();</script>
 <script type="text/javascript">
     var isInIFrame = (window.location != window.parent.location) ? true : false;
-    if(isInIFrame){ if(document.referrer){ if(document.referrer.indexOf(".go.com")==-1){ top.location.href=self.location.href; } } }
+    if (isInIFrame) {
+        if (document.referrer) {
+            if (document.referrer.indexOf(".go.com") == -1) {
+                top.location.href = self.location.href;
+            }
+        }
+    }
 </script>
 
 <script type='text/javascript'>
     //<![CDATA[
-    (function(){
+    (function () {
         window.gravityInsightsParams = {
             'type': 'content',
             'action': '',
             'site_guid': '9a41401e9b7c945344e001ee7f23031e'
         };
-        var b,c;b="https:"===document.location.protocol?"https://b-ssl.grvcdn.com/moth-min.js":"http://b.grvcdn.com/moth-min.js";window.grvMakeScript=function(d){var a;a=document.createElement("script");a.type="text/javascript";a.async=!0;a.src=d;return a};c=document.getElementsByTagName("script")[0];b&&c.parentNode.insertBefore(window.grvMakeScript(b),c);})();
+        var b, c;
+        b = "https:" === document.location.protocol ? "https://b-ssl.grvcdn.com/moth-min.js" : "http://b.grvcdn.com/moth-min.js";
+        window.grvMakeScript = function (d) {
+            var a;
+            a = document.createElement("script");
+            a.type = "text/javascript";
+            a.async = !0;
+            a.src = d;
+            return a
+        };
+        c = document.getElementsByTagName("script")[0];
+        b && c.parentNode.insertBefore(window.grvMakeScript(b), c);
+    })();
     //]]>
-</script></body>
+</script>
+</body>
 </html>

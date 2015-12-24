@@ -12,13 +12,13 @@
           class="com.btanabe.fsdu.parsers.PaginatedRecordParser">
         <constructor-arg ref="basketballReferenceSeasonTotalsPlayerValueExtractor"/>
         <constructor-arg ref="basketballReferenceSeasonTotalsRecordParserValueExtractorMap"/>
-        <constructor-arg ref="&amp;basketballReferneceSeasonTotalsModelFactory"/>
+        <constructor-arg ref="basketballReferenceSeasonTotalsModelFactory"/>
     </bean>
 
     <bean id="basketballReferenceSeasonTotalsRecordParser"
           class="com.btanabe.fsdu.parsers.RecordParser">
         <constructor-arg ref="basketballReferenceSeasonTotalsRecordParserValueExtractorMap"/>
-        <constructor-arg ref="&amp;basketballReferneceSeasonTotalsModelFactory"/>
+        <constructor-arg ref="basketballReferenceSeasonTotalsModelFactory"/>
     </bean>
 
     <util:map id="basketballReferenceSeasonTotalsRecordParserValueExtractorMap"

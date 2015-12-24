@@ -20,7 +20,8 @@ public class EspnNbaProjectionModel {
     private Double turnoversPerGame;
     private Double pointsPerGame;
 
-    public EspnNbaProjectionModel() {}
+    public EspnNbaProjectionModel() {
+    }
 
     @Override
     public String toString() {

@@ -13,6 +13,8 @@ import java.util.function.Function;
 public abstract class AbstractModelFactory<OutputClazz> extends AbstractFactoryBean implements FactoryBean, Function<Map<String, Object>, OutputClazz> {
 
     public abstract void setOutputClazz(Class<OutputClazz> outputModelClass);
+
     public abstract void setSetterMethodToValueMap(Map<String, ValueExtractor> setterMethodToValueMap);
+
     public abstract OutputClazz createObject() throws Exception;
 }

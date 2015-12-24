@@ -27,7 +27,7 @@ public class RecordCombinerTests {
     @Qualifier("basketballReferenceSeasonTotalsRecordCombiner")
     private RecordCombiner seasonTotalsRecordCombiner;
 
-    @Resource(name= "basketballReferenceSeasonTotalsTwoTeamsInOneSeasonModelList")
+    @Resource(name = "basketballReferenceSeasonTotalsTwoTeamsInOneSeasonModelList")
     private List<BasketballReferenceSeasonTotalsModel> twoTeamPlayerList;
 
     @Resource(name = "basketballReferenceSeasonTotalsThreeTeamsInOneSeasonModelList")

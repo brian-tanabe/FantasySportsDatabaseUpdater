@@ -18,10 +18,12 @@
     <util:map id="basketballReferenceSeasonTotalsRecordCombinerValueTransformerMap"
               key-type="org.apache.commons.lang3.tuple.Pair"
               value-type="com.btanabe.fsdu.processors.ValueTransformer">
-        <entry key-ref="teamNameGetterMethodSetterMethodNamePair" value-ref="commaSeparatedStringConcatenatorValueTransformer"/>
+        <entry key-ref="teamNameGetterMethodSetterMethodNamePair"
+               value-ref="commaSeparatedStringConcatenatorValueTransformer"/>
     </util:map>
 
-    <bean id="teamNameGetterMethodSetterMethodNamePair" class="org.apache.commons.lang3.tuple.ImmutablePair" factory-method="of">
+    <bean id="teamNameGetterMethodSetterMethodNamePair" class="org.apache.commons.lang3.tuple.ImmutablePair"
+          factory-method="of">
         <constructor-arg value="getTeam"/>
         <constructor-arg value="setTeam"/>
     </bean>

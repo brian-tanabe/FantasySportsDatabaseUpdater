@@ -62,7 +62,9 @@ public class EspnFantasyLeaguePlayerOwnershipModel {
         this.espnFantasyOwnerTeamName = espnFantasyOwnerTeamName;
     }
 
-    public String getPlayerFullName() { return playerFullName; }
+    public String getPlayerFullName() {
+        return playerFullName;
+    }
 
     public void setPlayerFullName(String playerFullName) {
         this.playerFullName = playerFullName;

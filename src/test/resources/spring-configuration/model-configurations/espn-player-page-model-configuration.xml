@@ -4,22 +4,22 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
     <bean id="eddieLacyEspnPlayerPageModel" class="com.btanabe.fsdu.models.EspnPlayerPageModel">
-        <property name="playerId" value="15848" />
-        <property name="height" value="5' 11&quot;" />
-        <property name="weightInPounds" value="234" />
-        <property name="birthday" value="Jun 2, 1990" />
-        <property name="experienceInYears" value="3" />
-        <property name="college" value="Alabama" />
-        <property name="draftPickTaken" value="61" />
+        <property name="playerId" value="15848"/>
+        <property name="height" value="5' 11&quot;"/>
+        <property name="weightInPounds" value="234"/>
+        <property name="birthday" value="Jun 2, 1990"/>
+        <property name="experienceInYears" value="3"/>
+        <property name="college" value="Alabama"/>
+        <property name="draftPickTaken" value="61"/>
     </bean>
 
     <bean id="brandonMcManusEspnPlayerPageModel" class="com.btanabe.fsdu.models.EspnPlayerPageModel">
-        <property name="playerId" value="16339" />
-        <property name="height" value="6' 3&quot;" />
-        <property name="weightInPounds" value="201" />
-        <property name="birthday" value="Jul 25, 1991" />
-        <property name="experienceInYears" value="2" />
-        <property name="college" value="Temple" />
-        <property name="draftPickTaken" value="-1" />
+        <property name="playerId" value="16339"/>
+        <property name="height" value="6' 3&quot;"/>
+        <property name="weightInPounds" value="201"/>
+        <property name="birthday" value="Jul 25, 1991"/>
+        <property name="experienceInYears" value="2"/>
+        <property name="college" value="Temple"/>
+        <property name="draftPickTaken" value="-1"/>
     </bean>
 </beans>
